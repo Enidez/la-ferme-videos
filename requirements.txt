@@ -1,0 +1,7 @@
+playwright==1.63.0
+numpy==2.5.4
+scipy==1.18.1
+librosa==1.0.0
+soundfile==0.14.0
+opencv-python-headless==4.14.0.94
+sherpa-onnx==1.13.8

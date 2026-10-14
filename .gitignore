@@ -1,11 +1,9 @@
-venv/
-node_modules/
+venv
+node_modules
+/models/
 prev/
-img/
-clips/
 *.mp4
 *.wav
-*.mp3
-*.caffemodel
 __pycache__/
 .DS_Store
+events.json

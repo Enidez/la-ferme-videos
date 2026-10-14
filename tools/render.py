@@ -1,6 +1,6 @@
 import sys,os,base64,subprocess,json
 from playwright.sync_api import sync_playwright
-P=sys.argv[1];mode=sys.argv[2]
+P=os.path.abspath(sys.argv[1]);mode=sys.argv[2]
 with sync_playwright() as pw:
     b=pw.chromium.launch(args=['--allow-file-access-from-files'])
     pg=b.new_page(viewport={'width':1080,'height':1920})
