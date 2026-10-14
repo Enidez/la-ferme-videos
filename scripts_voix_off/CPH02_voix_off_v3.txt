@@ -1,0 +1,98 @@
+COMME PAR HASARD #02 — « Le ciel suspendu »
+================================================
+
+1) VOIX OFF — ElevenLabs v4
+Réglages : stabilité Natural · vitesse 1.1 · voix grave, sérieuse, pince-sans-rire
+Durée visée : 75 à 85 s (minimum 61 s pour la monétisation)
+Copier tout ce qui est entre les deux lignes ↓
+
+----------------------------------------------------------------
+[serious] Samedi, toute la France part en vacances.
+Et les pilotes avaient décidé… de rester au sol.
+[intrigued] Cinq jours de grève. Du dix-sept au vingt-et-un octobre.
+Air France, Transavia, Corsair. Le premier jour de la Toussaint.
+[serious] Des millions de familles. Des valises déjà faites.
+Et puis, le neuf octobre… tout s'arrête. Grève suspendue.
+[deadpan] Officiellement, c'est une bonne nouvelle.
+[slowly] Officiellement.
+[serious] Moi, je me suis posé une seule question.
+Pendant trois semaines, quand vous avez eu peur de ne pas décoller…
+[whispers] vous avez regardé quoi ?
+[serious] Le train.
+[intrigued] Et le train… fait la guerre à l'avion depuis longtemps.
+En deux mille vingt-trois, l'État interdit des vols en France,
+dès qu'un train fait le trajet en moins de deux heures trente.
+Le décret est signé par une Première ministre…
+[slowly] ancienne de la SNCF. Et ancienne patronne de la RATP.
+[serious] Coïncidence ? Alors suivez les hommes.
+Louis Gallois. Président de la SNCF pendant dix ans.
+Puis, un neuf octobre, patron d'Airbus.
+[whispers] Le rail est déjà dans le cockpit.
+[serious] Mais le plus étrange…
+Pour suspendre la grève, les syndicats ont négocié avec qui ?
+Le ministère des Transports.
+Celui qui gère les avions…
+[deadpan] et les trains.
+[intrigued] Il jouait des deux côtés.
+[serious] Et la date, le neuf octobre, n'a pas été choisie au hasard.
+Un neuf octobre, Clément Ader fait décoller le premier « avion ».
+Avant ça… il travaillait aux chemins de fer.
+[slowly] L'avion est né d'un cheminot. Et c'est le train qui décide quand il vole.
+[serious] Vous croyez que la grève a échoué ?
+Une grève, ça coûte cher.
+[intrigued] Une menace de grève… c'est gratuit.
+Le train n'avait pas besoin que les avions restent au sol.
+[whispers] Il avait besoin que vous ayez peur.
+[serious] Et regardez bien le mot : suspendue. Pas annulée.
+[deadpan] La menace est toujours là. Juste au-dessus de vos vacances.
+[serious] Alors, vous avez regardé un billet de train, au cas où ?
+[deadpan] Avouez.
+Réfléchissez.
+Je dis ça, je dis rien.
+----------------------------------------------------------------
+
+
+2) MUSIQUE — Suno
+Mode : Custom · Instrumental ON
+
+▶ Style of Music (copier tel quel) — version « super-héros qui déraille » :
+unsettling orchestral thriller, screeching dissonant violins, sul ponticello tremolo strings, shrill high violin glissandos, menacing heroic brass undertone, deep taiko hits, psychotic tension, slow build to frantic strings, dark cinematic, minor key, 100 bpm, instrumental
+
+▶ Exclude styles :
+vocals, choir lyrics, EDM, happy, pop, lo-fi, piano ballad
+
+▶ Lyrics (structure, à coller dans le champ Lyrics) :
+[Instrumental]
+[Intro: single shrill violin note held, low brass drone, uneasy silence]
+[Verse: creeping string ostinato, sparse taiko, quiet menace, room for narration]
+[Build: violins rising in pitch, tremolo getting louder, nervous]
+[Hit: brutal orchestral stab, then silence]
+[Break: lone screeching violin, eerie, almost whispered]
+[Climax: frantic dissonant violins, pounding drums, heroic brass turned sinister]
+[Outro: violins screech upward and cut abruptly, final low boom]
+[End]
+
+(Ancienne version « documentaire d'enquête », si besoin :
+dark investigative documentary score, mock-serious conspiracy thriller, pulsing low strings ostinato, ticking clock percussion, deep sub booms, tense piano stabs, analog synth drone, cinematic hits, 92 bpm, minor key, instrumental)
+
+Conseils :
+- Générer 2 ou 3 versions et garder celle dont l'intro démarre fort dès les 2 premières secondes.
+- La musique doit rester sous la voix : pas de mélodie trop chargée dans le « Verse ».
+- Je découperai la musique sur la structure de la voix (montée, coup, creux pour « Mais le plus étrange… », climax, vraie fin).
+
+
+3) LÉGENDE (proposition)
+Samedi, les pilotes devaient clouer la France au sol. Le 9 octobre : grève suspendue. Officiellement, c'est une bonne nouvelle. Officiellement. ✈️🚆
+
+T'as regardé un billet de train, au cas où ? Avoue 👇
+
+#commeparhasard #greve #toussaint #sncf #laferme
+
+
+4) FAITS VÉRIFIÉS (pour l'écran)
+- Préavis du samedi 17 au mercredi 21 octobre 2026 (Air France, Transavia, Corsair…), 1er jour des vacances de la Toussaint ; appel à la grève le 19 septembre 2026.
+- Préavis suspendu le 9 octobre 2026 après des échanges avec les ministères des Transports et du Travail ; « suspension, pas levée » (communiqué SNPNC-FO / intersyndicale).
+- Décret n° 2023-385 du 22 mai 2023 : interdiction des vols intérieurs quand le train fait le trajet en moins de 2 h 30 (signé par Élisabeth Borne, Première ministre).
+- Élisabeth Borne : SNCF (2002-2007), PDG de la RATP (2015-2017).
+- Louis Gallois : président de la SNCF (1996-2006), nommé PDG d'Airbus le 9 octobre 2006.
+- Clément Ader : Compagnie des chemins de fer du Midi (1862-1866) ; l'Éole décolle le 9 octobre 1890 ; il a inventé le mot « avion ».

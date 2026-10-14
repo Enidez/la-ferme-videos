@@ -1,0 +1,133 @@
+---
+name: "la-ferme-videos"
+description: "Produire les vidéos verticales de la chaîne LA FERME (TikTok @laferme.media) : choix du sujet, script et voix, DA « tableau d'enquêteur » (cartes plastifiées, caméra drone, extraits plein écran), couverture, montage canvas, son, vérification, légende et livraison."
+---
+
+LA FERME — bible de production
+Chaîne de vidéos verticales (TikTok @laferme.media, puis Reels et Shorts), antisystème mais factuelle. Bio : « Ils parlent à ta place. Nous, on vérifie. » Le client s'appelle Enidez. Il ne code pas, il parle français et il délègue tous les choix techniques. Chaque nouvelle remarque de sa part doit être intégrée à cette bible.
+
+Séries et ton
+LE DOSSIER : décryptage sérieux d'une actu. C'est désormais la ligne principale. Récit presque tragique, qui touche le spectateur directement (son argent, ses enfants, ses droits). Voix grave, retenue, sans ironie.
+LE RÉCIT VS LE RÉEL : un récit viral confronté aux faits, avec des tampons de verdict (NON PROUVÉ, EXAGÉRÉ, VRAI, FAUX).
+LES ANTICORPS : portraits de lanceurs d'alerte.
+COMME PAR HASARD : parodie à 100 %, jamais à moitié. Un faux enquêteur très sérieux prouve un complot absurde. Les coïncidences doivent être VRAIES ; seule la logique est débile. L'absurde monte à chaque preuve jusqu'à une conclusion délirante. Sujets légers et populaires seulement (star, événement viral, objet du quotidien), jamais un sujet de société sérieux. Carton de fin : « Les chiffres sont vrais. Les conclusions sont débiles. » Ce format pourra avoir son propre compte s'il performe.
+HORS-SÉRIE : variantes, par exemple le style Matrix.
+L'AUTRE ANGLE (nouveau format, idée d'Enidez) : on prend une vidéo qui fait le buzz en ce moment et on l'analyse sous un angle que personne ne prend. Ce n'est pas un énième commentaire : on cherche ce que la vidéo révèle vraiment (le contexte coupé, qui en profite, ce que dit la loi, les chiffres derrière la scène, pourquoi elle a été partagée). Règles : réagir dans les 24 à 48 h ; n'utiliser que de courts extraits cités (droit de citation), avec le compte d'origine crédité à l'écran, jamais la vidéo entière ; flouter les particuliers ; vérifier le contexte avant d'affirmer quoi que ce soit ; couverture = l'image la plus connue de la vidéo virale + un titre court qui annonce l'autre angle.
+Règle d'or : un registre par vidéo. Une vidéo « entre deux » (ni drôle, ni inquiétante) ne marche pas. Exemple : Comme par hasard #02, la grève suspendue, était trop crédible pour faire rire et trop gentille pour inquiéter.
+Ce qui marche (données réelles)
+Compte LA FERME au 12 octobre 2026. Toutes les vidéos plafonnent à 600-950 vues, sauf le Récit vs Réel « 17 octobre » : 4 434 vues, 7 % de j'aime, 18 partages. Ses ingrédients : un sujet chaud que les gens cherchaient, une couverture photo forte (« SAMEDI 17 OCTOBRE » sur la foule), une question personnelle en légende. Les Dossiers ont le meilleur taux de j'aime (8-9 %) ; Comme par hasard le plus faible (3 %, 0 commentaire).
+Compte de référence @heysuperneva (Neva, travaille à RMC), 8 vidéos en 3 jours, jusqu'à 292 000 vues, 11 à 15 % de j'aime, énormes partages et enregistrements. Les leçons :
+L'accroche part de quelque chose que les gens connaissent déjà : un mème viral, une petite phrase de politique, une capture. Puis la vidéo apporte les vrais chiffres derrière.
+On parle à « toi », et chaque vidéo défend UNE thèse d'injustice qui touche l'identité ou la dignité du spectateur (« deux poids, deux mesures »). Les vidéos qui ne parlent que de chiffres (carburant, nombre de grenades) font un flop, chez lui comme chez nous.
+La vidéo doit fournir des arguments qu'on partage pour gagner un débat. Sources complètes en légende, et source en petit sous chaque chiffre à l'écran.
+Une signature récurrente : son tampon « LES CHIFFRES SONT TÊTUS », repris en hashtag, et son logo.
+Du volume : une vidéo par jour au minimum, même gabarit, durée d'environ 95 à 100 s. On épingle les meilleures.
+Veille de 10 comptes d'actu qui buzzent (13 octobre 2026 : HugoDécrypte, Brut, Ulyces, Cosmos Finance, Un moment d'Actu, actufrance_33, ActuFrance Express, @17octobre2026, V2, heysuperneva). Ce qui fait les tops : un moment ou une image plutôt qu'une explication ; ce qui VA arriver, avec une date (« à quoi s'attendre le 13 » : 616 000 vues, quand les comptes rendus après coup plafonnent à 400-3 000) ; l'appartenance (« la Gen Z », « nous ») ; la participation (« chaud ou pas chaud ? », « faites passer le message ») ; ton argent face à l'État ; un personnage ou un format récurrent reconnaissable. Ce qui fait les flops : l'étranger ou l'abstrait, des chiffres sans personnage, le compte rendu tardif, sortir de son sujet, l'info de service sans tension. Notre différence à garder : beaucoup de ces comptes relaient sans vérifier ; nous, on vérifie.
+Prudence : son plus gros succès joue sur un mème chargé ethniquement pour dénoncer une discrimination. C'est puissant mais risqué : uniquement en sérieux, avec « reconstitution » signalé et une vraie source derrière. Jamais en parodie.
+Direction artistique maison : LE TABLEAU D'ENQUÊTEUR (validée « perfect » par Enidez le 13/10/2026, L'Autre Angle #01 v6)
+C'est le style par défaut de toutes les nouvelles vidéos. L'ancien style « fond noir + cartes qui glissent » (plus bas) ne sert plus que de réserve.
+
+Le principe : tout le tableau existe déjà avant la première seconde. Un grand mur (environ 5 000 × 7 500 px dans le monde), où chaque élément du récit est une carte punaisée, reliée à la suivante par un fil rouge déjà tendu. La vidéo n'est qu'un vol de caméra sur ce mur.
+Caméra drone FPV : elle vole d'un indice à l'autre en suivant les fils, comme un oiseau. Spline Catmull-Rom passant par des points d'arrivée, de pause et de mi-parcours ; elle prend du recul (zoom × 0,72) au milieu de chaque fil, s'incline dans les virages (roulis jusqu'à ±0,09 rad), avec un flou de mouvement quand elle va vite. Elle arrive sur chaque carte au moment exact où la voix en parle.
+INTERDIT : fondus, cuts, écrans qui apparaissent. Uniquement des mouvements de caméra en travelling. Deux vues d'ensemble autorisées : juste après la couverture, et avant la conclusion (on voit tout le tableau d'un coup).
+Cartes « plastifiées » façon capsule complot : papier gris translucide, reflet brillant en diagonale, liseré fin, scotch ou punaise rouge, lettres blanches un peu transparentes. Démarche digitale mais toujours avec de la texture et de la transparence.
+Désordre (demandé par Enidez) : cartes franchement penchées (jusqu'à ±6°), légèrement décalées, et environ 70 éléments de décor sur le mur : post-it griffonnés, mini-photos N&B, fiches, punaises, bouts de fil rouge qui ne mènent nulle part. Ça doit ressembler à un vrai mur d'enquêteur, pas à une grille.
+Plein écran : plusieurs fois par vidéo, la caméra plonge DANS une carte vidéo jusqu'à ce qu'elle remplisse presque tout l'écran (largeur de la vidéo ≈ 1 100 px), puis repart sur le fil. À faire sur les extraits viraux, les images de manifestants/footage, les vidéos de référence et sur le carton de fin. Le but : utiliser au maximum l'espace de l'écran.
+Vrais extraits : les vidéos virales citées sont intégrées en vrai (courts extraits de 4 à 6 s, droit de citation, toujours après autorisation de téléchargement), sur une carte avec le @ du compte d'origine et un badge. Footage d'archive libre (Wikimedia Commons, CC0/CC BY) étiqueté « IMAGES D'ARCHIVE · année » avec l'auteur. Image IA étiquetée « GÉNÉRÉ PAR IA ». Visages des particuliers floutés image par image ; l'initiateur d'un appel reste anonyme.
+Ambiance : moins sombre qu'avant, plus grise (mur #3a3f3b, fond #262a27), étalonnage multiply légèrement vert-gris, vignettage, grain, poussière. Ambiance « Seven », en moins chargé : peu d'éléments importants par écran.
+Sous-titres : 3 mots maximum à la fois, sur une petite tuile translucide vers y 1330, hors caméra. Les longs sous-titres font décrocher.
+Carton de fin : une carte du tableau (titre de la série, « ABONNE-TOI »), avec les crédits en dessous (sources, @ des extraits, musique) ; la caméra finit dessus en plein écran.
+Moteur réutilisable (copie durable) : /Users/enidez/Movies/Dossier01_rushes/LA_FERME_moteur_tableau/ (projet_exemple = L'Autre Angle #01 : index.html + helpers.js + board.js + segs.js + clips/ + img/ ; tools/ = render.py, faces.py, prep_img.py, tighten.py, sfx_mix.py). Pour un nouvel épisode : copier projet_exemple, remplacer segs.js (timings des phrases), les cartes add({...}) de board.js et les clips. Dans board.js : full:1 sur une carte = plongée plein écran ; t0 = moment où la caméra arrive ; les fils suivent l'ordre chronologique des t0.
+
+Réserve : l'ancienne DA « dossier d'enquête » sur fond noir
+Elle s'applique à TOUTES les séries. Elle s'inspire de la grammaire visuelle des capsules parodiques d'enquête de la télé des années 2010, sans jamais reprendre leur nom, leur logo, leurs slogans ni leurs sujets.
+
+Fond : noir profond, poussière et grain de pellicule, vignettage fort, légers scintillements et fuites de lumière. Photo floue en noir et blanc sur un calque très lointain quand on en a une.
+Preuves en cartes : chaque image, capture ou document est un rectangle (environ 85 % d'opacité, ou opaque pour un document papier) avec un fin liseré blanc et une rotation de ±2°. Les cartes entrent en glissant depuis un bord, dérivent en parallaxe et se superposent. Une nouvelle carte toutes les 2 à 3 s, calée sur la voix.
+Étalonnage : noir et blanc dominant, la couleur gardée seulement sur l'élément-preuve (logo, drapeau, chiffre, gilets jaunes).
+Annotations : flèches rouges (#E8231F) qui « tapent » avec un rebond, cercles rouges tracés à la main, soulignés, tampons rouges inclinés.
+Jeux de lettres : chaque lettre sur une tuile grise translucide, police condensée blanche lumineuse (Oswald 700 ou Anton), petits chiffres qui comptent les lettres au-dessus. Pour barrer : deux barres lumineuses en grand X.
+Révélations : flash électrique (éclair blanc), poussée brutale de la caméra, son d'impact.
+Caméra 2.5D (composition « After Effects ») : c'est ce qui donne la dynamique, il ne faut jamais la retirer.
+Chaque élément vit sur un calque à une profondeur : fond très loin, cartes au milieu, tuiles et textes devant, annotations collées à leur cible.
+Pendant une scène, la caméra fait un lent travelling avant avec un léger roulis, et alterne trois mouvements d'une scène à l'autre : orbite (le texte reste fixe, les calques derrière glissent en sens inverse), dérive latérale, grue haut/bas.
+Entre deux scènes, elle fonce vers l'avant et traverse les calques qui s'effacent, puis la scène suivante arrive de l'arrière en décélérant.
+Sur une révélation, poussée brutale en avant.
+Les sous-titres, le grain et le flash restent fixes, hors caméra.
+Effets signatures déjà faits (réutilisables) :
+GIVRE (#03 « Le gel ») : cartes qui se couvrent de cristaux sous un tampon « GELÉE », bords de l'écran qui gèlent, étalonnage qui vire au bleu, neige.
+ACOUPHÈNE (#04 « Conforme ») : explosion, écran blanc et flou, musique coupée, sifflement aigu pendant 2 s, retour lent.
+TABLEAU DES DÉPARTS à palettes (Comme par hasard #02).
+Chaîne d'ordres avec maillons ; deux colonnes de versions (« PARQUET / FAMILLE ») avec un « VS » ; frise verticale chronologique ; compteur qui défile ; courbe des prix qui monte face à une aide à plat ; hémicycle de l'Assemblée en points.
+Palette : fond #060807, encre #ECEEE6, gris #6E776C, rouge #FF3A2E ou #E8231F, vert #A9C79A, ambre #FFB21E, glace #9fd8ff. Polices : Anton, Oswald 700, JetBrains Mono.
+Toujours : sous-titres calés sur la voix, 3 mots maximum à la fois. Faits et sources visibles. Footage ou photo réelle dès que possible.
+Couverture (la règle la plus importante pour les vues)
+La couverture est la première image de la vidéo, celle que TikTok et Instagram affichent dans la grille. Le modèle à suivre est le « 17 octobre » : une photo forte en plein écran, et un titre simple.
+
+Fond : UNE photo réelle évocatrice en plein cadre (foule, lieu, objet du sujet), légèrement assombrie en bas et en haut pour la lisibilité. Pas d'écran noir avec du texte seul, pas de collage de cartes. Si l'image est générée par IA, la mention « IMAGE GÉNÉRÉE PAR IA » reste visible.
+Titre : 1 à 4 mots maximum, en Anton blanc, très gros, centré (une date, un chiffre, une formule choc : « 17 OCTOBRE », « 15 ANS. », « LE GEL. »). Au maximum un petit sur-titre en Mono (« SAMEDI », « LE DOSSIER #04 ») et une seule petite étiquette (source, ou « IMAGE GÉNÉRÉE PAR IA »).
+Interdit sur la couverture : plusieurs blocs de texte, des tampons, des tuiles, des cercles, des phrases longues, plus de deux couleurs de texte. Pas de sous-titres pendant la fenêtre de couverture.
+Durée : la composition reste quasi fixe de 0 à 3 s (seulement un très lent zoom), pour que toute image prise automatiquement autour de la 2e seconde soit la bonne. La voix peut démarrer dessus ; le montage « animé » commence après 3 s.
+Livraison : exporter aussi la couverture en JPG, à choisir comme couverture à la publication.
+Règles de mise en page (vertical 1080×1920)
+Colonne de contenu entre x 120 et 960.
+Rien d'important sous y 1480 : c'est la zone de la légende et de l'interface TikTok.
+Rien en x > 960 entre y 900 et 1500 : ce sont les boutons TikTok.
+Rangées : label 285, titre 392, contenu 540–1060, texte1 1110, texte2 1285, note 1362, source 1428.
+Les sous-titres sur deux lignes occupent environ y 1250–1400 : aucun texte de scène sous y 1240.
+Au moins 175 px entre deux lignes Anton quand la 2e ligne est plus grande. Chaque texte reste au moins 1,5 s à l'écran.
+Un seul élément dominant par écran. Jamais de rouge sur fond rouge. Sources en 24 px sur une pastille sombre ; notes en 26 px.
+Les visages de personnes réelles sont floutés, profils compris. Les pseudos des particuliers sont floutés. Victimes mineures : ni nom, ni visage, ni image de blessure.
+Une image générée par IA est TOUJOURS étiquetée à l'écran « IMAGE GÉNÉRÉE PAR IA ». Un personnage d'exemple est étiqueté « EXEMPLE FICTIF ».
+Écriture
+Durée : au moins 61 s au final, carton de fin compris, pour la monétisation TikTok. Viser 75 à 110 s, et rester sous 2 minutes quand c'est possible. Le resserrage de la voix (tempo, silences) ne doit jamais faire passer la vidéo sous 61 s.
+Le storytelling d'abord : une seule affaire racontée du début à la fin (un fait, des enjeux, un rebondissement, une question d'enquête, des preuves qui font avancer le récit, un climax, une chute). Les références (films, livres, histoire) servent le récit, elles ne le remplacent pas. Une liste de coïncidences sans histoire ne marche pas.
+Structure type :
+Accroche par un fait choc ou une référence déjà virale (1 à 3 s).
+Le décor et les enjeux.
+Le rebondissement ou la question (« Officiellement… »).
+Les preuves, une par carte.
+« Mais le plus étrange… ».
+Climax.
+Chute qui laisse une phrase en tête.
+Carton de fin.
+Angle : parler à « toi » ; une seule thèse ; une injustice qui touche le spectateur ; lui donner des arguments à partager. Présenter honnêtement l'autre version quand les faits sont contestés (exemple : #04, parquet contre famille).
+Voix : DOSSIER = grave, posée, retenue. COMME PAR HASARD = grave, pince-sans-rire, rythme rapide.
+Balises Eleven v4, en anglais et sobres : [serious], [intrigued], [slowly], [deadpan], [whispers], [laughs]. Stabilité Natural, vitesse 1.0–1.05 pour un Dossier, 1.1 pour la parodie. Une phrase par ligne. Chiffres écrits en toutes lettres.
+Parodie : jamais de groupe ethnique ou religieux visé ; jamais de fausses citations de vraies personnes ; la conclusion reste inoffensive et visiblement absurde.
+Vérification : tout fait d'actualité est vérifié en ligne avant d'écrire, et revérifié avant le montage (les situations bougent : la grève de l'aérien a été suspendue entre le script et la voix). Chaque calcul est vérifié. Pour une recherche large, lancer plusieurs agents en parallèle (par exemple histoire, pop culture, politique) et ne garder que les faits sourcés.
+Légende des posts :
+une première ligne qui reprend l'accroche ;
+une question facile et personnelle qui s'adresse à « toi » (« Tu y vas, toi, le 17 ? » a marché ; « Quelle coïncidence j'ai ratée ? » non) ;
+à tester : les sources complètes en légende, comme @heysuperneva ;
+le crédit de la musique si elle est sous licence CC BY ;
+5 hashtags maximum, dont un hashtag de marque.
+Chaîne technique
+Voix : ElevenLabs v4, fournie par Enidez.
+Transcription de contrôle avec sherpa-onnx whisper-small (segments sur l'enveloppe à 10 ms).
+Resserrage : silences plafonnés à environ 0,2–0,3 s (0,45–0,6 s sur les phrases dramatiques), tempo 1.0 à 1.08 (ffmpeg atempo).
+Si la voix vient avec de la musique : Spleeter 2stems d'abord.
+Musique : celle d'Enidez quand il en fournit. Sinon, morceaux libres de Kevin MacLeod (incompetech.com, CC BY 4.0, crédit à l'écran sur le carton de fin et en légende), toujours après autorisation de téléchargement. Déjà validés : « Hitman » (tension, cordes), « Dark Times » (sombre), « Heartbreaking » (piano triste), « Volatile Reaction » (frénétique). Montage par sections calées sur le récit (montée, creux pour « Mais le plus étrange… », bascule, vraie fin), fondus à puissance constante de 1,2 à 1,5 s. Suno déçoit souvent : ne pas compter dessus.
+Effets sonores : synthétisés en numpy/scipy (boom, hit, thud, tick, whoosh, riser, zap, click, type, crack de glace, freeze, explosion, acouphène), déclenchés par une liste d'événements exportée par la page.
+Mix : ffmpeg avec compression de la voix, sidechain de la musique et des effets sous la voix, alimiter, puis loudnorm à -14 LUFS et crête ≤ -1,5 dB.
+Images :
+Wikimedia Commons via l'API (licences libres, crédit affiché sur chaque carte), toujours après autorisation, en indiquant le nom, la source et la taille.
+Traitement : noir et blanc, couleur gardée sur l'élément-preuve, floutage des visages (DNN res10). Vérifier à l'œil : le détecteur prend parfois un motif pour un visage.
+Rendu :
+Canvas HTML 1080×1920 à 30 fps, renderFrame(f) déterministe. Moteur par défaut : le TABLEAU (voir la DA). Ancien moteur « Complot » : cartes, tuiles, cercles, flèches, tampons, flashs, caméra 2.5D par calques.
+L'ancien head_template du LA_FERME_KIT fait un style REC/HUD : ne plus l'utiliser.
+Rendu avec Playwright Python (le navigateur de Playwright Node n'est pas installé sur le Mac), puis ffmpeg image2pipe en libx264.
+Ne jamais utiliser 99 comme « fin infinie » dans les fonctions de visibilité : utiliser 1e9 (sinon tout disparaît après 99 s).
+Extraits TikTok : yt-dlp dans un venv ; sur ce Mac il faut exporter les certificats système dans un PEM et définir SSL_CERT_FILE (chaîne de certificat auto-signée). Images extraites avec ffmpeg en JPG 540×960, visages floutés image par image (DNN, on garde les boîtes de l'image précédente si rien n'est détecté).
+Revue : prévisualiser des planches d'images clés avant le rendu complet, corriger les chevauchements (texte de scène contre sous-titres, éléments coupés par la caméra), puis rendre.
+Livraison :
+Vidéo de 30 Mo maximum via SendUserFile (environ 1 800 à 2 600 kb/s selon la durée).
+Couverture en JPG à part.
+Copie dans /Users/enidez/Movies/Dossier01_rushes/.
+Légende prête à coller.
+Épisodes déjà produits
+Le Dossier #01 « Le symptôme » ; #02 « Pourquoi ils ne recrutent pas » ; #03 « Le gel » (budget 2027) ; #04 « Conforme » (la main de Lens).
+Les Anticorps #01 « Aaron Swartz » ; hors-série « Les frères Badir ».
+Le Récit vs le Réel #01 « 17 octobre ».
+L'Autre Angle #01 « Patient zéro » (qui a lancé l'appel du 17 octobre ; v6 = référence du style tableau).
+Comme par hasard #01 « Fête de la musique, partie 2 » ; #02 « Le ciel suspendu ».

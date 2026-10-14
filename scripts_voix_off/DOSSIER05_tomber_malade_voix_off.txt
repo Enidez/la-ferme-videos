@@ -1,0 +1,55 @@
+LE DOSSIER #05 — « TOMBER MALADE VA TE COÛTER »
+Voix off pour ElevenLabs v4 · voix grave, posée, retenue (Martin Dupont – Thriller Narrator)
+Stabilité : Natural · Vitesse : 1.0 à 1.05 · Durée visée : environ 90 s
+Faits vérifiés le 13/10/2026 : PLF 2027, article 2 · commission des finances du 7/10 · vote solennel le 20/10.
+
+--- VOIX OFF (une phrase par ligne) ---
+
+[serious] Si tu tombes malade l'année prochaine… tu vas être dans la merde.
+[slowly] Et ce n'est pas une façon de parler.
+Cette semaine, les députés examinent le budget 2027.
+Et dedans, il y a une ligne que personne ne lit.
+Article deux.
+[intrigued] Prends Sarah. Trente-quatre ans. Caissière.
+Un matin, son médecin prononce le mot cancer.
+Six mois d'arrêt.
+Aujourd'hui, la Sécu lui verse une indemnité. Et sur cette indemnité, l'État prélève une taxe : la CSG. Six virgule deux pour cent.
+Le gouvernement veut la passer à neuf virgule deux.
+Trois points de plus. Sur des gens qui ne peuvent pas travailler.
+Mais ce n'est que le début.
+Parce que Sarah a un cancer. Une affection de longue durée.
+Et jusqu'ici, la loi disait une chose simple : quand tu te bats pour ta vie, tes indemnités ne paient pas d'impôt.
+[slowly] Le projet dit : la moitié, si.
+Et si c'est ton travail qui t'a brisé le dos ?
+Accident du travail, maladie professionnelle : aujourd'hui, la moitié seulement est imposée.
+Demain… tout.
+[serious] Au total, près d'un milliard d'euros. Pris dans la poche des malades.
+Officiellement, il faut boucher le trou de la Sécu. La branche accidents du travail devrait perdre un milliard et demi l’an prochain.
+C'est vrai.
+Mais pose-toi une seule question.
+Pourquoi c'est à Sarah de le boucher ?
+[intrigued] Le sept octobre, en commission, des députés ont tout supprimé.
+Fin de l'histoire ?
+[slowly] Non.
+Dans l'hémicycle, on repart du texte du gouvernement. Celui avec la taxe.
+Le vote, c'est le vingt octobre.
+Puis le Sénat. Qui peut tout remettre.
+[whispers] Toi, tu n'es pas malade.
+Pas encore.
+[serious] Mais en France, quinze millions de personnes vivent déjà avec une maladie de longue durée. Plus d'une sur cinq.
+Alors le vingt octobre… regarde qui vote quoi.
+Parce que la prochaine Sarah…
+[slowly] c'est peut-être toi.
+
+--- À VÉRIFIER AVANT LA VOIX ---
+• « Quinze millions… plus d'une sur cinq » : Drees, étude du 07/10/2026 (≈ 15 M de personnes en ALD en 2025, 22 % des assurés). VÉRIFIÉ.
+• Séance publique ouverte le mardi 13/10, vote solennel le 20/10. Revérifier le jour de la voix : un amendement peut supprimer la taxe en séance d’ici là.
+• Sarah = EXEMPLE FICTIF (étiqueté à l'écran).
+
+--- SOURCES (légende + carton de fin) ---
+PLF 2027, art. 2 (Assemblée nationale) · Légifiscal 08/10/2026 · Selectra 09/10/2026 (amendement I-CF384) · Toutsurmesfinances (rendements : 540 M€ CSG, 450 M€ ALD ; déficit AT/MP 1,5 Md€ en 2027) · NosParlementaires (calendrier, vote le 20/10) · Drees 07/10/2026 (15 M de personnes en ALD).
+
+--- IDÉES TABLEAU (style par défaut) ---
+Couverture : photo plein écran d'un bracelet d'hôpital / lit vide, titre « 9,2 % » ou « MALADE = TAXÉ ».
+Cartes : arrêt de travail (cerfa) · « ARTICLE 2 » tamponné · fiche « SARAH, 34 ANS — EXEMPLE FICTIF » · compteur 6,2 % → 9,2 % · « EXONÉRÉ » barré → « 50 % » · dos/chantier pour AT-MP · compteur « ≈ 1 MILLIARD € » · hémicycle en points · amendement « SUPPRIMÉ » puis « RÉTABLI ? » · calendrier « 20 OCTOBRE » entouré en rouge · dernière carte vide « LA PROCHAINE SARAH ? » avec un miroir.
+Plein écran : vrais plans de l'hémicycle (vidéos publiques de l'Assemblée) et d'hôpital (archives libres).

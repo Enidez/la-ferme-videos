@@ -1,0 +1,86 @@
+LE DOSSIER #03 — « LE GEL »  (budget 2027)
+==============================================
+
+1) VOIX OFF — ElevenLabs v4
+Réglages : stabilité Natural · vitesse 1.05 · voix grave, posée, presque triste (pas pince-sans-rire)
+Durée visée : 85 à 100 s (minimum 61 s)
+Copier tout ce qui est entre les deux lignes ↓
+
+----------------------------------------------------------------
+[serious] En deux mille vingt-sept, personne ne va augmenter vos impôts.
+[slowly] Et pourtant… vous allez perdre de l'argent.
+[serious] Le budget a été déposé le premier octobre. Cinquante-quatre milliards d'économies.
+Et le gouvernement le répète : pas de hausse généralisée d'impôts.
+[slowly] Officiellement.
+[serious] Alors prenons une famille. Appelons-la… la famille Martin.
+Elle travaille. Elle touche la prime d'activité.
+Deux enfants. Les allocations familiales.
+Un petit appartement. Les APL.
+Et sa mère, à la retraite. Mille quatre cents euros par mois.
+[intrigued] Dans ce budget, personne ne leur retire rien.
+Rien n'est supprimé. Rien n'est voté contre eux.
+[slowly] On fait juste… autre chose.
+[serious] La prime d'activité : gelée.
+Les allocations familiales : gelées.
+Les APL : gelées.
+La pension de sa mère : elle ne suivra pas les prix.
+[whispers] Ça s'appelle un gel.
+[serious] Un gel, c'est simple. Les prix, eux, continuent de monter.
+Le loyer monte. Les courses montent.
+Et l'aide… ne bouge plus.
+[intrigued] Le plus troublant ?
+Pour calculer votre impôt, l'État compte deux virgule un pour cent d'inflation.
+Pour vos aides… il compte zéro.
+[serious] Personne ne verra une ligne en moins sur son compte.
+Pas de lettre. Pas d'annonce. Pas de coupable.
+[slowly] Juste un frigo un peu moins plein. Chaque mois. Un peu plus.
+[serious] Les plus pauvres sont protégés : le RSA et l'AAH, eux, suivent l'inflation.
+Mais ceux qui travaillent, qui élèvent des enfants, qui ont cotisé toute leur vie…
+[whispers] eux, on les laisse refroidir.
+[serious] Un impôt, ça se voit. Ça se conteste. Ça fait descendre dans la rue.
+[slowly] Un gel… ça ne fait pas de bruit.
+Ça fait juste froid.
+[serious] Ce budget n'est encore qu'un projet. Il se joue à l'Assemblée. Maintenant.
+[slowly] Alors… vous, vous perdez combien ?
+----------------------------------------------------------------
+
+
+2) STRUCTURE DU RÉCIT (pour le montage)
+- Accroche / couverture : « PAS DE HAUSSE D'IMPÔTS. » … puis « VOUS ALLEZ PERDRE DE L'ARGENT. »
+- Le décor : budget déposé le 1er octobre, 54 milliards, « officiellement ».
+- La famille Martin (personnages fictifs, silhouettes, pas de visages) : chaque aide = une carte.
+- Le basculement : les cartes se figent une à une sous un tampon « GELÉ » (effet givre).
+- Le mécanisme : courbe des prix qui monte, aide qui reste à plat.
+- Le plus troublant : 2,1 % pour l'impôt / 0 % pour les aides.
+- La tragédie silencieuse : frigo qui se vide, « pas de coupable ».
+- L'honnêteté : RSA et AAH protégés (renforce la crédibilité).
+- La chute : « Un gel ne fait pas de bruit. Ça fait juste froid. »
+- La question : « Vous, vous perdez combien ? » (= question de la légende)
+
+
+3) MUSIQUE (si on reste sur du libre de droits)
+Ambiance : lente, piano + cordes graves, mélancolique et inquiétante, qui se tend vers la fin.
+À tester (Kevin MacLeod, incompetech.com, CC BY 4.0) : « Long Note Three », « Lasting Hope », « Heartbreaking ».
+Prompt Suno si tu retentes :
+  Style : melancholic cinematic underscore, slow solo piano, low cello drones, cold ambient pads, distant heartbeat pulse, sparse, tragic, minor key, 70 bpm, instrumental
+  Exclude : vocals, drums, epic, happy
+
+
+4) LÉGENDE (proposition)
+En 2027, personne ne va augmenter vos impôts. Et pourtant, vous allez perdre de l'argent. 🧊
+Prime d'activité, allocations familiales, APL : gelées. Les prix, eux, continuent de monter.
+
+Toi, tu touches quoi ? Tu perds combien ? 👇
+
+#budget2027 #pouvoirdachat #caf #apl #laferme
+
+
+5) FAITS VÉRIFIÉS (projet de loi, peut encore changer)
+- PLF 2027 déposé le 1er octobre 2026 (n° 3210) ; 54 milliards d'euros d'économies ; déficit visé 5 % du PIB.
+- Barème de l'impôt revalorisé de 2,1 % (inflation estimée 2026).
+- Gel 2027 : prestations familiales (pas de revalorisation au 1er avril 2027), prime d'activité, barème des APL.
+- Retraites (PLFSS) : pensions au-dessus de 1 260 € non revalorisées au niveau de l'inflation en 2027 ; plafond de l'abattement de 10 % ramené de 4 439 € à 3 000 € ; 5,5 milliards d'euros.
+- RSA, AAH et minimum vieillesse : revalorisés à l'inflation.
+- Message du gouvernement : pas de hausse généralisée d'impôts.
+- La famille Martin est un exemple fictif.
+Sources : La finance pour tous (2 oct. 2026), MoneyVox (7 oct. 2026), France Épargne / Tout sur mes finances (APL), Assemblée nationale (PLF n° 3210).

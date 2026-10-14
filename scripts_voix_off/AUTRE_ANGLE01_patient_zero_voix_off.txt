@@ -1,0 +1,78 @@
+L'AUTRE ANGLE #01 — « PATIENT ZÉRO »  (l'appel du samedi 17 octobre)
+=====================================================================
+À publier AVANT samedi 17 (idéalement mercredi ou jeudi).
+
+1) VOIX OFF — ElevenLabs v4
+Réglages : stabilité Natural · vitesse 1.05 · voix grave, tendue, qui s'adresse à « toi »
+Durée visée : 85 à 100 s (minimum 61 s)
+Copier tout ce qui est entre les deux lignes ↓
+
+----------------------------------------------------------------
+[serious] Samedi, des milliers de jeunes vont descendre dans la rue.
+[slowly] Et personne ne sait vraiment… qui les a appelés.
+[intrigued] Alors on a remonté le fil. Jusqu'au patient zéro.
+[serious] Sept septembre. Un compte TikTok inconnu. Un jeune, plutôt branché foot.
+Une vidéo. Une seule question :
+[whispers] « Chaud ou pas chaud ? »
+[serious] Il choisit un samedi de vacances. Pour que tout le monde puisse venir.
+Aujourd'hui, sa vidéo dépasse les deux millions de vues.
+[slowly] Mais lui, il le dit : il n'organise rien.
+[intrigued] Alors, qui a pris le volant ?
+[serious] D'abord, des comptes qui se disent « officiels ». Créés en quelques jours.
+Puis des affiches. Générées par intelligence artificielle.
+Des cartes de rassemblements… sans aucune source.
+Des voix qui imitent de vrais journalistes.
+[deadpan] Et cette semaine : « L'Élysée flouté sur Google Maps, pour samedi. »
+[serious] On a vérifié. Il est flouté depuis au moins deux mille vingt-et-un.
+[slowly] Rien à voir avec toi.
+[intrigued] Puis les partis arrivent. Ils se disent prêts à soutenir le mouvement.
+[serious] Résultat : une date que tout le monde veut conduire…
+[whispers] sauf celui qui l'a lancée.
+[serious] Mais le plus important n'est pas là.
+Une manifestation sans organisateur, c'est une manifestation sans responsable.
+Et quand il n'y a pas de responsable… c'est toi qu'on interpelle.
+[slowly] Depuis le début du mouvement, plus de six mille gardes à vue. Dont près de neuf sur dix… des mineurs.
+[serious] Une interpellation, même sans suite, peut te faire entrer dans un fichier de police.
+Il ne s'efface pas tout seul.
+Et il peut ressortir des années plus tard. Pour un concours. Pour un métier.
+[slowly] Ce n'est pas une raison pour rester chez toi.
+[serious] C'est une raison pour savoir où tu mets les pieds.
+[intrigued] Samedi, il n'y aura pas de chef. Pas d'organisateur.
+[whispers] Juste toi.
+[serious] Alors… chaud ou pas chaud ?
+Dis-le en commentaire. Et envoie ça à celui qui y va.
+----------------------------------------------------------------
+
+
+2) STRUCTURE / MONTAGE
+- Couverture (0–3 s, image fixe) : photo de foule en gilets jaunes plein écran + « SAMEDI 17. » en très gros ; sur-titre « L'AUTRE ANGLE » ; rien d'autre.
+- Le patient zéro : carte-preuve « DOSSIER V2 » (capture de la vidéo, VISAGE FLOUTÉ, pseudo flouté), tampon « INCONNU », date « 7 SEPT. », compteur de vues qui défile jusqu'à « 2 M+ ».
+- Tuiles de lettres : « CHAUD OU PAS CHAUD ? ».
+- Arbre de propagation : vidéo source → comptes « officiels » (tampon « AUTOPROCLAMÉ ») → affiches IA (tampon « GÉNÉRÉ PAR IA ») → carte sans source (tampon « AUCUNE SOURCE ») → fausses voix (tampon « VOIX IMITÉE »).
+- L'Élysée : carte satellite floutée, puis tampon rouge « FLOUTÉ DEPUIS 2021 AU MOINS » (preuve : tweet daté du 4 août 2021).
+- Les partis : logos neutres ou noms en tuiles, flèches qui « prennent le volant ».
+- La bascule : « SANS ORGANISATEUR = SANS RESPONSABLE » ; compteur « 6 877 GARDES À VUE » + « 86 % MINEURS ».
+- Le fichier : carte « FICHIER DE POLICE » qui se remplit, « PAS D'EFFACEMENT AUTOMATIQUE », puis « 2032 : CONCOURS / EMBAUCHE ».
+- Chute : écran presque noir, « JUSTE TOI. », puis la question « CHAUD OU PAS CHAUD ? ».
+- Musique : « Hitman » (tension) ou « Volatile Reaction » ; crescendo sur l'arbre de propagation, creux sur « Juste toi ».
+
+
+3) LÉGENDE (proposition)
+Samedi 17 : personne ne sait vraiment qui l'a lancé. On a remonté le fil jusqu'au patient zéro. 🔎
+Intox, comptes « officiels », affiches IA… et ce que tu risques vraiment.
+
+Chaud ou pas chaud ? Dis-le en commentaire, et envoie ça à celui qui y va 👇
+
+Sources : StreetPress · franceinfo (8/09 et suivants) · France 24 (17/09) · ICI (gardes à vue au 8/10) · tweets datés sur le floutage de l'Élysée (2021)
+#17octobre #manifestation #genz #lautreangle #laferme
+
+
+4) FAITS VÉRIFIÉS (à revérifier le jour du montage)
+- La première vidéo citant la date vient d'un jeune utilisateur jusque-là inconnu, plutôt porté sur le foot, postée le 7 septembre 2026 avec la légende « chaud ou pas chaud » ; il a choisi « un samedi de vacances » ; il invite d'autres à « organiser » et n'organise pas lui-même (StreetPress, franceinfo). Vues : plus de 2 millions (StreetPress) ; 2,9 millions constatées sur TikTok le 13 octobre.
+- Comptes se disant « officiels » sans légitimité, affiches générées par IA, carte des rassemblements sans source (environ 6 000 partages), compte imitant des voix de journalistes (environ 1 million de vues) (franceinfo).
+- Pas d'ingérence étrangère significative constatée à ce stade (Visibrain, cité par franceinfo).
+- Partis (LFI, PS, PCF) qui se disent prêts à soutenir la mobilisation (France 24).
+- L'Élysée est flouté sur Google Maps depuis au moins le 4 août 2021 (tweet daté), aucun lien avec le 17 octobre. Ne PAS reprendre l'affirmation non sourcée d'une demande gouvernementale « en janvier 2020 ».
+- 6 877 gardes à vue depuis le début du mouvement, dont 86 % de mineurs, au 8 octobre (ICI).
+- Fichier TAJ : une personne mise en cause peut y être inscrite même sans condamnation ; pas d'effacement automatique après un classement sans suite (demande au procureur) ; consulté lors d'enquêtes administratives pour certains emplois, concours et habilitations (CIDJ, avocats pénalistes — à confirmer sur Légifrance avant diffusion).
+- Ne jamais nommer, montrer ni chercher à identifier le jeune à l'origine de l'appel.

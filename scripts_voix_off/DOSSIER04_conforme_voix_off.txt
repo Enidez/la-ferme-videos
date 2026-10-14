@@ -1,0 +1,93 @@
+LE DOSSIER #04 — « CONFORME »  (la main de Lens)
+==================================================
+
+1) VOIX OFF — ElevenLabs v4
+Réglages : stabilité Natural · vitesse 1.0 à 1.05 · voix grave, retenue, presque chuchotée par moments. Aucun effet, aucune ironie.
+Durée visée : 90 à 105 s (minimum 61 s)
+Copier tout ce qui est entre les deux lignes ↓
+
+----------------------------------------------------------------
+[serious] Il avait quinze ans.
+Il était dans ce lycée depuis quelques semaines.
+[slowly] Lundi cinq octobre… il a perdu une main.
+[serious] Lens. Lycée professionnel Auguste-Béhal.
+Ce matin-là, deux cents à deux cent cinquante lycéens sont rassemblés.
+Selon le préfet : des pierres, des feux d'artifice, des mortiers.
+Une compagnie de CRS est déployée.
+[intrigued] Les sommations restent sans effet.
+Deux grenades lacrymogènes.
+Puis une troisième. Une grenade assourdissante.
+[whispers] Elle explose.
+[slowly] Et un adolescent de quinze ans se retrouve à l'hôpital. Sans sa main.
+[serious] Depuis, il y a deux versions.
+La première, c'est celle du parquet.
+La grenade a été tirée de loin. Elle est tombée au sol.
+Le lycéen l'aurait ramassée. Elle a explosé dans sa main.
+Et il n'existe aucune vidéo de l'explosion.
+[serious] La deuxième, c'est celle de sa famille.
+Son avocate l'affirme : il n'a jamais ramassé cette grenade.
+Plusieurs témoins racontent qu'elle est tombée sur lui.
+Sa mère a porté plainte.
+[slowly] Une enquête est ouverte. Pour violences ayant entraîné une mutilation.
+[intrigued] Mais regardez bien les dates.
+Le sept octobre, le ministre de l'Intérieur suspend cette grenade.
+Pas partout. Seulement pour les lycéens.
+[serious] Le neuf octobre, le procureur rend ses premières conclusions.
+Le tir était… « conforme ».
+[slowly] Conforme.
+Conforme à la formation. Conforme aux ordres. Une chaîne d'instructions strictes.
+[whispers] Personne n'a désobéi.
+[serious] Alors posez-vous la vraie question.
+Si tout a été fait dans les règles…
+c'est que les règles permettent ça.
+[slowly] Une arme qu'on a le droit d'utiliser… devant un lycée… où il y a des enfants de quinze ans.
+[serious] Plus de cent mille personnes ont signé une pétition pour interdire ces armes face aux lycéens.
+Dix-huit enquêtes ont été ouvertes par l'IGPN depuis le début du mouvement.
+[slowly] La grenade est suspendue. Pas interdite.
+[whispers] Suspendue.
+[serious] On ne sait pas encore exactement ce qui s'est passé ce matin-là.
+L'enquête le dira.
+[slowly] Mais une chose est déjà sûre.
+Un adolescent a perdu sa main…
+et, pour l'instant, personne n'a fait d'erreur.
+[serious] Conforme… et suspendue.
+Les deux sont vrais en même temps.
+[whispers] Et c'est peut-être ça… le plus inquiétant.
+----------------------------------------------------------------
+
+
+2) STRUCTURE DU RÉCIT (pour le montage)
+- Accroche / couverture : « 15 ANS. UNE MAIN EN MOINS. » + tampon « CONFORME ».
+- Le matin du 5 octobre : chronologie à la seconde près, sobre (rassemblement, projectiles selon le préfet, CRS, sommations, 2 lacrymos, 1 assourdissante).
+- Deux versions côte à côte : PARQUET / FAMILLE (deux colonnes de cartes, aucune ne gagne).
+- « Regardez les dates » : calendrier 5 → 7 (suspendue) → 9 (« conforme »).
+- Le mot « CONFORME » décliné : formation / ordres / chaîne d'instructions.
+- La vraie question : « si tout est dans les règles, ce sont les règles qui permettent ça ».
+- Les chiffres : pétition +100 000, 18 enquêtes IGPN.
+- Chute : « Conforme… et suspendue. Les deux sont vrais en même temps. »
+- Aucune image de l'adolescent, aucun visage, aucun nom. Pas d'image de blessure.
+- Ton visuel : noir, blanc, rouge sang très rare ; pas de givre ici (réservé au #03). Effet possible : écran qui siffle/assourdi après l'explosion (acouphène).
+
+
+3) MUSIQUE
+Libre de droits déjà téléchargés : « Dark Times » (sombre) pour tout le récit, « Heartbreaking » (piano) pour la fin.
+Effet sonore clé : après « Elle explose », coupure du son + sifflement d'acouphène 2 secondes.
+
+
+4) LÉGENDE (proposition)
+15 ans. Une main en moins. Et selon le parquet, le tir était « conforme ».
+Deux jours plus tôt, le ministre avait suspendu cette grenade pour les lycéens.
+
+Conforme et suspendue : pour toi, les deux peuvent être vrais ? 👇
+
+#lycéens #lens #maintiendelordre #ledossier #laferme
+
+
+5) FAITS VÉRIFIÉS (au 12 octobre 2026 ; enquête en cours, versions contestées)
+- Lundi 5 octobre 2026, matin, à quelques centaines de mètres du lycée professionnel Auguste-Béhal (Lens) : un lycéen de 15 ans, en seconde bac pro depuis quelques semaines, a la main arrachée (franceinfo, France 3, ICI).
+- Selon le préfet : 200 à 250 lycéens, projectiles (pierres, feux d'artifice, mortiers) ; une compagnie de CRS déployée (franceinfo).
+- Selon le parquet de Béthune : sommations sans effet, 2 grenades lacrymogènes puis 1 grenade assourdissante ; tir à longue distance (80 m), grenade au sol, l'adolescent l'aurait ramassée ; tir « conforme » au mode opératoire de la formation ; CRS sur ordre, « une chaîne d'instructions strictes » ; aucune vidéo de l'explosion (9 octobre).
+- Selon son avocate (10 octobre) : il dément avoir ramassé la grenade ; plusieurs témoins ont dit à ICI qu'elle est tombée sur lui ; sa mère a porté plainte.
+- Enquête pour « violences ayant entraîné une infirmité permanente ou une mutilation », confiée à l'IGPN.
+- 7 octobre : le ministre de l'Intérieur suspend l'usage des grenades assourdissantes pour le mouvement lycéen uniquement, jusqu'à clarification ; 18 enquêtes IGPN ouvertes depuis le début du mouvement (LCP, Orange/AFP).
+- Pétition pour « interdire des armes mutilantes dans les manifestations lycéennes » : plus de 100 000 signatures (franceinfo, 5 octobre).
