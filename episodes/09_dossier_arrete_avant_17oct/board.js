@@ -2,7 +2,7 @@
 const T=Object.fromEntries(SEGS.map((s,i)=>[i,s.t0]));
 const TE=Object.fromEntries(SEGS.map((s,i)=>[i,s.t1]));
 const GREEN='#A9C79A',INKD='#1b1c1a',PINK='#c9302c',PAPERC='rgba(222,219,206,.95)';
-const TCOV=3.0;
+const TCOV=3.4;
 
 // ---------- texture du mur
 const WALL=(()=>{const c=document.createElement('canvas');c.width=c.height=512;const g=c.getContext('2d');const r=rng(11);
@@ -15,7 +15,7 @@ let WALLPAT=null;
 // ---------- les cartes (ordre chronologique ; placement automatique en serpentin)
 const C=[];const add=o=>{C.push(Object.assign({rot:0},o));return C.length-1;};
 const cCover=add({k:'cover',w:1080,h:1920,rot:-1,t0:0});
-const cGare=add({k:'clip',full:1,clip:'gdn',handle:'Quahadi · CC BY-SA 4.0',badge:'RECONSTITUTION',badgeRed:1,w:620,h:1100,rot:2,t0:T[3]+.7});
+const cGare=add({k:'clip',full:1,clip:'gdn',handle:'Quahadi · CC BY-SA 4.0',badge:'RECONSTITUTION',badgeRed:1,w:620,h:1100,rot:2,t0:T[2]});
 const cFlic=add({k:'clip',full:1,clip:'police',handle:'H. Germain · CC0',badge:'IMAGES D’ARCHIVE · 2019',w:620,h:1100,rot:-2,t0:T[4]});
 const cRien=add({k:'rien',w:900,h:640,rot:1.5,t0:T[5]});
 const cCtrl=add({k:'cnt',to:1046,label:'CONTRÔLES « PRÉVENTIFS »',sub:'PARIS · 17 OCT. · À 15 H',src:'Préfecture de police, via franceinfo',w:900,h:600,rot:-1.5,t0:T[8]});
@@ -46,7 +46,7 @@ const KEYS=[];C.forEach((c,i)=>{if(i===cCover)KEYS.push({t:0,x:c.x,y:c.y+160/1.0
   else KEYS.push({t:c.t0,x:c.x,y:c.y,z:fitZoom(c),rot:-c.rot*Math.PI/180*.6});});
 const WIDE=(t,cs)=>{let mnx=1e9,mxx=-1e9,mny=1e9,mxy=-1e9;cs.forEach(i=>{const c=C[i];mnx=Math.min(mnx,c.x-c.w/2);mxx=Math.max(mxx,c.x+c.w/2);mny=Math.min(mny,c.y-c.h/2);mxy=Math.max(mxy,c.y+c.h/2);});
   return{t,x:(mnx+mxx)/2,y:(mny+mxy)/2,z:Math.min(1000/(mxx-mnx),1500/(mxy-mny)),rot:0};};
-KEYS.push(WIDE(TCOV+.25,[cCover,cGare]));
+
 KEYS.push(WIDE(T[38]+.9,[...C.keys()].filter(i=>i!==cOutro&&i!==cVs&&i!==cToi&&i!==cFin)));
 KEYS.sort((a,b)=>a.t-b.t);
 const WP=[];
@@ -125,10 +125,10 @@ function srcLine(s,w,h){txt(s,w/2-24,h/2-18,'400 22px Mono','rgba(236,238,230,.6
 function drawCard(c,t){
   ctx.save();ctx.translate(c.x,c.y);ctx.rotate(c.rot*Math.PI/180);
   const w=c.w,h=c.h;
-  if(c.k==='cover'){const im=IM.cover;framePaper(w+40,h+40,'rgba(230,232,224,.9)');if(im){ctx.filter='contrast(1.1)';ctx.drawImage(im,-w/2,-h/2,w,h);ctx.filter='none';}
+  if(c.k==='cover'){const fr=(window.CLIPS&&CLIPS.open)||[];const im=fr[Math.min(fr.length-1,Math.max(0,Math.floor(t*30)))]||IM.cover;framePaper(w+40,h+40,'rgba(230,232,224,.9)');if(im){ctx.filter='saturate(.8) contrast(1.12)';ctx.drawImage(im,-w/2,-h/2,w,h);ctx.filter='none';}
     const g=ctx.createLinearGradient(0,-h/2,0,h/2);g.addColorStop(0,'rgba(0,0,0,.7)');g.addColorStop(.45,'rgba(0,0,0,.1)');g.addColorStop(1,'rgba(0,0,0,.55)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,h);
-    txt('SAMEDI 17 OCTOBRE',0,-h/2+520,'700 34px Mono',INK,'center',12);txt('ARRÊTÉ',0,-h/2+700,'180px Anton',INK,'center',6,1,24);txt('AVANT.',0,-h/2+960,'220px Anton',RED,'center',8,1,30);
-    txt('PHOTO D’ARCHIVE · 2018',0,h/2-500,'400 24px Mono','rgba(236,238,230,.7)','center',4);}
+    txt('17 OCTOBRE',0,-h/2+520,'700 38px Mono',INK,'center',14);txt('ARRÊTÉ',0,-h/2+700,'180px Anton',INK,'center',6,1,24);txt('AVANT.',0,-h/2+960,'220px Anton',RED,'center',8,1,30);
+    txt('IMAGES D’ARCHIVE · 2019 · H. GERMAIN (CC0)',0,h/2-470,'400 24px Mono','rgba(236,238,230,.8)','center',3);}
   else if(c.k==='outro'){framePaper(w,h);txt('LE DOSSIER',0,-170,'120px Anton',INK,'center',4,1,24);txt('17.10',0,40,'200px Anton',PINK,'center',4,1,24);txt('LA FERME',0,140,'700 34px Mono','rgba(236,238,230,.6)','center',12);
     txt('ABONNE-TOI',0,260,'70px Anton',INK,'center',4,1,16);}
   else if(c.k==='clip'){framePaper(w,h,'rgba(230,232,224,.88)');const fr=c.img?[IM[c.img]]:((window.CLIPS&&CLIPS[c.clip])||[]);const im=fr[Math.min(fr.length-1,Math.max(0,Math.floor((t-c.t0+.3)*30)))];const pw=w-50,ph=h-170;

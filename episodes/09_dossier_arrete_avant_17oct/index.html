@@ -31,7 +31,7 @@ const IM={};const BGF=[];
 function load(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});}
 window.ready=(async()=>{
   for(const k of['cover','foule','lacrymo','pancarte','p03','p05','p06'])IM[k]=await load('img/'+k+'.jpg');
-  window.CLIPS={};for(const [k,n] of [['gdn',180],['police',150],['crowd',150]]){const ps=[];for(let i=1;i<=n;i++)ps.push(load('clips/'+k+'/'+String(i).padStart(4,'0')+'.jpg'));CLIPS[k]=await Promise.all(ps);}
+  window.CLIPS={};for(const [k,n] of [['open',103],['gdn',180],['police',150],['crowd',150]]){const ps=[];for(let i=1;i<=n;i++)ps.push(load('clips/'+k+'/'+String(i).padStart(4,'0')+'.jpg'));CLIPS[k]=await Promise.all(ps);}
   await document.fonts.load('80px Anton');await document.fonts.load('700 80px Osw');await document.fonts.load('700 30px Mono');await document.fonts.load('400 30px Mono');
 })();
 
