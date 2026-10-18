@@ -15,4 +15,9 @@ DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$W/video.mp4")
 ffmpeg -v error -y -i "$VO" -i "$W/music.wav" -i "$W/sfx.wav" -filter_complex "[0]aresample=48000,pan=stereo|c0=c0|c1=c0,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2dB,apad=whole_dur=${DUR}[v];[v]asplit=3[v1][v2][v3];[1]volume=0.5[m];[m][v2]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=350[md];[2]volume=0.7[s];[s][v3]sidechaincompress=threshold=0.05:ratio=3:attack=5:release=200[sd];[v1][md][sd]amix=inputs=3:normalize=0,alimiter=limit=0.85,loudnorm=I=-14:TP=-1.5:LRA=11" -ar 48000 "$W/mix.wav"
 ffmpeg -v error -y -i "$W/video.mp4" -i "$W/mix.wav" -c:v libx264 -preset slow -b:v 1900k -maxrate 2600k -bufsize 4500k -pix_fmt yuv420p -c:a aac -b:a 160k -shortest -movflags +faststart "$OUT"
 ffmpeg -v error -y -ss 2 -i "$OUT" -frames:v 1 -q:v 2 "${OUT%.mp4}_couverture.jpg"
+# générique de fin « ferme-la » enchaîné juste après la dernière phrase (GENERIQUE=0 pour s'en passer)
+if [ "${GENERIQUE:-1}" = 1 ]; then
+  VEND=$("$PY" -c "import json,sys;s=[l for l in open(sys.argv[1]).read().split(chr(10)) if l.startswith('const SEGS=')][0];print(json.loads(s[s.index('['):s.rindex(']')+1])[-1]['t1']+.35)" "$P/segs.js")
+  CUT=$(echo "$VEND + 1.4" | bc); mv "$OUT" "$W/sans_generique.mp4"; bash tools/generique.sh "$W/sans_generique.mp4" "$OUT" "$CUT"
+fi
 echo "OK : $OUT (+ couverture)"
