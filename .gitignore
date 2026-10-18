@@ -7,3 +7,6 @@ prev/
 __pycache__/
 .DS_Store
 events.json
+generique/prev/
+generique/events.json
+generique/node_modules

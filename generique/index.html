@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-024F;}
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Mono;font-weight:700;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2) format('woff2');}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head>
+<body><canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// ============ LA FERME — générique de fin (≈ 2,7 s) : réplique de film + logo qui claque sur « ferme-la »
+// Réglage : TF = moment où l'on entend « ferme » dans replique.m4a (secondes).
+const W=1080,H=1920,FPS=30,TF=1.54,DUR=2.7;window.DURATION=DUR;window.EVENTS=[[TF,'boom'],[TF+.12,'thud']];
+const cv=document.getElementById('c'),ctx=cv.getContext('2d');
+const INK='#ECEEE6',RED='#E8231F';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),lin=(t,a,b)=>cl((t-a)/(b-a)),eo=x=>1-Math.pow(1-x,3);
+function rng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;}}
+const WALL=(()=>{const c=document.createElement('canvas');c.width=c.height=512;const g=c.getContext('2d');const r=rng(11);g.fillStyle='#3a3f3b';g.fillRect(0,0,512,512);
+  const im=g.getImageData(0,0,512,512);for(let i=0;i<im.data.length;i+=4){const n=(r()-.5)*26;im.data[i]+=n;im.data[i+1]+=n;im.data[i+2]+=n;}g.putImageData(im,0,0);return c;})();
+const grains=[];for(let k=0;k<6;k++){const g=document.createElement('canvas');g.width=540;g.height=960;const gc=g.getContext('2d');const im=gc.createImageData(540,960);const r=rng(100+k);
+  for(let i=0;i<im.data.length;i+=4){const v=r()*255;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=255;}gc.putImageData(im,0,0);grains.push(g);}
+function txt(s,x,y,font,col,ls=0,a=1,glow=0){ctx.save();ctx.globalAlpha*=a;ctx.font=font;ctx.fillStyle=col;ctx.textAlign='center';ctx.letterSpacing=ls+'px';if(glow){ctx.shadowColor=col==RED?'rgba(255,60,40,.8)':'rgba(255,255,255,.5)';ctx.shadowBlur=glow;}ctx.fillText(s,x,y);ctx.restore();}
+window.ready=(async()=>{await document.fonts.load('80px Anton');await document.fonts.load('700 30px Mono');})();
+window.renderFrame=f=>{const t=f/FPS,fr=f;
+  ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#262a27';ctx.fillRect(0,0,W,H);
+  // caméra : lente poussée, puis coup de poing sur « ferme »
+  const hit=t>=TF?Math.exp(-(t-TF)*9):0;const z=1+.04*t/DUR+.07*hit;const r=rng(fr);const sx=hit>.2?(r()-.5)*22*hit:0,sy=hit>.2?(r()-.5)*22*hit:0;
+  ctx.save();ctx.translate(540+sx,900+sy);ctx.scale(z,z);ctx.rotate(-.012+.006*Math.sin(t*1.3));
+  ctx.fillStyle=ctx.createPattern(WALL,'repeat');ctx.fillRect(-1400,-1800,2800,3600);
+  // carte plastifiée sombre
+  const w=940,h=860;ctx.save();ctx.rotate(.02);ctx.shadowColor='rgba(0,0,0,.6)';ctx.shadowBlur=40;ctx.shadowOffsetY=20;ctx.fillStyle='rgba(12,13,12,.94)';ctx.fillRect(-w/2,-h/2,w,h);ctx.shadowColor='transparent';ctx.shadowOffsetY=0;ctx.shadowBlur=0;
+  // « L A » tapé lettre à lettre pendant « médite tant que tu voudras »
+  ['L','A'].forEach((c,i)=>{const t0=.25+i*.35;if(t>=t0)txt(c,(i-.5)*80,-215,'70px Anton',RED,0,lin(t,t0,t0+.08),12);});
+  // « FERME » qui claque
+  if(t>=TF){const p=eo(lin(t,TF,TF+.14));ctx.save();ctx.translate(0,90);ctx.scale(1.55-.55*p,1.55-.55*p);txt('FERME',0,0,'300px Anton',INK,4,cl(p*2),18);ctx.restore();}
+  else{ctx.save();ctx.globalAlpha=.10;txt('FERME',0,90,'300px Anton',INK,4);ctx.restore();}
+  // trait rouge qui se dessine
+  if(t>=TF+.12){const p=eo(lin(t,TF+.12,TF+.45));ctx.fillStyle=RED;ctx.shadowColor='rgba(255,40,30,.7)';ctx.shadowBlur=14;ctx.fillRect(-290,170,580*p,22);ctx.shadowBlur=0;ctx.shadowColor='transparent';}
+  if(t>=TF+.5)txt('ILS PARLENT À TA PLACE. NOUS, ON VÉRIFIE.',0,300,'700 26px Mono','rgba(236,238,230,.7)',3,lin(t,TF+.5,TF+.8));
+  // reflet plastifié + liseré
+  ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();const g=ctx.createLinearGradient(-w/2,-h/2,w/2,h/2);g.addColorStop(.38,'rgba(255,255,255,0)');g.addColorStop(.46,'rgba(255,255,255,.12)');g.addColorStop(.54,'rgba(255,255,255,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,h);ctx.restore();
+  ctx.strokeStyle='rgba(255,255,255,.85)';ctx.lineWidth=3;ctx.strokeRect(-w/2,-h/2,w,h);
+  const pg=ctx.createRadialGradient(-4,-h/2+14,2,0,-h/2+18,14);pg.addColorStop(0,'#ff6a5f');pg.addColorStop(1,'#8e1512');ctx.fillStyle=pg;ctx.beginPath();ctx.arc(0,-h/2+18,14,0,6.283);ctx.fill();
+  ctx.restore();ctx.restore();
+  // flash sur « ferme »
+  if(t>=TF&&t<TF+.3){ctx.save();ctx.globalCompositeOperation='lighter';ctx.fillStyle=`rgba(225,235,255,${.7*Math.pow(1-(t-TF)/.3,2)})`;ctx.fillRect(0,0,W,H);ctx.restore();}
+  // étalonnage gris-vert, vignettage, grain, scintillement, fondu au noir final
+  ctx.save();ctx.globalCompositeOperation='multiply';ctx.fillStyle='rgb(220,228,215)';ctx.fillRect(0,0,W,H);ctx.restore();
+  const v=ctx.createRadialGradient(540,860,420,540,960,1250);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(10,14,10,.7)');ctx.fillStyle=v;ctx.fillRect(0,0,W,H);
+  ctx.save();ctx.globalAlpha=.12;ctx.globalCompositeOperation='overlay';ctx.drawImage(grains[fr%grains.length],0,0,W,H);ctx.restore();
+  const fl=(r()-.5)*.05;ctx.fillStyle=fl>0?`rgba(255,250,240,${fl*.5})`:`rgba(0,0,0,${-fl})`;ctx.fillRect(0,0,W,H);
+  const a0=1-lin(t,0,.15),a1=lin(t,DUR-.25,DUR);ctx.fillStyle=`rgba(0,0,0,${Math.max(a0,a1)})`;ctx.fillRect(0,0,W,H);
+};
+</script></body></html>
