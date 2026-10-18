@@ -11,5 +11,6 @@
 | 07_dossier05_tomber_malade | Le Dossier #05 | **tableau** | Hitman `0:T23:50,T23:T25:30,T25:END:104` |
 | 08_samedi17_tes_droits_EN_COURS | « Samedi 17 : tes droits » | tableau | images prêtes, voix manquante (script dans scripts_voix_off/) |
 | 09_dossier_arrete_avant_17oct | « ARRÊTÉ AVANT. » | **tableau** | Hitman `0:T24:50,T24:T26:30,T26:END:104` |
+| 10_ce_soir_20h_18oct | « CE SOIR, 20 H. » (voix Liam) | **tableau** + accroche Macron | Hitman `0:T42:50,T42:T44:30,T44:END:104` |
 
 Les fichiers `sfx*.py`, `tighten*.py`, `patch_*.py` dans les épisodes sont les scripts d'origine (chemins de l'ancienne session) ; pour un nouveau rendu, utiliser `tools/sfx.py`, `tools/music_arrange.py` et `tools/build.sh`.
