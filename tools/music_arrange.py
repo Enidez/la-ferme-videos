@@ -5,7 +5,7 @@ La dernière section (jusqu'à la fin de la vidéo) prend automatiquement la vra
 import numpy as np,librosa,json,sys
 from scipy.io import wavfile
 src,segp,DUR,out,spec=sys.argv[1],sys.argv[2],float(sys.argv[3]),sys.argv[4],sys.argv[5];sr=48000
-s=open(segp).read();segs=json.loads(s[s.index('['):s.rindex(']')+1]);T=[d['t0'] for d in segs];VEND=segs[-1]['t1']+.35
+s=[l for l in open(segp).read().split('\n') if l.startswith('const SEGS=')][0];segs=json.loads(s[s.index('['):s.rindex(']')+1]);T=[d['t0'] for d in segs];VEND=segs[-1]['t1']+.35
 y,_=librosa.load(src,sr=sr,mono=False);L=len(y[0])/sr
 def v(x):return VEND+.3 if x=='END' else (T[int(x[1:])] if x.startswith('T') else float(x))
 P=[(v(a),v(b),float(c)) for a,b,c in (p.split(':') for p in spec.split(','))]

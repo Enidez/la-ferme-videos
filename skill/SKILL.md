@@ -100,6 +100,9 @@ Voix (choix d'Enidez le 18/10/2026) : **Liam – Sharp & Pro** (ElevenLabs, voic
 Balises Eleven v4, en anglais et sobres : [serious], [intrigued], [slowly], [deadpan], [whispers], [laughs]. Stabilité Natural, vitesse 1.0–1.05 pour un Dossier, 1.1 pour la parodie. Une phrase par ligne. Chiffres écrits en toutes lettres.
 Parodie : jamais de groupe ethnique ou religieux visé ; jamais de fausses citations de vraies personnes ; la conclusion reste inoffensive et visiblement absurde.
 Vérification : tout fait d'actualité est vérifié en ligne avant d'écrire, et revérifié avant le montage (les situations bougent : la grève de l'aérien a été suspendue entre le script et la voix). Chaque calcul est vérifié. Pour une recherche large, lancer plusieurs agents en parallèle (par exemple histoire, pop culture, politique) et ne garder que les faits sourcés.
+Discours et citations (leçon de « Le plan », 18/10/2026) : quand une vidéo commente un discours, on télécharge la VRAIE vidéo du discours et on la transcrit (whisper, par tranches de 10 s) AVANT de monter. Les articles résument et déforment : « zéro annonce sur les prix » était faux (il en avait parlé une minute) et « encadrées, voire interdites » n'était pas sa phrase exacte. Toute phrase entre guillemets doit exister mot pour mot dans la source.
+Citer avec SA voix : chaque citation d'un politique est jouée avec le vrai extrait audio et vidéo (carte clip calée image par image sur le son, plongée plein écran, sous-titres de la citation en ambre), pas relue par le narrateur. C'est plus fort et inattaquable. On cadre serré sur le visage en évitant les sous-titres incrustés, le logo de la chaîne et l'encart langue des signes. Volume de l'extrait remonté d'environ +7 dB pour égaler la voix off. On cherche aussi dans le discours la phrase la plus forte qu'aucun article n'a reprise (ici : manifester = « abîmer la République »).
+Temps du récit : vérifier « hier / ce soir / demain » par rapport à l'heure de PUBLICATION, pas à l'heure d'écriture. Corriger une phrase = regénérer seulement les morceaux fautifs avec la même voix et les recoller (quelques dizaines de crédits).
 Légende des posts (règle d'Enidez, 18/10/2026) : PAS de sources, PAS de crédits images, PAS de crédit musique dans la légende. Les crédits restent uniquement à l'écran (carton de fin et étiquettes sur les cartes), ce qui suffit pour les licences CC BY et le droit de citation.
 Format : une première ligne qui reprend l'accroche ; une ou deux lignes qui donnent envie (le « pourquoi regarder ») ; une question facile et personnelle ou un choix à répondre en commentaire (« Tu y vas, toi, le 17 ? », « 1, 2, 3 ou 4 ? ») ; 5 hashtags maximum, dont #laferme.
 Chaîne technique
@@ -131,6 +134,7 @@ Légende prête à coller.
 Le Dossier #01 « Le symptôme » ; #02 « Pourquoi ils ne recrutent pas » ; #03 « Le gel » (budget 2027) ; #04 « Conforme » (la main de Lens).
 Les Anticorps #01 « Aaron Swartz » ; hors-série « Les frères Badir ».
 Le Récit vs le Réel #01 « 17 octobre ».
+Le Dossier « Le plan. » (18/10/2026, après l'allocution de 20 h) : les 4 étapes, citations avec la vraie voix de Macron.
 L'Autre Angle #01 « Patient zéro » (qui a lancé l'appel du 17 octobre ; v6 = référence du style tableau).
 Le Dossier #05 « Tomber malade va te coûter » (budget 2027, arrêts maladie) — meilleur taux de partage de la chaîne (14 partages pour 384 vues).
 « Arrêté avant. » (17/10, délit de groupement en vue de violences, 80 % de classements sans suite en 2023) — ouverture sur affrontement.
