@@ -1,0 +1,46 @@
+« TROIS FRÈRES. AVEUGLES. » — version longue, style TABLEAU D'ENQUÊTEUR — voix Liam (eleven v3) — ~105 s
+Sources vérifiées : Associated Press / Seattle Times (29/10/1999 : procès à huis clos à Tel-Aviv, 42 chefs d'accusation, standard de la radio de l'armée, appels de Gaza « aux frais des forces armées israéliennes », les frères disent être visés parce qu'arabes et doués, le parquet dément) · Haaretz (04-05/09/2001 : les trois frères condamnés ; la radio de l'armée parmi les victimes) · Wired 12.02, « Three Blind Phreaks », Michael Kaplan (Kafr Kassem ; aveugles de naissance ; 1989 premier ordinateur au centre pour aveugles de Tel-Aviv ; imitation de voix ; ~20 000 numéros de cartes ; 1998 radio de l'armée à Jaffa, jusqu'à 281 appels simultanés, standard dans une cabane au milieu d'une orangeraie ; perquisition du 14/06/1999 ; 44 chefs ; procès de 27 mois ; Ramy 65 mois, Muzher 6 mois de travaux d'intérêt général, Shadde sursis ; Ramy libéré après 47 mois) · Wikidata.
+Prudence : les détails « policiers » (piratage de l'e-mail du procureur, ordinateur qui s'efface) viennent de Wired → présentés « selon le magazine Wired ». On donne aussi leur version (ciblés parce qu'arabes) et la réponse du parquet.
+Reconstitution : les dialogues en hébreu sont IMAGINÉS à partir des faits rapportés par Wired (ils se faisaient passer pour des techniciens et pour un enquêteur anti-fraude de Bezeq) ; aucun nom réel dans les répliques ; étiquette à l'écran. Hommage Matrix : ambiance et « Tout est en place ? », aucun extrait ni voix du film.
+Note : AP parle de deux frères au procès de 1999 ; Haaretz et Wired de trois frères condamnés → on dit « trois frères condamnés ».
+
+[HOOK « MATRIX » ~6 s — écran noir, pluie de code verte en lettres hébraïques, arabes et chiffres ; tonalité de téléphone, numérotation (bips DTMF), curseur qui tape « APPEL ENTRANT… LIGNE : RADIO DE L'ARMÉE · JAFFA · 1998 », chiffres du numéro qui se verrouillent un à un]
+[VOIX F, chuchotée, filtre téléphone] Tout est en place ?
+[VOIX H, chuchotée, filtre téléphone] La ligne est ouverte. Ils ne verront rien.
+[Boum → la pluie se fige → titre : TROIS FRÈRES. AVEUGLES. → la caméra recule et file vers le tableau]
+[serious] Ils ne voyaient rien.
+[intrigued] Et pourtant, ils ont fait payer des milliers d'appels… à l'armée israélienne.
+[serious] Kafr Kassem. Un village arabe, à une vingtaine de kilomètres de Tel-Aviv.
+Trois frères. Ramy, Muzher et Shadde Badir. Aveugles de naissance.
+[slowly] Enfants, ils inventent une langue secrète, pour que les autres ne comprennent pas.
+Ils démontent les téléphones. Ils apprennent à imiter n'importe quelle voix.
+[intrigued] En mille neuf cent quatre-vingt-neuf, dans un centre pour aveugles, ils touchent leur premier ordinateur.
+Ils ne le lâcheront plus.
+[firm] Leur arme ? Pas le clavier. La voix.
+[intrigued] Écoute. Reconstitution.
+[SCÈNE EN HÉBREU — carte « RECONSTITUTION · VOIX GÉNÉRÉES », filtre téléphone, sous-titres FR]
+[SECRÉTAIRE] שלום, במה אפשר לעזור?  (Bonjour, je peux vous aider ?)
+[FRÈRE, voix sûre de technicien] שלום, כאן טכנאי של בזק. יש תקלה במרכזייה. אני צריך את הקוד.  (Bonjour, ici un technicien de Bezeq. Il y a une panne sur le standard. J'ai besoin du code.)
+[SECRÉTAIRE] רגע... הנה.  (Attendez… voilà.)
+[firm] Elles donnent les codes.
+Un jour, l'opérateur national leur coupe trois lignes. Un frère rappelle… en se faisant passer pour l'enquêteur anti-fraude.
+[FRÈRE, voix grave et autoritaire] כאן המחלקה למניעת הונאות של בזק. תפתח מיד את שלושת הקווים.  (Ici le service anti-fraude de Bezeq. Rouvrez immédiatement les trois lignes.)
+[TECHNICIEN] כן, כן... זה פתוח.  (Oui, oui… c'est ouvert.)
+[deadpan] Les lignes sont rétablies.
+[serious] Puis ça devient sérieux. Vingt mille numéros de cartes bancaires, aspirés dans l'ordinateur d'un seul homme d'affaires.
+[firm] Et en mille neuf cent quatre-vingt-dix-huit… le coup le plus fou.
+La radio de l'armée israélienne.
+Ils réveillent une fonction oubliée de son standard. Jusqu'à deux cent quatre-vingt-un appels en même temps.
+Au milieu d'une orangeraie, une cabane. Dedans, un standard pirate.
+Des Palestiniens appellent l'étranger. Ils paient la cabane… et c'est l'armée qui reçoit la facture.
+[intrigued] Les factures explosent. La police remonte jusqu'à la cabane.
+Un ouvrier lâche un détail : les techniciens… étaient aveugles.
+[lowered voice] Un an d'écoutes. Selon le magazine Wired, ils auraient même piraté l'e-mail du procureur.
+[firm] Quatorze juin mille neuf cent quatre-vingt-dix-neuf. Quatorze policiers débarquent chez eux.
+Aucun ordinateur exploitable. Ramy affirme que le sien s'efface tout seul si quelqu'un d'autre l'ouvre.
+[serious] Quarante-quatre chefs d'accusation. Vingt-sept mois de procès.
+Ramy : soixante-cinq mois de prison. Muzher : des travaux d'intérêt général. Shadde : du sursis.
+[matter-of-fact] Eux disent qu'on les a visés parce qu'ils étaient arabes. Et doués. Le parquet a démenti.
+[slowly] Cette histoire, ce n'est pas nous qui l'inventons. Ce sont les tribunaux israéliens qui l'ont jugée. Et la presse israélienne qui l'a racontée.
+[intrigued] À sa sortie, Ramy dit vouloir protéger les entreprises… contre les pirates comme lui.
+[serious] Alors, dis-moi en commentaire. Génie… ou escroc ?
