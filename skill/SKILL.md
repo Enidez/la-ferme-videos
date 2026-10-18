@@ -72,6 +72,7 @@ Fond : UNE photo réelle évocatrice en plein cadre (foule, lieu, objet du sujet
 Titre : 1 à 4 mots maximum, en Anton blanc, très gros, centré (une date, un chiffre, une formule choc : « 17 OCTOBRE », « 15 ANS. », « LE GEL. »). Au maximum un petit sur-titre en Mono (« SAMEDI », « LE DOSSIER #04 ») et une seule petite étiquette (source, ou « IMAGE GÉNÉRÉE PAR IA »).
 Interdit sur la couverture : plusieurs blocs de texte, des tampons, des tuiles, des cercles, des phrases longues, plus de deux couleurs de texte. Pas de sous-titres pendant la fenêtre de couverture.
 Durée : la composition reste quasi fixe de 0 à 3 s (seulement un très lent zoom), pour que toute image prise automatiquement autour de la 2e seconde soit la bonne. La voix peut démarrer dessus ; le montage « animé » commence après 3 s.
+Grille Instagram : le profil recadre chaque couverture en 3:4 (on perd environ 240 px en haut et en bas). Le titre doit tenir entre y 300 et y 1620 (la couverture « Samedi 17 » avait son titre coupé). Au 18/10/2026, les couvertures photo réelle + titre court font environ 10 fois les vues des anciennes couvertures texte sur fond noir. Couvertures « à la une » : tools insta/index.html (cartes du tableau, contenu dans le cercle central).
 Livraison : exporter aussi la couverture en JPG, à choisir comme couverture à la publication.
 Règles de mise en page (vertical 1080×1920)
 Colonne de contenu entre x 120 et 960.
