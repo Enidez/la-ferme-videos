@@ -100,12 +100,8 @@ Voix (choix d'Enidez le 18/10/2026) : **Liam – Sharp & Pro** (ElevenLabs, voic
 Balises Eleven v4, en anglais et sobres : [serious], [intrigued], [slowly], [deadpan], [whispers], [laughs]. Stabilité Natural, vitesse 1.0–1.05 pour un Dossier, 1.1 pour la parodie. Une phrase par ligne. Chiffres écrits en toutes lettres.
 Parodie : jamais de groupe ethnique ou religieux visé ; jamais de fausses citations de vraies personnes ; la conclusion reste inoffensive et visiblement absurde.
 Vérification : tout fait d'actualité est vérifié en ligne avant d'écrire, et revérifié avant le montage (les situations bougent : la grève de l'aérien a été suspendue entre le script et la voix). Chaque calcul est vérifié. Pour une recherche large, lancer plusieurs agents en parallèle (par exemple histoire, pop culture, politique) et ne garder que les faits sourcés.
-Légende des posts :
-une première ligne qui reprend l'accroche ;
-une question facile et personnelle qui s'adresse à « toi » (« Tu y vas, toi, le 17 ? » a marché ; « Quelle coïncidence j'ai ratée ? » non) ;
-à tester : les sources complètes en légende, comme @heysuperneva ;
-le crédit de la musique si elle est sous licence CC BY ;
-5 hashtags maximum, dont un hashtag de marque.
+Légende des posts (règle d'Enidez, 18/10/2026) : PAS de sources, PAS de crédits images, PAS de crédit musique dans la légende. Les crédits restent uniquement à l'écran (carton de fin et étiquettes sur les cartes), ce qui suffit pour les licences CC BY et le droit de citation.
+Format : une première ligne qui reprend l'accroche ; une ou deux lignes qui donnent envie (le « pourquoi regarder ») ; une question facile et personnelle ou un choix à répondre en commentaire (« Tu y vas, toi, le 17 ? », « 1, 2, 3 ou 4 ? ») ; 5 hashtags maximum, dont #laferme.
 Chaîne technique
 Voix : ElevenLabs v4, fournie par Enidez.
 Transcription de contrôle avec sherpa-onnx whisper-small (segments sur l'enveloppe à 10 ms).
