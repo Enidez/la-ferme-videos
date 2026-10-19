@@ -1,0 +1,31 @@
+« LE PLAN · JOUR 1. » — v2 — lundi 19 octobre 2026 — à publier ce soir — voix Liam (eleven v3) + vraies voix (Nuñez, Macron) — ~95 s
+Faits vérifiés (19/10/2026) :
+- Nuñez : « J'ai remis ma démission parce que je suis responsable de tout ce qui se passe » (France Inter, lundi matin ; vidéo France Inter RCNuVAFzquY). Élysée : démission refusée, « compte tenu de la nécessité d'un commandement continu des forces de l'ordre dans le contexte actuel » ; Macron lui demande une nouvelle doctrine de maintien de l'ordre « face aux casseurs » et « au plus vite sur le terrain de nouveaux modes d'action » (franceinfo, RTS, Journal du Net). Nuñez : « asymétrie », « la situation n'est pas hors de contrôle », pas besoin d'état d'urgence.
+- Marseille : arrêté de la préfète de police déléguée — « interdiction de tout rassemblement et manifestation sur l'ensemble de la commune de 12 h à 20 h » ce lundi (X @prefpolice13 ; France 3 Régions).
+- Comparutions immédiates à partir de ce lundi : Paris, Nice, Tours, Saint-Étienne ; pas de verdict publié à l'écriture.
+- Lecornu accuse LFI ; le RN réclamait la démission de Nuñez (franceinfo). Cellule de crise à Matignon (économie, assurances, suivi judiciaire).
+- Macron, allocution du 18/10 (TF1, ~4 min 05) : « je poursuivrai ces actions dès demain matin en allant dans les pays du Golfe ».
+- Koweït 19/10 : accords et déclarations d'intention signés au palais Bayan (Kuwait Times : huit) — défense (Catherine Vautrin), IA/données (Pertimm), Airbus pour Kuwait Airways, investissements ; carburant : stocks de kérosène et de diesel prépositionnés à Oman, qui pourraient être livrés à La Réunion et Mayotte (Boursorama/AFP). Francis Perrin (IRIS) n'attend pas d'effet sur les prix ; Benjamin Morel : voyage qui peut paraître « déconnecté ».
+- Carburant : 595 stations totalement à sec en métropole le 18/10 (PrixCarbu, données du ministère de l'Économie, via Planet.fr) ; gazole à 2,364 € le litre en moyenne.
+
+[HOOK : vraie voix + image de Nuñez (France Inter) : « J'ai remis ma démission, parce que je suis responsable de tout ce qui se passe. » → tampon rouge « REFUSÉE. » → arrêt sur image : « LE PLAN. JOUR 1. »]
+[firm] Refusée.
+[serious] Ce matin, l'Élysée garde son ministre. Motif officiel : « un commandement continu des forces de l'ordre ».
+[intrigued] Et sa nouvelle mission ? Une nouvelle doctrine… « face aux casseurs ».
+[firm] Jour un du plan. On avait promis de compter. On compte.
+[firm] Étape un : l'ennemi. Le Premier ministre accuse La France insoumise. Le RN accuse le gouvernement. Personne… n'accuse les prix.
+[firm] Étape deux : interdire. Marseille. Ce matin, la préfecture interdit tout rassemblement. Sur toute la ville. Moins de vingt-quatre heures après l'allocution.
+[firm] Étape trois : punir. Premiers procès en comparution immédiate. Paris, Nice, Tours, Saint-Étienne.
+[lowered voice] Étape quatre… ton porte-monnaie. Hier soir, il promettait :
+[MACRON, vraie voix, allocution] « …dès demain matin, en allant dans les pays du Golfe. »
+[matter-of-fact] Promesse tenue. Le voilà au Koweït. Tapis rouge.
+[firm] Résultat : des accords. La défense. L'intelligence artificielle. Des avions Airbus.
+[intrigued] Et le carburant ? Des stocks de diesel… pour La Réunion et Mayotte.
+[serious] Pendant ce temps, en métropole : près de six cents stations à sec. Le gazole à deux euros trente-six.
+[matter-of-fact] Un spécialiste de l'énergie n'attend aucun effet sur les prix.
+[firm] Alors, le compteur. Jour un.
+Manifestations interdites : une ville entière.
+Ministre démissionnaire : un… retenu.
+Mesures pour ton plein : zéro.
+[serious] Jour deux, demain. Abonne-toi : on compte ensemble.
+Et dis-moi en commentaire : chez toi, la station est encore ouverte ?
