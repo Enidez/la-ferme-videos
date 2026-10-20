@@ -15,7 +15,7 @@ f"Le 17, entre 20{NB}000 et 30{NB}000 Algériens manifestent contre ce couvre-fe
 "Abonne-toi.","Ils parlent à ta place.","Nous,","on vérifie."]
 assert len(TX)==len(LS),(len(TX),len(LS))
 QUOTES={17,28,30}
-Q=load('vo/q.wav');P1=load('vo/p1.wav');P2=load('vo/p2.wav')
+Q=load('vo/q.wav');QH=load('vo/qh.wav');P1=load('vo/p1.wav');P2=load('vo/p2.wav')
 def fade(x,n=300):
     x=x.copy();n=min(n,len(x)//2);r=np.linspace(0,1,n);x[:n]*=r;x[-n:]*=r[::-1];return x
 rms=lambda x:np.sqrt(np.mean(x[np.abs(x)>.01]**2))
@@ -34,13 +34,13 @@ def clip(y,t,a,b,subs):
     s=fade(y[int(a*SR):int(b*SR)]);put(t,s,G(y))
     for (u0,u1,tx,i) in subs:SEGS.append(dict(t0=round(t+u0-a,2),t1=round(t+u1-a,2),txt=tx,id=i,m=1))
     return t+(b-a)
-e=clip(Q,0,0,1.45,[(0.05,1.4,"Non mais je m'en fous, madame…",'h')])
+e=clip(QH,0,0,len(QH)/SR,[(4.05,5.45,"Non mais je m'en fous, madame…",'h')])   # question de l'étudiante -> « je m'en fous, madame »
 FRZ=round(e,2)
 e=narr(0,1,FRZ+.3)
 TCOV=round(e+.3,2)
 e=narr(2,3,TCOV+.4)
 TQ=round(e+.25,2)
-e=clip(Q,TQ,0,6.9,[(0.05,1.4,"Non mais je m'en fous, madame…",'qa'),(2.2,3.5,"J'en ai rien à foutre.",'qb'),(4.7,5.75,"J'en ai rien à cirer !",'qc'),(5.85,6.85,"J'étais pas né.",'qd')])
+e=clip(Q,TQ,0,len(Q)/SR,[(0.7,2.0,"J'en ai rien à foutre.",'qb'),(3.2,4.25,"J'en ai rien à cirer !",'qc'),(4.35,5.35,"J'étais pas né.",'qd')])
 e=narr(4,7,e+.3)
 TP1=round(e+.2,2)
 e=clip(P1,TP1,0,len(P1)/SR,[(0.15,1.9,"Non mais c'est très grave…",'p1a'),(2.0,4.0,"… mais c'est en 61, quoi.",'p1b')])

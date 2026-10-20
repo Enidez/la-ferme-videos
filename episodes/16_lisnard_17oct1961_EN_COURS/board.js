@@ -23,8 +23,8 @@ const cLCI=add({k:'clip',full:1,clip:'q',sync:MARK.q,handle:'Montage : @quotidie
   after:(w,h,t)=>{topBox(w,h,t,N(3),'UNE ÉTUDIANTE L’INTERROGE','SUR LE 17 OCTOBRE 1961',54);stampAt('« J’ÉTAIS PAS NÉ. »',0,90,70,t,S('qd'),-.07);}});
 const cCut=add({k:'cut',w:900,h:760,rot:2,t0:N(4)});
 const cD1=add({k:'proof',lab:'POINT',n:1,l:'LA SUITE',w:880,h:760,rot:-1.5,t0:N(7)});
-const cP1=add({k:'clip',full:1,img:'lisp',handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:900,rot:1.5,t0:MARK.p1,
-  after:(w,h,t)=>{stampAt('COUPÉ AU MONTAGE',0,-h/2+170,64,t,MARK.p1+.35,-.07);}});
+const cP1=add({k:'clip',full:1,clip:'p1',sync:MARK.p1,handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:900,rot:1.5,t0:MARK.p1,
+  after:(w,h,t)=>{band(-h/2+130,t,MARK.p1,'VOIX : DAVID LISNARD (HORS CHAMP)',34,'rgba(10,10,10,.88)',AMB);stampAt('COUPÉ AU MONTAGE',0,-h/2+260,64,t,MARK.p1+.35,-.07);}});
 const cP2=add({k:'clip',full:1,clip:'p2',sync:MARK.p2,handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:900,rot:-2,t0:MARK.p2,
   after:(w,h,t)=>{band(-h/2+170,t,N(12),'ÇA NE L’ARRANGE PAS',58);}});
 const cD2=add({k:'proof',lab:'POINT',n:2,l:'CE QUI S’EST PASSÉ',w:880,h:760,rot:2,t0:N(13)});
@@ -150,9 +150,9 @@ function postit(w,h){ctx.save();ctx.translate(w/2-90,-h/2-75);ctx.rotate(.09);ct
 // source qui tient toujours dans la carte (règle d'Enidez du 20/10)
 function srcFit(s,w,h,dark){let sz=22;while(sz>14&&mw(s,'400 '+sz+'px Mono')>w-48)sz--;txt(s,w/2-24,h/2-18,'400 '+sz+'px Mono',dark?'rgba(27,28,26,.6)':'rgba(236,238,230,.62)','right');}
 function drawHook16(w,h,t){
-  const im=IM.hook,FRZ=MARK.frz,frz=t>=FRZ;
+  const FRZ=MARK.frz,frz=t>=FRZ,HF=CLIPS.hook||[];const im=HF[Math.max(0,Math.min(HF.length-1,Math.floor(t*30)))];   // vraie vidéo jusqu'à l'arrêt sur image
   ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
-  if(im){const zb=frz?1.07+.012*(t-FRZ):1.0+.02*t;const s=w/im.width*zb;
+  if(im){const zb=frz?1.07+.012*(t-FRZ):1.0+.006*t;const s=w/im.width*zb;
     ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.72)':'contrast(1.06)';
     ctx.drawImage(im,-im.width*s/2,-h/2+(h-im.height*s)*.3,im.width*s,im.height*s);ctx.restore();}
   if(frz){const p=eo(lin(t,FRZ,FRZ+.15));const g=ctx.createLinearGradient(0,-h/2+h*.44,0,-h/2+h*.62);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${.9*p})`);ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.44,w,h*.56);}

@@ -1,9 +1,9 @@
 // source qui tient toujours dans la carte (règle d'Enidez du 20/10)
 function srcFit(s,w,h,dark){let sz=22;while(sz>14&&mw(s,'400 '+sz+'px Mono')>w-48)sz--;txt(s,w/2-24,h/2-18,'400 '+sz+'px Mono',dark?'rgba(27,28,26,.6)':'rgba(236,238,230,.62)','right');}
 function drawHook16(w,h,t){
-  const im=IM.hook,FRZ=MARK.frz,frz=t>=FRZ;
+  const FRZ=MARK.frz,frz=t>=FRZ,HF=CLIPS.hook||[];const im=HF[Math.max(0,Math.min(HF.length-1,Math.floor(t*30)))];   // vraie vidéo jusqu'à l'arrêt sur image
   ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
-  if(im){const zb=frz?1.07+.012*(t-FRZ):1.0+.02*t;const s=w/im.width*zb;
+  if(im){const zb=frz?1.07+.012*(t-FRZ):1.0+.006*t;const s=w/im.width*zb;
     ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.72)':'contrast(1.06)';
     ctx.drawImage(im,-im.width*s/2,-h/2+(h-im.height*s)*.3,im.width*s,im.height*s);ctx.restore();}
   if(frz){const p=eo(lin(t,FRZ,FRZ+.15));const g=ctx.createLinearGradient(0,-h/2+h*.44,0,-h/2+h*.62);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${.9*p})`);ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.44,w,h*.56);}

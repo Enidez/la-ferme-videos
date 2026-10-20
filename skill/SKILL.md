@@ -82,7 +82,7 @@ Rangées : label 285, titre 392, contenu 540–1060, texte1 1110, texte2 1285, n
 Les sous-titres sur deux lignes occupent environ y 1250–1400 : aucun texte de scène sous y 1240.
 Au moins 175 px entre deux lignes Anton quand la 2e ligne est plus grande. Chaque texte reste au moins 1,5 s à l'écran.
 Un seul élément dominant par écran. Jamais de rouge sur fond rouge. Sources en 24 px sur une pastille sombre ; notes en 26 px.
-Les visages de personnes réelles sont floutés, profils compris. Les pseudos des particuliers sont floutés. Victimes mineures : ni nom, ni visage, ni image de blessure.
+Les visages de personnes réelles sont floutés, profils compris (règle précisée par Enidez le 20/10/2026 : le flou ne concerne QUE les particuliers filmés dans la rue (manifestants, passants, vidéos amateurs). Un extrait d'ÉMISSION TÉLÉ ne se floute pas du tout, ni les invités, ni le public du plateau ; on ne nomme toujours pas un particulier, comme l'étudiante face à Lisnard). JAMAIS d'image figée pendant qu'on entend une voix : sur un extrait, la vraie vidéo bouge en même temps que le son (si on veut éviter un plan, on coupe le son avec, on ne fige pas). Les pseudos des particuliers sont floutés. Victimes mineures : ni nom, ni visage, ni image de blessure.
 Une image générée par IA est TOUJOURS étiquetée à l'écran « IMAGE GÉNÉRÉE PAR IA ». Un personnage d'exemple est étiqueté « EXEMPLE FICTIF ».
 Écriture
 Durée : au moins 61 s au final, carton de fin compris, pour la monétisation TikTok. Viser 75 à 110 s, et rester sous 2 minutes quand c'est possible. Le resserrage de la voix (tempo, silences) ne doit jamais faire passer la vidéo sous 61 s.
