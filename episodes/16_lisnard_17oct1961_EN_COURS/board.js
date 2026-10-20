@@ -23,20 +23,21 @@ const cLCI=add({k:'clip',full:1,clip:'q',sync:MARK.q,handle:'Montage : @quotidie
   after:(w,h,t)=>{topBox(w,h,t,N(3),'UNE ÉTUDIANTE L’INTERROGE','SUR LE 17 OCTOBRE 1961',54);stampAt('« J’ÉTAIS PAS NÉ. »',0,90,70,t,S('qd'),-.07);}});
 const cCut=add({k:'cut',w:900,h:760,rot:2,t0:N(4)});
 const cD1=add({k:'proof',lab:'POINT',n:1,l:'LA SUITE',w:880,h:760,rot:-1.5,t0:N(7)});
-const cP1=add({k:'clip',full:1,img:'lisp',handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:1000,rot:1.5,t0:MARK.p1,
+const cP1=add({k:'clip',full:1,img:'lisp',handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:900,rot:1.5,t0:MARK.p1,
   after:(w,h,t)=>{stampAt('COUPÉ AU MONTAGE',0,-h/2+170,64,t,MARK.p1+.35,-.07);}});
-const cP2=add({k:'clip',full:1,clip:'p2',sync:MARK.p2,handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:1010,rot:-2,t0:MARK.p2,
+const cP2=add({k:'clip',full:1,clip:'p2',sync:MARK.p2,handle:'LCI · « La Grande Confrontation » · via X @24hPujadas',badge:'VERSION LONGUE',badgeRed:1,w:900,h:900,rot:-2,t0:MARK.p2,
   after:(w,h,t)=>{band(-h/2+170,t,N(12),'ÇA NE L’ARRANGE PAS',58);}});
 const cD2=add({k:'proof',lab:'POINT',n:2,l:'CE QUI S’EST PASSÉ',w:880,h:760,rot:2,t0:N(13)});
 const cPapon=add({k:'clip',full:1,img:'papon',gray:1,handle:'André Cros · CC BY-SA 4.0',badge:'MAURICE PAPON · PRÉFET DE POLICE',w:900,h:1100,rot:-1.5,t0:N(14),
   after:(w,h,t)=>{topBox(w,h,t,N(14),'5 OCTOBRE 1961','IL ANNONCE UN COUVRE-FEU',64);band(-h/2+340,t,N(16),'PAS POUR TOUT LE MONDE.',54);
     band(-h/2+430,t,N(17),'« FRANÇAIS MUSULMANS D’ALGÉRIE »',40,'rgba(10,10,10,.88)',AMB);}});
 const cChif=add({k:'chif',w:920,h:900,rot:1.5,t0:N(18)});
-const cPlaque=add({k:'clip',full:1,img:'plaque',handle:'Algeria-SP · CC BY-SA 4.0',badge:'PONT SAINT-MICHEL · PARIS',w:900,h:1300,rot:-1,t0:N(20),
-  after:(w,h,t)=>{topBox(w,h,t,N(20),'DES MANIFESTANTS','JETÉS DANS LA SEINE',70);}});
+const cPlaque=add({k:'clip',full:1,img:'plaque',aim:470,handle:'Algeria-SP · CC BY-SA 4.0',badge:'PONT SAINT-MICHEL · PARIS',w:900,h:1300,rot:-1,t0:N(20),
+  after:(w,h,t)=>{band(-170,t,N(20),'DES MANIFESTANTS',64);band(-80,t,N(20)+.3,'JETÉS DANS LA SEINE',64,'rgba(10,10,10,.88)',AMB);}});
 const cMorts=add({k:'morts',w:960,h:980,rot:2,t0:N(21)});
 const cD3=add({k:'proof',lab:'POINT',n:3,l:'CE QUE DIT LA RÉPUBLIQUE',w:900,h:760,rot:-1.5,t0:N(26)});
-const cHol=add({k:'hol',w:900,h:720,rot:1.5,t0:N(27)});
+const cHol=add({k:'clip',full:1,img:'hollande',handle:'COP Paris · CC0',badge:'FRANÇOIS HOLLANDE',w:900,h:1100,rot:1.5,t0:N(27),
+  after:(w,h,t)=>{band(-42,t,N(27),'17 OCTOBRE 2012 · LA RÉPUBLIQUE RECONNAÎT',32,'rgba(10,10,10,.88)',INK);band(42,t,N(28)+.4,'« SANGLANTE RÉPRESSION »',62,'rgba(201,48,44,.92)');}});
 const cMac=add({k:'clip',full:1,img:'macron',handle:'Commission européenne · CC BY 4.0',badge:'EMMANUEL MACRON',w:900,h:1060,rot:-1.5,t0:N(29),
   after:(w,h,t)=>{topBox(w,h,t,N(29),'16 OCTOBRE 2021','COMMUNIQUÉ DE L’ÉLYSÉE',64);band(-h/2+340,t,N(30)+.6,'« INEXCUSABLES',60,'rgba(10,10,10,.88)',AMB);band(-h/2+420,t,N(30)+1.1,'POUR LA RÉPUBLIQUE »',60,'rgba(10,10,10,.88)',AMB);}});
 const cDep=add({k:'depuis',w:940,h:860,rot:2,t0:N(31)});
@@ -52,7 +53,7 @@ const XT=[[cLCI,cP2,N(35)],[cPapon,cPlaque,N(35)+.2],[cMorts,cHol,N(35)+.35],[cP
 
 // ---------- trajectoire caméra
 function fitZoom(c){return Math.min(880/c.w,900/c.h);}
-const KEYS=[];C.forEach((c,i)=>{if(i===cCover)KEYS.push({t:0,x:c.x,y:c.y-160/1.04,z:1.04,rot:-c.rot*Math.PI/180});else if(c.full){const pw=c.k==='clip'?c.w-50:c.w;const z=(c.k==='clip'?1100:880)/pw;const a=c.rot*Math.PI/180;const oy=c.k==='clip'?-85:0;KEYS.push({t:c.t0,x:c.x-Math.sin(a)*oy,y:c.y+Math.cos(a)*oy-160/z,z,rot:-a});}
+const KEYS=[];C.forEach((c,i)=>{if(i===cCover)KEYS.push({t:0,x:c.x,y:c.y-160/1.04,z:1.04,rot:-c.rot*Math.PI/180});else if(c.full){const pw=c.k==='clip'?c.w-50:c.w;const z=(c.k==='clip'?1100:880)/pw;const a=c.rot*Math.PI/180;const oy=(c.k==='clip'?-85:0)+(c.aim||0);KEYS.push({t:c.t0,x:c.x-Math.sin(a)*oy,y:c.y+Math.cos(a)*oy-160/z,z,rot:-a});}
   else KEYS.push({t:c.t0,x:c.x,y:c.y,z:fitZoom(c),rot:-c.rot*Math.PI/180*.6});});
 const WIDE=(t,cs)=>{let mnx=1e9,mxx=-1e9,mny=1e9,mxy=-1e9;cs.forEach(i=>{const c=C[i];mnx=Math.min(mnx,c.x-c.w/2);mxx=Math.max(mxx,c.x+c.w/2);mny=Math.min(mny,c.y-c.h/2);mxy=Math.max(mxy,c.y+c.h/2);});
   return{t,x:(mnx+mxx)/2,y:(mny+mxy)/2,z:Math.min(1000/(mxx-mnx),1500/(mxy-mny)),rot:0};};
@@ -289,14 +290,14 @@ function drawCard(c,t){
     txt('DIS-LE EN COMMENTAIRE ↓',0,h/2-70,'700 40px Mono',AMB,'center',3,lin(t,N(52),N(52)+.3));}
   laminate(w,h);
   if(c.k!=='cover'){pin(0,-h/2+18);tape(-w/2+40,-h/2+10,140,-.6);}else{pin(0,-h/2+10);}
-  if(c.k==='hol')postit(w,h);
+  if(c.k==='depuis')postit(w,h);
   if(c.hl!=null&&t>=c.hl&&t<WT1+1){const a=(1-lin(t,WT1,WT1+1))*eo(lin(t,c.hl,c.hl+.2))*(.7+.3*Math.sin((t-c.hl)*9));ctx.save();ctx.strokeStyle=`rgba(255,58,46,${a})`;ctx.lineWidth=40;ctx.shadowColor='rgba(255,40,30,.95)';ctx.shadowBlur=70;ctx.strokeRect(-w/2-34,-h/2-34,w+68,h+68);ctx.restore();}
   ctx.restore();
 }
 function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);[
   'Sources : AFP · Puremédias · Wikipédia · rapports Mandelkern (1998) et Géronimi (1999)',
   'Extraits : LCI « La Grande Confrontation » via @quotidienofficiel et @24hPujadas (citation)',
-  'Images : A. Cros, Algeria-SP (CC BY-SA 4.0) · Commission européenne (CC BY 4.0)',
+  'Images : A. Cros, Algeria-SP (CC BY-SA 4.0) · Commission européenne (CC BY 4.0) · COP Paris (CC0)',
   'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>{let sz=20;while(sz>14&&mw(s,'400 '+sz+'px Mono')>c.w-48)sz--;txt(s,0,i*36,'400 '+sz+'px Mono','rgba(236,238,230,.75)','center');});ctx.restore();}
 
 // ---------- sous-titres courts (3 mots max)
@@ -314,7 +315,7 @@ C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 [N(7),N(13),N(26)].forEach(x=>reveal(x,1.1));
 ev(N(3),'tick');ev(S('qd'),'thud');ev(N(5),'zap');ev(N(5)+.15,'thud');ev(N(6),'tick');ev(MARK.p1+.35,'thud');ev(N(12),'tick');
 ev(N(14),'tick');ev(N(16),'thud');ev(N(17),'tick');ev(N(18),'tick');for(let k=0;k<12;k++)ev(N(19)+k*.1,'tick');ev(N(20),'thud');
-ev(N(22)+.5,'thud');ev(N(24),'tick');reveal(N(25),1);ev(N(28)+.4,'thud');ev(N(29),'tick');ev(N(30)+.6,'tick');ev(N(30)+1.1,'thud');
+ev(N(22)+.5,'thud');ev(N(24),'tick');reveal(N(25),1);ev(N(28)+.4,'thud');ev(N(27),'tick');ev(N(29),'tick');ev(N(30)+.6,'tick');ev(N(30)+1.1,'thud');
 ev(N(32),'tick');ev(N(33),'tick');reveal(N(34),1);ev(WT0-.9,'riser');reveal(N(35),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));reveal(C[cNe].t0+.15,1.3);ev(N(39),'tick');ev(VEND+.35,'boom');
 
 // ---------- post (gris-vert)
