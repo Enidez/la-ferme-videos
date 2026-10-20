@@ -11,8 +11,10 @@ Changements par rapport à la v1 : grille numérotée 1-2-3 (recette LE PLAN) ; 
 [serious] Lundi soir, sur LCI. Une étudiante l'interroge sur le 17 octobre 1961.
 LISNARD (extrait 7,3 s → ~14 s) : « Non mais je m'en fous madame… j'en ai rien à cirer… j'étais pas né. » (transcription whisper du 20/10 ; « rien à foutre » ≈ 7,8 s pour le hook)
 [firm] La séquence tourne partout. Mais elle est coupée. Voici trois choses qu'elle ne te montre pas.
-[intrigued] Un. La suite. Juste après, il ajoute : « C'est très grave, c'est dramatique… mais c'était en 61. »
-Puis il explique que ce n'est pas son problème aujourd'hui.
+[intrigued] Un. La suite.
+LISNARD (vraie voix, X @24hPujadas, ~45-48 s) : « Non mais c'est très grave, mais c'est en 61, quoi. » (attribution confirmée à l'écoute par Enidez, 20/10)
+LISNARD (vraie voix, X @24hPujadas, ~67-69 s) : « Ce n'est pas mon problème aujourd'hui, madame. »
+(au montage : couper dans la prise de Paul « Juste après, il ajoute… » et « Puis il explique… », remplacées par ces deux extraits)
 [firm] La version longue ne l'arrange pas vraiment.
 [dramatic] Deux. Ce qui s'est passé. Le 5 octobre 1961, le préfet de police Maurice Papon annonce un couvre-feu. Pas pour tout le monde. Pour les seuls « Français musulmans d'Algérie ».
 [intense] Le 17, entre vingt et trente mille Algériens manifestent contre ce couvre-feu, à l'appel du FLN.
