@@ -17,7 +17,9 @@ const cD2=add({k:'proof',lab:'POINT',n:2,l:'CE QUI S’EST PASSÉ',w:880,h:760,r
 const cPapon=add({k:'clip',full:1,img:'papon',gray:1,handle:'André Cros · CC BY-SA 4.0',badge:'MAURICE PAPON · PRÉFET DE POLICE',w:900,h:1100,rot:-1.5,t0:N(14),
   after:(w,h,t)=>{topBox(w,h,t,N(14),'5 OCTOBRE 1961','IL ANNONCE UN COUVRE-FEU',64);band(-h/2+340,t,N(16),'PAS POUR TOUT LE MONDE.',54);
     band(-h/2+430,t,N(17),'« FRANÇAIS MUSULMANS D’ALGÉRIE »',40,'rgba(10,10,10,.88)',AMB);}});
-const cChif=add({k:'chif',w:920,h:900,rot:1.5,t0:N(18)});
+const cCarte=add({k:'clip',full:1,img:'carte',aim:265,handle:'S0l0xal · CC BY-SA 3.0',badge:'17 OCTOBRE 1961 · LES CORTÈGES',w:960,h:720,rot:1.5,t0:N(18),
+  after:(w,h,t)=>{band(-h/2+120,t,N(18)+.4,'20 000 – 30 000 MANIFESTANTS',54);}});
+const cChif=add({k:'chif',w:920,h:900,rot:-1.5,t0:N(19)});
 const cPlaque=add({k:'clip',full:1,img:'plaque',aim:470,handle:'Algeria-SP · CC BY-SA 4.0',badge:'PONT SAINT-MICHEL · PARIS',w:900,h:1300,rot:-1,t0:N(20),
   after:(w,h,t)=>{band(-170,t,N(20),'DES MANIFESTANTS',64);band(-80,t,N(20)+.3,'JETÉS DANS LA SEINE',64,'rgba(10,10,10,.88)',AMB);}});
 const cMorts=add({k:'morts',w:960,h:980,rot:2,t0:N(21)});

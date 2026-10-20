@@ -31,7 +31,9 @@ const cD2=add({k:'proof',lab:'POINT',n:2,l:'CE QUI S’EST PASSÉ',w:880,h:760,r
 const cPapon=add({k:'clip',full:1,img:'papon',gray:1,handle:'André Cros · CC BY-SA 4.0',badge:'MAURICE PAPON · PRÉFET DE POLICE',w:900,h:1100,rot:-1.5,t0:N(14),
   after:(w,h,t)=>{topBox(w,h,t,N(14),'5 OCTOBRE 1961','IL ANNONCE UN COUVRE-FEU',64);band(-h/2+340,t,N(16),'PAS POUR TOUT LE MONDE.',54);
     band(-h/2+430,t,N(17),'« FRANÇAIS MUSULMANS D’ALGÉRIE »',40,'rgba(10,10,10,.88)',AMB);}});
-const cChif=add({k:'chif',w:920,h:900,rot:1.5,t0:N(18)});
+const cCarte=add({k:'clip',full:1,img:'carte',aim:265,handle:'S0l0xal · CC BY-SA 3.0',badge:'17 OCTOBRE 1961 · LES CORTÈGES',w:960,h:720,rot:1.5,t0:N(18),
+  after:(w,h,t)=>{band(-h/2+120,t,N(18)+.4,'20 000 – 30 000 MANIFESTANTS',54);}});
+const cChif=add({k:'chif',w:920,h:900,rot:-1.5,t0:N(19)});
 const cPlaque=add({k:'clip',full:1,img:'plaque',aim:470,handle:'Algeria-SP · CC BY-SA 4.0',badge:'PONT SAINT-MICHEL · PARIS',w:900,h:1300,rot:-1,t0:N(20),
   after:(w,h,t)=>{band(-170,t,N(20),'DES MANIFESTANTS',64);band(-80,t,N(20)+.3,'JETÉS DANS LA SEINE',64,'rgba(10,10,10,.88)',AMB);}});
 const cMorts=add({k:'morts',w:960,h:980,rot:2,t0:N(21)});
@@ -100,7 +102,7 @@ let TNOW=0;
 
 // ---------- mur + fouillis
 const SCRAPS=[];{const r=rng(21);for(let i=0;i<80;i++)SCRAPS.push({x:-1500+r()*6500,y:-1500+r()*13000,w:200+r()*380,h:150+r()*320,rot:(r()-.5)*.3,a:.08+r()*.12,lines:Math.floor(r()*6)});}
-const CLUT=[];{const r=rng(55);const ims=['papon','plaque','macron','lisp'];for(let i=0;i<90;i++){const k=r();CLUT.push({x:-1300+r()*6200,y:-1300+r()*12500,rot:(r()-.5)*.5,kind:k<.45?'post':k<.75?'photo':'clip',im:ims[Math.floor(r()*4)],w:k<.45?220:260,h:k<.45?220:190,lines:2+Math.floor(r()*4),col:r()});}}
+const CLUT=[];{const r=rng(55);const ims=['papon','plaque','plaque2','carte'];for(let i=0;i<90;i++){const k=r();CLUT.push({x:-1300+r()*6200,y:-1300+r()*12500,rot:(r()-.5)*.5,kind:k<.45?'post':k<.75?'photo':'clip',im:ims[Math.floor(r()*4)],w:k<.45?220:260,h:k<.45?220:190,lines:2+Math.floor(r()*4),col:r()});}}
 function drawClutter(){CLUT.forEach((c,i)=>{ctx.save();ctx.translate(c.x,c.y);ctx.rotate(c.rot);ctx.globalAlpha=.85;
   if(c.kind==='post'){ctx.fillStyle=c.col<.5?'rgba(200,190,110,.55)':'rgba(170,175,165,.45)';ctx.fillRect(-c.w/2,-c.h/2,c.w,c.h);ctx.strokeStyle='rgba(30,30,28,.55)';ctx.lineWidth=4;for(let l=0;l<c.lines;l++){ctx.beginPath();ctx.moveTo(-c.w/2+24,-c.h/2+50+l*40);ctx.lineTo(c.w/2-30-(l%2)*50,-c.h/2+46+l*40);ctx.stroke();}}
   else if(c.kind==='photo'){const im=IM[c.im];ctx.fillStyle='rgba(230,232,224,.8)';ctx.fillRect(-c.w/2-12,-c.h/2-12,c.w+24,c.h+40);if(im){ctx.filter='grayscale(1) brightness(.8)';const s=Math.max(c.w/im.width,c.h/im.height);ctx.save();ctx.beginPath();ctx.rect(-c.w/2,-c.h/2,c.w,c.h);ctx.clip();ctx.drawImage(im,-im.width*s/2,-im.height*s/2,im.width*s,im.height*s);ctx.restore();ctx.filter='none';}}
@@ -169,7 +171,7 @@ function cardExtra(c,t,w,h){
     stampAt('COUPÉE.',0,-h/2+470,130,t,N(5)+.15,-.07);
     if(t>=N(6))txt('3 CHOSES QU’ELLE NE TE MONTRE PAS',0,h/2-70,'700 36px Mono',AMB,'center',2,lin(t,N(6),N(6)+.3));return 1;}
   if(c.k==='chif'){framePaper(w,h);txt('17 OCTOBRE 1961 · PARIS',0,-h/2+95,'700 32px Mono',AMB,'center',5);
-    txt('20 000 – 30 000',0,-h/2+260,'120px Anton',INK,'center',2,lin(t,c.t0+.1,c.t0+.3),12);txt('ALGÉRIENS MANIFESTENT',0,-h/2+340,'58px Anton',INK,'center',2,lin(t,c.t0+.3,c.t0+.5));
+    txt('20 000 – 30 000',0,-h/2+260,'120px Anton',INK,'center',2,1,12);txt('ALGÉRIENS MANIFESTENT',0,-h/2+340,'58px Anton',INK,'center',2);
     txt('CONTRE LE COUVRE-FEU · À L’APPEL DU FLN',0,-h/2+400,'700 28px Mono','rgba(236,238,230,.75)','center',2,lin(t,c.t0+.6,c.t0+.9));
     if(t>=N(19)){const v=Math.round(11518*eo(lin(t,N(19),N(19)+1.2)));txt(v.toLocaleString('fr-FR').replace(/ /g,' '),0,-h/2+640,'210px Anton',PINK,'center',2,1,16);txt('ARRESTATIONS · LE 17',0,-h/2+720,'60px Anton',INK,'center',3);}
     srcFit('Sources : préfecture de police (1961) · Wikipédia « Massacre du 17 octobre 1961 »',w,h);return 1;}
@@ -297,7 +299,8 @@ function drawCard(c,t){
 function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);[
   'Sources : AFP · Puremédias · Wikipédia · rapports Mandelkern (1998) et Géronimi (1999)',
   'Extraits : LCI « La Grande Confrontation » via @quotidienofficiel et @24hPujadas (citation)',
-  'Images : A. Cros, Algeria-SP (CC BY-SA 4.0) · Commission européenne (CC BY 4.0) · COP Paris (CC0)',
+  'Images : A. Cros, Algeria-SP, FSouici (CC BY-SA 4.0) · S0l0xal (CC BY-SA 3.0)',
+  'Commission européenne (CC BY 4.0) · COP Paris (CC0)',
   'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>{let sz=20;while(sz>14&&mw(s,'400 '+sz+'px Mono')>c.w-48)sz--;txt(s,0,i*36,'400 '+sz+'px Mono','rgba(236,238,230,.75)','center');});ctx.restore();}
 
 // ---------- sous-titres courts (3 mots max)
