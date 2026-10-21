@@ -1,0 +1,21 @@
+« J+1 · PANNE GÉANTE » — épisode 1 — v3 (21/10/2026, faits vérifiés, sans vote : « on t'explique comment y survivre ») — voix Liam (UNE seule prise) — ~60 s
+Personnage : Sam, 3e étage, Lyon. HUD permanent : heure (H+), RÉSEAU, EAU, FRIGO. Décor : salle de crise (carte de France 3D qui s'éteint) ↔ appartement de Sam (3D).
+
+[intense] Si toute la France perd le courant, surtout ne file pas au supermarché.
+→ titre « J+1 · PANNE GÉANTE » · HUD H+0
+[serious] Ce n'est pas de la science-fiction. Le 28 avril 2025, l'Espagne et le Portugal se sont éteints d'un coup. Il a fallu près de dix-huit heures pour tout rallumer.
+H+0 · [intrigued] Premier réflexe de tout le monde : le magasin. Sauf que sans courant, plus de caisse, plus de carte bancaire.
+[firm] Sam fait l'inverse : il remplit la baignoire et toutes les bouteilles.
+[serious] Parce que l'eau arrive grâce à des pompes. Les réservoirs tiennent souvent douze à vingt-quatre heures. Dans certains quartiers, quelques minutes.
+H+0:20 · [intrigued] Le téléphone. Les antennes ont des batteries de secours : vingt minutes à peine, selon Orange.
+Plus de réseau. Sam ressort la radio à piles.
+H+4 · Le frigo. Fermé, il garde le froid environ quatre heures. Un congélateur plein : jusqu'à deux jours.
+Alors Sam n'ouvre rien, et mange d'abord ce qui craint.
+H+12 · [dramatic] La nuit tombe. Toute la ville est noire.
+Sur le papier, Sam peut tenir trois jours.
+[slowly] Seul problème…
+[whispers] quelqu'un frappe à sa porte.
+[firm] Dans la partie 2, on t'explique comment survivre aux trois jours suivants. Abonne-toi à J+1.
+
+Sources : REE et dépêches des 28-29/04/2025 (panne à 12 h 33, 99 % rétabli le lendemain vers 6 h) · Orange, FAQ délestages (2022, maj 2023) : batteries d'antennes 10 à 20 min ·
+FP2E (réservoirs pleins : 12 à 24 h d'autonomie) ; FNCCR via Maire-info (petits réseaux : ~15 min) · FDA et gouvernement du Québec (frigo ~4 h, congélateur plein ~48 h).

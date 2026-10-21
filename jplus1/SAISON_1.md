@@ -40,3 +40,8 @@ Pas de page web ni de lien externe : tout reste dans les applis.
 - YouTube Shorts : « vidéo associée » cliquable vers A ou B.
 - Instagram : Story sondage A/B + stickers lien vers les Reels A et B.
 - Production : tronc commun + seulement la fin (~15 s) en deux versions (économie de voix).
+
+## Mise à jour (Enidez, 21/10/2026) : pour l'instant, PAS de vote A/B
+Chaque chapitre = « on t'explique comment y survivre ». La fin en suspens annonce le chapitre suivant (« Dans la partie 2, on t'explique… »).
+Le vote A/B (section ci-dessus) est gardé pour plus tard.
+Bio : Instagram « Et si tout s'arrêtait demain ? / 🟥 Panne, guerre, crise : on simule. / ✅ On t'explique comment y survivre. » · TikTok « Et si tout s'arrêtait demain ? On t'explique comment y survivre. »
