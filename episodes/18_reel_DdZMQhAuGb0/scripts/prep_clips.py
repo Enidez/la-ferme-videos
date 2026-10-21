@@ -9,7 +9,7 @@ J={ # nom: (fichier, début, fin, crop)
  'attali':('dm_x46ojd.mp4',11.8,19.4,'320:204:0:0'),
  'closer':('dm_x5ff3ax.mp4',2.2,8.9,None),     # TF1, 20 mars 2017 : « … banquier. Certains ou certaines me l'ont parfois reproché. »
  'nestle':('dm_xqbb46.mp4',0,11.9,None),       # euronews, avril 2012
- 'ely':('dm_xqng6u.mp4',44.4,50.3,None),       # Le Point, 6 mai 2012 (l'Élysée)
+ 'ely':('dm_xqng6u.mp4',44.7,50.3,None),       # Le Point, 6 mai 2012 (l'Élysée)
  'pass':('dm_x24nvgs.mp4',20,31,'300:288:0:0'),# RTL/BFMTV, passation à Bercy, 27 août 2014
  'amiens':('dm_x42dl68.mp4',155.6,160.5,'300:250:212:0'), # i24news, Amiens, 6 avril 2016 (lancement d'En Marche)
  'mel0':('dm_x2883mo.mp4',2628.6,2632.4,None),      # plateau d'ONPC (plan large)
