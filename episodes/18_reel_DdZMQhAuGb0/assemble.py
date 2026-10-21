@@ -17,7 +17,6 @@ TX=["On te l'a vendu comme le banquier qui allait redresser la France. Regarde d
 "Ils misent sur l'oubli.","Nous,","on garde les preuves.","Pour toi :","il a redressé la France…","ou il l'a plombée ?","Dis-le en commentaire.","Abonne-toi.","Ils parlent à ta place.","Nous,","on vérifie."]
 assert len(TX)==len(LS),(len(TX),len(LS))
 QUOTES={34,42}
-B=load('vo/bel.wav')
 def fade(x,n=300):
     x=x.copy();n=min(n,len(x)//2);r=np.linspace(0,1,n);x[:n]*=r;x[-n:]*=r[::-1];return x
 rms=lambda x:np.sqrt(np.mean(x[np.abs(x)>.01]**2))
@@ -32,13 +31,24 @@ def narr(i0,i1,t):
         SEGS.append(d)
     put(t,fade(L[int(a*SR):int(b*SR)]));return t+b-a
 # pas d'extrait du Reel (décision d'Enidez) : on retire aussi « Ce dîner, tu l'as peut-être vu passer. » (phrases 25-26)
-e=narr(0,24,0.15)
+# intro « pompier pyromane » (prise unique hook2) ; la transcription auto se trompe, texte réel ci-dessous
+H=load('vo/hook2.wav');HS=[[0.00,2.01],[2.43,4.31],[4.75,5.57]]
+HT=["Le banquier qui devait sauver la France…","Et si c'était lui, le pyromane ?","Regarde d'où il vient."]
+for k,(a,b) in enumerate(HS):SEGS.append(dict(t0=round(.15+a,2),t1=round(.15+b,2),txt=HT[k],id='h%d'%k))
+put(.15,fade(H));e=.15+HS[-1][1]
+e=narr(1,18,e+.45)
+# vraie voix d'Emmanuel Macron (TF1, 20 mars 2017)
+V=load('vo/closer.wav');VS=[[.25,1.56,"« Je suis devenu fonctionnaire. »"],[2.58,3.07,"« Banquier. »"],[4.36,6.3,"« Certains ou certaines me l'ont parfois reproché. »"]]
+t=e+.35;MV=t
+for k,(a,b,x) in enumerate(VS):SEGS.append(dict(t0=round(t+a,2),t1=round(t+b,2),txt=x,id='v%d'%k,m=1))
+put(t,fade(V,800)*(rms(L)/rms(V))*.95);e=t+len(V)/SR
+e=narr(19,24,e+.25)
 e=narr(27,59,e+.35)
 e=narr(60,70,e+.75)
 y=np.clip(buf[:int((e+.2)*SR)],-1,1);os.makedirs('audio',exist_ok=True)
 w=wave.open('audio/vo.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((y*32767).astype(np.int16).tobytes());w.close()
 SEGS.sort(key=lambda s:s['t0']);ID={s['id']:i for i,s in enumerate(SEGS)}
-FRZ=round(SEGS[0]['t1']-1.15,2)
-MARK=dict(frz=FRZ,tcov=round(SEGS[ID['n0']]['t1']+.25,2))
+FRZ=round(SEGS[ID['h2']]['t0']-.05,2)
+MARK=dict(frz=FRZ,tcov=round(SEGS[ID['h2']]['t1']+.25,2),mv=round(MV,2))
 open('segs.js','w').write('const SEGS='+json.dumps(SEGS,ensure_ascii=False)+';\nconst MARK='+json.dumps(MARK)+';\nconst ID='+json.dumps(ID)+';\n')
 print('total',round(e,2),MARK)

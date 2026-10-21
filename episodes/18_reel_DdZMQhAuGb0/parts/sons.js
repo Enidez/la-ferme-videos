@@ -1,5 +1,5 @@
 // ---------- sons
-reveal(MARK.frz,1.3);ev(MARK.frz,'hit');ev(MARK.tcov-.1,'whoosh');
+ev(SEGS[ID.h1].t0,'hit');ev(SEGS[ID.h1].t0+.75,'thud');reveal(MARK.frz,1.3);ev(MARK.frz,'hit');ev(MARK.tcov-.1,'whoosh');
 KEYS.forEach(k=>{if(k.t>MARK.tcov+.1)ev(k.t-.5,'whoosh');});
 C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 [N(3),N(10),N(14),N(23),N(37),N(47)].forEach(x=>reveal(x,1.1));

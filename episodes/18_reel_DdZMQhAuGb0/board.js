@@ -26,22 +26,27 @@ const cENA=add({k:'doc',hd:'ÉCOLE NATIONALE D’ADMINISTRATION',big:'2004',l2:'
 const cJou=add({k:'clip',full:1,img:'jouyet',handle:IMC('jouyet'),badge:'JEAN-PIERRE JOUYET',w:900,h:1050,rot:1.5,t0:N(8),
   after:(w,h,t)=>{band(-30,t,N(8),'SON PROTECTEUR',64);}});
 const cD2=add({k:'proof',lab:'DOSSIER',n:2,l:'LE PREMIER ATTALI',w:880,h:760,rot:-1.5,t0:N(10)});
-const cDuo1=add({k:'duo',a:'sarkozy',b:'jattali',la:'NICOLAS SARKOZY',lb:'JACQUES ATTALI',title:'2007',ta:N(12),tb:N(13),bandT:N(13)+.6,bandS:'RAPPORTEUR ADJOINT DE LA COMMISSION ATTALI',w:960,h:860,rot:2,t0:N(12)});
+const cDuo1=add({k:'duo',a:'sarkozy',b:'jattali',va:'sarko',vb:'attali',sa:'ÉLYSÉE · JANVIER 2008',sb:'IL LUI REMET SON RAPPORT',la:'NICOLAS SARKOZY',lb:'JACQUES ATTALI',vsrc:'Images : France 3, 23/01/2008',title:'2007',ta:N(12),tb:N(13),bandT:N(13)+.6,bandS:'RAPPORTEUR ADJOINT DE LA COMMISSION ATTALI',w:960,h:860,rot:2,t0:N(12)});
 const cD3=add({k:'proof',lab:'DOSSIER',n:3,l:'LA BANQUE',w:880,h:760,rot:1.5,t0:N(14)});
 const cRoth=add({k:'doc',hd:'BANQUE D’AFFAIRES · PARIS',big:'ROTHSCHILD',l2:'2008 : IL Y ENTRE',rows:[['2010 : ASSOCIÉ-GÉRANT',N(18)]],src:'Source : franceinfo',w:920,h:760,rot:-1.5,t0:N(16)});
-const cDeal=add({k:'deal',w:940,h:900,rot:2,t0:N(19)});
+const cMv=add({k:'clip',full:1,clip:'closer',sync:MARK.mv,handle:'Extrait : TF1, « Le Grand Débat », 20/03/2017',badge:'EMMANUEL MACRON · SA VRAIE VOIX',w:900,h:1050,rot:-1.5,t0:MARK.mv-.35,aim:-40,
+  after:(w,h,t)=>{topBox(w,h,t,MARK.mv-.2,'MARS 2017 · TF1','IL EN PARLE LUI-MÊME',62);}});
+const cNes=add({k:'clip',full:1,clip:'nestle',sync:N(19)-.3,handle:'Images : euronews, avril 2012',badge:'NESTLÉ · PFIZER NUTRITION',w:900,h:1050,rot:2,t0:N(19),
+  after:(w,h,t)=>{topBox(w,h,t,N(19),'2012','LE CONTRAT DU BANQUIER',66);}});
+const cDeal=add({k:'deal',w:940,h:900,rot:-1,t0:N(21)-.15});
 const cD4=add({k:'proof',lab:'DOSSIER',n:4,l:'LE DÎNER',w:880,h:760,rot:-2,t0:N(23)});
 const cMonde=add({k:'doc',hd:'LE MONDE · 29 AOÛT 2019',big:'L’ENQUÊTE',l2:'G. DAVET ET F. LHOMME',rows:[['« LA DÉVORANTE AMBITION D’EMMANUEL MACRON »',N(24)+.5],['LE TÉMOIN : FRANÇOIS REBSAMEN',N(24)+1.3]],src:'Source : Le Monde, série « PS, sept ans de trahisons » (5/6)',w:940,h:820,rot:1.5,t0:N(24)});
 const cDuo2=add({k:'duo',a:'battali',b:'jattali',la:'BERNARD ATTALI',sa:'EX-PATRON D’AIR FRANCE (PHOTO : UN AVION AIR FRANCE)',lb:'SON FRÈRE, JACQUES',title:'JANVIER 2012 · LE DÎNER',ta:N(28),tb:N(29),w:960,h:860,rot:-1.5,t0:N(28)-.4});
 const cPat=add({k:'patrons',w:900,h:760,rot:2,t0:N(30)});
 const cDuo3=add({k:'duo',a:'rebsamen',b:'hollande',la:'FRANÇOIS REBSAMEN',fxa:.2,lb:'FRANÇOIS HOLLANDE',title:'LE MESSAGE',ta:N(33),tb:N(33)+.7,bandT:N(34),bandS:'« ON N’A QU’UNE DEMANDE À FORMULER »',stampT:N(35),stampS:'EMMANUEL MACRON',w:960,h:900,rot:-2,t0:N(33)});
-const cEly=add({k:'doc',hd:'PRÉSIDENCE DE LA RÉPUBLIQUE',big:'15 MAI 2012',l2:'IL ENTRE À L’ÉLYSÉE',rows:[['SECRÉTAIRE GÉNÉRAL ADJOINT',N(36)+.8]],src:'Source : présidence de la République',w:920,h:760,rot:1.5,t0:N(36)});
+const cEly=add({k:'clip',full:1,clip:'ely',sync:N(36)-.3,handle:'Images : Le Point / France 2, mai 2012',badge:'LE PALAIS DE L’ÉLYSÉE',w:900,h:1050,rot:1.5,t0:N(36),
+  after:(w,h,t)=>{topBox(w,h,t,N(36),'15 MAI 2012','IL ENTRE À L’ÉLYSÉE',70);band(-230,t,N(36)+.9,'SECRÉTAIRE GÉNÉRAL ADJOINT',56);}});
 const cD5=add({k:'proof',lab:'DOSSIER',n:5,l:'L’AVERTISSEMENT',w:880,h:760,rot:-1.5,t0:N(37)});
-const cMin=add({k:'clip',full:1,img:'macron2015',handle:IMC('macron2015'),badge:'EMMANUEL MACRON · 2015',w:900,h:1100,rot:2,t0:N(39),
-  after:(w,h,t)=>{topBox(w,h,t,N(39),'AOÛT 2014','MINISTRE DE L’ÉCONOMIE',70);band(60,t,N(40)+.6,'LE BANQUIER À BERCY',64);}});
+const cMin=add({k:'clip',full:1,clip:'pass',sync:N(39)-.5,handle:'Images : RTL / BFMTV, 27/08/2014',badge:'PASSATION À BERCY',w:900,h:1100,rot:2,t0:N(39),
+  after:(w,h,t)=>{topBox(w,h,t,N(39),'AOÛT 2014','MINISTRE DE L’ÉCONOMIE',70);band(-250,t,N(40)+.6,'LE BANQUIER À BERCY',64);}});
 const cMel=add({k:'clip',full:1,img:'melenchon',handle:IMC('melenchon'),badge:'JEAN-LUC MÉLENCHON',w:900,h:1050,rot:-1.5,t0:N(41),
   after:(w,h,t)=>{topBox(w,h,t,N(41),'18 OCTOBRE 2014 · FRANCE 2','« ON N’EST PAS COUCHÉ »',62);stampAt('« DÉSASTRE »',0,60,110,t,N(42)+.7,-.08);}});
-const cPres=add({k:'clip',full:1,img:'macron2017',handle:IMC('macron2017'),badge:'EMMANUEL MACRON',w:900,h:1000,rot:1.5,t0:N(43),
+const cPres=add({k:'clip',full:1,seq:[['amiens',N(43)-.4],['louvre',N(45)-.1]],handle:'Images : i24news (Amiens, 6/04/2016) · Le Monde (Louvre, 7/05/2017)',badge:'EMMANUEL MACRON',w:900,h:1000,rot:1.5,t0:N(43),
   after:(w,h,t)=>{band(-h/2+150,t,N(43),'2016 · EN MARCHE',60);band(-h/2+250,t,N(45),'2017 · PRÉSIDENT DE LA RÉPUBLIQUE',52,DK,AMB);}});
 const cD6=add({k:'proof',lab:'DOSSIER',n:6,l:'LE BILAN',w:880,h:760,rot:-2,t0:N(47)});
 const cDette=add({k:'dette',w:960,h:1000,rot:1.5,t0:N(49)});
@@ -155,29 +160,33 @@ function postit(w,h){ctx.save();ctx.translate(w/2-90,-h/2-75);ctx.rotate(.09);ct
   txt('3 500',0,10,'100px Anton','#2a2618','center',2);txt('MERCI.',0,75,'700 40px Mono','#2a2618','center',6);txt('— la ferme',50,118,'400 22px Mono','rgba(42,38,24,.75)','center');pin(0,-118);ctx.restore();}
 // source qui tient toujours dans la carte (règle d'Enidez du 20/10)
 function srcFit(s,w,h,dark){let sz=22;while(sz>14&&mw(s,'400 '+sz+'px Mono')>w-48)sz--;txt(s,w/2-24,h/2-18,'400 '+sz+'px Mono',dark?'rgba(27,28,26,.6)':'rgba(236,238,230,.62)','right');}
+// image d'un extrait vidéo à l'instant t (30 i/s, départ t0) ; null si pas d'extrait
+function VF(k,t,t0){const f=k&&window.CLIPS&&CLIPS[k];if(!f||!f.length)return null;return f[Math.min(f.length-1,Math.max(0,Math.floor((t-t0)*30)))];}
 function photo(im,x,y,pw,ph,gray,fx=.5){ctx.fillStyle='#000';ctx.fillRect(x-pw/2,y-ph/2,pw,ph);if(!im)return;ctx.save();ctx.beginPath();ctx.rect(x-pw/2,y-ph/2,pw,ph);ctx.clip();const s=Math.max(pw/im.width,ph/im.height);
   ctx.filter=gray?'grayscale(1) contrast(1.1)':'saturate(.85) contrast(1.06)';ctx.drawImage(im,x-pw/2-(im.width*s-pw)*fx,y-ph/2-(im.height*s-ph)*.25,im.width*s,im.height*s);ctx.restore();}
 function drawHook18(w,h,t){
-  const FRZ=MARK.frz,frz=t>=FRZ,im=IM.macron2015||IM.macron;
+  const FRZ=MARK.frz,frz=t>=FRZ,H1=SEGS[ID.h1].t0,pyro=t>=H1,im=VF('hook',t,0)||IM.macron2015;
   ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
-  if(im){const zb=frz?1.12+.01*(t-FRZ):1.02+.03*t;const s=Math.max(w/im.width,h/im.height)*zb;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
-    ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.7)':'contrast(1.06) brightness(.9)';ctx.drawImage(im,-im.width*s/2,-h/2-(im.height*s-h)*.2,im.width*s,im.height*s);ctx.restore();}
+  if(im){const zb=frz?1.16+.01*(t-FRZ):1.04+.02*t;const s=Math.max(w/im.width,h/im.height)*zb;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
+    ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.7)':pyro?'grayscale(.5) sepia(.5) saturate(2.2) hue-rotate(-18deg) contrast(1.2) brightness(.8)':'contrast(1.06) brightness(.9)';ctx.drawImage(im,-im.width*s/2,-h/2-(im.height*s-h)*.3,im.width*s,im.height*s);ctx.restore();
+    if(pyro&&!frz){ctx.save();ctx.globalAlpha=.25+.08*Math.sin(t*23);ctx.fillStyle='#c9302c';ctx.fillRect(-w/2,-h/2,w,h);ctx.restore();}}
   {const g=ctx.createLinearGradient(0,-h/2+h*.42,0,-h/2+h*.66);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.9)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.42,w,h*.58);}
   {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+380);g.addColorStop(0,'rgba(0,0,0,.75)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,380);}
   txt('LE DOSSIER · EMMANUEL MACRON',0,-h/2+320,'700 28px Mono','rgba(236,238,230,.85)','center',4);
-  txt(IMC('macron2015'),0,-h/2+1500,'400 18px Mono','rgba(236,238,230,.6)','center',2);
+  txt('Images : Le Monde, Louvre, 7 mai 2017',0,-h/2+1500,'400 18px Mono','rgba(236,238,230,.6)','center',2);
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.7-.7*q;const sh=t<ta+.22?(1-lin(t,ta,ta+.22))*12:0;ctx.save();ctx.translate(Math.sin(t*90)*sh,y+Math.cos(t*77)*sh);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
-  if(!frz)txt('« LE BANQUIER QUI ALLAIT',0,-h/2+1160,'86px Anton',INK,'center',2,lin(t,.1,.4)),txt('REDRESSER LA FRANCE »',0,-h/2+1260,'86px Anton',AMB,'center',2,lin(t,.6,.9));
+  if(!pyro)txt('LE BANQUIER QUI DEVAIT',0,-h/2+1160,'86px Anton',INK,'center',2,lin(t,.1,.4)),txt('SAUVER LA FRANCE…',0,-h/2+1260,'86px Anton',AMB,'center',2,lin(t,.6,.9));
+  if(pyro&&!frz){sl('ET SI C’ÉTAIT LUI,',-h/2+1140,'92px Anton',INK,H1,2,12);sl('LE PYROMANE ?',-h/2+1270,'130px Anton',RED,H1+.75,3,18);}
   if(frz){sl('D’OÙ',-h/2+1130,'250px Anton',INK,FRZ,6,18);sl('IL VIENT.',-h/2+1360,'250px Anton',RED,FRZ+.12,6,14);}
-  if(t>=3.1)txt('SIX DOSSIERS · TOUT EST SOURCÉ',0,-h/2+1450,'700 32px Mono',AMB,'center',3,lin(t,3.1,3.3));
+  if(t>=N(1)-.2)txt('SIX DOSSIERS · TOUT EST SOURCÉ',0,-h/2+1450,'700 32px Mono',AMB,'center',3,lin(t,N(1)-.2,N(1)));
 }
 function cardExtra(c,t,w,h){
   if(c.k==='duo'){framePaper(w,h,'rgba(30,32,30,.95)');txt(c.title,0,-h/2+100,'70px Anton',INK,'center',3);
-    const pw=w/2-60,ph=h-330,X=[-w/4,w/4];[[c.a,c.la,c.ta,X[0],c.sa,c.fxa],[c.b,c.lb,c.tb,X[1],c.sb,c.fxb]].forEach(([k,l,t0,x,sub,fx])=>{if(t<t0-.05)return;const q=eo(lin(t,t0-.05,t0+.25));ctx.save();ctx.globalAlpha*=q;photo(IM[k],x,-h/2+150+ph/2,pw,ph,1,fx??.5);
+    const pw=w/2-60,ph=h-330,X=[-w/4,w/4];[[c.a,c.la,c.ta,X[0],c.sa,c.fxa,c.va],[c.b,c.lb,c.tb,X[1],c.sb,c.fxb,c.vb]].forEach(([k,l,t0,x,sub,fx,vk])=>{if(t<t0-.05)return;const q=eo(lin(t,t0-.05,t0+.25));ctx.save();ctx.globalAlpha*=q;photo(VF(vk,t,t0-.05)||IM[k],x,-h/2+150+ph/2,pw,ph,vk?0:1,fx??.5);
       ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=3;ctx.strokeRect(x-pw/2,-h/2+150,pw,ph);txt(l,x,-h/2+190+ph,'44px Anton',INK,'center',2);if(sub){let z=20;while(z>12&&mw(sub,'700 '+z+'px Mono')>pw)z--;txt(sub,x,-h/2+222+ph,'700 '+z+'px Mono',AMB,'center');}ctx.restore();});
     if(c.bandS)band(-h/2+150+ph-60,t,c.bandT,c.bandS,44,DK,AMB);
     if(c.stampS)stampAt(c.stampS,0,-h/2+260,84,t,c.stampT,-.07);
-    srcFit([IMC(c.a),IMC(c.b)].filter(Boolean).join(' · '),w,h);return 1;}
+    srcFit(c.vsrc||[IMC(c.a),IMC(c.b)].filter(Boolean).join(' · '),w,h);return 1;}
   if(c.k==='doc'){framePaper(w,h,PAPERC);txt(c.hd,0,-h/2+95,'700 30px Mono','rgba(27,28,26,.7)','center',3);
     {let z=150;while(z>60&&mw(c.big,z+'px Anton',2)>w-80)z-=6;txt(c.big,0,-h/2+280,z+'px Anton',INKD,'center',2);}
     txt(c.l2,0,-h/2+370,'64px Anton',PINK,'center',2,lin(t,c.t0+.3,c.t0+.5));
@@ -242,8 +251,8 @@ function drawCard(c,t){
     {let sz=96;while(sz>50&&mw(c.l,sz+'px Anton',3)>w-70)sz-=4;txt(c.l,0,-h/2+620,sz+'px Anton',INK,'center',3,lin(t,c.t0+.3,c.t0+.5),12);}}
   else if(c.k==='outro'){framePaper(w,h);txt('D’OÙ',0,-230,'130px Anton',INK,'center',4,1,24);txt('IL VIENT.',0,-60,'150px Anton',PINK,'center',4,1,24);txt('LA FERME · LE DOSSIER',0,30,'700 30px Mono','rgba(236,238,230,.6)','center',6);
     txt('ABONNE-TOI',0,210,'70px Anton',INK,'center',4,1,16);txt('ILS PARLENT À TA PLACE.',0,290,'700 32px Mono',AMB,'center',3);txt('NOUS, ON VÉRIFIE.',0,340,'700 32px Mono',AMB,'center',3);}
-  else if(c.k==='clip'){framePaper(w,h,'rgba(230,232,224,.88)');const fr=c.img?[IM[c.img]]:((window.CLIPS&&CLIPS[c.clip])||[]);
-    const fi=c.sync!=null?Math.floor((t-c.sync)*30):Math.floor((t-c.t0+.3)*30);const im=fr[Math.min(fr.length-1,Math.max(0,fi))];const pw=w-50,ph=h-170;
+  else if(c.k==='clip'){framePaper(w,h,'rgba(230,232,224,.88)');let ck=c.clip,cs=c.sync;if(c.seq)c.seq.forEach(([k,ts])=>{if(t>=ts){ck=k;cs=ts;}});const fr=c.img?[IM[c.img]]:((window.CLIPS&&CLIPS[ck])||[]);
+    const fi=cs!=null?Math.floor((t-cs)*30):Math.floor((t-c.t0+.3)*30);const im=fr[Math.min(fr.length-1,Math.max(0,fi))];const pw=w-50,ph=h-170;
     ctx.fillStyle='#000';ctx.fillRect(-pw/2,-h/2+25,pw,ph);if(im){ctx.save();ctx.beginPath();ctx.rect(-pw/2,-h/2+25,pw,ph);ctx.clip();const age=Math.max(0,t-c.t0);const s=Math.max(pw/im.width,ph/im.height)*(1.02+age*.01);ctx.filter=c.gray?'grayscale(1) contrast(1.12)':'saturate(.8) contrast(1.08)';ctx.drawImage(im,-im.width*s/2,-h/2+25+ph/2-im.height*s/2,im.width*s,im.height*s);ctx.restore();}
     if(c.after){ctx.save();c.after(w,h,t);ctx.restore();}
     txt(c.handle,-w/2+30,h/2-85,'700 28px Mono','#1b1c1a','left',1);
@@ -331,7 +340,7 @@ function subs2(t){const c=CHUNKS.find(c=>t>=c.t-.03&&t<c.e);if(!c)return;const p
   const w=ctx.measureText(c.txt).width;ctx.fillStyle='rgba(90,96,90,.45)';ctx.fillRect(-w/2-26,-74,w+52,96);ctx.strokeStyle='rgba(255,255,255,.55)';ctx.lineWidth=2;ctx.strokeRect(-w/2-26,-74,w+52,96);ctx.shadowColor='rgba(255,255,255,.5)';ctx.shadowBlur=14;ctx.fillStyle=c.m?'#FFC24A':'#f4f1e6';ctx.fillText(c.txt,0,0);ctx.restore();}
 
 // ---------- sons
-reveal(MARK.frz,1.3);ev(MARK.frz,'hit');ev(MARK.tcov-.1,'whoosh');
+ev(SEGS[ID.h1].t0,'hit');ev(SEGS[ID.h1].t0+.75,'thud');reveal(MARK.frz,1.3);ev(MARK.frz,'hit');ev(MARK.tcov-.1,'whoosh');
 KEYS.forEach(k=>{if(k.t>MARK.tcov+.1)ev(k.t-.5,'whoosh');});
 C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 [N(3),N(10),N(14),N(23),N(37),N(47)].forEach(x=>reveal(x,1.1));

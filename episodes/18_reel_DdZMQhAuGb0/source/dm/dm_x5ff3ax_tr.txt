@@ -1,0 +1,6 @@
+(2.47,3.74,"Je suis devenu fonctionnaire."),
+(4.80,5.28,"banquiers"),
+(6.60,8.51,"Certains ou certaines me l'ont parfois reproché."),
+(9.24,9.86,"Chant de la"),
+(10.63,11.22,"Mais je n'"),
+(12.25,16.16,"J'ai rien..."),

@@ -1,28 +1,32 @@
 // source qui tient toujours dans la carte (règle d'Enidez du 20/10)
 function srcFit(s,w,h,dark){let sz=22;while(sz>14&&mw(s,'400 '+sz+'px Mono')>w-48)sz--;txt(s,w/2-24,h/2-18,'400 '+sz+'px Mono',dark?'rgba(27,28,26,.6)':'rgba(236,238,230,.62)','right');}
+// image d'un extrait vidéo à l'instant t (30 i/s, départ t0) ; null si pas d'extrait
+function VF(k,t,t0){const f=k&&window.CLIPS&&CLIPS[k];if(!f||!f.length)return null;return f[Math.min(f.length-1,Math.max(0,Math.floor((t-t0)*30)))];}
 function photo(im,x,y,pw,ph,gray,fx=.5){ctx.fillStyle='#000';ctx.fillRect(x-pw/2,y-ph/2,pw,ph);if(!im)return;ctx.save();ctx.beginPath();ctx.rect(x-pw/2,y-ph/2,pw,ph);ctx.clip();const s=Math.max(pw/im.width,ph/im.height);
   ctx.filter=gray?'grayscale(1) contrast(1.1)':'saturate(.85) contrast(1.06)';ctx.drawImage(im,x-pw/2-(im.width*s-pw)*fx,y-ph/2-(im.height*s-ph)*.25,im.width*s,im.height*s);ctx.restore();}
 function drawHook18(w,h,t){
-  const FRZ=MARK.frz,frz=t>=FRZ,im=IM.macron2015||IM.macron;
+  const FRZ=MARK.frz,frz=t>=FRZ,H1=SEGS[ID.h1].t0,pyro=t>=H1,im=VF('hook',t,0)||IM.macron2015;
   ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
-  if(im){const zb=frz?1.12+.01*(t-FRZ):1.02+.03*t;const s=Math.max(w/im.width,h/im.height)*zb;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
-    ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.7)':'contrast(1.06) brightness(.9)';ctx.drawImage(im,-im.width*s/2,-h/2-(im.height*s-h)*.2,im.width*s,im.height*s);ctx.restore();}
+  if(im){const zb=frz?1.16+.01*(t-FRZ):1.04+.02*t;const s=Math.max(w/im.width,h/im.height)*zb;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
+    ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.7)':pyro?'grayscale(.5) sepia(.5) saturate(2.2) hue-rotate(-18deg) contrast(1.2) brightness(.8)':'contrast(1.06) brightness(.9)';ctx.drawImage(im,-im.width*s/2,-h/2-(im.height*s-h)*.3,im.width*s,im.height*s);ctx.restore();
+    if(pyro&&!frz){ctx.save();ctx.globalAlpha=.25+.08*Math.sin(t*23);ctx.fillStyle='#c9302c';ctx.fillRect(-w/2,-h/2,w,h);ctx.restore();}}
   {const g=ctx.createLinearGradient(0,-h/2+h*.42,0,-h/2+h*.66);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.9)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.42,w,h*.58);}
   {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+380);g.addColorStop(0,'rgba(0,0,0,.75)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,380);}
   txt('LE DOSSIER · EMMANUEL MACRON',0,-h/2+320,'700 28px Mono','rgba(236,238,230,.85)','center',4);
-  txt(IMC('macron2015'),0,-h/2+1500,'400 18px Mono','rgba(236,238,230,.6)','center',2);
+  txt('Images : Le Monde, Louvre, 7 mai 2017',0,-h/2+1500,'400 18px Mono','rgba(236,238,230,.6)','center',2);
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.7-.7*q;const sh=t<ta+.22?(1-lin(t,ta,ta+.22))*12:0;ctx.save();ctx.translate(Math.sin(t*90)*sh,y+Math.cos(t*77)*sh);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
-  if(!frz)txt('« LE BANQUIER QUI ALLAIT',0,-h/2+1160,'86px Anton',INK,'center',2,lin(t,.1,.4)),txt('REDRESSER LA FRANCE »',0,-h/2+1260,'86px Anton',AMB,'center',2,lin(t,.6,.9));
+  if(!pyro)txt('LE BANQUIER QUI DEVAIT',0,-h/2+1160,'86px Anton',INK,'center',2,lin(t,.1,.4)),txt('SAUVER LA FRANCE…',0,-h/2+1260,'86px Anton',AMB,'center',2,lin(t,.6,.9));
+  if(pyro&&!frz){sl('ET SI C’ÉTAIT LUI,',-h/2+1140,'92px Anton',INK,H1,2,12);sl('LE PYROMANE ?',-h/2+1270,'130px Anton',RED,H1+.75,3,18);}
   if(frz){sl('D’OÙ',-h/2+1130,'250px Anton',INK,FRZ,6,18);sl('IL VIENT.',-h/2+1360,'250px Anton',RED,FRZ+.12,6,14);}
-  if(t>=3.1)txt('SIX DOSSIERS · TOUT EST SOURCÉ',0,-h/2+1450,'700 32px Mono',AMB,'center',3,lin(t,3.1,3.3));
+  if(t>=N(1)-.2)txt('SIX DOSSIERS · TOUT EST SOURCÉ',0,-h/2+1450,'700 32px Mono',AMB,'center',3,lin(t,N(1)-.2,N(1)));
 }
 function cardExtra(c,t,w,h){
   if(c.k==='duo'){framePaper(w,h,'rgba(30,32,30,.95)');txt(c.title,0,-h/2+100,'70px Anton',INK,'center',3);
-    const pw=w/2-60,ph=h-330,X=[-w/4,w/4];[[c.a,c.la,c.ta,X[0],c.sa,c.fxa],[c.b,c.lb,c.tb,X[1],c.sb,c.fxb]].forEach(([k,l,t0,x,sub,fx])=>{if(t<t0-.05)return;const q=eo(lin(t,t0-.05,t0+.25));ctx.save();ctx.globalAlpha*=q;photo(IM[k],x,-h/2+150+ph/2,pw,ph,1,fx??.5);
+    const pw=w/2-60,ph=h-330,X=[-w/4,w/4];[[c.a,c.la,c.ta,X[0],c.sa,c.fxa,c.va],[c.b,c.lb,c.tb,X[1],c.sb,c.fxb,c.vb]].forEach(([k,l,t0,x,sub,fx,vk])=>{if(t<t0-.05)return;const q=eo(lin(t,t0-.05,t0+.25));ctx.save();ctx.globalAlpha*=q;photo(VF(vk,t,t0-.05)||IM[k],x,-h/2+150+ph/2,pw,ph,vk?0:1,fx??.5);
       ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=3;ctx.strokeRect(x-pw/2,-h/2+150,pw,ph);txt(l,x,-h/2+190+ph,'44px Anton',INK,'center',2);if(sub){let z=20;while(z>12&&mw(sub,'700 '+z+'px Mono')>pw)z--;txt(sub,x,-h/2+222+ph,'700 '+z+'px Mono',AMB,'center');}ctx.restore();});
     if(c.bandS)band(-h/2+150+ph-60,t,c.bandT,c.bandS,44,DK,AMB);
     if(c.stampS)stampAt(c.stampS,0,-h/2+260,84,t,c.stampT,-.07);
-    srcFit([IMC(c.a),IMC(c.b)].filter(Boolean).join(' · '),w,h);return 1;}
+    srcFit(c.vsrc||[IMC(c.a),IMC(c.b)].filter(Boolean).join(' · '),w,h);return 1;}
   if(c.k==='doc'){framePaper(w,h,PAPERC);txt(c.hd,0,-h/2+95,'700 30px Mono','rgba(27,28,26,.7)','center',3);
     {let z=150;while(z>60&&mw(c.big,z+'px Anton',2)>w-80)z-=6;txt(c.big,0,-h/2+280,z+'px Anton',INKD,'center',2);}
     txt(c.l2,0,-h/2+370,'64px Anton',PINK,'center',2,lin(t,c.t0+.3,c.t0+.5));

@@ -1,0 +1,4 @@
+(0.00,2.01,"Le banquier qui devait sauver la France."),
+(2.43,3.23,"Et si c'était"),
+(3.50,4.31,"le pire Roman."),
+(4.75,5.57,"Regarde où il vient."),
