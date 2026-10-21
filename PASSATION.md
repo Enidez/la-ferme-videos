@@ -139,6 +139,7 @@ Le générique de fin « ferme-la » (réplique de film + logo animé) est ajout
 - Étapes suivantes : validation du script → voix Paul → aperçu intro → rendu.
 
 ### Idées en attente
+- **Nouvelle chaîne J+1** (validée par Enidez le 21/10/2026) : simulations de catastrophes réalistes, heure par heure, avec les gestes qui sauvent. Doc de présentation : https://claude.ai/artifact/AjprzaJASsckZUVNhAkxad. DA : moteur 3D du tableau, décor « salle de crise » (carte de France, horloge H+). Voix proposée : Liam. Premier épisode conseillé : « 72 heures sans courant ». Comptes à créer le 22/10 (rappel programmé).
 - **LE PLAN · Jour 2 / 3** (le compteur : interdictions vs mesures sur les prix).
 - **Récit vs Réel « Un mort à l'Élysée ? »** (rumeur Blast/X du 17/10 → NON PROUVÉ).
 - **L'Autre Angle « Aux lycéens : retournez travailler »** (Reel 12 k j'aime ; identifier l'élu par la légende du Reel).
