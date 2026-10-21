@@ -1,0 +1,214 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF;}
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Mono;font-weight:400;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Mono;font-weight:700;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2) format('woff2');}
+html,body{margin:0;background:#05070b}canvas{display:block}#g{position:absolute;left:-9999px}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body><canvas id="c" width="1080" height="1920"></canvas><canvas id="g" width="1080" height="1920"></canvas>
+<script src="../../assets/geo/departements.js"></script>
+<script src="../../assets/models/plastic_bottle_gallon.js"></script>
+<script src="../../assets/models/plastic_jerrycan.js"></script>
+<script src="../../assets/models/metal_jerrycan_green.js"></script>
+<script src="../../assets/models/vintage_radio_transceiver.js"></script>
+<script src="../../assets/models/long_life_food.js"></script>
+<script src="../../assets/models/russian_food_cans_01.js"></script>
+<script src="../../assets/models/Lantern_01.js"></script>
+<script src="../../assets/models/wall_clock.js"></script>
+<script src="segs.js"></script>
+<script type="module">
+// ============ J+1 · chapitre 1 « PANNE GÉANTE » — carte de France 3D (la panne) + table de survie de Sam (objets Poly Haven CC0) + HUD
+// renderFrame(f) déterministe, contrat de tools/render.py (window.ready, DURATION, EVENTS)
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+const W=1080,H=1920,FPS=30;const N=k=>SEGS[ID['n'+k]].t0,NE=k=>SEGS[ID['n'+k]].t1;
+const VEND=SEGS[SEGS.length-1].t1+.35,DUR=VEND+3.8;window.DURATION=DUR;
+const lin=(t,a,b)=>Math.max(0,Math.min(1,(t-a)/(b-a))),eo=x=>1-Math.pow(1-x,3),eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,mix=(a,b,k)=>a+(b-a)*k;
+const gv=document.getElementById('g'),ctx=document.getElementById('c').getContext('2d');
+const R=new THREE.WebGLRenderer({canvas:gv,antialias:true,preserveDrawingBuffer:true});R.setSize(W,H,false);R.setPixelRatio(1);R.toneMapping=THREE.ACESFilmicToneMapping;R.outputColorSpace=THREE.SRGBColorSpace;R.shadowMap.enabled=true;
+const RED='#ff3a2e',AMB='#ffb21e',INK='#f2f0e8',CY='#7fc3e6';
+// ---------------- les scènes (temps = début des phrases)
+const T={A:0,B:N(3)-.15,C:N(8)-.15,D:N(13)-.15,E:N(18)-.15,F:N(23)-.15,G:N(30)-.15,G2:N(32)-.15,Hk:N(34)-.15,I:N(36)-.15};
+const SC=[['A',T.A,'map'],['B',T.B,'map'],['C',T.C,'map'],['D',T.D,'table'],['E',T.E,'table'],['F',T.F,'table'],['G',T.G,'map'],['G2',T.G2,'table'],['Hk',T.Hk,'table'],['I',T.I,'none']];
+const scAt=t=>{let s=SC[0];for(const x of SC)if(t>=x[1])s=x;return s;};
+// ---------------- sons
+const EV=[];const ev=(t,s)=>EV.push([+t.toFixed(2),s]);window.EVENTS=EV;
+ev(.25,'boom');ev(3.95,'hit');SC.slice(1).forEach(s=>ev(s[1]-.3,'whoosh'));
+ev(N(6),'tick');ev(N(11)+.1,'thud');ev(N(12)+.15,'thud');ev(N(14)+.4,'tick');ev(N(14)+1.2,'tick');ev(N(16)+.5,'thud');
+for(let k=0;k<8;k++)ev(N(20)+k*.18,'tick');ev(N(21),'zap');ev(N(22)+.4,'click');ev(N(25)+.3,'tick');ev(N(27)+.2,'tick');ev(N(28)+.3,'thud');
+ev(N(30),'boom');ev(N(33)+.3,'tick');ev(N(34)-1.3,'riser');[0,.42,.84].forEach(d=>ev(NE(35)-.2+d,'thud'));ev(T.I+.1,'hit');ev(VEND+.3,'boom');
+// ---------------- carte
+const SM=new THREE.Scene();SM.background=new THREE.Color('#04060a');SM.fog=new THREE.Fog('#04060a',20,48);
+const CM=new THREE.PerspectiveCamera(36,W/H,.1,200);SM.add(new THREE.HemisphereLight('#9fb8d8','#0a0c10',.55));
+const sunM=new THREE.DirectionalLight('#ffe2bd',1.6);sunM.position.set(-8,14,10);SM.add(sunM);
+const grid=new THREE.GridHelper(80,80,'#1a2c40','#0d1722');grid.position.y=-.02;SM.add(grid);
+const L0=2.4,P0=46.6,KK=Math.cos(P0*Math.PI/180),SCL=1.05,pr=([lo,la])=>new THREE.Vector2((lo-L0)*KK*SCL,-(la-P0)*SCL);
+const p3=(lo,la)=>{const v=pr([lo,la]);return new THREE.Vector3(v.x,.2,v.y);};
+const LYON=p3(4.835,45.764),PARIS=p3(2.35,48.86),SUD=p3(-1.2,42.6);
+const DEP=[];
+// ---------------- table de survie
+const ST=new THREE.Scene();ST.background=new THREE.Color('#06080c');ST.fog=new THREE.Fog('#06080c',8,22);
+const CT=new THREE.PerspectiveCamera(32,W/H,.05,100);
+const hemT=new THREE.HemisphereLight('#a9c4e0','#0b0d12',.6);ST.add(hemT);
+const day=new THREE.DirectionalLight('#cfe3ff',2.4);day.position.set(-4,7,3);day.castShadow=true;day.shadow.mapSize.set(1024,1024);day.shadow.camera.left=-8;day.shadow.camera.right=8;day.shadow.camera.top=6;day.shadow.camera.bottom=-6;ST.add(day);
+const lamp=new THREE.PointLight('#ffae55',0,9,1.6);lamp.castShadow=true;ST.add(lamp);
+const OBJ={};const GL=new GLTFLoader();
+const put=async(id,x,z,h,ry=0)=>{const g=await new Promise((ok,ko)=>GL.parse(JSON.stringify(window.MODELS[id]),'',ok,ko));const o=g.scene;
+  const b=new THREE.Box3().setFromObject(o),sz=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3());const k=h/sz.y;o.scale.setScalar(k);o.position.set(x-c.x*k,-b.min.y*k,z-c.z*k);o.rotation.y=ry;
+  o.traverse(m=>{if(m.isMesh){m.castShadow=true;m.receiveShadow=true;}});const grp=new THREE.Group();grp.add(o);ST.add(grp);OBJ[id]={grp,x,z,h};return grp;};
+const ease=(t,a)=>eo(lin(t,a,a+.45));
+window.ready=(async()=>{
+  await Promise.all([document.fonts.load('80px Anton'),document.fonts.load('700 30px Mono'),document.fonts.load('400 30px Mono')]);
+  for(const f of GEO_DEPARTEMENTS.features){const polys=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;
+    const sh=polys.map(p=>{const s=new THREE.Shape(p[0].map(pr));p.slice(1).forEach(h=>s.holes.push(new THREE.Path(h.map(pr))));return s;});
+    const geo=new THREE.ExtrudeGeometry(sh,{depth:.18,bevelEnabled:false});geo.rotateX(Math.PI/2);geo.translate(0,.18,0);geo.computeBoundingBox();const c=new THREE.Vector3();geo.boundingBox.getCenter(c);
+    const mat=new THREE.MeshStandardMaterial({color:'#2b3d52',roughness:.65,metalness:.15,emissive:'#000'});const m=new THREE.Mesh(geo,mat);SM.add(m);
+    const ed=new THREE.LineSegments(new THREE.EdgesGeometry(geo,30),new THREE.LineBasicMaterial({color:CY,transparent:true,opacity:.4}));SM.add(ed);
+    DEP.push({code:f.properties.code,m,mat,ed,c,ds:c.distanceTo(SUD),dl:c.distanceTo(LYON),rnd:(parseInt(f.properties.code,36)%17)/17});}
+  // table : plateau sombre + objets (positions le long de x ; la caméra va d'un groupe à l'autre)
+  const tx=new THREE.TextureLoader();const dif=tx.load('../../assets/textures/concrete_floor/concrete_floor_diff_1k.jpg');dif.wrapS=dif.wrapT=THREE.RepeatWrapping;dif.repeat.set(6,3);dif.colorSpace=THREE.SRGBColorSpace;
+  const floor=new THREE.Mesh(new THREE.PlaneGeometry(30,14),new THREE.MeshStandardMaterial({map:dif,color:'#6d7480',roughness:.9}));floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;ST.add(floor);
+  const wall=new THREE.Mesh(new THREE.PlaneGeometry(30,10),new THREE.MeshStandardMaterial({color:'#1a1f27',roughness:1}));wall.position.set(0,5,-2.6);wall.receiveShadow=true;ST.add(wall);
+  await put('plastic_bottle_gallon',-6.6,0,1.1,.3);await put('plastic_jerrycan',-5.3,-.4,1.2,-.4);await put('metal_jerrycan_green',-4.0,.2,1.15,.5);
+  await put('vintage_radio_transceiver',-.3,0,.95,-.35);
+  await put('long_life_food',3.6,0,1.0,.2);await put('russian_food_cans_01',4.9,.3,.55,-.3);
+  await put('Lantern_01',8.6,0,1.0,0);await put('wall_clock',7.2,-2.5,1.0,0);OBJ.wall_clock.grp.children[0].position.y+=2.2;
+  lamp.position.set(8.6,1.0,.2);
+  // l'image de fond « grain » (fixe, décalée à chaque image)
+  NOISE=document.createElement('canvas');NOISE.width=NOISE.height=256;const nc=NOISE.getContext('2d'),id=nc.createImageData(256,256);let s=7;for(let i=0;i<id.data.length;i+=4){s=(s*16807)%2147483647;const v=s%255;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=22;}nc.putImageData(id,0,0);
+  BUILD();
+})();
+let NOISE,FXM,FXT;
+function BUILD(){FXM=new EffectComposer(R);FXM.setSize(W,H);FXM.addPass(new RenderPass(SM,CM));FXM.addPass(new UnrealBloomPass(new THREE.Vector2(W,H),.7,.55,.3));FXM.addPass(new OutputPass());
+  FXT=new EffectComposer(R);FXT.setSize(W,H);FXT.addPass(new RenderPass(ST,CT));FXT.addPass(new UnrealBloomPass(new THREE.Vector2(W,H),.45,.5,.6));FXT.addPass(new OutputPass());}
+// ---------------- état de la carte (lumières des villes qui s'éteignent)
+const LIT=new THREE.Color('#ffb54a'),BASE=new THREE.Color('#2b3d52'),DARK=new THREE.Color('#121a24'),REDC=new THREE.Color(RED);
+function mapState(t){
+  const wave=(t-.25)*5.2;   // la panne part du sud-ouest (l'Espagne) et avale le pays en ~3 s
+  DEP.forEach(d=>{let lit=1-lin(wave-d.ds,-.6,.6);
+    if(t>=T.B&&t<T.D)lit=0;                       // tout est noir
+    let col=BASE.clone().lerp(DARK,1-lit),em=LIT.clone().multiplyScalar(lit*(.55+.25*Math.sin(d.rnd*40+t*3)));
+    const edge=lin(wave-d.ds,-.6,0)*(1-lin(wave-d.ds,0,1.2));em.add(REDC.clone().multiplyScalar(edge*.9));
+    if(t>=T.C&&t<T.D&&d.dl<1.1){const p=.5+.5*Math.sin(t*5);em.add(REDC.clone().multiplyScalar(.25*p*lin(t,N(13)-.4,N(13))));}
+    if(t>=T.G){col=DARK.clone();em=new THREE.Color(0,0,0);}
+    d.mat.color.copy(col);d.mat.emissive.copy(em);d.ed.material.color.set(lit>.5?'#ffcf8a':CY);d.ed.material.opacity=.18+.3*lit;});
+  // caméra
+  let pos,look;
+  if(t<T.B){const k=eio(lin(t,0,T.B));pos=new THREE.Vector3(mix(.3,-.2,k),mix(27,21,k),mix(11,10,k));look=new THREE.Vector3(0,0,mix(.4,.8,k));}
+  else if(t<T.C){const k=eio(lin(t,T.B,T.C));pos=new THREE.Vector3(mix(-2.5,-3.4,k),mix(13,11,k),mix(12,10.5,k));look=new THREE.Vector3(-1.5,0,4.2);}
+  else if(t<T.D){const k=eio(lin(t,T.C,T.D));pos=new THREE.Vector3(mix(3,LYON.x+.4,k),mix(13,5.2,k),mix(9,LYON.z+5.2,k));look=new THREE.Vector3(mix(1.5,LYON.x,k),0,mix(1.5,LYON.z,k));}
+  else{const k=eio(lin(t,T.G,T.G2));pos=new THREE.Vector3(mix(.4,0,k),mix(30,26,k),mix(12,10,k));look=new THREE.Vector3(0,0,.6);}
+  CM.position.copy(pos);CM.lookAt(look);sunM.intensity=t>=T.G?.15:1.6;
+}
+// ---------------- état de la table (objets qui apparaissent, la lumière du jour qui baisse)
+const pop=(id,t0,t)=>{const o=OBJ[id];if(!o)return;const k=t0==null?1:eo(lin(t,t0,t0+.4));o.grp.visible=k>0;o.grp.scale.setScalar(Math.max(.001,k*(1+.08*Math.sin(Math.min(1,lin(t,t0,t0+.4))*Math.PI))));o.grp.position.y=(1-k)*.6;};
+function tableState(t){
+  pop('plastic_bottle_gallon',N(14)+.2,t);pop('plastic_jerrycan',N(14)+.7,t);pop('metal_jerrycan_green',N(14)+1.2,t);
+  pop('vintage_radio_transceiver',T.E+.2,t);pop('long_life_food',T.F+.3,t);pop('russian_food_cans_01',N(28)+.2,t);pop('Lantern_01',T.G2+.1,t);pop('wall_clock',T.G2+.5,t);
+  const nightK=lin(t,T.F,T.G2);day.intensity=mix(2.4,.0,nightK);hemT.intensity=mix(.6,.08,nightK);day.color.set(t<T.F?'#cfe3ff':'#ffd6a8');
+  const fl=t>=T.G2?(.85+.15*Math.sin(t*17)*Math.sin(t*7.3)):0;lamp.intensity=t>=T.G2?mix(0,14,eo(lin(t,T.G2+.1,T.G2+.8)))*fl*(t>=T.Hk?mix(1,.55,lin(t,T.Hk,N(35))):1):0;
+  // radio allumée
+  const rad=OBJ.vintage_radio_transceiver;if(rad)rad.grp.traverse(m=>{if(m.isMesh&&m.material&&m.material.emissive){m.material.emissive.set('#000');}});
+  // caméra : un plan par groupe d'objets, léger travelling
+  const shot=(x,dz,y,a)=>{const k=lin(t,a,a+6);CT.position.set(x-1.4+1.0*k,y,7.4+dz-.7*k);CT.lookAt(x,.35,0);};
+  if(t<T.E)shot(-5.3,.4,1.9,T.D);else if(t<T.F)shot(-.3,-.6,1.5,T.E);else if(t<T.G)shot(4.2,-.2,1.6,T.F);
+  else{const k=lin(t,T.G2,T.I);CT.position.set(8.0+.5*k,1.55-.25*k,3.6-1.2*k);CT.lookAt(8.4,.7,-.4);}
+}
+// ---------------- 2D : textes, HUD, sous-titres
+function txt(s,x,y,f,c,al='left',ls=0,a=1,glow=0){ctx.save();ctx.globalAlpha*=a;ctx.font=f;ctx.fillStyle=c;ctx.textAlign=al;ctx.textBaseline='alphabetic';if(ls)ctx.letterSpacing=ls+'px';if(glow){ctx.shadowColor=c;ctx.shadowBlur=glow;}ctx.fillText(s,x,y);ctx.restore();}
+const mw=(s,f,ls=0)=>{ctx.save();ctx.font=f;if(ls)ctx.letterSpacing=ls+'px';const w=ctx.measureText(s).width;ctx.restore();return w;};
+function panel(x,y,w,h,a=1,col='rgba(8,11,16,.82)',edge=CY){ctx.save();ctx.globalAlpha*=a;ctx.fillStyle=col;ctx.fillRect(x-w/2,y,w,h);ctx.strokeStyle=edge;ctx.globalAlpha*=.6;ctx.lineWidth=2;ctx.strokeRect(x-w/2,y,w,h);
+  ctx.globalAlpha/=.6;ctx.fillStyle=edge;[[x-w/2,y],[x+w/2-26,y],[x-w/2,y+h-4],[x+w/2-26,y+h-4]].forEach(([a,b])=>ctx.fillRect(a,b,26,4));ctx.restore();}
+function stamp(s,x,y,sz,t,t0,rot=-.07,col=RED){if(t<t0)return;const q=eo(lin(t,t0,t0+.18));ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(1.8-.8*q,1.8-.8*q);ctx.globalAlpha*=q;ctx.font=sz+'px Anton';const w=ctx.measureText(s).width;
+  ctx.strokeStyle=col;ctx.lineWidth=8;ctx.strokeRect(-w/2-24,-sz*.9,w+48,sz*1.15);ctx.fillStyle=col;ctx.textAlign='center';ctx.fillText(s,0,sz*.08);ctx.restore();}
+const HK=[[0,0],[T.E,.2],[N(21),.4],[T.F,4],[T.G,12],[T.Hk,12.6],[DUR,12.7]];
+function hours(t){for(let i=0;i<HK.length-1;i++){const [a,va]=HK[i],[b,vb]=HK[i+1];if(t<b)return va+(vb-va)*lin(t,a,b)*(i===0?1:1);}return 12.7;}
+function hud(t){
+  const g=ctx.createLinearGradient(0,0,0,330);g.addColorStop(0,'rgba(0,0,0,.8)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,330);
+  const a=lin(t,4.6,5.2);if(a<=0)return;ctx.save();ctx.globalAlpha=a;
+  txt('J+1',60,215,'64px Anton',INK);txt('+',60+mw('J',' 64px Anton'),215,'64px Anton',AMB);txt('· PANNE GÉANTE',60+mw('J+1','64px Anton')+16,212,'40px Anton','rgba(242,240,232,.8)','left',2);
+  if(Math.floor(t*2)%2===0){ctx.fillStyle=RED;ctx.beginPath();ctx.arc(70,255,8,0,7);ctx.fill();}txt('SIMULATION · CHAPITRE 1',90,264,'700 22px Mono',RED,'left',4);
+  const hh=hours(t),h=Math.floor(hh),m=Math.floor((hh-h)*60);txt('H+'+h+':'+String(m).padStart(2,'0'),W-60,220,'700 60px Mono',AMB,'right',2,1,14);
+  // voyants : réseau, eau, frigo
+  const net=t<N(20)?4:t<N(21)?Math.ceil(4*(1-lin(t,N(20),N(21)))):0;const y=300;
+  txt('RÉSEAU',W-300,y,'700 20px Mono',net?INK:RED,'left',3);for(let i=0;i<4;i++){ctx.fillStyle=i<net?INK:'rgba(255,58,46,.35)';ctx.fillRect(W-170+i*22,y-8-i*7,14,8+i*7);}
+  const wat=t<N(14)?0:t<T.E?lin(t,N(14),N(15)):1;txt('EAU',W-300,y+40,'700 20px Mono',INK,'left',3);ctx.strokeStyle=CY;ctx.lineWidth=2;ctx.strokeRect(W-170,y+22,80,20);ctx.fillStyle=CY;ctx.fillRect(W-168,y+24,76*wat,16);
+  txt('COURANT',W-300,y+80,'700 20px Mono',RED,'left',3);txt(t<.6?'ON':'OFF',W-170,y+80,'700 20px Mono',t<.6?'#6be37a':RED,'left',3);
+  ctx.restore();
+}
+const CH=[];SEGS.forEach(s=>{const ws=s.txt.split(' ');const tot=ws.reduce((a,w)=>a+w.length+1,0);let acc=0;const dur=s.t1-s.t0;const wt=ws.map(w=>{const tt=s.t0+dur*acc/tot;acc+=w.length+1;return[w,tt];});
+  for(let i=0;i<wt.length;){let n=Math.min(3,wt.length-i);if(n==3&&wt[i][0].length+wt[i+1][0].length+wt[i+2][0].length>18)n=2;CH.push({m:s.m,txt:wt.slice(i,i+n).map(x=>x[0]).join(' ').toUpperCase(),t:wt[i][1]});i+=n;}});
+CH.forEach((c,i)=>{c.e=i<CH.length-1?Math.min(CH[i+1].t,c.t+1.6):c.t+1.2;});
+function subs(t){const c=CH.find(c=>t>=c.t-.03&&t<c.e);if(!c)return;const p=eo(lin(t,c.t-.03,c.t+.08));ctx.save();ctx.translate(540,1440);ctx.scale(.9+.1*p,.9+.1*p);ctx.globalAlpha=p;
+  let sz=78;while(sz>50&&mw(c.txt,sz+'px Anton')>940)sz-=4;ctx.font=sz+'px Anton';ctx.textAlign='center';const w=ctx.measureText(c.txt).width;ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(-w/2-24,-sz*.95,w+48,sz*1.25);
+  ctx.fillStyle=c.m?AMB:INK;ctx.shadowColor='rgba(0,0,0,.9)';ctx.shadowBlur=10;ctx.fillText(c.txt,0,0);ctx.restore();}
+const src=(s,t,a,b)=>{if(t<a||t>b)return;txt(s,W/2,1640,'400 22px Mono','rgba(242,240,232,.6)','center',1,lin(t,a,a+.3)*(1-lin(t,b-.3,b)));};
+function scene2D(t){
+  const sc=scAt(t)[0];
+  // A : titre
+  if(t>=3.85&&t<5.2){const q=eo(lin(t,3.85,4.05)),o=1-lin(t,4.9,5.2);ctx.save();ctx.globalAlpha=o;ctx.translate(540,860);ctx.scale(1.5-.5*q,1.5-.5*q);
+    ctx.fillStyle='rgba(4,6,10,.55)';ctx.fillRect(-540,-260,1080,420);txt('J',-170,40,'300px Anton',INK,'center',0,1,30);txt('+',-20,40,'300px Anton',AMB,'center',0,1,30);txt('1',140,40,'300px Anton',INK,'center',0,1,30);
+    txt('PANNE GÉANTE',0,130,'90px Anton',RED,'center',6,1,20);ctx.restore();}
+  // B : l'Espagne, 28 avril 2025
+  if(sc==='B'){const a=lin(t,T.B,T.B+.3);panel(540,560,900,560,a);txt('28 AVRIL 2025',540,680,'96px Anton',INK,'center',2,a);txt('ESPAGNE · PORTUGAL',540,760,'700 40px Mono',AMB,'center',4,a);
+    if(t>=N(5)){const q=lin(t,N(5),N(5)+.3);txt('12 H 33 : TOUT S’ÉTEINT',540,850,'60px Anton',RED,'center',2,q,12);}
+    if(t>=N(6)){const q=lin(t,N(6),N(6)+.3),n=Math.round(18*eo(lin(t,N(6),NE(7))));txt('≈ '+n+' H',540,1020,'150px Anton',AMB,'center',2,q,18);txt('POUR TOUT RALLUMER',540,1075,'700 30px Mono',INK,'center',4,q);}
+    src('Source : Red Eléctrica (REE), 28-29 avril 2025',t,T.B,T.C);}
+  // C : le magasin
+  if(sc==='C'){const a=lin(t,T.C,T.C+.3);panel(540,560,900,520,a);txt('PREMIER RÉFLEXE',540,660,'70px Anton',INK,'center',2,a);txt('LE MAGASIN',540,750,'90px Anton',AMB,'center',2,lin(t,N(9),N(9)+.25));
+    const card=(x,y,lab,t0)=>{if(t<N(10))return;const q=lin(t,N(10),N(10)+.3);ctx.save();ctx.globalAlpha*=q;ctx.fillStyle='#1b2533';ctx.strokeStyle=CY;ctx.lineWidth=3;ctx.beginPath();ctx.roundRect(x-150,y,300,180,18);ctx.fill();ctx.stroke();
+      ctx.fillStyle=AMB;ctx.fillRect(x-110,y+50,60,44);txt(lab,x,y+235,'700 30px Mono',INK,'center',3);ctx.restore();if(t>=t0){const k=eo(lin(t,t0,t0+.15));ctx.save();ctx.strokeStyle=RED;ctx.lineWidth=16;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x-120,y+10);ctx.lineTo(x-120+240*k,y+10+160*k);ctx.moveTo(x+120,y+10);ctx.lineTo(x+120-240*k,y+10+160*k);ctx.stroke();ctx.restore();}};
+    card(310,820,'CAISSE',N(11)+.1);card(770,820,'CARTE',N(12)+.15);
+    if(t>=N(13)-.4){}}
+  // C -> D : Sam à Lyon (épingle projetée sur la carte)
+  if(sc==='C'&&t>=N(13)-.8){const v=LYON.clone();v.y=.3;v.project(CM);const x=(v.x+1)/2*W,y=(1-v.y)/2*H,q=lin(t,N(13)-.8,N(13)-.5);ctx.save();ctx.globalAlpha=q;ctx.fillStyle=RED;ctx.beginPath();ctx.arc(x,y,14,0,7);ctx.fill();ctx.restore();}
+  // D : l'eau
+  if(sc==='D'){if(t<N(15)){const a=lin(t,T.D+.2,T.D+.5);panel(540,400,800,150,a);txt('SAM · LYON · 3E ÉTAGE',540,495,'64px Anton',INK,'center',2,a);
+      if(t>=N(14))[['BAIGNOIRE',N(14)+.3],['BOUTEILLES',N(14)+1.0]].forEach(([s,t0],i)=>{const q=lin(t,t0,t0+.25);panel(540,600+i*110,620,90,q,'rgba(8,11,16,.82)',CY);txt('✓  '+s+' PLEINES',540,662+i*110,'52px Anton',CY,'center',2,q);});}
+    else{const a=lin(t,N(15),N(15)+.3);panel(540,420,900,620,a);txt('L’EAU DU ROBINET',540,530,'72px Anton',INK,'center',2,a);txt('ARRIVE GRÂCE À DES POMPES',540,600,'700 34px Mono',AMB,'center',3,a);
+      if(t>=N(15)+1.6){const q=lin(t,N(15)+1.6,N(15)+1.9);txt('RÉSERVOIRS',540,720,'60px Anton',INK,'center',2,q);txt('12 À 24 H',540,850,'130px Anton',CY,'center',2,q,16);}
+      if(t>=N(16))stamp('PARFOIS QUELQUES MINUTES',540,975,58,t,N(16)+.4,-.05);
+      src('Sources : FP2E (fédération des distributeurs d’eau) · FNCCR',t,N(15),T.E);}}
+  // E : le téléphone
+  if(sc==='E'){const a=lin(t,T.E,T.E+.3);panel(540,420,860,560,a);txt('LES ANTENNES',540,530,'72px Anton',INK,'center',2,a);txt('BATTERIES DE SECOURS',540,600,'700 34px Mono',AMB,'center',3,a);
+    if(t>=N(20)-.2){const left=Math.max(0,20*(1-lin(t,N(20),N(21))));const m=Math.floor(left),s=Math.floor((left-m)*60);txt(String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'),540,790,'170px Anton',left>0?AMB:RED,'center',4,1,18);txt('MINUTES À PEINE',540,850,'700 30px Mono',INK,'center',4);}
+    if(t>=N(21))stamp('PAS DE RÉSEAU',540,950,70,t,N(21),-.05);
+    if(t>=N(22)+.4){const q=lin(t,N(22)+.4,N(22)+.7);panel(540,1040,700,100,q,'rgba(30,18,6,.85)',AMB);txt('📻  RADIO À PILES : ON',540,1108,'52px Anton',AMB,'center',2,q);}
+    src('Source : Orange, FAQ délestages (2022, mise à jour 2023)',t,N(19),T.F);}
+  // F : le frigo
+  if(sc==='F'){const a=lin(t,T.F,T.F+.3);panel(540,420,860,600,a);
+    const bar=(y,lab,val,t0,k0,k1)=>{if(t<t0)return;const q=lin(t,t0,t0+.3);txt(lab,190,y,'54px Anton',INK,'left',2,q);txt(val,890,y,'54px Anton',CY,'right',2,q,10);ctx.save();ctx.globalAlpha*=q;ctx.strokeStyle=CY;ctx.lineWidth=2;ctx.strokeRect(190,y+24,700,34);
+      ctx.fillStyle=CY;ctx.fillRect(193,y+27,694*(1-lin(t,k0,k1)*.25),28);ctx.restore();};
+    bar(560,'FRIGO FERMÉ','≈ 4 H',N(24),N(25),T.G);bar(730,'CONGÉLATEUR PLEIN','≈ 48 H',N(26),N(27),T.G);
+    if(t>=N(28))stamp('ON N’OUVRE RIEN',540,920,74,t,N(28)+.3,-.05);
+    src('Sources : FDA (États-Unis) · gouvernement du Québec',t,N(24),T.G);}
+  // G : la nuit
+  if(sc==='G'){const a=lin(t,T.G+.2,T.G+.5);txt('LYON · H+12',540,560,'70px Anton',INK,'center',4,a);txt('TOUTE LA VILLE EST NOIRE',540,630,'700 32px Mono',AMB,'center',4,a);}
+  if(sc==='G2'&&t>=N(33)){const q=lin(t,N(33),N(33)+.3);panel(540,420,760,260,q);txt('RÉSERVES DE SAM',540,520,'56px Anton',INK,'center',2,q);txt('3 JOURS',540,640,'120px Anton',AMB,'center',2,q,16);}
+  // H : on frappe
+  if(sc==='Hk'){const K=NE(35)-.2;if(t>=K){[0,.42,.84].forEach((d,i)=>{if(t>=K+d)txt('TOC.',300+i*240,760,'110px Anton',INK,'center',4,1-lin(t,K+d+1.2,K+d+1.8),20);});}
+    if(t>=K+1.3)txt('QUELQU’UN FRAPPE.',540,920,'92px Anton',RED,'center',3,lin(t,K+1.3,K+1.6),20);}
+  // I : fin
+  if(sc==='I'){const a=lin(t,T.I,T.I+.4);ctx.fillStyle='#04060a';ctx.globalAlpha=1;ctx.fillRect(0,0,W,H);
+    txt('PARTIE 2',540,640,'110px Anton',AMB,'center',6,a,18);txt('SURVIVRE',540,800,'150px Anton',INK,'center',4,lin(t,N(37),N(37)+.3),12);txt('AUX 3 JOURS SUIVANTS',540,880,'60px Anton',INK,'center',4,lin(t,N(38),N(38)+.3));
+    if(t>=N(39)){const q=eo(lin(t,N(39),N(39)+.3));ctx.save();ctx.translate(540,1110);ctx.scale(1.3-.3*q,1.3-.3*q);txt('ABONNE-TOI À',0,0,'60px Anton',INK,'center',4,q);
+      txt('J',-60,150,'170px Anton',INK,'center',0,q,20);txt('+',20,150,'170px Anton',AMB,'center',0,q,20);txt('1',100,150,'170px Anton',INK,'center',0,q,20);ctx.restore();}
+    txt('Simulation fondée sur des faits réels · sources dans la légende',540,1600,'400 22px Mono','rgba(242,240,232,.6)','center',1,a);txt('Musique : « Dark Times », K. MacLeod (CC BY 4.0) · Objets 3D : Poly Haven (CC0) · Carte : IGN',540,1640,'400 19px Mono','rgba(242,240,232,.5)','center',0,a);}
+}
+let LAST=-1;
+window.renderFrame=f=>{const t=f/FPS;const [sc,t0,kind]=scAt(t);
+  if(kind==='map'){mapState(t);FXM.render();ctx.drawImage(gv,0,0);}else if(kind==='table'){tableState(t);FXT.render();ctx.drawImage(gv,0,0);}else{ctx.fillStyle='#04060a';ctx.fillRect(0,0,W,H);}
+  // flash / noir aux changements de scène
+  const dt=t-t0;if(dt<.25&&sc!=='A'){ctx.fillStyle='rgba(0,0,0,'+(1-dt/.25)+')';ctx.fillRect(0,0,W,H);}
+  // tremblement quand on frappe
+  if(sc==='Hk'){const K=NE(35)-.2;[0,.42,.84].forEach(d=>{const u=t-(K+d);if(u>=0&&u<.15){ctx.save();ctx.globalCompositeOperation='source-over';ctx.drawImage(ctx.canvas,Math.sin(u*90)*14,Math.cos(u*70)*10);ctx.restore();}});}
+  // assombrir, vignette, grain
+  const v=ctx.createRadialGradient(540,900,300,540,900,1200);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.75)');ctx.fillStyle=v;ctx.fillRect(0,0,W,H);
+  if(sc==='Hk'){ctx.fillStyle='rgba(0,0,0,'+(.35*lin(t,T.Hk,NE(35)))+')';ctx.fillRect(0,0,W,H);}
+  scene2D(t);hud(t);subs(t);
+  const ox=(f*53)%256,oy=(f*97)%256;ctx.save();ctx.globalAlpha=.6;ctx.fillStyle=ctx.createPattern(NOISE,'repeat');ctx.translate(-ox,-oy);ctx.fillRect(ox,oy,W,H);ctx.restore();
+};
+</script></body></html>
