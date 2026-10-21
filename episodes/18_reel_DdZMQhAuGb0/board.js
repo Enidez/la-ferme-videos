@@ -31,8 +31,8 @@ const cD3=add({k:'proof',lab:'DOSSIER',n:3,l:'LA BANQUE',w:880,h:760,rot:1.5,t0:
 const cRoth=add({k:'doc',hd:'BANQUE D’AFFAIRES · PARIS',big:'ROTHSCHILD',l2:'2008 : IL Y ENTRE',rows:[['2010 : ASSOCIÉ-GÉRANT',N(18)]],src:'Source : franceinfo',w:920,h:760,rot:-1.5,t0:N(16)});
 const cDeal=add({k:'deal',w:940,h:900,rot:2,t0:N(19)});
 const cD4=add({k:'proof',lab:'DOSSIER',n:4,l:'LE DÎNER',w:880,h:760,rot:-2,t0:N(23)});
-const cBel=add({k:'clip',full:1,clip:'bel',sync:MARK.bel,handle:'@maxbellona · Instagram',badge:'REEL DU 17 SEPTEMBRE 2026',badgeRed:1,w:900,h:1500,rot:1.5,t0:N(25)});
-const cDuo2=add({k:'duo',a:'battali',b:'jattali',la:'BERNARD ATTALI',sa:'EX-PATRON D’AIR FRANCE (PHOTO : UN AVION AIR FRANCE)',lb:'SON FRÈRE, JACQUES',title:'JANVIER 2012 · LE DÎNER',ta:N(28),tb:N(29),w:960,h:860,rot:-1.5,t0:N(27)});
+const cMonde=add({k:'doc',hd:'LE MONDE · 29 AOÛT 2019',big:'L’ENQUÊTE',l2:'G. DAVET ET F. LHOMME',rows:[['« LA DÉVORANTE AMBITION D’EMMANUEL MACRON »',N(24)+.5],['LE TÉMOIN : FRANÇOIS REBSAMEN',N(24)+1.3]],src:'Source : Le Monde, série « PS, sept ans de trahisons » (5/6)',w:940,h:820,rot:1.5,t0:N(24)});
+const cDuo2=add({k:'duo',a:'battali',b:'jattali',la:'BERNARD ATTALI',sa:'EX-PATRON D’AIR FRANCE (PHOTO : UN AVION AIR FRANCE)',lb:'SON FRÈRE, JACQUES',title:'JANVIER 2012 · LE DÎNER',ta:N(28),tb:N(29),w:960,h:860,rot:-1.5,t0:N(28)-.4});
 const cPat=add({k:'patrons',w:900,h:760,rot:2,t0:N(30)});
 const cDuo3=add({k:'duo',a:'rebsamen',b:'hollande',la:'FRANÇOIS REBSAMEN',fxa:.2,lb:'FRANÇOIS HOLLANDE',title:'LE MESSAGE',ta:N(33),tb:N(33)+.7,bandT:N(34),bandS:'« ON N’A QU’UNE DEMANDE À FORMULER »',stampT:N(35),stampS:'EMMANUEL MACRON',w:960,h:900,rot:-2,t0:N(33)});
 const cEly=add({k:'doc',hd:'PRÉSIDENCE DE LA RÉPUBLIQUE',big:'15 MAI 2012',l2:'IL ENTRE À L’ÉLYSÉE',rows:[['SECRÉTAIRE GÉNÉRAL ADJOINT',N(36)+.8]],src:'Source : présidence de la République',w:920,h:760,rot:1.5,t0:N(36)});
@@ -202,8 +202,8 @@ function cardExtra(c,t,w,h){
     ctx.fillStyle='rgba(236,238,230,.4)';ctx.fillRect(-w/2+60,base,w-120,3);
     srcFit('Source : Insee (dette au sens de Maastricht, fin 2017 ; fin du 2e trimestre 2026)',w,h);return 1;}
   if(c.k==='notes'){framePaper(w,h,PAPERC);txt('IL Y A EU…',0,-h/2+110,'70px Anton',INKD,'center',3);
-    [['LE COVID',N(53),-w/4],['LA CRISE DE L’ÉNERGIE',N(54),w/4]].forEach(([s,t0,x])=>{if(t<t0)return;txt(s,x,-h/2+220,'56px Anton',INKD,'center',2,lin(t,t0,t0+.2));});
-    if(t>=N(55))txt('MAIS EN 2025…',0,-h/2+340,'60px Anton',INKD,'center',2,lin(t,N(55),N(55)+.2));
+    [['LE COVID',N(53),-h/2+210],['LA CRISE DE L’ÉNERGIE',N(54),-h/2+275]].forEach(([s,t0,y])=>{if(t<t0)return;txt(s,0,y,'52px Anton',INKD,'center',2,lin(t,t0,t0+.2));});
+    if(t>=N(55))txt('MAIS EN 2025…',0,-h/2+360,'60px Anton',INKD,'center',2,lin(t,N(55),N(55)+.2));
     stampAt('FITCH : A+',-w/4+20,-h/2+500,72,t,N(56)+.3,-.08);stampAt('S&P : A+',w/4-20,-h/2+520,72,t,N(56)+.8,.06);
     if(t>=N(56)+1.2)txt('LA NOTE DE LA FRANCE DÉGRADÉE',0,h/2-120,'700 32px Mono',INKD,'center',2,lin(t,N(56)+1.2,N(56)+1.4));
     srcFit('Sources : Fitch (12/09/2025) · S&P (2025) · AFP',w,h,1);return 1;}
@@ -318,7 +318,7 @@ function drawCard(c,t){
 }
 function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);[
   'Sources : Le Monde (G. Davet, F. Lhomme, 29/08/2019) · franceinfo · Insee · Fitch · S&P · AFP',
-  'Extrait : @maxbellona (Instagram, citation) · On n’est pas couché (France 2, 18/10/2014)',
+  'Émission citée : On n’est pas couché (France 2, 18/10/2014)',
   'Photos Wikimedia Commons : '+[...new Set(Object.values(window.CRED||{}))].join(' · '),
   'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>{let sz=20;while(sz>11&&mw(s,'400 '+sz+'px Mono')>c.w-48)sz--;txt(s,0,i*36,'400 '+sz+'px Mono','rgba(236,238,230,.75)','center');});ctx.restore();}
 

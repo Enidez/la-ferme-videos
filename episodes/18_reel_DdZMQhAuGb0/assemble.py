@@ -1,4 +1,4 @@
-# « D'OÙ IL VIENT. » : narration Paul French + extrait du Reel @maxbellona (dîner de janvier 2012, droit de citation).
+# « D'OÙ IL VIENT. » : narration Paul French, sources d'origine uniquement (Le Monde, Insee, agences de notation…).
 import wave,numpy as np,json,re,os
 SR=44100
 def load(p):
@@ -31,16 +31,14 @@ def narr(i0,i1,t):
         if k in QUOTES:d['m']=1
         SEGS.append(d)
     put(t,fade(L[int(a*SR):int(b*SR)]));return t+b-a
-e=narr(0,26,0.15)
-TB=round(e+.25,2)
-put(TB,fade(B),min(2.2,rms(L)/rms(B)*.95))
-SEGS.append(dict(t0=round(TB+.05,2),t1=round(TB+5.5,2),txt="Si Emmanuel Macron est entré en politique, c'est en partie grâce à un dîner secret organisé par de puissants hommes d'affaires.",id='bel',m=1))
-e=narr(27,59,TB+len(B)/SR+.3)
+# pas d'extrait du Reel (décision d'Enidez) : on retire aussi « Ce dîner, tu l'as peut-être vu passer. » (phrases 25-26)
+e=narr(0,24,0.15)
+e=narr(27,59,e+.35)
 e=narr(60,70,e+.75)
 y=np.clip(buf[:int((e+.2)*SR)],-1,1);os.makedirs('audio',exist_ok=True)
 w=wave.open('audio/vo.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((y*32767).astype(np.int16).tobytes());w.close()
 SEGS.sort(key=lambda s:s['t0']);ID={s['id']:i for i,s in enumerate(SEGS)}
 FRZ=round(SEGS[0]['t1']-1.15,2)
-MARK=dict(frz=FRZ,tcov=round(SEGS[ID['n0']]['t1']+.25,2),bel=TB)
+MARK=dict(frz=FRZ,tcov=round(SEGS[ID['n0']]['t1']+.25,2))
 open('segs.js','w').write('const SEGS='+json.dumps(SEGS,ensure_ascii=False)+';\nconst MARK='+json.dumps(MARK)+';\nconst ID='+json.dumps(ID)+';\n')
 print('total',round(e,2),MARK)

@@ -47,8 +47,8 @@ function cardExtra(c,t,w,h){
     ctx.fillStyle='rgba(236,238,230,.4)';ctx.fillRect(-w/2+60,base,w-120,3);
     srcFit('Source : Insee (dette au sens de Maastricht, fin 2017 ; fin du 2e trimestre 2026)',w,h);return 1;}
   if(c.k==='notes'){framePaper(w,h,PAPERC);txt('IL Y A EU…',0,-h/2+110,'70px Anton',INKD,'center',3);
-    [['LE COVID',N(53),-w/4],['LA CRISE DE L’ÉNERGIE',N(54),w/4]].forEach(([s,t0,x])=>{if(t<t0)return;txt(s,x,-h/2+220,'56px Anton',INKD,'center',2,lin(t,t0,t0+.2));});
-    if(t>=N(55))txt('MAIS EN 2025…',0,-h/2+340,'60px Anton',INKD,'center',2,lin(t,N(55),N(55)+.2));
+    [['LE COVID',N(53),-h/2+210],['LA CRISE DE L’ÉNERGIE',N(54),-h/2+275]].forEach(([s,t0,y])=>{if(t<t0)return;txt(s,0,y,'52px Anton',INKD,'center',2,lin(t,t0,t0+.2));});
+    if(t>=N(55))txt('MAIS EN 2025…',0,-h/2+360,'60px Anton',INKD,'center',2,lin(t,N(55),N(55)+.2));
     stampAt('FITCH : A+',-w/4+20,-h/2+500,72,t,N(56)+.3,-.08);stampAt('S&P : A+',w/4-20,-h/2+520,72,t,N(56)+.8,.06);
     if(t>=N(56)+1.2)txt('LA NOTE DE LA FRANCE DÉGRADÉE',0,h/2-120,'700 32px Mono',INKD,'center',2,lin(t,N(56)+1.2,N(56)+1.4));
     srcFit('Sources : Fitch (12/09/2025) · S&P (2025) · AFP',w,h,1);return 1;}
