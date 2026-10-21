@@ -33,3 +33,10 @@ Rien n'est copié d'un film : on prend les mécaniques qui marchent, pas les sc�
 - Le vote A/B en commentaire décide vraiment de la suite (l'épisode suivant reprend le choix gagnant).
 - Récap de 3 s au début de chaque chapitre (« Précédemment… ») + numéro de chapitre à l'écran.
 - Visuel : salle de crise + carte de France 3D (moteur jplus1), appartement 3D de Sam, HUD (H+, RÉSEAU, EAU, FRIGO, BATTERIE).
+
+## Choix A/B : 100 % natif (décision d'Enidez, 21/10/2026)
+Pas de page web ni de lien externe : tout reste dans les applis.
+- TikTok : vote en commentaire ; suites A et B publiées et épinglées en haut du profil ; playlists « Choix A » / « Choix B » si dispo ; réponse vidéo à un commentaire pour la branche perdante.
+- YouTube Shorts : « vidéo associée » cliquable vers A ou B.
+- Instagram : Story sondage A/B + stickers lien vers les Reels A et B.
+- Production : tronc commun + seulement la fin (~15 s) en deux versions (économie de voix).
