@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(../../node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2');}
+html,body{margin:0;background:#05070b}canvas{display:block}#g{position:absolute;left:-9999px}</style>
+<script type="importmap">{"imports":{"three":"../../node_modules/three/build/three.module.js","three/addons/":"../../node_modules/three/examples/jsm/"}}</script>
+</head>
+<body><canvas id="c" width="1080" height="1080"></canvas><canvas id="g" width="1080" height="1080"></canvas>
+<script src="../assets/geo/departements.js"></script>
+<script type="module">
+// J+1 — photo de profil : la France vue du ciel, la panne (rouge) qui gagne depuis Paris, « J+1 » au centre (lisible en rond)
+import * as THREE from 'three';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+const W=1080,H=1080,gv=document.getElementById('g'),out=document.getElementById('c').getContext('2d');
+const R=new THREE.WebGLRenderer({canvas:gv,antialias:true,preserveDrawingBuffer:true});R.setSize(W,H,false);R.setPixelRatio(1);R.toneMapping=THREE.ACESFilmicToneMapping;R.outputColorSpace=THREE.SRGBColorSpace;
+const S=new THREE.Scene();S.background=new THREE.Color('#05070b');
+const CAM=new THREE.PerspectiveCamera(34,1,.1,200);CAM.position.set(0,26,9);CAM.lookAt(0,0,.3);
+S.add(new THREE.HemisphereLight('#9fb8d8','#0a0c10',1.0));const sun=new THREE.DirectionalLight('#ffe2bd',2.2);sun.position.set(-8,14,10);S.add(sun);
+const FX=new EffectComposer(R);FX.setSize(W,H);FX.addPass(new RenderPass(S,CAM));FX.addPass(new UnrealBloomPass(new THREE.Vector2(W,H),.55,.5,.35));FX.addPass(new OutputPass());
+const grid=new THREE.GridHelper(80,80,'#1d3247','#0e1823');grid.position.y=-.02;S.add(grid);
+const L0=2.4,P0=46.6,K=Math.cos(P0*Math.PI/180),SC=1.05,pr=([lo,la])=>new THREE.Vector2((lo-L0)*K*SC,-(la-P0)*SC);
+const RED=new THREE.Color('#ff3a2e'),BASE=new THREE.Color('#2b3d52');
+window.ready=(async()=>{
+  await document.fonts.load('100px Anton');
+  const D=[];
+  for(const f of GEO_DEPARTEMENTS.features){const polys=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;
+    const sh=polys.map(p=>{const s=new THREE.Shape(p[0].map(pr));p.slice(1).forEach(h=>s.holes.push(new THREE.Path(h.map(pr))));return s;});
+    const geo=new THREE.ExtrudeGeometry(sh,{depth:.18,bevelEnabled:false});geo.rotateX(Math.PI/2);geo.translate(0,.18,0);geo.computeBoundingBox();const c=new THREE.Vector3();geo.boundingBox.getCenter(c);
+    const mat=new THREE.MeshStandardMaterial({color:BASE,roughness:.65,metalness:.15});const m=new THREE.Mesh(geo,mat);S.add(m);
+    const ed=new THREE.LineSegments(new THREE.EdgesGeometry(geo,30),new THREE.LineBasicMaterial({color:'#6fa3c8',transparent:true,opacity:.45}));S.add(ed);D.push({code:f.properties.code,m,mat,ed,c});}
+  const paris=D.find(d=>d.code==='75').c;
+  D.forEach(d=>{const k=Math.max(0,Math.min(1,(5.2-d.c.distanceTo(paris))/2.2));d.mat.color.copy(BASE).lerp(RED,k*.45);d.mat.emissive=RED.clone().multiplyScalar(k*.45);d.ed.material.color.copy(k>0?RED:new THREE.Color('#6fa3c8'));d.ed.material.opacity=.45+.5*k;d.m.position.y=d.ed.position.y=k*.1;});
+  FX.render();
+  out.drawImage(gv,0,0);
+  // vignette ronde + titre
+  let g=out.createRadialGradient(540,540,260,540,540,620);g.addColorStop(0,'rgba(5,7,11,0)');g.addColorStop(1,'rgba(5,7,11,.92)');out.fillStyle=g;out.fillRect(0,0,W,H);
+  out.fillStyle='rgba(5,7,11,.45)';out.fillRect(0,0,W,H);
+  out.textAlign='center';out.textBaseline='alphabetic';out.font='400 400px Anton';
+  out.shadowColor='rgba(255,58,46,.75)';out.shadowBlur=45;out.fillStyle='#f2f0e8';
+  const a='J',b='+',c='1',wa=out.measureText(a).width,wb=out.measureText(b).width,wc=out.measureText(c).width,x0=540-(wa+wb+wc)/2,y=690;
+  out.textAlign='left';out.fillText(a,x0,y);out.fillStyle='#ffb21e';out.fillText(b,x0+wa,y);out.fillStyle='#f2f0e8';out.fillText(c,x0+wa+wb,y);
+  out.shadowBlur=0;out.textAlign='center';out.font='400 46px Anton';out.fillStyle='rgba(242,240,232,.85)';out.fillText('SIMULATION',540,800);
+})();
+</script></body></html>
