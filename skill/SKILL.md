@@ -129,6 +129,7 @@ Musique : celle d'Enidez quand il en fournit. Sinon, morceaux libres de Kevin Ma
 Effets sonores : synthétisés en numpy/scipy (boom, hit, thud, tick, whoosh, riser, zap, click, type, crack de glace, freeze, explosion, acouphène), déclenchés par une liste d'événements exportée par la page.
 Mix : ffmpeg avec compression de la voix, sidechain de la musique et des effets sous la voix, alimiter, puis loudnorm à -14 LUFS et crête ≤ -1,5 dB.
 Images :
+Si Wikimedia bloque le cloud (erreur 429) : passer par Openverse (photos Flickr sous licence CC), avec episodes/18_reel_DdZMQhAuGb0/scripts/candidats.py (planche de candidates à choisir à l'œil) puis prendre.py (téléchargement en grand + crédit). Toujours regarder les candidates : la recherche renvoie aussi des caricatures, des dessins 3D et des tableaux sans rapport. Pour un lieu sans photo libre (banque, école, palais), une carte « document officiel » suffit ; pour une personne sans photo libre, ce qui la représente, clairement étiqueté (ex. un avion Air France pour Bernard Attali, ex-patron d'Air France).
 Wikimedia Commons via l'API (licences libres, crédit affiché sur chaque carte), toujours après autorisation, en indiquant le nom, la source et la taille.
 Traitement : noir et blanc, couleur gardée sur l'élément-preuve, floutage des visages (DNN res10). Vérifier à l'œil : le détecteur prend parfois un motif pour un visage.
 Rendu :

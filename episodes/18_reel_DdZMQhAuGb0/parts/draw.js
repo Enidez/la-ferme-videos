@@ -1,7 +1,7 @@
 // source qui tient toujours dans la carte (règle d'Enidez du 20/10)
 function srcFit(s,w,h,dark){let sz=22;while(sz>14&&mw(s,'400 '+sz+'px Mono')>w-48)sz--;txt(s,w/2-24,h/2-18,'400 '+sz+'px Mono',dark?'rgba(27,28,26,.6)':'rgba(236,238,230,.62)','right');}
-function photo(im,x,y,pw,ph,gray){ctx.fillStyle='#000';ctx.fillRect(x-pw/2,y-ph/2,pw,ph);if(!im)return;ctx.save();ctx.beginPath();ctx.rect(x-pw/2,y-ph/2,pw,ph);ctx.clip();const s=Math.max(pw/im.width,ph/im.height);
-  ctx.filter=gray?'grayscale(1) contrast(1.1)':'saturate(.85) contrast(1.06)';ctx.drawImage(im,x-im.width*s/2,y-ph/2-(im.height*s-ph)*.25,im.width*s,im.height*s);ctx.restore();}
+function photo(im,x,y,pw,ph,gray,fx=.5){ctx.fillStyle='#000';ctx.fillRect(x-pw/2,y-ph/2,pw,ph);if(!im)return;ctx.save();ctx.beginPath();ctx.rect(x-pw/2,y-ph/2,pw,ph);ctx.clip();const s=Math.max(pw/im.width,ph/im.height);
+  ctx.filter=gray?'grayscale(1) contrast(1.1)':'saturate(.85) contrast(1.06)';ctx.drawImage(im,x-pw/2-(im.width*s-pw)*fx,y-ph/2-(im.height*s-ph)*.25,im.width*s,im.height*s);ctx.restore();}
 function drawHook18(w,h,t){
   const FRZ=MARK.frz,frz=t>=FRZ,im=IM.macron2015||IM.macron;
   ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
@@ -18,11 +18,17 @@ function drawHook18(w,h,t){
 }
 function cardExtra(c,t,w,h){
   if(c.k==='duo'){framePaper(w,h,'rgba(30,32,30,.95)');txt(c.title,0,-h/2+100,'70px Anton',INK,'center',3);
-    const pw=w/2-60,ph=h-330,X=[-w/4,w/4];[[c.a,c.la,c.ta,X[0]],[c.b,c.lb,c.tb,X[1]]].forEach(([k,l,t0,x])=>{if(t<t0-.05)return;const q=eo(lin(t,t0-.05,t0+.25));ctx.save();ctx.globalAlpha*=q;photo(IM[k],x,-h/2+150+ph/2,pw,ph,1);
-      ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=3;ctx.strokeRect(x-pw/2,-h/2+150,pw,ph);txt(l,x,-h/2+190+ph,'44px Anton',INK,'center',2);ctx.restore();});
+    const pw=w/2-60,ph=h-330,X=[-w/4,w/4];[[c.a,c.la,c.ta,X[0],c.sa,c.fxa],[c.b,c.lb,c.tb,X[1],c.sb,c.fxb]].forEach(([k,l,t0,x,sub,fx])=>{if(t<t0-.05)return;const q=eo(lin(t,t0-.05,t0+.25));ctx.save();ctx.globalAlpha*=q;photo(IM[k],x,-h/2+150+ph/2,pw,ph,1,fx??.5);
+      ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=3;ctx.strokeRect(x-pw/2,-h/2+150,pw,ph);txt(l,x,-h/2+190+ph,'44px Anton',INK,'center',2);if(sub){let z=20;while(z>12&&mw(sub,'700 '+z+'px Mono')>pw)z--;txt(sub,x,-h/2+222+ph,'700 '+z+'px Mono',AMB,'center');}ctx.restore();});
     if(c.bandS)band(-h/2+150+ph-60,t,c.bandT,c.bandS,44,DK,AMB);
     if(c.stampS)stampAt(c.stampS,0,-h/2+260,84,t,c.stampT,-.07);
     srcFit([IMC(c.a),IMC(c.b)].filter(Boolean).join(' · '),w,h);return 1;}
+  if(c.k==='doc'){framePaper(w,h,PAPERC);txt(c.hd,0,-h/2+95,'700 30px Mono','rgba(27,28,26,.7)','center',3);
+    {let z=150;while(z>60&&mw(c.big,z+'px Anton',2)>w-80)z-=6;txt(c.big,0,-h/2+280,z+'px Anton',INKD,'center',2);}
+    txt(c.l2,0,-h/2+370,'64px Anton',PINK,'center',2,lin(t,c.t0+.3,c.t0+.5));
+    (c.rows||[]).forEach(([s,t0],i)=>{if(t<t0)return;const q=eo(lin(t,t0,t0+.25));const y=-h/2+480+i*100;ctx.save();ctx.globalAlpha*=q;let z=46;while(z>24&&mw(s,z+'px Anton',2)>w-120)z-=2;
+      ctx.fillStyle='rgba(27,28,26,.88)';ctx.fillRect(-w/2+50,y-z,w-100,z*1.45);txt(s,0,y+z*.1,z+'px Anton',i?AMB:INK,'center',2);ctx.restore();});
+    srcFit(c.src||'',w,h,1);return 1;}
   if(c.k==='deal'){framePaper(w,h,PAPERC);txt('2012 · LE CONTRAT',0,-h/2+95,'700 30px Mono','rgba(27,28,26,.7)','center',4);
     txt('NESTLÉ',-w/4+10,-h/2+250,'100px Anton',INKD,'center',2);txt('PFIZER',w/4-10,-h/2+250,'100px Anton',INKD,'center',2);txt('←',0,-h/2+245,'90px Anton',PINK,'center');
     txt('LE LAIT INFANTILE DE PFIZER RACHETÉ PAR NESTLÉ',0,-h/2+320,'700 26px Mono','rgba(27,28,26,.75)','center',1);
