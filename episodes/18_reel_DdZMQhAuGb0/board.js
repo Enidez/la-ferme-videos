@@ -29,7 +29,7 @@ const cD2=add({k:'proof',lab:'DOSSIER',n:2,l:'LE PREMIER ATTALI',w:880,h:760,rot
 const cDuo1=add({k:'duo',a:'sarkozy',b:'jattali',va:'sarko',vb:'attali',sa:'ÉLYSÉE · JANVIER 2008',sb:'IL LUI REMET SON RAPPORT',la:'NICOLAS SARKOZY',lb:'JACQUES ATTALI',vsrc:'Images : France 3, 23/01/2008',title:'2007',ta:N(12),tb:N(13),bandT:N(13)+.6,bandS:'RAPPORTEUR ADJOINT DE LA COMMISSION ATTALI',w:960,h:860,rot:2,t0:N(12)});
 const cD3=add({k:'proof',lab:'DOSSIER',n:3,l:'LA BANQUE',w:880,h:760,rot:1.5,t0:N(14)});
 const cRoth=add({k:'doc',hd:'BANQUE D’AFFAIRES · PARIS',big:'ROTHSCHILD',l2:'2008 : IL Y ENTRE',rows:[['2010 : ASSOCIÉ-GÉRANT',N(18)]],src:'Source : franceinfo',w:920,h:760,rot:-1.5,t0:N(16)});
-const cMv=add({k:'clip',full:1,clip:'closer',sync:MARK.mv,handle:'Extrait : TF1, « Le Grand Débat », 20/03/2017',badge:'EMMANUEL MACRON · SA VRAIE VOIX',w:900,h:1050,rot:-1.5,t0:MARK.mv-.35,aim:-40,
+const cMv=add({k:'clip',full:1,hold:1,clip:'closer',sync:MARK.mv,handle:'Extrait : TF1, « Le Grand Débat », 20/03/2017',badge:'EMMANUEL MACRON · SA VRAIE VOIX',w:900,h:1050,rot:-1.5,t0:MARK.mv-.35,aim:-40,
   after:(w,h,t)=>{topBox(w,h,t,MARK.mv-.2,'MARS 2017 · TF1','IL EN PARLE LUI-MÊME',62);}});
 const cNes=add({k:'clip',full:1,clip:'nestle',sync:N(19)-.3,handle:'Images : euronews, avril 2012',badge:'NESTLÉ · PFIZER NUTRITION',w:900,h:1050,rot:2,t0:N(19),
   after:(w,h,t)=>{topBox(w,h,t,N(19),'2012','LE CONTRAT DU BANQUIER',66);}});
@@ -44,8 +44,8 @@ const cEly=add({k:'clip',full:1,clip:'ely',sync:N(36)-.3,handle:'Images : Le Poi
 const cD5=add({k:'proof',lab:'DOSSIER',n:5,l:'L’AVERTISSEMENT',w:880,h:760,rot:-1.5,t0:N(37)});
 const cMin=add({k:'clip',full:1,clip:'pass',sync:N(39)-.5,handle:'Images : RTL / BFMTV, 27/08/2014',badge:'PASSATION À BERCY',w:900,h:1100,rot:2,t0:N(39),
   after:(w,h,t)=>{topBox(w,h,t,N(39),'AOÛT 2014','MINISTRE DE L’ÉCONOMIE',70);band(-250,t,N(40)+.6,'LE BANQUIER À BERCY',64);}});
-const cMel=add({k:'clip',full:1,img:'melenchon',handle:IMC('melenchon'),badge:'JEAN-LUC MÉLENCHON',w:900,h:1050,rot:-1.5,t0:N(41),
-  after:(w,h,t)=>{topBox(w,h,t,N(41),'18 OCTOBRE 2014 · FRANCE 2','« ON N’EST PAS COUCHÉ »',62);stampAt('« DÉSASTRE »',0,60,110,t,N(42)+.7,-.08);}});
+const cMel=add({k:'clip',full:1,hold:1,seq:[['mel0',N(41)-.2],['mel1',MARK.mel1],['mel2',MARK.mel2]],handle:'Extrait : On n’est pas couché, France 2, 18/10/2014',badge:'JEAN-LUC MÉLENCHON · SA VRAIE VOIX',w:900,h:1050,rot:-1.5,t0:N(41),
+  after:(w,h,t)=>{topBox(w,h,t,N(41),'18 OCTOBRE 2014 · FRANCE 2','« ON N’EST PAS COUCHÉ »',62);stampAt('« DÉSASTRE »',0,-200,110,t,SEGS[ID.m1].t1-.9,-.08);}});
 const cPres=add({k:'clip',full:1,seq:[['amiens',N(43)-.4],['louvre',N(45)-.1]],handle:'Images : i24news (Amiens, 6/04/2016) · Le Monde (Louvre, 7/05/2017)',badge:'EMMANUEL MACRON',w:900,h:1000,rot:1.5,t0:N(43),
   after:(w,h,t)=>{band(-h/2+150,t,N(43),'2016 · EN MARCHE',60);band(-h/2+250,t,N(45),'2017 · PRÉSIDENT DE LA RÉPUBLIQUE',52,DK,AMB);}});
 const cD6=add({k:'proof',lab:'DOSSIER',n:6,l:'LE BILAN',w:880,h:760,rot:-2,t0:N(47)});
@@ -64,7 +64,7 @@ const XT=[[cDuo1,cDuo2,N(57)],[cRoth,cDeal,N(57)+.2],[cDuo3,cEly,N(57)+.4],[cMel
 
 // ---------- trajectoire caméra
 function fitZoom(c){return Math.min(880/c.w,900/c.h);}
-const KEYS=[];C.forEach((c,i)=>{if(i===cCover)KEYS.push({t:0,x:c.x,y:c.y-160/1.04,z:1.04,rot:-c.rot*Math.PI/180});else if(c.full){const pw=c.k==='clip'?c.w-50:c.w;const z=(c.k==='clip'?1100:880)/pw;const a=c.rot*Math.PI/180;const oy=(c.k==='clip'?-85:0)+(c.aim||0);KEYS.push({t:c.t0,x:c.x-Math.sin(a)*oy,y:c.y+Math.cos(a)*oy-160/z,z,rot:-a});}
+const KEYS=[];C.forEach((c,i)=>{if(i===cCover)KEYS.push({t:0,x:c.x,y:c.y-160/1.04,z:1.04,rot:-c.rot*Math.PI/180});else if(c.full){const pw=c.k==='clip'?c.w-50:c.w;const z=(c.k==='clip'?1100:880)/pw;const a=c.rot*Math.PI/180;const oy=(c.k==='clip'?-85:0)+(c.aim||0);KEYS.push({t:c.t0,x:c.x-Math.sin(a)*oy,y:c.y+Math.cos(a)*oy-160/z,z,rot:-a,hold:c.hold});}
   else KEYS.push({t:c.t0,x:c.x,y:c.y,z:fitZoom(c),rot:-c.rot*Math.PI/180*.6});});
 const WIDE=(t,cs)=>{let mnx=1e9,mxx=-1e9,mny=1e9,mxy=-1e9;cs.forEach(i=>{const c=C[i];mnx=Math.min(mnx,c.x-c.w/2);mxx=Math.max(mxx,c.x+c.w/2);mny=Math.min(mny,c.y-c.h/2);mxy=Math.max(mxy,c.y+c.h/2);});
   return{t,x:(mnx+mxx)/2,y:(mny+mxy)/2,z:Math.min(1000/(mxx-mnx),1500/(mxy-mny)),rot:0};};
@@ -79,7 +79,7 @@ const WP=[];let WH=null;
     if(i===0){WP.push({t:0,x:a.x,y:a.y,z:a.z,r:a.rot});WP.push({t:TCOV-.05,x:a.x,y:a.y+10,z:a.z*1.01,r:a.rot});continue;}
     const gap=b?b.t-a.t:2.5;
     const dx=b?b.x-a.x:a.x-p.x,dy=b?b.y-a.y:a.y-p.y,dl=Math.hypot(dx,dy)||1;const ux=dx/dl,uy=dy/dl;
-    const dwell=Math.max(.35,Math.min(gap-.55,gap*.72));
+    const dwell=a.hold?Math.max(.35,gap-.6):Math.max(.35,Math.min(gap-.55,gap*.72));   // hold : on reste sur la carte tant que la vraie voix parle
     if(a.wide)WH={t0:a.t-.05,t1:a.t+dwell,x:a.x,y:a.y,z:a.z};
     WP.push({t:a.t-.05,x:a.x-ux*40,y:a.y-uy*40,z:a.z,r:a.rot});
     WP.push({t:a.t+dwell,x:a.x+ux*55,y:a.y+uy*55,z:a.z*1.06,r:a.rot});
@@ -346,7 +346,7 @@ C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 [N(3),N(10),N(14),N(23),N(37),N(47)].forEach(x=>reveal(x,1.1));
 ev(N(7),'tick');ev(N(7)+1.6,'tick');ev(N(8),'thud');ev(N(13),'tick');ev(N(13)+.6,'tick');ev(N(18),'thud');ev(N(21),'thud');reveal(N(22)+.8,1);
 ev(N(28),'tick');ev(N(29),'tick');[30,31,32].forEach(k=>ev(N(k),'thud'));ev(N(34),'tick');reveal(N(35),1.2);ev(N(36),'tick');
-ev(N(40)+.6,'thud');reveal(N(42)+.7,1.2);ev(N(43),'tick');ev(N(45),'tick');
+ev(N(40)+.6,'thud');reveal(SEGS[ID.m1].t1-.9,1.2);ev(N(43),'tick');ev(N(45),'tick');
 for(let k=0;k<11;k++)ev(N(50)+k*.1,'tick');for(let k=0;k<11;k++)ev(N(51)+k*.1,'tick');ev(N(53),'tick');ev(N(54),'tick');ev(N(56)+.3,'thud');ev(N(56)+.8,'thud');
 ev(WT0-.9,'riser');reveal(N(57),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));reveal(N(59),1.3);ev(N(61),'thud');ev(N(65),'tick');ev(VEND+.35,'boom');
 

@@ -32,7 +32,7 @@ const IM={};const BGF=[];
 function load(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});}
 window.ready=(async()=>{
   for(const k of['macron2015','macron2017','macron','jouyet','jattali','battali','rebsamen','hollande','melenchon','sarkozy','ena','rothschild','elysee'])IM[k]=await load('img/'+k+'.jpg');IM.macron2017=IM.macron2017||IM.macron;
-  window.CLIPS={};for(const [k,n] of [['amiens',149],['attali',229],['closer',202],['ely',178],['hook',241],['louvre',181],['nestle',358],['pass',330],['sarko',181]]){const ps=[];for(let i=1;i<=n;i++)ps.push(load('clips/'+k+'/'+String(i).padStart(4,'0')+'.jpg'));CLIPS[k]=await Promise.all(ps);}
+  window.CLIPS={};for(const [k,n] of [['amiens',149],['attali',229],['closer',202],['ely',178],['hook',241],['louvre',181],['mel0',114],['mel1',148],['mel2',108],['nestle',358],['pass',330],['sarko',181]]){const ps=[];for(let i=1;i<=n;i++)ps.push(load('clips/'+k+'/'+String(i).padStart(4,'0')+'.jpg'));CLIPS[k]=await Promise.all(ps);}
   await document.fonts.load('80px Anton');await document.fonts.load('700 80px Osw');await document.fonts.load('700 30px Mono');await document.fonts.load('400 30px Mono');
 })();
 

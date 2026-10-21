@@ -43,12 +43,19 @@ t=e+.35;MV=t
 for k,(a,b,x) in enumerate(VS):SEGS.append(dict(t0=round(t+a,2),t1=round(t+b,2),txt=x,id='v%d'%k,m=1))
 put(t,fade(V,800)*(rms(L)/rms(V))*.95);e=t+len(V)/SR
 e=narr(19,24,e+.25)
-e=narr(27,59,e+.35)
+e=narr(27,41,e+.35)
+# vraie voix de Jean-Luc Mélenchon (On n'est pas couché, France 2, 18/10/2014) à la place de la phrase 42
+MEL=[]
+for k,f,ws in [(0,'vo/mel1.wav',[[.25,4.75,"« Je suis dérangé qu'il applique une logique de banquier à la tête de l'État. »"]]),(1,'vo/mel2.wav',[[.3,3.25,"« La politique que va appliquer M. Macron va conduire à un désastre. »"]])]:
+    V=load(f);t=e+(.3 if k==0 else .15);MEL.append(round(t,2))
+    for a,b,x in ws:SEGS.append(dict(t0=round(t+a,2),t1=round(t+b,2),txt=x,id='m%d'%k,m=1))
+    put(t,fade(V,800)*(rms(L)/rms(V))*.95);e=t+len(V)/SR
+e=narr(43,59,e+.35)
 e=narr(60,70,e+.75)
 y=np.clip(buf[:int((e+.2)*SR)],-1,1);os.makedirs('audio',exist_ok=True)
 w=wave.open('audio/vo.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((y*32767).astype(np.int16).tobytes());w.close()
 SEGS.sort(key=lambda s:s['t0']);ID={s['id']:i for i,s in enumerate(SEGS)}
 FRZ=round(SEGS[ID['h2']]['t0']-.05,2)
-MARK=dict(frz=FRZ,tcov=round(SEGS[ID['h2']]['t1']+.25,2),mv=round(MV,2))
+MARK=dict(frz=FRZ,tcov=round(SEGS[ID['h2']]['t1']+.25,2),mv=round(MV,2),mel1=MEL[0],mel2=MEL[1])
 open('segs.js','w').write('const SEGS='+json.dumps(SEGS,ensure_ascii=False)+';\nconst MARK='+json.dumps(MARK)+';\nconst ID='+json.dumps(ID)+';\n')
 print('total',round(e,2),MARK)
