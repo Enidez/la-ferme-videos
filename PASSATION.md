@@ -8,7 +8,7 @@
 
 **LA FERME** est un média vidéo vertical (9:16) d'actualité française, antisystème mais **factuel** : on prend ce que disent les politiques et les institutions, on le confronte aux faits, et on laisse le spectateur relier les points.
 
-- **Bio / signature** : « Ils parlent à ta place. Nous, on vérifie. »
+- **Slogan officiel / bio / signature** (Enidez, 21/10/2026) : « Ils parlent… Nous on vérifie. »
 - **Identité visuelle** : le « **tableau d'enquêteur** » — un mur gris-vert où chaque fait est une carte plastifiée punaisée, reliée par des fils rouges ; une caméra « drone » vole de carte en carte ; tampons rouges, sous-titres courts (3 mots max), grain, ambiance série policière.
 - **Ton** : sérieux, tendu, « débrief Canal+ » ; on parle à « toi » ; une thèse d'injustice par vidéo, prouvée par les mots mêmes des puissants.
 - **Différence revendiquée** : les autres comptes relaient sans vérifier ; nous, on vérifie — y compris contre notre camp (on démonte les fausses rumeurs).
@@ -78,7 +78,7 @@ Le générique de fin « ferme-la » (réplique de film + logo animé) est ajout
 5. **On démonte aussi les fausses rumeurs**, ton officiel, sans se justifier (« Le parquet dément. »).
 6. **Plus de visages et d'émotion** : chaque fait a une photo ou une vraie voix ; images d'illustration étiquetées ; particuliers floutés ; pas de gore ; jamais de mineur blessé.
 7. **Les sources/crédits ne dépassent jamais du cadre** de la carte.
-8. **Fin** : « Abonne-toi. Ils parlent à ta place. Nous, on vérifie. » (plus jamais « on continue de compter »). Pas de « merci / abonnez-vous » au milieu (post-it muet à la place).
+8. **Fin** : « Abonne-toi. Ils parlent… Nous on vérifie. » (plus jamais « on continue de compter »). Pas de « merci / abonnez-vous » au milieu (post-it muet à la place).
 9. **Légendes** : accroche + question en commentaire + ≤ 5 hashtags dont #LaFerme ; **pas de sources ni crédits** dans la légende.
 10. **Voix rapide** : pauses minimales.
 11. **Aperçu de l'extrait avant tout rendu complet** ; ne jamais refaire une vidéo publiée sans demande.

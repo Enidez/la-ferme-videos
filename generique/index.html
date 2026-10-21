@@ -36,7 +36,7 @@ window.renderFrame=f=>{const t=f/FPS,fr=f;
   else{ctx.save();ctx.globalAlpha=.10;txt('FERME',0,90,'300px Anton',INK,4);ctx.restore();}
   // trait rouge qui se dessine
   if(t>=TF+.12){const p=eo(lin(t,TF+.12,TF+.45));ctx.fillStyle=RED;ctx.shadowColor='rgba(255,40,30,.7)';ctx.shadowBlur=14;ctx.fillRect(-290,170,580*p,22);ctx.shadowBlur=0;ctx.shadowColor='transparent';}
-  if(t>=TF+.5)txt('ILS PARLENT À TA PLACE. NOUS, ON VÉRIFIE.',0,300,'700 26px Mono','rgba(236,238,230,.7)',3,lin(t,TF+.5,TF+.8));
+  if(t>=TF+.5)txt('ILS PARLENT… NOUS ON VÉRIFIE.',0,300,'700 26px Mono','rgba(236,238,230,.7)',3,lin(t,TF+.5,TF+.8));
   // reflet plastifié + liseré
   ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();const g=ctx.createLinearGradient(-w/2,-h/2,w/2,h/2);g.addColorStop(.38,'rgba(255,255,255,0)');g.addColorStop(.46,'rgba(255,255,255,.12)');g.addColorStop(.54,'rgba(255,255,255,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,h);ctx.restore();
   ctx.strokeStyle='rgba(255,255,255,.85)';ctx.lineWidth=3;ctx.strokeRect(-w/2,-h/2,w,h);
