@@ -1,0 +1,1 @@
+window.CRED={"hollande": "COP Paris · CC0", "macron": "Commission européenne · CC BY 4.0", "macron2015": "Claude TRUONG-NGOC · CC BY-SA 3.0", "jouyet": "User:Autorité des Marchés Financiers · Public domain", "macron2017": "Commission européenne · CC BY 4.0"};
