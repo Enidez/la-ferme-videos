@@ -1,0 +1,23 @@
+« J+1 · PANNE GÉANTE » — épisode 1 — v1 (21/10/2026) — voix Liam (UNE seule prise) — ~60 s
+Personnage : Sam, 3e étage, Lyon. HUD permanent : heure (H+), RÉSEAU, EAU, BATTERIE, FRIGO.
+Décor : salle de crise (carte de France 3D qui s'éteint région par région) ↔ appartement de Sam.
+
+[intense] Si toute la France perd le courant, surtout ne file pas au supermarché.
+→ titre « J+1 · PANNE GÉANTE » · HUD H+0
+[serious] Ce n'est pas de la science-fiction. Le 28 avril 2025, l'Espagne et le Portugal se sont éteints en quelques secondes.
+[firm] Sam a une heure. Pas plus.
+H+0 · [intrigued] Premier réflexe de tout le monde : le magasin. Sauf que sans courant, plus de caisse, plus de carte bancaire.
+Sam fait l'inverse : il remplit la baignoire et toutes les bouteilles.
+[serious] Parce que l'eau du robinet arrive grâce à des pompes. Et les pompes, elles aussi, ont besoin de courant.
+H+1 · Le téléphone. [firm] Les antennes tiennent quelques heures sur batterie. Ensuite, plus de réseau.
+Sam passe en mode avion, et ressort la radio à piles.
+H+4 · [intrigued] Le frigo. Fermé, il garde le froid environ quatre heures. Le congélateur plein : jusqu'à deux jours.
+Alors Sam n'ouvre rien. Et mange d'abord ce qui craint.
+H+12 · [dramatic] La nuit tombe. Toute la ville est noire.
+Sur le papier, Sam peut tenir trois jours.
+[slowly] Seul problème…
+[whispers] quelqu'un frappe à sa porte.
+[firm] Partie 2 : il ouvre… ou pas ? Dis-le en commentaire. Abonne-toi à J+1.
+
+À VÉRIFIER avant la voix (sources primaires) : panne ibérique 28/04/2025 (REE / ENTSO-E) ; autonomie des antennes relais (ARCEP / Fédération française des télécoms) ;
+dépendance des réseaux d'eau aux pompes et durée des réservoirs (FP2E / ministère) ; frigo 4 h, congélateur plein 48 h (USDA / ANSES) ; kit d'urgence (gouvernement.fr « Je me prépare »).
