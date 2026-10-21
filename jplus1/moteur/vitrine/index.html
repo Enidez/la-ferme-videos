@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#05070b}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"../../../node_modules/three/build/three.module.js","three/addons/":"../../../node_modules/three/examples/jsm/"}}</script>
+</head><body><canvas id="c" width="1080" height="1920"></canvas>
+<script src="../../assets/models/Lantern_01.js"></script>
+<script src="../../assets/models/Megaphone_01.js"></script>
+<script src="../../assets/models/alarm_clock_01.js"></script>
+<script src="../../assets/models/binoculars.js"></script>
+<script src="../../assets/models/boombox.js"></script>
+<script src="../../assets/models/korean_fire_extinguisher_01.js"></script>
+<script src="../../assets/models/long_life_food.js"></script>
+<script src="../../assets/models/medical_box.js"></script>
+<script src="../../assets/models/medical_tape.js"></script>
+<script src="../../assets/models/metal_jerrycan_green.js"></script>
+<script src="../../assets/models/modular_electricity_poles.js"></script>
+<script src="../../assets/models/old_gas_mask.js"></script>
+<script src="../../assets/models/old_military_crate.js"></script>
+<script src="../../assets/models/pastic_torch_6v.js"></script>
+<script src="../../assets/models/plastic_bottle_gallon.js"></script>
+<script src="../../assets/models/plastic_crate_01.js"></script>
+<script src="../../assets/models/plastic_jerrycan.js"></script>
+<script src="../../assets/models/portable_generator.js"></script>
+<script src="../../assets/models/portable_searchlight.js"></script>
+<script src="../../assets/models/power_box_01.js"></script>
+<script src="../../assets/models/rubber_boots.js"></script>
+<script src="../../assets/models/russian_food_cans_01.js"></script>
+<script src="../../assets/models/signal_flashlight.js"></script>
+<script src="../../assets/models/street_lamp_01.js"></script>
+<script src="../../assets/models/television_02.js"></script>
+<script src="../../assets/models/vintage_flashlight.js"></script>
+<script src="../../assets/models/vintage_lighter.js"></script>
+<script src="../../assets/models/vintage_oil_lamp.js"></script>
+<script src="../../assets/models/vintage_radio_transceiver.js"></script>
+<script src="../../assets/models/wall_clock.js"></script>
+<script type="module">
+// J+1 — vitrine de contrôle : tous les objets de assets/models sur une grille, chacun ramené à la même taille
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+const W=1080,H=1920;window.DURATION=1;window.EVENTS=[];
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,preserveDrawingBuffer:true});R.setSize(W,H,false);R.outputColorSpace=THREE.SRGBColorSpace;R.toneMapping=THREE.ACESFilmicToneMapping;
+const S=new THREE.Scene();S.background=new THREE.Color('#10161e');S.add(new THREE.HemisphereLight('#dfe8f5','#202830',2.2));const sun=new THREE.DirectionalLight('#fff',2.5);sun.position.set(3,8,6);S.add(sun);
+const CAM=new THREE.PerspectiveCamera(30,W/H,.1,200);CAM.position.set(0,0,30);CAM.lookAt(0,0,0);
+const L=new GLTFLoader();const ids=Object.keys(window.MODELS).sort();
+window.ready=(async()=>{for(const [n,id] of ids.entries()){const g=await new Promise((ok,ko)=>L.parse(JSON.stringify(window.MODELS[id]),'',ok,ko));const o=g.scene;
+  const b=new THREE.Box3().setFromObject(o),sz=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3());const k=1.6/Math.max(sz.x,sz.y,sz.z);o.scale.setScalar(k);o.position.sub(c.multiplyScalar(k));
+  const p=new THREE.Group();p.add(o);p.position.set((n%5-2)*2.1,4.2*1.55-Math.floor(n/5)*2.6,0);p.rotation.y=-.5;S.add(p);}})();
+window.renderFrame=f=>R.render(S,CAM);
+</script></body></html>

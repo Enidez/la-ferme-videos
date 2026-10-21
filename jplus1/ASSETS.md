@@ -12,7 +12,15 @@ Tout ce qui sert au décor « salle de crise » de J+1. Rendu par le même pipel
 
 Rappel technique : le navigateur refuse `fetch()` sur un fichier local ; les données sont donc chargées en `<script>` (`window.GEO_DEPARTEMENTS`, `window.GEO_REGIONS`).
 
-## À récupérer (sites bloqués par le réseau du cloud pour l'instant)
-- Objets 3D libres (CC0) : Poly Haven (`polyhaven.com`, `api.polyhaven.com`, `dl.polyhaven.org`) et Kenney (`kenney.nl`) : radio, lampe torche, bouteilles d'eau, sac d'urgence, jerrican, trousse de secours, pylône électrique.
-- Ciels et éclairages HDRI de nuit (Poly Haven, CC0).
-- Textures béton et métal pour le sol de la salle de crise (Poly Haven, CC0).
+| Objets 3D (30) | `assets/models/<id>/` (glTF 1K) ; `assets/models/<id>.js` généré par `scripts/gltf2js.py` | Poly Haven, CC0 | prêts, vérifiés dans `moteur/vitrine/` |
+| Ciels de nuit (HDRI 1K) | `assets/hdri/` : cobblestone_street_night, modern_buildings_night, dresden_station_night, metro_vijzelgracht, kloppenheim_02_puresky | Poly Haven, CC0 | prêts |
+| Textures de sol (1K) | `assets/textures/` : concrete_floor, asphalt_02, blue_metal_plate | Poly Haven, CC0 | prêtes |
+
+### Les objets
+Lantern_01, Megaphone_01, alarm_clock_01, binoculars, boombox, korean_fire_extinguisher_01, long_life_food, medical_box, medical_tape, metal_jerrycan_green, modular_electricity_poles, old_gas_mask, old_military_crate, pastic_torch_6v, plastic_bottle_gallon, plastic_crate_01, plastic_jerrycan, portable_generator, portable_searchlight, power_box_01, rubber_boots, russian_food_cans_01, signal_flashlight, street_lamp_01, television_02, vintage_flashlight, vintage_lighter, vintage_oil_lamp, vintage_radio_transceiver, wall_clock
+
+### Utilisation
+Charger `<script src="../assets/models/<id>.js">` puis `new GLTFLoader().parse(JSON.stringify(window.MODELS['<id>']), '', ok, ko)`. Les `.js` ne sont pas versionnés (trop lourds) : `python3 jplus1/scripts/gltf2js.py` les régénère (lancé par `setup_cloud.sh`). Nouveaux objets : `python3 jplus1/scripts/polyhaven.py models <id> …` (catalogue : `https://api.polyhaven.com/assets?t=models`).
+
+### À récupérer plus tard
+- Kenney (CC0) : kits low-poly (ville, véhicules) si besoin d'une ville en maquette.

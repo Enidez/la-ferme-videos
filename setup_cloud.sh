@@ -24,4 +24,5 @@ if [ ! -f models/sherpa-onnx-whisper-small/small-encoder.int8.onnx ]; then
   tar xjf w.tar.bz2 && rm w.tar.bz2 && cd ..
 fi
 for d in episodes/*/; do ln -sfn "$(pwd)/node_modules" "$d/node_modules"; done
+python3 jplus1/scripts/gltf2js.py >/dev/null   # objets 3D J+1 : un fichier .js autonome par objet (non versionné)
 echo "Installation cloud terminée."
