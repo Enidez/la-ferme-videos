@@ -10,8 +10,10 @@ TX=["Si toute la France perd le courant,","surtout ne file pas au supermarché."
 assert len(TX)==len(LS),(len(TX),len(LS))
 D=.4  # la voix démarre à 0,4 s
 os.makedirs('audio',exist_ok=True)
-os.system(f"ffmpeg -v error -y -i vo/narr.wav -af adelay={int(D*1000)} -ar 44100 audio/vo.wav")
-S=[dict(t0=round(a+D,2),t1=round(b+D,2),txt=TX[i],id='n%d'%i) for i,(a,b) in enumerate(LS)]
+# 2,4 s de silence après « quelqu'un frappe à sa porte » pour les trois coups
+GAP=2.4;CUT=(LS[35][1]+LS[36][0])/2
+os.system(f"ffmpeg -v error -y -i vo/narr.wav -filter_complex \"[0]atrim=0:{CUT},asetpts=N/SR/TB[a];[0]atrim={CUT},asetpts=N/SR/TB,adelay={int(GAP*1000)}[b];[a][b]concat=n=2:v=0:a=1,adelay={int(D*1000)}\" -ar 44100 audio/vo.wav")
+S=[dict(t0=round(a+D+(GAP if i>35 else 0),2),t1=round(b+D+(GAP if i>35 else 0),2),txt=TX[i],id='n%d'%i) for i,(a,b) in enumerate(LS)]
 for i in (34,35):S[i]['m']=1
 ID={s['id']:i for i,s in enumerate(S)}
 open('segs.js','w').write('const SEGS='+json.dumps(S,ensure_ascii=False)+';\nconst ID='+json.dumps(ID)+';\n')
