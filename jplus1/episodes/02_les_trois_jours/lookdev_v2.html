@@ -1,0 +1,147 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF;}
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Mono;font-weight:700;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2) format('woff2');}
+html,body{margin:0;background:#05070b}canvas{display:block}#g{position:absolute;left:-9999px}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body><canvas id="c" width="1080" height="1920"></canvas><canvas id="g" width="1080" height="1920"></canvas>
+<script>window.MODELS={};</script>
+<script src="../../assets/models/Lantern_01.js"></script><script src="../../assets/models/portable_generator.js"></script>
+<script src="../../assets/models/plastic_bottle_gallon.js"></script><script src="../../assets/models/plastic_jerrycan.js"></script>
+<script src="../../assets/models/metal_jerrycan_green.js"></script><script src="../../assets/models/long_life_food.js"></script>
+<script src="../../assets/models/russian_food_cans_01.js"></script><script src="../../assets/models/vintage_radio_transceiver.js"></script>
+<script src="../../assets/models/alarm_clock_01.js"></script><script src="../../assets/models/medical_box.js"></script>
+<script src="../../assets/models/vintage_flashlight.js"></script><script src="../../assets/models/vintage_oil_lamp.js"></script>
+<script src="../../assets/models/wall_clock.js"></script><script src="../../assets/models/television_02.js"></script>
+<script src="../../assets/models/rubber_boots.js"></script><script src="../../assets/models/plastic_crate_01.js"></script>
+<script src="../../assets/models/street_lamp_01.js"></script><script src="../../assets/models/Megaphone_01.js"></script>
+<script src="../../assets/models/power_box_01.js"></script><script src="../../assets/models/vintage_lighter.js"></script>
+<script type="module">
+// J+1 ch.2 « LES TROIS JOURS » — lookdev v2 : les 6 plans clés (1 plan par seconde : renderFrame(f) avec t = numéro du plan)
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';import {BokehPass} from 'three/addons/postprocessing/BokehPass.js';import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+import {M,box,rbox,cyl,put,perso,pose,place,FURN,immeuble,rue,mairie,B,Y,loadModels,softTex} from '../../moteur/immeuble.js';
+const W=1080,H=1920,FPS=30;window.DURATION=6;window.EVENTS=[];
+const gv=document.getElementById('g'),ctx=document.getElementById('c').getContext('2d');
+const R=new THREE.WebGLRenderer({canvas:gv,antialias:true,preserveDrawingBuffer:true});R.setSize(W,H,false);R.setPixelRatio(1);R.toneMapping=THREE.ACESFilmicToneMapping;R.outputColorSpace=THREE.SRGBColorSpace;R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+const S=new THREE.Scene();const CAM=new THREE.PerspectiveCamera(36,W/H,.05,400);
+const pm=new THREE.PMREMGenerator(R);S.environment=pm.fromScene(new RoomEnvironment(),.04).texture;
+// ---------- lumières de nuit
+const NIGHT=new THREE.Group();S.add(NIGHT);
+const hemi=new THREE.HemisphereLight('#5d74a8','#0b0d12',.35);NIGHT.add(hemi);
+const moon=new THREE.DirectionalLight('#9fb4ff',1.1);moon.position.set(-14,26,-22);moon.castShadow=true;moon.shadow.mapSize.set(4096,4096);Object.assign(moon.shadow.camera,{left:-16,right:16,top:20,bottom:-6,near:1,far:80});moon.shadow.bias=-.0004;NIGHT.add(moon);
+const fill=new THREE.DirectionalLight('#7f93c9',.12);fill.position.set(6,10,30);NIGHT.add(fill);
+// ---------- décor
+const imm=immeuble(S);const street=rue(S);
+const F={sam:3,mamie:2,voisin:4};
+// Sam (3e) : séjour cuisine + réserves, chambre
+const y3=Y(3);FURN.kitchen(S,-1.75,y3,-1.97,1.9,false);FURN.table(S,-1.55,y3,.45,1.4,.85);FURN.chair(S,-2.45,y3,.45,Math.PI/2);FURN.chair(S,-.65,y3,.45,-Math.PI/2);
+FURN.sofa(S,.45,y3,-1.72,'#3f5a6e',2.2);FURN.low(S,.45,y3,-.55,1.1,.55);FURN.rug(S,.2,y3,-.6,2.6,1.8,'#7a3b32');
+FURN.bed(S,4.75,y3,-1.2,1.5,'#d08a3a');FURN.wardrobe(S,2.45,y3,-1.95,1.2);FURN.shelf(S,6.0-.17,y3,.6,1,1.9);
+FURN.frame(S,-.5,y3+1.75,-2.16,.6,.45,'#6c8aa6');FURN.radiator(S,.3,y3,-2.1,.9);
+// Mme Ferreira (2e) : fauteuil, buffet, télé morte, horloge
+const y2=Y(2);FURN.armchair(S,-2.55,y2,.1,'#7d4f5f',.55);rbox(S,1.8,.85,.5,M('#6b4a33',.6),-.6,y2+.425,-1.98,.02);FURN.frame(S,-1.1,y2+1.1,-1.9,.24,.3,'#b9a07a');FURN.frame(S,-.75,y2+1.08,-1.9,.2,.24,'#8aa0a8');
+FURN.rug(S,-1.4,y2,.2,2.4,1.6,'#3d5e6b');FURN.bed(S,4.5,y2,-1.2,1.4,'#c9b7d6');FURN.wardrobe(S,2.5,y2,-1.95,1.1);FURN.plant(S,1.15,y2,-1.8);FURN.frame(S,3.2,y2+1.6,-2.16,.7,.5,'#a8b38f');
+// voisin (4e) : canapé, télé allumée sur le groupe électrogène
+const y4=Y(4);FURN.sofa(S,-1.6,y4,-1.72,'#5b5148',2);FURN.rug(S,-1,y4,-.4,2.6,1.6,'#4b4b3a');FURN.bed(S,4.6,y4,-1.2,1.5,'#6d7c5a');FURN.wardrobe(S,2.5,y4,-1.95,1.2);
+rbox(S,.9,.5,.45,M('#2a2a2a',.5),-3.0,y4+.25,.3,.02);
+// 1er : une famille autour d'une bougie
+const y1=Y(1);FURN.table(S,-1.4,y1,-.2,1.3,.8);FURN.chair(S,-2.25,y1,-.2,Math.PI/2);FURN.chair(S,-.55,y1,-.2,-Math.PI/2);FURN.sofa(S,.6,y1,-1.72,'#6d6a5a',2);FURN.bed(S,4.6,y1,-1.2,1.4,'#8f9fb8');
+// ---------- personnages
+const sam=perso({top:'#e8742c',hood:1,bottom:'#2f3d55',skin:'#c98e66',hairCol:'#24170f',shoes:'#f1efe9'});
+const mamie=perso({top:'#7a5c8e',bottom:'#4f4458',skin:'#e8c4a6',hair:'chignon',hairCol:'#dcd8d2',glasses:1,cane:1,scarf:'#c9b77e',shoes:'#6b4a3a',h:.9,hunch:.18});
+const voisin=perso({top:'#4e6b4a',bottom:'#3a3a3a',skin:'#a87656',hair:'bonnet',hatCol:'#8e2b25',beard:1,hairCol:'#1c1410',shoes:'#3a2a1e',h:1.06});
+const fam=[perso({top:'#3b5d7a',skin:'#7a4e33',hairCol:'#120c08'}),perso({top:'#b5543c',skin:'#7a4e33',hair:'chignon',hairCol:'#120c08',h:.95})];
+pose(fam[0],{sit:1,armL:[-.9,0,-.6],armR:[-.9,0,-.6],head:[.2,0,0]});pose(fam[1],{sit:1,armL:[-.9,0,-.6],armR:[-.9,0,-.6],head:[.2,0,0]});
+place(S,fam[0],-2.1,y1+.0,-.2,Math.PI/2);place(S,fam[1],-.7,y1,-.2,-Math.PI/2);
+// ---------- lumières pratiques
+const L=(c,i,d,x,y,z,shadow)=>{const l=new THREE.PointLight(c,i,d,2);l.position.set(x,y,z);if(shadow){l.castShadow=true;l.shadow.mapSize.set(1024,1024);l.shadow.bias=-.002;}S.add(l);return l;};
+const lampSam=L('#ffa04a',6.5,9,-1.3,y3+1.3,.45,1);
+const candle=L('#ff9a40',2.2,5,-1.4,y1+1.02,-.2,1);
+const tvL=L('#b9d0ff',6,7,-2.55,y4+.95,.15,1);
+const baes=[1,2,3,4].map(f=>{rbox(S,.32,.12,.06,M('#e9ffee',.3,{emissive:'#2bff6a',emissiveIntensity:2.2}),-4.1,Y(f)+2.35,-2.25,.02);return L('#4dff8a',.5,3.5,-4.1,Y(f)+2.2,-1.9,0);});
+const torch=new THREE.SpotLight('#fff2d0',14,9,.38,.5,1.6);torch.castShadow=true;torch.shadow.mapSize.set(1024,1024);S.add(torch);S.add(torch.target);
+// ---------- jour (mairie)
+const DAY=new THREE.Group();S.add(DAY);DAY.visible=false;
+const sun=new THREE.DirectionalLight('#e9ecf2',2.2);sun.position.set(140,40,20);sun.target.position.set(120,0,-6);sun.castShadow=true;sun.shadow.mapSize.set(4096,4096);Object.assign(sun.shadow.camera,{left:-25,right:25,top:25,bottom:-25,near:1,far:120});DAY.add(sun);DAY.add(sun.target);
+DAY.add(new THREE.HemisphereLight('#c9d3e0','#5a5248',.9));
+const blk=FURN.plaid(S,.45,y3,2.1,[[-1.66,.98],[-1.5,.9],[-1.3,.7],[-1.12,.58],[-1.0,.48],[-.95,.3],[-.93,.1]]);
+let LANT,FX,BOK,mair,haze=[],gen,tv;
+window.ready=(async()=>{
+  await Promise.all([document.fonts.load('80px Anton'),document.fonts.load('700 30px Mono')]);
+  await loadModels(new GLTFLoader(),Object.keys(window.MODELS));
+  put(S,'street_lamp_01',-9.5,0,5.3,Math.PI/2);put(S,'street_lamp_01',9.5,0,5.3,-Math.PI/2);
+  // réserves de Sam : eau, nourriture, radio, lanterne, trousse
+  LANT=put(S,'Lantern_01',-1.3,y3+.78,.5,.3);Object.assign(LANT.userData,{x0:LANT.position.x,y0:LANT.position.y,z0:LANT.position.z});put(S,'plastic_bottle_gallon',-2.0,y3+.78,.3,.4);put(S,'plastic_bottle_gallon',-1.7,y3+.78,.72,-.3);put(S,'vintage_radio_transceiver',-1.95,y3+.78,.62,.5);put(S,'alarm_clock_01',-.95,y3+.78,.75,-.4);
+  put(S,'long_life_food',-1.75,y3+.78,.25,.2);put(S,'russian_food_cans_01',-1.0,y3+.78,.3,0);
+  [[-3.2,-1.3],[-3.2,-.9],[-2.85,-1.3],[-3.2,-.5]].forEach(([x,z])=>put(S,'plastic_bottle_gallon',x,y3,z));put(S,'plastic_jerrycan',-2.95,y3,-.55,.6);
+  put(S,'medical_box',-1.2,y3+.9,-2.0,0);put(S,'rubber_boots',-3.25,y3,1.7,1.2);put(S,'plastic_crate_01',-2.3,y3,1.55,.2);
+  put(S,'vintage_lighter',.6,y3+.43,-.5,0);
+  // Mme Ferreira : télé éteinte, lampe à pétrole (vide), horloge arrêtée
+  put(S,'television_02',-.35,y2+.85,-1.95,0);put(S,'vintage_oil_lamp',-1.35,y2+.85,-1.95,0);put(S,'wall_clock',-2.6,y2+1.9,-2.1,0,1.4);
+  // voisin : groupe électrogène DANS le salon, jerrycans, télé allumée
+  gen=put(S,'portable_generator',.05,y4,.2,-.35);put(S,'metal_jerrycan_green',.85,y4,.55,.4);put(S,'plastic_jerrycan',.95,y4,-.15,-.3);
+  tv=put(S,'television_02',-3.0,y4+.5,.3,.95);
+  const scr=new THREE.Mesh(new THREE.PlaneGeometry(.5,.36),new THREE.MeshBasicMaterial({color:'#9ec6ff'}));scr.position.set(-2.86,y4+.83,.38);scr.rotation.y=.95;S.add(scr);
+  const cable=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-.3,y4+.3,.25),new THREE.Vector3(-1.2,y4+.03,.6),new THREE.Vector3(-2.4,y4+.03,.6),new THREE.Vector3(-2.8,y4+.35,.3)]),40,.012,6),M('#111',.6));S.add(cable);
+  // monoxyde de carbone : nappe grise invisible « dans la vraie vie », rendue ici en voile glauque qui envahit la pièce
+  for(let i=0;i<40;i++){const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:softTex,color:'#a7b39a',transparent:true,opacity:.0,depthWrite:false}));const a=i*2.39;sp.userData={x:.1+Math.cos(a)*(.3+i*.06),y:y4+.6+(i%8)*.25,z:.1+Math.sin(a)*(.2+i*.03),s:.8+(i%5)*.3,o:.1+(i%3)*.045};S.add(sp);haze.push(sp);}
+  put(S,'power_box_01',2.2,Y(0)+1.0,-2.15,0);
+  mair=mairie(S,{x:120,crowd:80});
+  FX=new EffectComposer(R);FX.addPass(new RenderPass(S,CAM));BOK=new BokehPass(S,CAM,{focus:10,aperture:.0012,maxblur:.008});FX.addPass(BOK);
+  FX.addPass(new UnrealBloomPass(new THREE.Vector2(W,H),.35,.45,.9));FX.addPass(new OutputPass());
+})();
+// ---------- les plans clés
+function night(on){blk.visible=false;mamie.userData.P.cane.visible=true;if(LANT){LANT.position.set(LANT.userData.x0??LANT.position.x,LANT.userData.y0??LANT.position.y,LANT.userData.z0??LANT.position.z);}lampSam.position.set(-1.3,y3+1.3,.45);NIGHT.visible=on;DAY.visible=!on;S.background=new THREE.Color(on?'#0a1120':'#b9c2cc');S.fog=on?new THREE.Fog('#0a1120',60,180):new THREE.Fog('#b9c2cc',40,120);R.toneMappingExposure=on?1.1:.95;S.environmentIntensity=on?.06:.35;
+  [lampSam,candle,tvL,...baes].forEach(l=>l.visible=on);haze.forEach(h=>h.visible=on);}
+function cam(p,t,fov=36,focus,ap=.0012){CAM.fov=fov;CAM.updateProjectionMatrix();CAM.position.set(...p);CAM.lookAt(...t);BOK.uniforms.focus.value=focus||CAM.position.distanceTo(new THREE.Vector3(...t));BOK.uniforms.aperture.value=ap;}
+const SHOTS=[
+ {nom:'LARGE',hud:'J+1',sub:'TOUTE LA FRANCE',set(){night(1);torch.visible=false;blk.visible=false;
+   pose(sam,{armL:[0,-.1,-.3],armR:[0,.1,-.3],brows:.25});place(S,sam,-2.2,y3,1.0,.25);
+   pose(mamie,{armL:[0,-.1,-.4],armR:[-.6,.15,-.9],brows:.3});place(S,mamie,-4.15,y3,.9,Math.PI/2);
+   pose(voisin,{armL:[-.3,-.3,-1.6],armR:[-.3,.3,-1.6],head:[.25,0,0]});place(S,voisin,-.6,y4,.4,.6);
+   cam([-.3,8.6,38],[-.3,7.9,0],38,38,.0002);}},
+ {nom:'LA PORTE',hud:'J+1',sub:'QUELQU\'UN FRAPPE',set(){night(1);torch.visible=true;
+   pose(mamie,{armL:[-1.1,-.2,-.9],armR:[-.9,.1,-1.2],head:[0,0,0],brows:.45});mamie.userData.P.cane.visible=false;place(S,mamie,-4.25,y3,1.0,Math.PI/2-.35);
+   torch.position.set(-4.05,y3+1.0,.95);torch.target.position.set(-3.6,y3+1.2,.8);
+   pose(sam,{armL:[0,-.1,-.2],armR:[-1.3,0,-.9],head:[0,-.15,0],brows:.55,lean:-.05});place(S,sam,-2.95,y3,1.0,-Math.PI/2+.35);
+   cam([-3.4,y3+1.35,6.4],[-3.6,y3+1.0,.8],36,null,.0018);}},
+ {nom:'JOUR 1 · L\'EAU',hud:'J+1',sub:'SIX LITRES',set(){night(1);torch.visible=false;
+   pose(sam,{armL:[-.8,-.1,-1.1],armR:[-1.0,.2,-.6],head:[.35,.2,0],brows:.35,lean:.12});place(S,sam,-2.6,y3,1.05,.75);mamie.userData.P.cane.visible=false;
+   pose(mamie,{sit:1,armL:[-.8,0,-.7],armR:[-.8,0,-.7],brows:.3});place(S,mamie,-.65,y3,.45,-Math.PI/2+.3);
+   cam([-1.3,y3+1.85,5.6],[-2.0,y3+.95,.1],42,null,.0016);}},
+ {nom:'JOUR 2 · LE CO',hud:'J+2',sub:'ERREUR MORTELLE',set(){night(1);torch.visible=false;
+   haze.forEach(h=>{const u=h.userData;h.position.set(u.x,u.y,u.z);h.scale.setScalar(u.s);h.material.opacity=u.o;});
+   pose(voisin,{sit:1,armL:[-.5,-.15,-.8],armR:[-.5,.15,-.8],head:[0,-.2,0],brows:-.1});place(S,voisin,-1.65,y4+.05,-1.5,-.6);
+   cam([.5,y4+1.45,4.3],[-.95,y4+.8,-.6],40,null,.0016);}},
+ {nom:'LE SOIR',hud:'J+2',sub:'UNE SEULE LAMPE',set(){night(1);torch.visible=false;haze.forEach(h=>h.material.opacity=0);
+   pose(sam,{sit:1,armL:[-.4,-.1,-1.0],armR:[-.4,.1,-1.0],brows:.3,head:[.1,.2,0]});place(S,sam,-.05,y3+.05,-1.55,0);
+   pose(mamie,{sit:1,armL:[-.4,-.1,-1.0],armR:[-.4,.1,-1.0],brows:.2,head:[.05,-.25,0]});place(S,mamie,.95,y3+.05,-1.55,0);blk.visible=true;LANT.position.set(.45,LANT.position.y-.78+.46+.0,-.5);lampSam.position.set(.45,y3+.85,-.5);
+   pose(voisin,{sit:1,armL:[-.5,-.2,-1.2],armR:[-.5,.2,-1.2],head:[.25,0,0]});place(S,voisin,-1.55,y3,.45,Math.PI/2);
+   cam([.5,y3+1.45,4.2],[.3,y3+.8,-1.2],38,null,.0018);}},
+ {nom:'JOUR 3 · LA MAIRIE',hud:'J+3',sub:'TROIS PALETTES',set(){night(0);torch.visible=false;
+   pose(sam,{armL:[0,-.1,-.3],armR:[0,.1,-.3],head:[0,.3,0],brows:.5});place(S,sam,124.2,0,5.4,-2.6);
+   pose(mamie,{armL:[-.4,-.2,-1.0],armR:[-.6,.15,-.9],brows:.4});place(S,mamie,125.0,0,5.0,-2.75);
+   cam([134,13,17],[120.5,3.2,-4],44,null,.0003);}},
+];
+// ---------- HUD (repris du chapitre 1) + sous-titre type
+const RED='#ff3a2e',AMB='#ffb21e',INK='#f2f0e8',CY='#7fc3e6';
+function txt(s,x,y,f,c,al='left',ls=0,glow=0){ctx.save();ctx.font=f;ctx.fillStyle=c;ctx.textAlign=al;if(ls)ctx.letterSpacing=ls+'px';if(glow){ctx.shadowColor=c;ctx.shadowBlur=glow;}ctx.fillText(s,x,y);ctx.restore();}
+function hud(s,i){const g=ctx.createLinearGradient(0,0,0,330);g.addColorStop(0,'rgba(0,0,0,.75)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,330);
+  txt('J+1',60,215,'64px Anton',INK);txt('· LES TROIS JOURS',190,212,'40px Anton','rgba(242,240,232,.8)','left',2);
+  ctx.fillStyle=RED;ctx.beginPath();ctx.arc(70,255,8,0,7);ctx.fill();txt('SIMULATION · CHAPITRE 2',90,264,'700 22px Mono',RED,'left',4);
+  txt(s.hud,W-60,220,'700 60px Mono',AMB,'right',2,14);
+  const y=300,eau=[1,1,.8,.55,.45,.2][i];txt('RÉSEAU',W-300,y,'700 20px Mono',RED,'left',3);for(let k=0;k<4;k++){ctx.fillStyle='rgba(255,58,46,.35)';ctx.fillRect(W-170+k*22,y-8-k*7,14,8+k*7);}
+  txt('EAU',W-300,y+40,'700 20px Mono',INK,'left',3);ctx.strokeStyle=CY;ctx.lineWidth=2;ctx.strokeRect(W-170,y+22,80,20);ctx.fillStyle=eau<.3?RED:CY;ctx.fillRect(W-168,y+24,76*eau,16);
+  txt('COURANT',W-300,y+80,'700 20px Mono',RED,'left',3);txt('OFF',W-170,y+80,'700 20px Mono',RED,'left',3);
+  if(i===3){ctx.save();ctx.translate(540,520);ctx.rotate(-.06);ctx.font='70px Anton';const w=ctx.measureText('DANGER · CO').width;ctx.strokeStyle=RED;ctx.lineWidth=8;ctx.strokeRect(-w/2-24,-64,w+48,82);ctx.fillStyle=RED;ctx.textAlign='center';ctx.fillText('DANGER · CO',0,0);ctx.restore();}
+  ctx.save();ctx.translate(540,1440);ctx.font='78px Anton';ctx.textAlign='center';const w=ctx.measureText(s.sub).width;ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(-w/2-24,-74,w+48,98);ctx.fillStyle=INK;ctx.fillText(s.sub,0,0);ctx.restore();}
+window.renderFrame=f=>{const i=Math.min(SHOTS.length-1,Math.floor(f/FPS)),s=SHOTS[i];s.set();
+  FX.render();ctx.drawImage(gv,0,0);
+  const v=ctx.createRadialGradient(540,960,420,540,960,1200);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.55)');ctx.fillStyle=v;ctx.fillRect(0,0,W,H);
+  if(!window.NOHUD)hud(s,i);};
+</script></body></html>

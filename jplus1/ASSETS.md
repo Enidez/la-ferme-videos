@@ -24,3 +24,7 @@ Charger `<script src="../assets/models/<id>.js">` puis `new GLTFLoader().parse(J
 
 ### À récupérer plus tard
 - Kenney (CC0) : kits low-poly (ville, véhicules) si besoin d'une ville en maquette.
+
+### Décor « maquette en coupe » (chapitre 2, 22/10/2026)
+`moteur/immeuble.js` (module réutilisable) : l'immeuble de Sam en coupe (5 niveaux, cage d'escalier avec veilleuses vertes, porte d'entrée vue de profil, fenêtres à l'arrière éclairées par la lune), le mobilier (canapé, cuisine, lit, armoire, étagère, tapis, plaid…), la rue de nuit, la place de la mairie (foule, 3 palettes d'eau, agents en gilet), et les figurines « vinyle » posables (`perso`, `pose`, `place`) : Sam (sweat orange à capuche), Mme Ferreira (82 ans, chignon, lunettes, canne), le voisin du 4e (bonnet rouge, barbe). Objets Poly Haven posés à leur taille réelle avec `put`.
+Essai : `episodes/02_les_trois_jours/lookdev_v2.html` (6 plans clés, planche dans `lookdev_v2/`).
