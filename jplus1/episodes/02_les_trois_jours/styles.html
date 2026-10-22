@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF;}
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Mono;font-weight:700;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2) format('woff2');}
+html,body{margin:0;background:#05070b}canvas{display:block}#g{position:absolute;left:-9999px}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body><canvas id="c" width="1080" height="1920"></canvas><canvas id="g" width="1080" height="1920"></canvas>
+<script type="module">
+// J+1 — planche de character design : 3 styles (LOW POLY, PIONS, JOUET), 1 style par seconde
+import * as THREE from 'three';import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {BokehPass} from 'three/addons/postprocessing/BokehPass.js';import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+import {pose,canvasTex} from '../../moteur/immeuble.js';
+const W=1080,H=1920,FPS=30;window.DURATION=3;window.EVENTS=[];
+const gv=document.getElementById('g'),ctx=document.getElementById('c').getContext('2d');
+const R=new THREE.WebGLRenderer({canvas:gv,antialias:true,preserveDrawingBuffer:true});R.setSize(W,H,false);R.setPixelRatio(1);R.toneMapping=THREE.ACESFilmicToneMapping;R.outputColorSpace=THREE.SRGBColorSpace;R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+const S=new THREE.Scene();const CAM=new THREE.PerspectiveCamera(30,W/H,.05,200);
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),.04).texture;
+const add=(p,geo,m,x=0,y=0,z=0)=>{const o=new THREE.Mesh(geo,m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;p.add(o);return o;};
+const dir=(p,c,i,x,y,z,tx=0,tz=0)=>{const l=new THREE.DirectionalLight(c,i);l.position.set(x,y,z);l.target.position.set(tx,0,tz);l.castShadow=true;l.shadow.mapSize.set(2048,2048);Object.assign(l.shadow.camera,{left:-4,right:4,top:4,bottom:-4,near:.5,far:60});l.shadow.bias=-.0005;l.shadow.radius=4;p.add(l);p.add(l.target);return l;};
+let SETS=[],FX,BOK;
+window.ready=(async()=>{
+  await Promise.all([document.fonts.load('80px Anton'),document.fonts.load('700 30px Mono')]);
+  const {lowPoly,pion,jouet,CAST}=await import('../../moteur/styles_persos.js');
+  const trio=(p,make,ox)=>{const m=pose(make(CAST.mamie),{armR:[-.15,0,-.1]}),s=pose(make(CAST.sam),{armL:[0,-.12,-.15],armR:[0,.12,-.15]}),v=pose(make(CAST.voisin),{armL:[0,-.28,-.25],armR:[0,.28,-.25]});
+    m.position.set(ox-.62,0,-1.3);m.rotation.y=.25;s.position.set(ox,0,.25);v.position.set(ox+.66,0,-1.4);v.rotation.y=-.25;[m,s,v].forEach(o=>p.add(o));return [m,s,v];};
+  // ---- 1. LOW POLY : sol à facettes, ciel dégradé, rochers et réverbère anguleux
+  {const g=new THREE.Group();S.add(g);const F=(c)=>new THREE.MeshStandardMaterial({color:c,roughness:.9,flatShading:true});
+   const gr=new THREE.PlaneGeometry(30,30,24,24);const pa=gr.attributes.position;for(let i=0;i<pa.count;i++){const x=pa.getX(i),y=pa.getY(i),d=Math.hypot(x,y);pa.setZ(i,d<3?0:Math.sin(i*12.9898)*.25+(d-3)*.08);}gr.computeVertexNormals();
+   const gm=add(g,gr,F('#56657a'));gm.rotation.x=-Math.PI/2;
+   [[-2.6,-3,1],[2.4,-3.6,1.4],[3.4,-1.5,.6],[-3.2,-1,.5]].forEach(([x,z,s])=>{const r=add(g,new THREE.DodecahedronGeometry(.6*s,0),F('#3e4a5c'),x,.3*s,z);r.rotation.set(x,z,0);});
+   add(g,new THREE.CylinderGeometry(.06,.08,3.4,5),F('#2a3240'),1.7,1.7,-1.6);add(g,new THREE.ConeGeometry(.25,.3,5),F('#2a3240'),1.7,3.45,-1.6).rotation.x=Math.PI;
+   for(let i=0;i<5;i++){const h=3+((i*7)%5);add(g,new THREE.BoxGeometry(1.4,h,1.4),F('#34405a'),-6+i*3,h/2,-8-(i%2)*2);}
+   trio(g,lowPoly,0);dir(g,'#ffd6a3',2.4,-3,6,5);g.add(new THREE.HemisphereLight('#9fb8e6','#3a2f2a',.9));
+   SETS.push({g,bg:['#2b3b5c','#e8a273'],cam:[[0,1.25,6.4],[0,1.0,0]],env:.25,exp:1.0,label:'1 · LOW POLY',desc:'FACETTES, COULEURS FRANCHES'});}
+  // ---- 2. PIONS : plateau de jeu « J+1 » (cases J+1/J+2/J+3), dé, cartes
+  {const g=new THREE.Group();g.position.x=40;S.add(g);
+   const board=canvasTex(1024,1024,(c,w)=>{c.fillStyle='#e9e1cf';c.fillRect(0,0,w,w);c.strokeStyle='#3a3229';c.lineWidth=6;c.strokeRect(20,20,w-40,w-40);
+     const cells=[];for(let i=0;i<7;i++)cells.push([60+i*130,60]);for(let i=1;i<7;i++)cells.push([840,60+i*130]);for(let i=1;i<7;i++)cells.push([840-i*130,840]);
+     const col=['#d9b44a','#7fc3e6','#e8742c','#9bbf7a','#c8584b'];cells.forEach(([x,y],i)=>{c.fillStyle=col[i%5];c.fillRect(x,y,122,122);c.strokeStyle='#3a3229';c.lineWidth=4;c.strokeRect(x,y,122,122);c.fillStyle='#3a3229';c.font='44px Anton';c.textAlign='center';c.fillText(i%6===0?'J+'+(i/6+1):String(i+1),x+61,y+80);});
+     c.font='150px Anton';c.fillStyle='rgba(58,50,41,.85)';c.textAlign='center';c.fillText('J+1',w/2,w/2+20);c.font='40px Mono';c.fillText('LE JEU DE LA SURVIE',w/2,w/2+90);});
+   board.anisotropy=8;const bm=new THREE.MeshStandardMaterial({map:board,roughness:.6});add(g,new THREE.BoxGeometry(5,.08,5),[bm,bm,bm,bm,bm,bm].map((m,i)=>i===2?m:new THREE.MeshStandardMaterial({color:'#5b3d27',roughness:.5})),0,-.04,-1.2);
+   const tbl=add(g,new THREE.PlaneGeometry(40,40),new THREE.MeshStandardMaterial({color:'#3b2a1e',roughness:.7}),0,-.081,0);tbl.rotation.x=-Math.PI/2;
+   const die=add(g,new RoundedBoxGeometry(.32,.32,.32,4,.05),new THREE.MeshStandardMaterial({color:'#f4f1ea',roughness:.3}),1.25,.16,.45);die.rotation.y=.5;
+   [[0,0],[-.08,-.08],[.08,.08]].forEach(([a,b])=>add(die,new THREE.SphereGeometry(.025,10,8),new THREE.MeshStandardMaterial({color:'#b3262b'}),a,.162,b));
+   for(let i=0;i<5;i++){const cd=add(g,new RoundedBoxGeometry(.45,.012,.65,2,.005),new THREE.MeshStandardMaterial({color:i==4?'#c8242b':'#e9e1cf',roughness:.5}),-1.35,.006+i*.013,.4);cd.rotation.y=-.3+i*.03;}
+   trio(g,pion,0);const sp=new THREE.SpotLight('#ffe2b8',60,20,.55,.6,1.5);sp.position.set(40-1,6,3);sp.target.position.set(40,0,0);sp.castShadow=true;sp.shadow.mapSize.set(2048,2048);g.parent.add(sp);g.parent.add(sp.target);g.userData.sp=sp;
+   g.add(new THREE.HemisphereLight('#ffe9cc','#2a1d14',.35));
+   SETS.push({g,bg:['#120c08','#3b2a1e'],cam:[[40,1.35,4.6],[40,.68,0]],env:.15,exp:1.05,label:'2 · PIONS',desc:'PIÈCES DE BOIS SUR UN PLATEAU'});}
+  // ---- 3. JOUET : figurines plastique dans une chambre (parquet, cubes J + 1)
+  {const g=new THREE.Group();g.position.x=80;S.add(g);
+   const wood=canvasTex(512,512,(c,w)=>{for(let i=0;i<8;i++){const v=150+((i*37)%40);c.fillStyle=`rgb(${v+40},${v},${v-50})`;c.fillRect(0,i*64,w,64);c.fillStyle='rgba(60,35,15,.5)';c.fillRect(0,i*64,w,3);for(let k=0;k<20;k++){c.fillStyle='rgba(90,55,25,.12)';c.fillRect(0,i*64+6+k*3,w,1);}c.fillRect((i*173)%w,i*64,3,64);}});
+   wood.wrapS=wood.wrapT=THREE.RepeatWrapping;wood.repeat.set(4,4);const fl=add(g,new THREE.PlaneGeometry(16,16),new THREE.MeshStandardMaterial({map:wood,roughness:.45}));fl.rotation.x=-Math.PI/2;
+   const wp=canvasTex(512,512,(c,w)=>{c.fillStyle='#9cc3d9';c.fillRect(0,0,w,w);c.fillStyle='#b4d3e4';for(let i=0;i<8;i+=2)c.fillRect(i*64,0,64,w);});wp.wrapS=wp.wrapT=THREE.RepeatWrapping;wp.repeat.set(3,2);
+   add(g,new THREE.PlaneGeometry(16,8),new THREE.MeshStandardMaterial({map:wp,roughness:.9}),0,4,-3.2);add(g,new THREE.BoxGeometry(16,.18,.05),new THREE.MeshStandardMaterial({color:'#f4f1ea'}),0,.09,-3.17);
+   const blk=(ch,col,x,y,z,ry)=>{const t=canvasTex(256,256,(c,w)=>{c.fillStyle=col;c.fillRect(0,0,w,w);c.strokeStyle='rgba(255,255,255,.7)';c.lineWidth=14;c.strokeRect(14,14,w-28,w-28);c.fillStyle='#fff';c.font='170px Anton';c.textAlign='center';c.fillText(ch,w/2,200);});
+     const m=new THREE.MeshPhysicalMaterial({map:t,roughness:.4,clearcoat:.5});const b=add(g,new RoundedBoxGeometry(.5,.5,.5,3,.04),m,x,y,z);b.rotation.y=ry;return b;};
+   blk('J','#c8242b',-1.25,.25,-2.4,.25);blk('+','#2d5a9b',-.7,.25,-2.55,-.1);blk('1','#e8a21e',-.95,.75,-2.45,.12);
+   const ball=add(g,new THREE.SphereGeometry(.32,32,20),new THREE.MeshPhysicalMaterial({color:'#e94b3c',roughness:.3,clearcoat:.8}),1.3,.32,-2.3);
+   trio(g,jouet,0);dir(g,'#fff1dc',3.2,80+3,5,4,80,0);g.add(new THREE.HemisphereLight('#dbe9ff','#8a6447',.7));
+   SETS.push({g,bg:['#9cc3d9','#9cc3d9'],cam:[[80,1.25,6.4],[80,1.0,0]],env:.5,exp:1.0,label:'3 · JOUET',desc:'FIGURINE PLASTIQUE ARTICULÉE'});}
+  FX=new EffectComposer(R);FX.addPass(new RenderPass(S,CAM));BOK=new BokehPass(S,CAM,{focus:5,aperture:.0025,maxblur:.008});FX.addPass(BOK);FX.addPass(new OutputPass());
+})();
+const bgTex=(a,b)=>canvasTex(4,256,(c)=>{const g=c.createLinearGradient(0,0,0,256);g.addColorStop(0,a);g.addColorStop(1,b);c.fillStyle=g;c.fillRect(0,0,4,256);});
+window.renderFrame=f=>{const i=Math.min(SETS.length-1,Math.floor(f/FPS)),s=SETS[i];
+  SETS.forEach((o,k)=>o.g.visible=k===i);if(SETS[1].g.userData.sp)SETS[1].g.userData.sp.visible=i===1;
+  S.background=bgTex(...s.bg);S.environmentIntensity=s.env;R.toneMappingExposure=s.exp;
+  CAM.position.set(...s.cam[0]);CAM.lookAt(...s.cam[1]);BOK.uniforms.focus.value=CAM.position.distanceTo(new THREE.Vector3(s.cam[1][0],s.cam[1][1],.25));
+  FX.render();ctx.drawImage(gv,0,0);
+  const g=ctx.createLinearGradient(0,0,0,360);g.addColorStop(0,'rgba(0,0,0,.7)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,360);
+  ctx.font='110px Anton';ctx.fillStyle='#f2f0e8';ctx.textAlign='center';ctx.fillText(s.label,540,190);ctx.font='700 30px Mono';ctx.fillStyle='#ffb21e';ctx.letterSpacing='4px';ctx.fillText(s.desc,540,250);ctx.letterSpacing='0px';};
+</script></body></html>
