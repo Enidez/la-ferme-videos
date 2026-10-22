@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#05070b}canvas{display:block}#g{position:absolute;left:-9999px}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body><canvas id="c" width="1080" height="1920"></canvas><canvas id="g" width="1080" height="1920"></canvas>
+<script src="../../assets/models/portable_generator.js"></script>
+<script src="../../assets/models/Lantern_01.js"></script>
+<script src="../../assets/models/plastic_bottle_gallon.js"></script>
+<script type="module">
+// J+1 ch.2 — essai de style « maquette en coupe » : l'immeuble de Sam ouvert comme une maison de poupée, figurines, nuit, effet miniature
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';import {BokehPass} from 'three/addons/postprocessing/BokehPass.js';import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+const W=1080,H=1920,FPS=30;window.DURATION=6;window.EVENTS=[];
+const gv=document.getElementById('g'),ctx=document.getElementById('c').getContext('2d');
+const R=new THREE.WebGLRenderer({canvas:gv,antialias:true,preserveDrawingBuffer:true});R.setSize(W,H,false);R.setPixelRatio(1);R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.1;R.outputColorSpace=THREE.SRGBColorSpace;R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+const S=new THREE.Scene();S.background=new THREE.Color('#070b14');S.fog=new THREE.Fog('#070b14',14,40);
+const CAM=new THREE.PerspectiveCamera(34,W/H,.1,200);
+S.add(new THREE.HemisphereLight('#3b4f7a','#06070a',.55));
+const moon=new THREE.DirectionalLight('#8fa8ff',.6);moon.position.set(-6,12,8);moon.castShadow=true;moon.shadow.mapSize.set(2048,2048);Object.assign(moon.shadow.camera,{left:-8,right:8,top:10,bottom:-4});S.add(moon);
+const M=(c,r=.85,e)=>new THREE.MeshStandardMaterial({color:c,roughness:r,emissive:e||'#000'});
+const box=(w,h,d,m,x,y,z,p=S)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;p.add(o);return o;};
+// ---------- l'immeuble en coupe : 5 étages, façade arrière, planchers, murs de refend
+const FH=1.6,FW=6.4,FD=3.2,NF=5;const conc=M('#9a9387'),wallIn=M('#cfc6b4'),floorM=M('#6d5848',.7);
+for(let f=0;f<=NF;f++)box(FW+.3,.16,FD+.2,conc,0,f*FH,0);                  // dalles
+box(FW+.3,NF*FH,.16,wallIn,0,NF*FH/2,-FD/2);                             // mur du fond
+box(.16,NF*FH,FD+.2,conc,-FW/2,NF*FH/2,0);box(.16,NF*FH,FD+.2,conc,FW/2,NF*FH/2,0);
+const PAP=['#b9a88f','#8c9a86','#c9b48e','#8d8fa6','#a89a8a'];for(let f=0;f<NF;f++){box(FW,FH-.17,.04,M(PAP[f]),0,f*FH+FH/2,-FD/2+.1);box(.12,FH-.16,FD,wallIn,.9,f*FH+FH/2,0);box(FW-.2,.02,FD-.1,floorM,0,f*FH+.09,0);}
+box(FW+.6,.4,FD+.6,conc,0,NF*FH+.2,0);
+// fenêtres au fond (nuit dehors) + immeubles d'en face éteints
+const winM=M('#0b1426',.3,'#0a1222');for(let f=0;f<NF;f++)[-2,2.4].forEach(x=>box(.9,.8,.05,winM,x,f*FH+.95,-FD/2+.1));
+for(let i=0;i<9;i++){const h=6+((i*37)%7);box(3,h,3,M('#0d121c'),-14+i*3.6,h/2,-9-(i%3)*2);}
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(80,40),M('#0b0e14',1));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;S.add(ground);
+// ---------- mobilier minimal
+const sofa=(x,y)=>{box(1.4,.35,.6,M('#4b5d6e'),x,y+.25,-FD/2+.5);box(1.4,.45,.18,M('#43535f'),x,y+.55,-FD/2+.22);};
+const table=(x,y)=>{box(.9,.06,.6,M('#8a6a4c'),x,y+.55,.2);[[-.4,-.25],[.4,-.25],[-.4,.25],[.4,.25]].forEach(([a,b])=>box(.05,.52,.05,M('#5a4532'),x+a,y+.28,.2+b));};
+const bath=(x,y)=>{box(1.3,.45,.65,M('#e8e6e0',.3),x,y+.3,-FD/2+.5);box(1.15,.05,.5,M('#5aa0c8',.1,'#1c3a4a'),x,y+.49,-FD/2+.5);};
+// ---------- figurines « jouet en vinyle » (tête ronde, corps capsule, yeux en points)
+function figure(col,opt={}){const g=new THREE.Group();const body=new THREE.Mesh(new THREE.CapsuleGeometry(.17,.32,6,16),M(col,.6));body.position.y=.42;g.add(body);
+  const skin=M(opt.skin||'#e0b08a',.55);const head=new THREE.Mesh(new THREE.SphereGeometry(.17,24,16),skin);head.position.y=.86;g.add(head);
+  if(opt.hair){const hr=new THREE.Mesh(new THREE.SphereGeometry(.175,24,16,0,Math.PI*2,0,Math.PI*.5),M(opt.hair,.8));hr.position.y=.88;g.add(hr);}
+  if(opt.hood){const hd=new THREE.Mesh(new THREE.TorusGeometry(.15,.05,8,20),M(col,.6));hd.rotation.x=Math.PI/2;hd.position.y=.72;g.add(hd);}
+  const eyeM=M('#141414',.4);[-.06,.06].forEach(x=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.022,8,8),eyeM);e.position.set(x,.89,.155);g.add(e);});
+  [-.21,.21].forEach(x=>{const a=new THREE.Mesh(new THREE.CapsuleGeometry(.05,.22,4,8),M(col,.6));a.position.set(x,.46,0);a.rotation.z=x>0?.15:-.15;g.add(a);});
+  [-.08,.08].forEach(x=>{const l=new THREE.Mesh(new THREE.CapsuleGeometry(.06,.16,4,8),M(opt.legs||'#2b2f36',.7));l.position.set(x,.12,0);g.add(l);});
+  g.traverse(m=>{if(m.isMesh){m.castShadow=true;m.receiveShadow=true;}});return g;}
+// étages : 2e = voisine, 3e = Sam, 4e = voisin au groupe électrogène
+const Y=f=>f*FH+.17;
+sofa(-1.8,Y(2));table(-.6,Y(1));sofa(1.6,Y(1));bath(2.3,Y(2));table(-1.2,Y(3));sofa(2.2,Y(3));table(1.8,Y(0));sofa(-1.6,Y(4));
+const sam=figure('#e8742c',{hood:1,hair:'#2a1d14',skin:'#c98e66'});sam.position.set(-1.5,Y(2),.55);sam.rotation.y=.35;S.add(sam);
+const mamie=figure('#7a5c8e',{hair:'#d9d6d0',skin:'#e6c2a2',legs:'#5b4a66'});mamie.scale.setScalar(.9);mamie.position.set(-1.0,Y(1),.7);mamie.rotation.y=.2;S.add(mamie);
+const voisin=figure('#4e6b4a',{hair:'#141414',skin:'#a87656'});voisin.position.set(1.4,Y(3),.6);voisin.rotation.y=-.4;S.add(voisin);
+// lumière de la lanterne chez Sam, lueur de téléphone chez la voisine
+const lamp=new THREE.PointLight('#ffa64a',6,5,1.7);lamp.position.set(-1.1,Y(2)+.85,.3);lamp.castShadow=true;S.add(lamp);
+const phone=new THREE.PointLight('#9fd0ff',.18,1.2,2);phone.position.set(-.75,Y(1)+.55,.95);S.add(phone);const tv=new THREE.PointLight('#c8d8ff',1.1,3.5,1.8);tv.position.set(1.2,Y(3)+1.0,.8);S.add(tv);
+const GL=new GLTFLoader();const load=id=>new Promise((ok,ko)=>GL.parse(JSON.stringify(window.MODELS[id]),'',g=>ok(g.scene),ko));
+const fit=(o,h,x,y,z)=>{const b=new THREE.Box3().setFromObject(o),sz=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3());const k=h/sz.y;o.scale.setScalar(k);o.position.set(x-c.x*k,y-b.min.y*k,z-c.z*k);o.traverse(m=>{if(m.isMesh){m.castShadow=true;m.receiveShadow=true;}});S.add(o);return o;};
+let FX;
+window.ready=(async()=>{
+  fit(await load('Lantern_01'),.32,-1.1,Y(2)+.58,.3);
+  fit(await load('portable_generator'),.42,2.1,Y(3),.5);
+  for(let i=0;i<3;i++)fit(await load('plastic_bottle_gallon'),.3,-2.6+i*.22,Y(2),.9);
+  // fumée grise du groupe électrogène (le danger), particules simples
+  FX=new EffectComposer(R);FX.addPass(new RenderPass(S,CAM));
+  const bok=new BokehPass(S,CAM,{focus:18.8,aperture:.0007,maxblur:.007});FX.addPass(bok);
+  FX.addPass(new UnrealBloomPass(new THREE.Vector2(W,H),.55,.6,.55));FX.addPass(new OutputPass());
+})();
+window.renderFrame=f=>{const t=f/FPS;
+  const a=-.08+.03*t;CAM.position.set(Math.sin(a)*19,Y(2)+1.6+.1*t,Math.cos(a)*19);CAM.lookAt(0,Y(2)+.2,0);
+  lamp.intensity=6*(.9+.1*Math.sin(t*13)*Math.sin(t*5.1));sam.rotation.y=.35+.1*Math.sin(t*1.3);
+  FX.render();ctx.drawImage(gv,0,0);
+  const v=ctx.createRadialGradient(540,900,350,540,900,1250);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.7)');ctx.fillStyle=v;ctx.fillRect(0,0,W,H);
+};
+</script></body></html>
