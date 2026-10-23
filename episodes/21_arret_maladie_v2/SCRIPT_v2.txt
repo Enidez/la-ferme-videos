@@ -1,0 +1,26 @@
+« ELLE REVIENT. » — LE DOSSIER (refonte de « Tomber malade va te coûter », 14/10) — v2 (23/10/2026, faits vérifiés) — voix Paul — ~60 s
+Corrections v1 → v2 : vote 2026 = nuit du 14 octobre, 109 voix contre 37 (3 amendements identiques) ; « près d'un milliard pris aux malades » remplacé par le fait sourcé
+(1 milliard d'économies sur les arrêts maladie encore à trouver, négociation patronat-syndicats) ; « elle revient » → « elle peut revenir » (pas encore revenue une 3e fois) ;
+« une sur cinq » → « plus d'une sur cinq » ; hook ministre abandonné (aucun extrait trouvé) → ouverture sur le tableau des votes.
+
+[HOOK 0-3 s : tableau des votes, tampon rouge « SUPPRIMÉE » qui tombe deux fois]
+[intense] Les députés l'ont supprimée. Deux fois. Et elle peut encore revenir.
+[serious] Elle, c'est une taxe. Sur les gens en arrêt maladie.
+[firm] Un. Novembre 2025. Le gouvernement veut imposer les indemnités des malades de longue durée. Cancer, diabète, sclérose en plaques.
+[dramatic] Les députés disent non. Cent trente-cinq voix contre cinquante-cinq.
+[firm] Deux. Octobre 2026. Budget 2027. La même mesure revient… en plus large.
+La moitié des indemnités des malades de longue durée imposée. Les accidents du travail imposés en totalité. Et la CSG sur tous les arrêts maladie : de 6,2 à 9,2 %.
+[firm] Trois. Nuit du 14 octobre. Les députés disent non. Encore. Cent neuf voix contre trente-sept.
+[dramatic] Fin de l'histoire ? Non. Le budget part au Sénat, qui peut tout remettre.
+[serious] Et il reste un milliard d'euros d'économies à trouver… sur les arrêts maladie.
+En France, plus d'une personne sur cinq vit avec une maladie de longue durée.
+[emphatic] Toi, tu n'es pas malade. Pas encore.
+[firm] Quand une mesure revient trois fois… c'est qu'on compte sur toi pour ne pas regarder la troisième.
+[firm] Abonne-toi. Ils parlent… Nous on vérifie.
+
+Légende : Supprimée deux fois par les députés… elle peut revenir au Sénat. Tu connais quelqu'un en arrêt longue durée ? 👇 #LaFerme #budget2027 #arretmaladie #ALD #Sénat
+
+Sources : vote du 03/11/2025 (PLF 2026) : franceinfo, Egora, Yahoo Finance ; décompte 135-55 : NosParlementaires (à confirmer sur le compte rendu de séance) ·
+PLF 2027 art. 2 (texte déposé) : Kohen avocats, Moneyvox, Selectra · vote de la nuit du 14/10/2026 : 109 voix contre 37 (Tout sur mes finances, Selectra, Fiscalonline) ; art. 2 modifié adopté le 15/10 par 96 voix contre 0 ·
+milliard d'économies / négociation sur les arrêts maladie : Kohen avocats, Selectra · calendrier : vote solennel 1re partie le 03/11, Sénat en novembre-décembre (NosParlementaires, Public Sénat) ·
+« plus d'une sur cinq » : Drees, 07/10/2026 (source de la v1).
