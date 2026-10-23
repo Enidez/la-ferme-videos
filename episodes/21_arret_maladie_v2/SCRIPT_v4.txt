@@ -1,11 +1,11 @@
-« EN 2027, TOMBER MALADE POURRAIT TE COÛTER CHER… » — LE DOSSIER (refonte de « Tomber malade va te coûter », 14/10) — v4 (23/10/2026, titre d'Enidez, au conditionnel : la mesure a été retirée par les députés) — voix Paul — ~60 s
+« EN 2027, TOMBER MALADE VA PEUT-ÊTRE TE COÛTER CHER… » — LE DOSSIER (refonte de « Tomber malade va te coûter », 14/10) — v4 (23/10/2026, titre d'Enidez, au conditionnel : la mesure a été retirée par les députés) — voix Paul — ~60 s
 Corrections v1 → v2 : vote 2026 = nuit du 14 octobre, 109 voix contre 37 (3 amendements identiques) ; « près d'un milliard pris aux malades » remplacé par le fait sourcé
 (1 milliard d'économies sur les arrêts maladie encore à trouver, négociation patronat-syndicats) ; « elle revient » → « elle peut revenir » (pas encore revenue une 3e fois) ;
 « une sur cinq » → « plus d'une sur cinq » ; hook ministre abandonné (aucun extrait trouvé) → ouverture sur le tableau des votes.
 
-[HOOK 0-3 s — UNE phrase = le titre] [intense] En 2027, tomber malade pourrait te coûter cher…
+[HOOK 0-3 s — UNE phrase = le titre] [intense] En 2027, tomber malade va peut-être te coûter cher…
   ILLUSTRATION : plein écran, un avis d'arrêt de travail stylisé (pas une copie du vrai formulaire), un tampon rouge « IMPOSABLE » s'abat dessus (boom),
-  puis un 2e tampon (boom) ; compteur « 2 » géant en surimpression ; à 3,0 s le 3e tampon reste suspendu au-dessus, avec « ? » → titre à l'écran « EN 2027, TOMBER MALADE POURRAIT TE COÛTER CHER… »
+  puis un 2e tampon (boom) ; compteur « 2 » géant en surimpression ; à 3,0 s le 3e tampon reste suspendu au-dessus, avec « ? » → titre à l'écran « EN 2027, TOMBER MALADE VA PEUT-ÊTRE TE COÛTER CHER… »
 [serious] Ils ont essayé deux fois de taxer ton arrêt maladie. Les députés ont dit non. Mais ce n'est pas fini.
 [firm] Un. Novembre 2025. Le gouvernement veut imposer les indemnités des malades de longue durée. Cancer, diabète, sclérose en plaques.
 [dramatic] Les députés disent non. Cent trente-cinq voix contre cinquante-cinq.
