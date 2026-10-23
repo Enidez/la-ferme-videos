@@ -1,0 +1,29 @@
+« ELLE REVIENT. » — LE DOSSIER (refonte de « Tomber malade va te coûter », 14/10) — v1 (23/10/2026) — voix Paul — ~65 s
+Pourquoi refaire : la v1 = 1 785 vues mais 9 % de partages (record du compte). Nouveau hook, nouvelle structure numérotée (recette LE PLAN), et l'info a changé : les députés ont rejeté la mesure… pour la 2e fois.
+Format : tableau d'enquêteur, 3 étapes numérotées, compteur « 2 FOIS SUPPRIMÉE », tampons.
+
+[HOOK — 0-3 s : vraie voix du ministre qui défend la mesure (extrait à trouver), puis tampon rouge]
+[intense] Les députés l'ont supprimée. Deux fois. Elle revient quand même.
+
+[serious] Elle, c'est une taxe. Sur les gens en arrêt maladie.
+[firm] ÉTAPE 1. Novembre 2025. Le gouvernement veut imposer les indemnités des malades de longue durée. Cancer, diabète, sclérose en plaques. [dramatic] Les députés disent non. 135 voix contre 55.
+[firm] ÉTAPE 2. Octobre 2026. Budget 2027. La même mesure revient… en plus large. La moitié des indemnités des malades de longue durée imposée. Les accidents du travail imposés en totalité. Et la CSG sur tous les arrêts maladie : de 6,2 à 9,2 %. Près d'un milliard d'euros, pris dans la poche des malades.
+[firm] ÉTAPE 3. Mi-octobre. Les députés disent non. Encore.
+[dramatic] Fin de l'histoire ? Non. Le texte part au Sénat. Qui peut tout remettre.
+
+[serious] En France, plus de quinze millions de personnes vivent avec une maladie de longue durée. Une sur cinq.
+[emphatic] Toi, tu n'es pas malade. Pas encore.
+[firm] Alors retiens bien ça : quand une mesure revient trois fois… c'est qu'on compte sur toi pour ne pas regarder la troisième.
+
+[firm] Abonne-toi. Ils parlent… Nous on vérifie.
+
+Légende : Supprimée deux fois par les députés… elle revient au Sénat. Tu connais quelqu'un en arrêt longue durée ? 👇 #LaFerme #budget2027 #arretmaladie #ALD #Sénat
+
+À VÉRIFIER AVANT VOIX
+- Date et résultat exacts du vote de 2026 à l'Assemblée (14 ou 16 octobre selon les sources ; séance ou commission ?) et décompte des voix ; quels volets exactement retirés (CSG, ALD, AT/MP).
+- Vote de novembre 2025 : 135 contre 55 (France Épargne) → confirmer sur assemblee-nationale.fr.
+- Calendrier du Sénat (date d'examen) ; ne PAS annoncer de 49.3 sans source.
+- Montant « près d'un milliard » (v1 : exposé des motifs PLF 2027) et « 15 millions en ALD » (v1 : Drees, 7/10/2026 → la v1 disait « plus d'une sur cinq », garder la même formule).
+- Hook : trouver un extrait vidéo du ministre qui défend la mesure (sa vraie voix) ; sinon ouvrir sur le tableau des votes.
+Sources : NosParlementaires « quatre mesures déjà rejetées reviennent » · Tout sur mes finances (13 et ~15/10) · Selectra (vote du 14/10) · France Épargne · Kohen avocats (texte de l'art. 2) · v1 : PLF 2027 art. 2, Drees.
+DA : reprendre le moteur tableau du dernier épisode ; cartes « 2025 » / « 2026 » / « SÉNAT » reliées au fil rouge, compteur de suppressions qui passe 1 → 2, puis « ? » clignotant sur la carte Sénat.
