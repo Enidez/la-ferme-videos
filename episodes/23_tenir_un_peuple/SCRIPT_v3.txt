@@ -4,7 +4,7 @@ Couverture : photo réelle de la foule du 17 octobre (ou des forces de l'ordre /
 Règles : chaque ingrédient = SES mots (carte + source) + un fait d'octobre 2026 à l'écran. Jamais « c'est voulu » ; une seule phrase de prudence, au climax.
 Revérifier les faits d'actu (recap_2026-10-24.md) le jour de la voix.
 
-[HOOK 0-3 s] — plein écran foule du 17 octobre, arrêt sur image + titre « ON TE MANIPULE ? »
+[HOOK 0-3 s] — VRAI extrait du 17 octobre en plein écran (foule agitée, fumigènes, policiers), avec son ambiance ; arrêt sur image N&B + boum + titre « ON TE MANIPULE ? » (validé par Enidez)
 [intense] Depuis le 17 octobre… on te manipule ?
 [firm] Voici les huit techniques. Compte combien tu en as vues.
 
