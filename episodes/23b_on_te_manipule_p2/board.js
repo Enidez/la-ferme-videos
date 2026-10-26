@@ -66,7 +66,7 @@ const WP=[];let WH=null;
     if(i===0){WP.push({t:0,x:a.x,y:a.y,z:a.z,r:a.rot});WP.push({t:TCOV-.05,x:a.x,y:a.y+10,z:a.z*1.01,r:a.rot});continue;}
     const gap=b?b.t-a.t:2.5;
     const dx=b?b.x-a.x:a.x-p.x,dy=b?b.y-a.y:a.y-p.y,dl=Math.hypot(dx,dy)||1;const ux=dx/dl,uy=dy/dl;
-    const dwell=Math.max(.35,Math.min(gap-.55,gap*.72));
+    const dwell=Math.max(.35,Math.min(gap-.55,Math.max(gap*.72,gap-1.6)));
     if(a.wide)WH={t0:a.t-.05,t1:a.t+dwell,x:a.x,y:a.y,z:a.z};
     WP.push({t:a.t-.05,x:a.x-ux*40,y:a.y-uy*40,z:a.z,r:a.rot});
     WP.push({t:a.t+dwell,x:a.x+ux*55,y:a.y+uy*55,z:a.z*1.06,r:a.rot});
@@ -246,14 +246,18 @@ function cardExtra(c,t,w,h){
     [['A',-60,170],['B',110,300],['C',280,240]].forEach(([s,x,l])=>{ctx.fillStyle=INKD;ctx.fillRect(x-7,ly-l,14,l);txt(s,x,ly+50,'700 34px Mono',INKD,'center',2);});
     // les étudiants : 7 complices + le cobaye
     const py=-h/2+760;const truth=N(73),all=N(74);
-    for(let i=0;i<8;i++){const x=-w/2+110+i*105;const cob=i===6;let col='rgba(27,28,26,.55)';let ans='';
-      if(t>=N(71)&&!cob){ans='B';col=PINK;}if(cob){col=t>=all?'#2f6b2a':'#1b5fa8';ans=t>=N(72)&&t<truth?'B ?':t>=truth?'C':'';}
-      if(i===2&&t>=truth){col='#2f6b2a';ans='C';}
-      person(x,py+60,.62,col);if(ans)txt(ans,x,py-60,'700 34px Mono',col,'center',1);if(cob)txt('LE COBAYE',x,py+120,'700 20px Mono','#1b5fa8','center',1);}
-    if(t>=N(71)&&t<truth)txt('7 COMPLICES DONNENT LA MAUVAISE RÉPONSE',0,-h/2+940,'700 28px Mono',PINK,'center',1);
-    if(t>=N(72)&&t<truth)band(-h/2+1030,t,N(72),'1 FOIS SUR 3, IL SUIT LE GROUPE',52,'rgba(27,28,26,.88)',INK);
-    if(t>=truth)band(-h/2+1030,t,truth,'UN SEUL DIT LA VÉRITÉ…',56,'rgba(47,107,42,.92)');
-    if(t>=all)txt('… ET LE COBAYE OSE LA DIRE AUSSI',0,-h/2+940,'700 30px Mono','#2f6b2a','center',1,lin(t,all,all+.3));
+    const RED2='#c9302c',GRN='#2f6b2a',T1=N(71),T2=N(72),T3=N(73),T4=N(74);
+    for(let i=0;i<8;i++){const x=-w/2+110+i*105;const cob=i===6;let col='rgba(27,28,26,.55)',ans='',pop=0;
+      const flip=(ta)=>{if(t>=ta)pop=Math.max(pop,1-lin(t,ta,ta+.35));return t>=ta;};
+      if(!cob){if(flip(T1+i*.06)){col=RED2;ans='B';}
+        const tg=i===2?T3:T4+Math.abs(i-2)*.18;if(flip(tg)){col=GRN;ans='C';}}
+      else{col=GRN;ans='?';if(flip(T2)){col=RED2;ans='B';}if(flip(T3+.8)){col=GRN;ans='C';}}
+      ctx.save();ctx.translate(x,py+60);ctx.scale(1+pop*.25,1+pop*.25);person(0,0,.62,col);ctx.restore();
+      if(ans)txt(ans,x,py-60,'700 34px Mono',col,'center',1);if(cob)txt('LE COBAYE',x,py+120,'700 20px Mono',col,'center',1);}
+    if(t>=T1&&t<T2)txt('7 COMPLICES DONNENT LA MAUVAISE RÉPONSE',0,-h/2+940,'700 28px Mono',RED2,'center',1);
+    if(t>=T2&&t<T3)band(-h/2+1030,t,T2,'1 FOIS SUR 3, IL SUIT LE GROUPE',52,'rgba(201,48,44,.92)');
+    if(t>=T3)band(-h/2+1030,t,T3,'UN SEUL DIT LA VÉRITÉ…',56,'rgba(47,107,42,.92)');
+    if(t>=T4)txt('… ET LA VÉRITÉ SE PROPAGE',0,-h/2+940,'700 30px Mono',GRN,'center',1,lin(t,T4,T4+.3));
     darkTxt('Asch, « Opinions and Social Pressure », Scientific American, 1955',0,w,h);return 1;}
   if(c.k==='toi'){framePaper(w,h,'rgba(30,32,30,.95)');txt('CETTE PERSONNE,',0,-h/2+200,'96px Anton',INK,'center',2,lin(t,c.t0,c.t0+.2));
     if(t>=N(76)){const q=eo(lin(t,N(76),N(76)+.15));ctx.save();ctx.translate(0,-h/2+430);ctx.scale(1.6-.6*q,1.6-.6*q);txt('C’EST TOI.',0,0,'170px Anton',PINK,'center',3,q,22);ctx.restore();}return 1;}
@@ -381,7 +385,7 @@ ev(N(50),'boom');ev(N(52),'thud');ev(N(53),'tick');ev(N(54),'thud');reveal(N(56)
 ev(N(59),'tick');ev(N(61),'thud');
 ev(WT0-.9,'riser');reveal(N(63),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));
 [0,.22,.44].forEach(d=>ev(C[cPouv].t0+d,'thud'));reveal(C[cPouv].t0+.8,1.2);ev(N(66),'tick');
-ev(N(68),'tick');ev(N(71),'tick');ev(N(72),'thud');reveal(N(73),1);ev(N(74),'tick');reveal(N(76),1.3);ev(VEND+.35,'boom');
+ev(N(68),'tick');ev(N(71),'tick');ev(N(72),'thud');reveal(N(73),1);ev(N(73)+.8,'zap');for(let k=0;k<6;k++)ev(N(74)+k*.18,'tick');reveal(N(76),1.3);ev(VEND+.35,'boom');
 // ---------- post (gris-vert)
 function post2(t){const fr=Math.floor(t*FPS);
   ctx.save();ctx.globalCompositeOperation='multiply';ctx.fillStyle='rgba(220,228,215,1)';ctx.fillRect(0,0,W,H);ctx.restore();
