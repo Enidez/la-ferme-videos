@@ -1,0 +1,21 @@
+ÉP. 23 « TENIR UN PEUPLE. » — sources (vérifiées le 26/10/2026)
+V = relu mot à mot dans le texte d'origine (archive.org, OCR) · S = confirmé par des sources secondaires sérieuses
+
+1. Göring — V. G. M. Gilbert, Nuremberg Diary (1947), entrée du 18 avril 1946 (soir, cellule), p. 255-256 :
+   « voice or no voice, the people can always be brought to the bidding of the leaders. That is easy. All you have to do is tell them they are being attacked and denounce the pacifists for lack of patriotism and exposing the country to danger. It works the same way in any country. »
+   (pas « greater danger » ; dit en cellule, pas au procès) — archive.org/details/the-nuremberg-diary
+2. Lasswell — V. Propaganda Technique in the World War (1927), ch. III « War Guilt and War Aims » :
+   « every war must appear to be a war of defence against a menacing, murderous aggressor. There must be no ambiguity about whom the public is to hate. »
+   archive.org/details/PropagandaTechniqueInTheWorldWar
+3. COINTELPRO — S. FBI, 1956-1971 ; mémo de 1967 : « expose, disrupt, misdirect, discredit, or otherwise neutralize » ; révélé par le cambriolage de Media (Pennsylvanie) en 1971 ; Commission Church (1976).
+4. Friedman — V. Capitalism and Freedom, préface de 1982, p. xiv :
+   « Only a crisis—actual or perceived—produces real change. When that crisis occurs, the actions that are taken depend on the ideas that are lying around. […] to keep them alive and available until the politically impossible becomes politically inevitable. »
+5. King, Pan, Roberts — S. « How the Chinese Government Fabricates Social Media Posts for Strategic Distraction, not Engaged Argument », American Political Science Review, 2017 : « about 448 million social media comments a year » ; stratégie : éviter de débattre, changer de sujet. (Le working paper 2016 disait 488 M : utiliser 448 M.)
+6. Orwell — « Politics and the English Language » (1946) : « designed to make lies sound truthful and murder respectable ». PSYOP renommé MISO par le Pentagone (2010, rétabli « PSYOP » en 2014 dans l'armée de terre).
+7. Bernays — V. Propaganda (1928), ch. I « Organizing Chaos » : « Those who manipulate this unseen mechanism of society constitute an invisible government which is the true ruling power of our country. »
+   Complément Lippmann — V. Public Opinion (1922), ch. XV, § 4 : « That the manufacture of consent is capable of great refinements no one, I think, denies. »
+8. Mémo du tabac — S. Brown & Williamson, « Smoking and Health Proposal » (1969) : « Doubt is our product since it is the best means of competing with the "body of fact" that exists in the mind of the general public. » (Archives Minnesota / UCSF Industry Documents)
+Chute. Asch — S. « Opinions and Social Pressure », Scientific American 193 (1955), p. 31-35 ; Asch 1956 : un seul partenaire qui donne la bonne réponse fait s'effondrer le conformisme. Ne pas afficher de pourcentage à l'écran.
+Symétrie France — Facebook (rapport de décembre 2020) : réseau de faux comptes lié à « des personnes associées à l'armée française », Mali / Centrafrique.
+
+Actu d'octobre 2026 : voir veille/recap_2026-10-24.md (couvre-feux, 70 000 FDO + blindés le 24/10, Macron 22/10 « séditieux… ultragauche », Trump/Vance « invasion », PLFSS au Sénat, fausses images, gazole des stocks le 28/10, grève le 5/11, Macron « manipulation étrangère »). À REVÉRIFIER le jour de la voix.
