@@ -38,6 +38,7 @@ def narr(i0,i1,t,a=None):
         if k in QUOTES:d['m']=1
         SEGS.append(d)
     put(t,fade(L[int(a*SR):int(b*SR)]));return t+b-a
+amb=load('audio/amb.wav');put(0,fade(amb[:int((LS[1][1]-LS[0][0]+.5)*SR)])*.5)
 e=narr(0,1,0.15)                 # « Depuis le 17 octobre… on te manipule ? » (souffle supprimé)
 FRZ=SEGS[1]['t0']
 TT=round(e+.3,2);e=narr(2,len(TX)-1,TT)   # temps mort : arrêt sur image + titre

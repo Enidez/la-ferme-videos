@@ -160,7 +160,7 @@ function drawHook3(w,h,t){
     if(frz){const p=eo(lin(t,FRZ,FRZ+.12));ctx.save();ctx.globalAlpha=p*.9;ctx.strokeStyle=RED;ctx.lineWidth=8;ctx.beginPath();ctx.ellipse(-10,-60,250+8*Math.sin(t*6),140,-.05,0,6.283);ctx.stroke();ctx.restore();}}
   {const g=ctx.createLinearGradient(0,-h/2+h*.45,0,-h/2+h*.75);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.85)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.45,w,h*.55);}
   {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+380);g.addColorStop(0,'rgba(0,0,0,.75)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,380);}
-  txt(fr.length?(window.HOOKCREDIT||''):'PHOTO DU SAMEDI 17 OCT. 2026 · J. JARAMILLO · CC BY-SA',0,-h/2+1490,'400 20px Mono','rgba(236,238,230,.7)','center',2);
+  txt(fr.length?'VIDÉO : AFP · PARIS · 17 OCT. 2026':'PHOTO DU SAMEDI 17 OCT. 2026 · J. JARAMILLO · CC BY-SA',0,-h/2+1490,'400 20px Mono','rgba(236,238,230,.7)','center',2);
   txt('SAMEDI 17 OCTOBRE · PARIS',0,-h/2+300,'700 34px Mono',AMB,'center',6,lin(t,.1,.5));
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.7-.7*q;const sh=t<ta+.22?(1-lin(t,ta,ta+.22))*12:0;ctx.save();ctx.translate(Math.sin(t*90)*sh,y+Math.cos(t*77)*sh);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
   if(t<FRZ){sl('DEPUIS LE',-h/2+1080,'120px Anton',INK,N(0)+.3,5,14);sl('17 OCTOBRE…',-h/2+1240,'150px Anton',INK,N(0)+.8,5,14);}
@@ -349,7 +349,7 @@ function drawCard(c,t){
 function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);[
   'Sources : G. M. Gilbert, Nuremberg Diary (1947) · King, Pan & Roberts, APSR (2017) · Orwell (1946) · Bernays, Propaganda (1928)',
   'Brown & Williamson (1969) · Asch (1955) · Meta (2020) · Journal officiel · AFP · CheckNews · BFMTV',
-  'Images : J. Jaramillo (CC BY-SA) · Commission européenne (CC BY 4.0) · BNUJ, Bain News Service (domaine public)',
+  'Images : AFP (droit de citation) · J. Jaramillo (CC BY-SA) · Commission européenne (CC BY 4.0) · BNUJ, Bain News Service (domaine public)',
   'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>txt(s,0,i*36,'400 15px Mono','rgba(236,238,230,.75)','center'));ctx.restore();}
 // ---------- sous-titres courts (3 mots max)
 const CHUNKS=[];SEGS.forEach(s=>{const ws=s.txt.split(' ');const tot=ws.reduce((a,w)=>a+w.length+1,0);let acc=0;const dur=s.t1-s.t0;const wt=ws.map(w=>{const tt=s.t0+dur*acc/tot;acc+=w.length+1;return[w,tt];});
