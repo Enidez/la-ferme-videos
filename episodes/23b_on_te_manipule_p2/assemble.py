@@ -38,9 +38,9 @@ def narr(i0,i1,t,a=None):
         if k in QUOTES:d['m']=1
         SEGS.append(d)
     put(t,fade(L[int(a*SR):int(b*SR)]));return t+b-a
-e=narr(0,1,0,a=0)                 # souffle + « Depuis le 17 octobre… on te manipule ? »
+e=narr(0,1,0.15)                 # « Depuis le 17 octobre… on te manipule ? » (souffle supprimé)
 FRZ=SEGS[1]['t0']
-TT=round(e+.45,2);e=narr(2,len(TX)-1,TT)   # temps mort : arrêt sur image + titre
+TT=round(e+.3,2);e=narr(2,len(TX)-1,TT)   # temps mort : arrêt sur image + titre
 y=np.clip(buf[:int((e+.2)*SR)],-1,1)
 w=wave.open('audio/vo.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((y*32767).astype(np.int16).tobytes());w.close()
 ID={s['id']:i for i,s in enumerate(SEGS)}

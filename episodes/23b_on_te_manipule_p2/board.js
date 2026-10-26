@@ -368,7 +368,7 @@ function hud(t){if(t<TCOV||t>=N(75))return;let v=4,t0=0;CNT.forEach(([a,n])=>{if
   txt('TECHNIQUE',0,-36,'700 20px Mono','rgba(236,238,230,.75)','center',4);txt(v+'/8',0,52,'86px Anton',v===8?RED:INK,'center',2,1,pk>0?18:0);ctx.restore();}
 
 // ---------- sons
-ev(.05,'riser');ev(MARK.frz,'boom');reveal(MARK.frz,1.3);ev(MARK.tt,'thud');ev(N(3),'tick');ev(N(4),'tick');ev(TCOV-.1,'whoosh');
+ev(MARK.frz,'boom');reveal(MARK.frz,1.3);ev(MARK.tt,'thud');ev(N(3),'tick');ev(N(4),'tick');ev(TCOV-.1,'whoosh');
 KEYS.forEach(k=>{if(k.t>TCOV+.1)ev(k.t-.5,'whoosh');});
 C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 [5,6,7,8].forEach(k=>ev(N(k),'tick'));ev(N(9),'thud');
