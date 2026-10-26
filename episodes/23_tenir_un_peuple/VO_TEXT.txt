@@ -1,7 +1,7 @@
-[firm] « C'est facile. »
-[dramatic] Voilà ce que répond le numéro deux nazi, dans sa cellule, quand on lui parle de la volonté du peuple.
-[intense] Lui, et d'autres après lui, ont écrit la recette. Huit ingrédients. Et en octobre… tu en as vu passer plusieurs.
-[firm] Un. La peur. Göring : « Il suffit de leur dire qu'ils sont attaqués. »
+[intense] Depuis le 17 octobre… on te manipule ?
+[firm] Voici les huit techniques. Compte combien tu en as vues.
+Elles ne viennent pas de moi. Elles sont écrites noir sur blanc… par ceux qui les ont utilisées ou étudiées.
+[firm] Un. La peur. Le numéro deux nazi, en prison : « C'est facile. Il suffit de leur dire qu'ils sont attaqués. »
 Octobre : couvre-feux, soixante-dix mille policiers et gendarmes, des blindés.
 Deux. L'ennemi. Il ne doit y avoir aucun doute sur « qui le public doit haïr ». Ici, « l'ultragauche ». Là-bas, « les migrants ».
 [emphatic] Trois. Diviser. Le FBI l'a fait contre ses propres citoyens. Et la colère contre la vie chère devient une guerre entre voisins.
@@ -11,5 +11,6 @@ Six. Les mots. Orwell : rendre « le mensonge crédible et le meurtre respectabl
 Sept. Le consentement. Bernays parle d'« un gouvernement invisible ». On ne force pas : on fait accepter. Un geste sur le gazole… juste avant la grève.
 [intense] Huit. Le doute. Un cigarettier : « Le doute est notre produit. » Quand tout le monde accuse tout le monde… plus personne ne croit rien.
 [firm] On ne dit pas que c'est voulu. Aucune preuve. On dit que la boîte à outils existe. Et que tous les pouvoirs s'en servent. La France aussi.
+[intense] Alors… tu en as compté combien ?
 [dramatic] Mais un psychologue l'a prouvé : face à un groupe qui ment, il suffit d'une seule personne qui dit non… pour que les autres osent la vérité.
 Abonne-toi. Ils parlent… Nous on vérifie.
