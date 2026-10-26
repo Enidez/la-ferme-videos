@@ -1,41 +1,47 @@
+LA FERME — ÉP. 23b « ON TE MANIPULE ? » PARTIE 2/2 — LE DOSSIER (compteur 4→8/8) — ~2 min — voix Paul K
+Découpage de la v4 en deux vidéos (Enidez, 26/10). Deux générations de voix séparées, même voix, mêmes réglages.
+Hook validé : VRAI extrait du 17 octobre en plein écran (foule agitée, fumigènes, policiers), son d'ambiance, arrêt sur image N&B + boum + titre « ON TE MANIPULE ? » + bandeau « PARTIE 2/2 ».
+Règles : jamais « c'est voulu » ; ce qui n'est pas prouvé est dit comme tel ; on ne nomme ni le suspect ni les victimes de Trappes. Chaque partie contient la phrase de prudence.
+Revérifier les faits d'actu (recap_2026-10-24.md) le jour de la voix.
+
+[HOOK 0-3 s] — extrait 17 octobre (autre plan que la partie 1), arrêt sur image, titre « ON TE MANIPULE ? » + « PARTIE 2/2 »
 [exhales sharply] [scoffs] [contemptuous] Depuis le 17 octobre… on te manipule ?
-[firm] Voici les huit techniques pour tenir un peuple. Compte combien tu en as vues ce mois-ci.
-Elles sont écrites noir sur blanc, par ceux qui les ont utilisées… ou étudiées. [intrigued] Et la huitième est la plus dangereuse.
-[serious] Un. La peur.
-Prison de Nuremberg, mille neuf cent quarante-six. Un psychologue dit à Göring, le numéro deux nazi, que le peuple ne veut pas la guerre.
-Réponse : « C'est facile. Il suffit de leur dire qu'ils sont attaqués. Ça marche dans tous les pays. »
-Octobre : couvre-feux dans cinq grandes villes. Soixante-dix mille policiers. Des blindés.
-Les violences étaient réelles. Mais quand tu as peur, tu ne demandes plus « pourquoi ». Tu demandes « protégez-moi ».
-Deux. L'ennemi.
-Le grand théoricien américain de la propagande l'écrit en mille neuf cent vingt-sept : il ne doit y avoir « aucun doute sur qui le public doit haïr ».
-Le 22 octobre, le Président accuse « l'ultragauche ». Aucune preuve publique. Trump, lui, accuse « les migrants ».
-Même outil, autre cible. Et pendant qu'on parle de l'ennemi… on ne parle plus du prix de ton plein.
-[emphatic] Trois. Diviser.
-Mille neuf cent soixante et onze : des documents volés révèlent que le FBI infiltre ses propres citoyens depuis quinze ans. Consigne écrite : « perturber, discréditer, neutraliser ». Méthode : monter les groupes les uns contre les autres.
-Chez nous, le 17, on manifeste contre la vie chère. Le 23, à Trappes, un homme tire sur des passants. Il aurait voulu « venger les commerçants ».
-La colère contre les prix… devient une guerre entre voisins.
-Quatre. Le choc.
-Milton Friedman, prix Nobel d'économie : en crise, « l'impossible devient inévitable ».
-En pleine crise, le budget de la Sécu repart au Sénat dans sa version la plus dure : gel partiel des pensions, plus de CSG sur tes arrêts maladie.
-Hasard du calendrier ? Peut-être. Mais ta retraite se joue le 9 novembre. Pendant que tout le monde regarde la rue.
+[firm] Partie deux. Il reste quatre techniques. Et la dernière est la plus dangereuse.
+
+[RAPPEL] — compteur 4/8, les cartes 1 à 4 défilent en accéléré : PEUR · ENNEMI · DIVISER · CHOC
+La peur. L'ennemi. Diviser. Le choc. Tu en étais à combien ? Reprends ton compte.
+
+[5. SATURER] — carte Harvard 2017 « 448 millions » ; mur de fausses images tamponnées FAUX
 Cinq. Saturer.
 Harvard a épluché les mails de la propagande chinoise : quatre cent quarante-huit millions de faux messages par an. Pas pour débattre. Pour noyer.
 Chez nous, en dix jours : une fausse image à six millions de vues, de faux « policiers pilleurs », un innocent présenté comme le tireur de Trappes.
 Des faux de tous les côtés. Et toi, tu tries le vrai du faux… au lieu de parler de ton salaire.
+
+[6. LES MOTS] — carte Orwell 1946 ; tuiles SÉDITIEUX · TOURNANT · INVASION
 Six. Les mots.
 Orwell : le langage politique sert à rendre « le mensonge crédible et le meurtre respectable ».
 Ce mois-ci : « séditieux ». « Tournant ». « Invasion ». Le mot arrive avant les faits. Et il les range déjà dans une case.
+
+[7. LE CONSENTEMENT] — carte Bernays 1928 ; carte gazole : pompe le 1/11, grève le 5/11
 Sept. Le consentement.
 Edward Bernays, le neveu de Freud, l'inventeur des relations publiques, parle d'« un gouvernement invisible, qui est le vrai pouvoir ». Pas besoin de matraque si on obtient ton accord.
 Le gouvernement ouvre ses stocks de gazole. Baisse attendue à la pompe le premier novembre. La grève : le 5.
 Aucune source ne dit que c'est calculé. Le calendrier, lui, est public.
+
+[8. LE DOUTE] — carte mémo du tabac 1969 ; carte Macron « manipulation étrangère »
 [intense] Huit. Le doute.
 Mémo d'un fabricant de cigarettes, mille neuf cent soixante-neuf : « Le doute est notre produit. » Pas besoin de prouver que la cigarette est saine. Il suffit que tu ne saches plus quoi croire.
 Ce mois-ci, l'Élysée accuse l'étranger de manipulation. D'autres accusent l'Élysée. Résultat : plus personne ne croit rien.
 Et un peuple qui ne croit plus rien… ne bouge plus.
+
+[CLIMAX] — compteur 8/8, tous les fils rouges s'allument ; tampons MOSCOU · PÉKIN · WASHINGTON · PARIS
 [firm] Soyons clairs : on ne dit pas que quelqu'un coche cette liste. Aucune preuve. Une vraie crise crée aussi, toute seule, de la peur et des rumeurs.
 Mais la boîte à outils existe. Et tous les pouvoirs s'en servent. Même Paris : en deux mille vingt, Facebook a supprimé de faux comptes liés à l'armée française.
 [intense] Alors… tu en as compté combien ?
+
+[CHUTE] — carte Asch : les trois lignes, les complices
 [dramatic] Années cinquante. Le psychologue Solomon Asch montre des lignes à des étudiants. Tous les autres sont des complices et donnent la mauvaise réponse. Un tiers du temps, le cobaye suit le groupe.
 Mais il suffit d'une seule personne qui dit la vérité… pour que presque tout le monde ose la dire aussi.
+
+[OUTRO] — carton ABONNE-TOI
 [firm] Cette personne, c'est toi. Abonne-toi. Ils parlent… Nous on vérifie.
