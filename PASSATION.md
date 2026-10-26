@@ -155,6 +155,6 @@ Le générique de fin « ferme-la » (réplique de film + logo animé) est ajout
 - **Recap actu 24/10** : `veille/recap_2026-10-24.md` (Trappes, 17/10, budget, gazole, dette, international, rumeurs vérifiées).
 - **Ép. 22 « LE MAUVAIS VISAGE »** (Trappes : la photo virale montrait un homonyme innocent) : script v1 prêt dans `episodes/22_le_mauvais_visage/`, attend le go d'Enidez + ~1 000 crédits ElevenLabs (il en restait ~290). Revérifier le bilan le jour de la voix.
 - **Dossier manipulation** : `veille/manipulation/00_GRILLE.md` (8 ingrédients pour tenir un peuple + parallèle actu établi/hypothèse) et 4 dossiers sources 01-04. Prochaine vidéo proposée : « CE QU'IL FAUT POUR TENIR UN PEUPLE » (ou série, 1 épisode par ingrédient). Citations « à vérifier » à relire sur l'original avant tournage. Jamais d'accusation d'intention sans preuve : « ça ressemble à… », pas « c'est voulu ».
-- **Ép. 23 « TENIR UN PEUPLE. »** (vidéo des 8 ingrédients, puis série si ça marche) : script v1 + sources vérifiées dans `episodes/23_tenir_un_peuple/`, attend le go d'Enidez.
+- **Ép. 23 « TENIR UN PEUPLE. »** (vidéo des 8 ingrédients, puis série si ça marche) : script v2 (~1 min 45) + sources vérifiées dans `episodes/23_tenir_un_peuple/`, attend le go d'Enidez.
 - **Ép. 21 arrêt maladie** : script v4 prêt, attend la voix.
 - **J+1** : ch.1 publié ; ch.2 (3D, personnage Sam) en cours dans `jplus1/episodes/02_les_trois_jours/`.
