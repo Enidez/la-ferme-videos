@@ -11,7 +11,7 @@ const cMatch=add({k:'clip',full:1,img:'parc3',handle:'Kilyac · CC BY-SA',badge:
 const cP3=add({k:'proof',lab:'POINT',n:3,l:'LE GESTE',w:880,h:760,rot:-1.5,t0:N(33)});
 const cSalute=add({k:'clip',full:1,clip:'katniss',handle:'Hunger Games (2012) · Lionsgate',badge:'DANS LE FILM',w:900,h:1150,rot:2,t0:N(35),
   after:(w,h,t)=>{topBox(w,h,t,N(36),'TROIS DOIGTS LEVÉS','LE SIGNE DE LA RÉVOLTE',66);}});
-const cThai=add({k:'clip',full:1,img:'thai',handle:'Milktea2020 · CC BY-SA 4.0',badge:'THAÏLANDE · LE SALUT DANS LA RUE',w:900,h:1150,rot:-1.5,t0:N(38),
+const cThai=add({k:'clip',full:1,img:'thai',handle:'Photo de presse · Khon Kaen, 19 nov. 2014',badge:'THAÏLANDE · DEVANT LE PREMIER MINISTRE',w:900,h:1150,rot:-1.5,t0:N(38),
   after:(w,h,t)=>{topBox(w,h,t,N(38),'NOV. 2014 · APRÈS LE COUP D’ÉTAT','5 ÉTUDIANTS ARRÊTÉS À KHON KAEN',52);band(-160,t,N(42),'CINÉMA SCALA : FILM DÉPROGRAMMÉ',46);stampAt('ARRÊTÉS POUR 3 DOIGTS',0,-30,62,t,N(44),-.07);}});
 const cAsie=add({k:'asie',w:940,h:1000,rot:2,t0:N(45)});
 const cOP=add({k:'onepiece',w:960,h:1100,rot:-1.5,t0:N(48)});
@@ -27,7 +27,7 @@ HOOK=r'''function drawHook3(w,h,t){
     const z=(fr.length?1.9:1.0)+.02*t;const s=w/im.width*z;ctx.filter='contrast(1.12)';ctx.drawImage(im,-im.width*s*.5,-h/2+720-im.height*s*.5,im.width*s,im.height*s);ctx.restore();}
   {const g=ctx.createLinearGradient(0,-h/2+h*.55,0,-h/2+h*.85);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.9)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.55,w,h*.45);}
   {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+420);g.addColorStop(0,'rgba(0,0,0,.8)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,420);}
-  txt(fr.length?'HUNGER GAMES (2012) · LIONSGATE':'THAÏLANDE · MILKTEA2020 · CC BY-SA 4.0',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
+  txt(fr.length?'HUNGER GAMES (2012) · LIONSGATE':'THAÏLANDE · KHON KAEN · 2014',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.5-.5*q;ctx.save();ctx.translate(0,y);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
   sl('CE GESTE VIENT',-h/2+210,'110px Anton',INK,0,2,16);sl('D’UN FILM.',-h/2+330,'110px Anton',INK,0,2,16);
   sl('DANS LA VRAIE VIE…',-h/2+1170,'100px Anton',INK,N(1),2,16);if(t>=N(2))stampAt('IL T’ENVOIE EN PRISON',0,-h/2+1310,80,t,N(2),-.06,RED);
@@ -58,13 +58,10 @@ EXTRA=r'''  if(c.k==='hgtitle'){framePaper(w,h,'rgba(30,32,30,.95)');txt('HUNGER
       txt(a,-w/2+350,y-5,'64px Anton',INK,'left',2);txt(b,-w/2+350,y+45,'700 24px Mono',AMB,'left',1);ctx.restore();});
     srcLine('Sources : Khaosod English · SCMP · LMU Asia Media · CBS',w,h);return 1;}
   if(c.k==='onepiece'){framePaper(w,h,'rgba(30,32,30,.95)');txt('GÉNÉRATION Z · 2025',0,-h/2+100,'700 34px Mono',AMB,'center',6);
-    // le drapeau (symbole, pas de personne) : tête de mort au chapeau de paille
-    const fx=0,fy=-h/2+330;ctx.fillStyle='#0d0d0d';ctx.fillRect(fx-260,fy-170,520,340);ctx.fillStyle='#f2efe4';ctx.beginPath();ctx.arc(fx,fy-10,85,0,6.283);ctx.fill();ctx.fillRect(fx-50,fy+50,100,50);
-    ctx.fillStyle='#0d0d0d';ctx.beginPath();ctx.arc(fx-32,fy-5,22,0,6.283);ctx.arc(fx+32,fy-5,22,0,6.283);ctx.fill();ctx.fillStyle='#e8c34a';ctx.beginPath();ctx.ellipse(fx,fy-80,140,26,0,0,6.283);ctx.fill();ctx.fillRect(fx-75,fy-140,150,62);ctx.fillStyle='#c9302c';ctx.fillRect(fx-75,fy-96,150,16);
-    ctx.strokeStyle='#f2efe4';ctx.lineWidth=22;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(fx-150,fy+130);ctx.lineTo(fx+150,fy+40);ctx.moveTo(fx+150,fy+130);ctx.lineTo(fx-150,fy+40);ctx.stroke();
-    txt('LE DRAPEAU PIRATE DE ONE PIECE',0,-h/2+570,'54px Anton',INK,'center',1,lin(t,N(49),N(49)+.2));
+    panel(IM.nepal,-w/2+40,-h/2+150,w/2-50,360,.5,1,'none');panel(IM.indonesie,10,-h/2+150,w/2-50,360,.5,1,'none');txt('NÉPAL · SEPT. 2025',-w/4,-h/2+540,'700 22px Mono',AMB,'center',2);txt('INDONÉSIE · 2025',w/4,-h/2+540,'700 22px Mono',AMB,'center',2);
+    txt('LE DRAPEAU PIRATE DE ONE PIECE',0,-h/2+610,'54px Anton',INK,'center',1,lin(t,N(49),N(49)+.2));
     [['NÉPAL',N(50),PINK],['INDONÉSIE',N(50)+.3,INK],['MADAGASCAR',N(50)+.45,INK],['MAROC',N(50)+.6,INK]].forEach(([s,t0,col],i)=>{if(t>=t0)txt(s,(i%2?1:-1)*220,-h/2+690+Math.floor(i/2)*90,'60px Anton',col,'center',2,lin(t,t0,t0+.2));});
-    stampAt('NÉPAL : LE GOUVERNEMENT TOMBE',0,h/2-150,56,t,N(51),-.05);srcLine('Source : NPR, 5 oct. 2025',w,h);return 1;}
+    stampAt('NÉPAL : LE GOUVERNEMENT TOMBE',0,h/2-150,56,t,N(51),-.05);srcLine('Photos de presse · Source : NPR, 5 oct. 2025',w,h);return 1;}
   if(c.k==='fin1'){framePaper(w,h,PAPERC);txt('LA FICTION',0,-h/2+170,'120px Anton',INKD,'center',3);txt('EST SORTIE DE L’ÉCRAN.',0,-h/2+300,'90px Anton',PINK,'center',2,lin(t,c.t0+.3,c.t0+.5));
     if(t>=N(53))txt('LA FRANCE ≠ PANEM · MAIS LES RESSEMBLANCES SONT LÀ',0,-h/2+400,'700 26px Mono',INKD,'center',1,lin(t,N(53),N(53)+.2));
     if(t>=N(55)){txt('PARTIE 2 :',0,-h/2+520,'60px Anton',INKD,'center',2);['LE CAPITOLE','LES PACIFICATEURS','LA PHRASE DE SNOW'].forEach((s,i)=>txt(s,0,-h/2+610+i*80,'64px Anton',i==2?PINK:INKD,'center',2,lin(t,N(55)+.3+i*.4,N(55)+.5+i*.4)));}return 1;}
@@ -83,6 +80,6 @@ ev(WT0-.9,'riser');reveal(N(52),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));ev(N(55)
 CRED=['Sources : S. Collins (British Council, LitCharts) · Juvénal, Satires X · Khaosod English · SCMP · CBC · LMU Asia Media · NPR (2025)',
  'Extraits de films : Hunger Games (Lionsgate), droit de citation · Images : Milktea2020, Kilyac (CC BY-SA) · LaloMassalia (CC0)',
  'Musique : « Hitman », K. MacLeod · CC BY 4.0']
-build('.',"« HUNGER GAMES » partie 1 (27/10/2026)",CARDS,HOOK,EXTRA,"[[0,0],[N(6),1],[N(19),2],[N(33),3]]","POINT",SOUNDS,CRED,['hook','parc3','lacry','thai','hongkong','myanmar','nepal','collins'])
+build('.',"« HUNGER GAMES » partie 1 (27/10/2026)",CARDS,HOOK,EXTRA,"[[0,0],[N(6),1],[N(19),2],[N(33),3]]","POINT",SOUNDS,CRED,['hook','parc3','lacry','thai','hongkong','myanmar','nepal','indonesie','collins'])
 s=open('board.js').read();s=s.replace('t>=N(75))return;','t>=N(58))return;');open('board.js','w').write(s)
 print('ok')
