@@ -154,8 +154,8 @@ function drawHook3(w,h,t){
   txt('EMMANUEL MACRON · OCT. 2026 · COMMISSION EUROPÉENNE · CC BY 4.0',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
   topBox(w,h,t,0,'« MANIPULATION ÉTRANGÈRE »','LE PRÉSIDENT, CE MOIS-CI',66);
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.7-.7*q;ctx.save();ctx.translate(0,y);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
-  sl('ON TE',-h/2+800,'170px Anton',INK,0,8,20);sl('MANIPULE ?',-h/2+1330,'170px Anton',RED,0,6,22);
-  if(t>=TT)band(-h/2+1410,t,TT,'PARTIE 2 / 2',56);
+  sl('ON TE',-h/2+925,'170px Anton',INK,0,8,20);sl('MANIPULE ?',-h/2+1195,'170px Anton',RED,0,6,22);
+  if(t>=TT)band(-h/2+1300,t,TT,'PARTIE 2 / 2',56);
   if(t>=N(3))txt('IL RESTE 4 TECHNIQUES · LA DERNIÈRE EST LA PIRE',0,-h/2+1480,'700 28px Mono',AMB,'center',2,lin(t,N(3),N(3)+.2));
 }
 // ---------- cartes dessinées
