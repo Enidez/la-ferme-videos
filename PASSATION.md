@@ -152,6 +152,7 @@ Le générique de fin « ferme-la » (réplique de film + logo animé) est ajout
 ---
 
 ## ÉTAT AU 26/10/2026 (à lire en premier par la nouvelle session)
+- **Prêt à publier** (vidéos finies + légendes à copier) : https://claude.ai/artifact/Dg5BD34JYGRUjyWuxLjeEi
 - **Studio** (suivi de tout) : https://claude.ai/artifact/CZrvshCB1UBe43xvA35mPx — mettre à jour à chaque étape.
 - **Recap actu 24/10** : `veille/recap_2026-10-24.md` (Trappes, 17/10, budget, gazole, dette, international, rumeurs vérifiées).
 - **Ép. 22 « LE MAUVAIS VISAGE »** (Trappes : la photo virale montrait un homonyme innocent) : script v1 prêt dans `episodes/22_le_mauvais_visage/`, attend le go d'Enidez + ~1 000 crédits ElevenLabs (il en restait ~290). Revérifier le bilan le jour de la voix.

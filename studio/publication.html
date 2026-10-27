@@ -1,0 +1,109 @@
+<title>Prêt à publier</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout : une colonne de « fiches de tournage », la plus récente en haut ; couverture 9:16 à gauche, tout le reste à droite. */
+:root{
+  --bg:#eef0ea; --panel:#fbfcf8; --ink:#16191a; --mute:#5d675f; --line:#d3d8cf;
+  --red:#d8261d; --amber:#a36a00; --green:#2f6b2a; --chip:#e3e7df;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --body:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d100f;--panel:#161a18;--ink:#eceee6;--mute:#9aa49b;--line:#2a312d;--red:#ff4a3d;--amber:#ffb21e;--green:#8fc283;--chip:#222826;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d100f;--panel:#161a18;--ink:#eceee6;--mute:#9aa49b;--line:#2a312d;--red:#ff4a3d;--amber:#ffb21e;--green:#8fc283;--chip:#222826;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,7vw,52px);line-height:.95;letter-spacing:.5px;margin:0;text-transform:uppercase}
+h1 span{color:var(--red)}
+.sub{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:600 13px var(--body);padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.list{display:flex;flex-direction:column;gap:16px}
+.card{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;background:var(--panel);border:1px solid var(--line);padding:14px}
+.cover{width:150px;aspect-ratio:9/16;max-width:100%;background:var(--chip);object-fit:cover;display:block}
+.top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.top h2{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.3px;text-wrap:balance}
+.meta{font-family:var(--mono);font-size:12px;color:var(--mute);margin-top:4px;font-variant-numeric:tabular-nums}
+.chip{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px}
+.chip.ready{background:var(--red);color:#fff}
+.chip.done{background:var(--chip);color:var(--green)}
+.caption{margin-top:10px;white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);padding:10px 12px;font-size:14px;min-width:0;overflow-wrap:anywhere}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.actions button{font:600 14px var(--body);padding:9px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.actions button.ghost{background:transparent;color:var(--ink)}
+.actions button:focus-visible,.filters button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.actions button:disabled{opacity:.5;cursor:default}
+.note{font-size:13px;color:var(--mute);margin-top:6px;min-height:1.2em}
+.empty{border:1px dashed var(--line);padding:28px;text-align:center;color:var(--mute)}
+@media (max-width:520px){.card{grid-template-columns:96px minmax(0,1fr);gap:12px}.cover{width:96px}.top h2{font-size:21px}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="sub">La Ferme · vidéos prêtes</div>
+      <h1>Prêt à <span>publier</span></h1>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrer">
+      <button id="f-ready" aria-pressed="true" data-f="ready">À publier</button>
+      <button id="f-all" aria-pressed="false" data-f="all">Toutes</button>
+      <button id="f-done" aria-pressed="false" data-f="done">Publiées</button>
+    </div>
+  </header>
+  <div id="list" class="list">
+    <div class="empty">Les vidéos prêtes apparaissent ici, avec leur couverture, leur légende et un bouton de téléchargement. Chaque nouvelle version remplace l'ancienne.</div>
+  </div>
+</div>
+
+<script>
+let ROWS=[],FILTER='ready',DL=null,DB=null;
+try{FILTER=localStorage.getItem('pf-filter')||'ready'}catch(e){}
+const $=s=>document.querySelector(s);
+function setFilter(f){FILTER=f;try{localStorage.setItem('pf-filter',f)}catch(e){}document.querySelectorAll('.filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));render()}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+function fmtDate(s){try{return new Date(s).toLocaleString('fr-FR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}catch(e){return s||''}}
+function render(){
+  const list=$('#list');list.textContent='';
+  const rows=ROWS.filter(r=>FILTER==='all'||(FILTER==='done'?r.statut==='publie':r.statut!=='publie'));
+  if(!rows.length){const e=document.createElement('div');e.className='empty';e.textContent=ROWS.length?'Rien dans ce filtre.':'Les vidéos prêtes apparaissent ici, avec leur couverture, leur légende et un bouton de téléchargement.';list.append(e);return}
+  rows.forEach(r=>{
+    const c=document.createElement('article');c.className='card';
+    const img=document.createElement('img');img.className='cover';img.alt='Couverture : '+(r.titre||'');if(r.cover)img.src=r.cover;c.append(img);
+    const b=document.createElement('div');b.style.minWidth='0';
+    const top=document.createElement('div');top.className='top';
+    const h=document.createElement('h2');h.textContent=r.titre||'Sans titre';
+    const chip=document.createElement('span');const done=r.statut==='publie';chip.className='chip '+(done?'done':'ready');chip.textContent=done?'Publiée':'À publier';
+    top.append(h,chip);b.append(top);
+    const m=document.createElement('div');m.className='meta';m.textContent=[r.serie,r.duree,r.maj?'version du '+fmtDate(r.maj):''].filter(Boolean).join(' · ');b.append(m);
+    const cap=document.createElement('div');cap.className='caption';cap.id='cap-'+r.id;cap.textContent=r.legende||'';b.append(cap);
+    const a=document.createElement('div');a.className='actions';
+    const bd=document.createElement('button');bd.id='dl-'+r.id;bd.textContent='Télécharger la vidéo';
+    const bc=document.createElement('button');bc.className='ghost';bc.id='cp-'+r.id;bc.textContent='Copier la légende';
+    const bs=document.createElement('button');bs.className='ghost';bs.id='st-'+r.id;bs.textContent=done?'Remettre à publier':'Marquer publiée';
+    a.append(bd,bc,bs);b.append(a);
+    const note=document.createElement('div');note.className='note';b.append(note);
+    bd.onclick=async()=>{
+      if(!DL){note.textContent='Le téléchargement n’est pas disponible dans cette vue. Ouvre la page sur claude.ai.';return}
+      if(!r.video){note.textContent='Vidéo pas encore envoyée.';return}
+      bd.disabled=true;note.textContent='Préparation du fichier…';
+      try{const res=await fetch(r.video);const blob=await res.blob();await DL.save({filename:r.fichier||'video.mp4',data:blob});note.textContent='Téléchargée.'}
+      catch(e){note.textContent=e&&e.code==='declined'?'Téléchargement annulé.':'Échec du téléchargement : '+((e&&e.message)||'réessaie dans un instant.')}
+      bd.disabled=false};
+    bc.onclick=()=>{const t=r.legende||'';navigator.clipboard.writeText(t).then(()=>{note.textContent='Légende copiée.'},()=>{const s=window.getSelection(),rg=document.createRange();rg.selectNodeContents(cap);s.removeAllRanges();s.addRange(rg);note.textContent='Copie bloquée : la légende est sélectionnée, fais Copier.'})};
+    bs.onclick=async()=>{if(!DB){note.textContent='Modification impossible dans cette vue.';return}
+      try{await DB.collection('videos').doc(r.id).update({statut:done?'pret':'publie'})}catch(e){note.textContent='Impossible d’enregistrer : '+((e&&e.message)||'')}};
+    c.append(b);list.append(c);
+  });
+}
+(async()=>{
+  if(!window.claude)return;
+  claude.use('downloads').then(d=>{DL=d});
+  const db=await claude.use('db');if(!db)return;DB=db;
+  db.collection('videos').orderBy('ordre','desc').onSnapshot(s=>{ROWS=s.docs.map(d=>Object.assign({id:d.id},d.data()));render()},()=>{});
+})();
+setFilter(FILTER);
+</script>
