@@ -147,28 +147,16 @@ function postit(w,h){ctx.save();ctx.translate(w/2-90,-h/2-75);ctx.rotate(.09);ct
   txt('3 500',0,10,'100px Anton','#2a2618','center',2);txt('MERCI.',0,75,'700 40px Mono','#2a2618','center',6);txt('— la ferme',50,118,'400 22px Mono','rgba(42,38,24,.75)','center');pin(0,-118);ctx.restore();}
 // ---------- hook : le 17 octobre en plein écran, arrêt sur image, titre
 function drawHook3(w,h,t){
-  const FRZ=MARK.frz,TT=MARK.tt;const fr=(window.CLIPS&&CLIPS.hook)||[];
-  ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
-  const tf=Math.min(t,FRZ);let im=IM.hook;if(fr.length)im=fr[Math.min(fr.length-1,Math.floor(tf*30))];
-  if(im){const frz=t>=FRZ;const z=(fr.length?1.05:1.18)+.05*tf+(frz?.18*eo(lin(t,FRZ,FRZ+.4))+.012*(t-FRZ):0);const s=Math.max(w/im.width,h/im.height)*z;
-    const fx=fr.length?.5:.3+.02*tf,fy=.6;
-    ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
-    ctx.filter=frz?'grayscale(.9) contrast(1.3) brightness(.9)':'saturate(1.1) contrast(1.05) brightness(1.35)';
-    ctx.drawImage(im,-im.width*s*fx,-im.height*s*fy,im.width*s,im.height*s);ctx.restore();
-    if(!frz){// fumée qui dérive
-      ctx.save();ctx.globalCompositeOperation='lighter';for(let k=0;k<5;k++){const x=-w/2+((k*260+t*40*(1+k*.2))%(w+400))-200,y=-h/2+420+k*90+Math.sin(t+k)*30;const g=ctx.createRadialGradient(x,y,0,x,y,380);g.addColorStop(0,'rgba(120,120,115,.10)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(x-400,y-400,800,800);}ctx.restore();}
-    if(frz){const p=eo(lin(t,FRZ,FRZ+.12));ctx.save();ctx.globalAlpha=p*.9;ctx.strokeStyle=RED;ctx.lineWidth=8;ctx.beginPath();ctx.ellipse(-10,-60,250+8*Math.sin(t*6),140,-.05,0,6.283);ctx.stroke();ctx.restore();}}
-  {const g=ctx.createLinearGradient(0,-h/2+h*.45,0,-h/2+h*.75);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.85)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.45,w,h*.55);}
-  {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+380);g.addColorStop(0,'rgba(0,0,0,.75)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,380);}
-  txt(fr.length?'VIDÉO : AFP · PARIS · 17 OCT. 2026':'PHOTO DU SAMEDI 17 OCT. 2026 · J. JARAMILLO · CC BY-SA',0,-h/2+1490,'400 20px Mono','rgba(236,238,230,.7)','center',2);
-  txt('SAMEDI 17 OCTOBRE · PARIS',0,-h/2+300,'700 34px Mono',AMB,'center',6,lin(t,.1,.5));
-  const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.7-.7*q;const sh=t<ta+.22?(1-lin(t,ta,ta+.22))*12:0;ctx.save();ctx.translate(Math.sin(t*90)*sh,y+Math.cos(t*77)*sh);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
-  if(t<FRZ){sl('DEPUIS LE',-h/2+1080,'120px Anton',INK,N(0)+.3,5,14);sl('17 OCTOBRE…',-h/2+1240,'150px Anton',INK,N(0)+.8,5,14);}
-  else{const p=eo(lin(t,FRZ,FRZ+.15));ctx.save();ctx.globalAlpha=p*.35;ctx.fillStyle='#000';ctx.fillRect(-w/2,-h/2,w,h);ctx.restore();
-    sl('ON TE',-h/2+930,'190px Anton',INK,FRZ,8,20);sl('MANIPULE ?',-h/2+1140,'190px Anton',RED,FRZ+.12,6,22);
-    if(t>=TT){band(-h/2+1300,t,TT,'PARTIE 2 / 2',64);}
-    txt('IL RESTE 4 TECHNIQUES',0,-h/2+1420,'700 36px Mono',AMB,'center',4,lin(t,N(3),N(3)+.2));
-    if(t>=N(4))txt('LA DERNIÈRE EST LA PLUS DANGEREUSE',0,-h/2+1470,'700 30px Mono',INK,'center',3,lin(t,N(4),N(4)+.2));}
+  const TT=MARK.tt;const im=IM.macron;ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
+  if(im){const z=1.12+.03*t;const s=Math.max(w/im.width,h/im.height)*z;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
+    ctx.filter=t<.15?'none':'grayscale(.35) contrast(1.15) brightness(.85)';ctx.drawImage(im,-im.width*s*.5,-im.height*s*.38,im.width*s,im.height*s);ctx.restore();}
+  {const g=ctx.createLinearGradient(0,-h/2+h*.5,0,-h/2+h*.8);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.9)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.5,w,h*.5);}
+  txt('EMMANUEL MACRON · OCT. 2026 · COMMISSION EUROPÉENNE · CC BY 4.0',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
+  topBox(w,h,t,0,'« MANIPULATION ÉTRANGÈRE »','LE PRÉSIDENT, CE MOIS-CI',66);
+  const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.7-.7*q;ctx.save();ctx.translate(0,y);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
+  sl('ON TE',-h/2+1130,'190px Anton',INK,0,8,20);sl('MANIPULE ?',-h/2+1310,'190px Anton',RED,0,6,22);
+  if(t>=TT)band(-h/2+1410,t,TT,'PARTIE 2 / 2',56);
+  if(t>=N(3))txt('IL RESTE 4 TECHNIQUES · LA DERNIÈRE EST LA PIRE',0,-h/2+1480,'700 28px Mono',AMB,'center',2,lin(t,N(3),N(3)+.2));
 }
 // ---------- cartes dessinées
 function cardExtra(c,t,w,h){
@@ -372,7 +360,7 @@ function hud(t){if(t<TCOV||t>=N(75))return;let v=4,t0=0;CNT.forEach(([a,n])=>{if
   txt('TECHNIQUE',0,-36,'700 20px Mono','rgba(236,238,230,.75)','center',4);txt(v+'/8',0,52,'86px Anton',v===8?RED:INK,'center',2,1,pk>0?18:0);ctx.restore();}
 
 // ---------- sons
-ev(MARK.frz,'boom');reveal(MARK.frz,1.3);ev(MARK.tt,'thud');ev(N(3),'tick');ev(N(4),'tick');ev(TCOV-.1,'whoosh');
+ev(0,'boom');ev(MARK.tt,'thud');ev(N(3),'tick');ev(N(4),'tick');ev(TCOV-.1,'whoosh');
 KEYS.forEach(k=>{if(k.t>TCOV+.1)ev(k.t-.5,'whoosh');});
 C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 [5,6,7,8].forEach(k=>ev(N(k),'tick'));ev(N(9),'thud');

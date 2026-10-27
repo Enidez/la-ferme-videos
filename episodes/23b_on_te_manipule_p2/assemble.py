@@ -38,9 +38,8 @@ def narr(i0,i1,t,a=None):
         if k in QUOTES:d['m']=1
         SEGS.append(d)
     put(t,fade(L[int(a*SR):int(b*SR)]));return t+b-a
-amb=load('audio/amb.wav');put(0,fade(amb[:int((LS[1][1]-LS[0][0]+.5)*SR)])*.5)
-e=narr(0,1,0.15)                 # « Depuis le 17 octobre… on te manipule ? » (souffle supprimé)
-FRZ=SEGS[1]['t0']
+e=narr(1,1,0.12)                 # hook : « on te manipule ? » dès 0:00, sur un visage
+FRZ=SEGS[0]['t0']
 TT=round(e+.3,2);e=narr(2,len(TX)-1,TT)   # temps mort : arrêt sur image + titre
 y=np.clip(buf[:int((e+.2)*SR)],-1,1)
 w=wave.open('audio/vo.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((y*32767).astype(np.int16).tobytes());w.close()
