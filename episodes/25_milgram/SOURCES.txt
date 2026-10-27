@@ -1,0 +1,7 @@
+ÉP. 25 « 450 VOLTS. » — sources vérifiées le 27/10/2026
+- S. Milgram, Obedience to Authority (1974), relu sur archive.org (ObedienceToAuthority_368) :
+  « Of the 40 subjects, 26 obeyed the orders of the experimenter to the end » (450 V, administrés 3 fois, puis arrêt).
+  Les 4 « prods » : « Please continue » / « The experiment requires that you continue » / « It is absolutely essential that you continue » / « You have no other choice, you must go on ».
+  Expérience 17 « Two Peers Rebel » : « 36 of the 40 subjects defy the experimenter » → 10 % obéissants ; « none was so effective in undercutting the experimenter's authority ».
+- Participants recrutés par annonce à New Haven, 20-50 ans, métiers variés (pas des étudiants de Yale). Expériences 1961-1962, publication 1963.
+- Générateur gradué de 15 en 15 V jusqu'à 450 V, mentions « Danger: Severe Shock » et « XXX ».
