@@ -13,6 +13,8 @@ const cSalute=add({k:'clip',full:1,clip:'katniss',handle:'Hunger Games (2012) ·
   after:(w,h,t)=>{topBox(w,h,t,N(36),'TROIS DOIGTS LEVÉS','LE SIGNE DE LA RÉVOLTE',66);}});
 const cThai=add({k:'clip',full:1,img:'thai',handle:'Photo de presse · Khon Kaen, 19 nov. 2014',badge:'THAÏLANDE · DEVANT LE PREMIER MINISTRE',w:900,h:1150,rot:-1.5,t0:N(38),
   after:(w,h,t)=>{topBox(w,h,t,N(38),'NOV. 2014 · APRÈS LE COUP D’ÉTAT','5 ÉTUDIANTS ARRÊTÉS À KHON KAEN',52);band(-160,t,N(42),'CINÉMA SCALA : FILM DÉPROGRAMMÉ',46);stampAt('ARRÊTÉS POUR 3 DOIGTS',0,-30,62,t,N(44),-.07);}});
+const cBkk=add({k:'clip',full:1,clip:'bkk',handle:'TV5 Monde · Le Journal international',badge:'BANGKOK · OCTOBRE 2020',w:900,h:1150,rot:1.5,t0:N(43),
+  after:(w,h,t)=>{topBox(w,h,t,N(43),'LE GESTE INTERDIT','DES MILLIERS DE MAINS LEVÉES',64);}});
 const cAsie=add({k:'asie',w:940,h:1000,rot:2,t0:N(45)});
 const cOP=add({k:'onepiece',w:960,h:1100,rot:-1.5,t0:N(48)});
 const cFin=add({k:'fin1',w:920,h:900,rot:1.5,t0:N(52)});
@@ -77,7 +79,7 @@ ev(N(23),'tick');ev(N(24),'thud');ev(N(25),'tick');ev(N(26),'tick');reveal(N(29)
 ev(N(36),'tick');ev(N(38),'tick');ev(N(42),'thud');reveal(N(44),1.2);ev(N(46),'tick');ev(N(47),'tick');
 ev(N(49),'tick');[0,.3,.45,.6].forEach(d=>ev(N(50)+d,'tick'));reveal(N(51),1.2);
 ev(WT0-.9,'riser');reveal(N(52),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));ev(N(55),'tick');ev(VEND+.35,'boom');'''
-CRED=['Sources : S. Collins (British Council, LitCharts) · Juvénal, Satires X · Khaosod English · SCMP · CBC · LMU Asia Media · NPR (2025)',
+CRED=['Sources : TV5 Monde · S. Collins (British Council, LitCharts) · Juvénal, Satires X · Khaosod English · SCMP · CBC · LMU Asia Media · NPR (2025)',
  'Extraits de films : Hunger Games (Lionsgate), droit de citation · Images : Milktea2020, Kilyac (CC BY-SA) · LaloMassalia (CC0)',
  'Musique : « Hitman », K. MacLeod · CC BY 4.0']
 build('.',"« HUNGER GAMES » partie 1 (27/10/2026)",CARDS,HOOK,EXTRA,"[[0,0],[N(6),1],[N(19),2],[N(33),3]]","POINT",SOUNDS,CRED,['hook','parc3','lacry','thai','hongkong','myanmar','nepal','indonesie','collins'])

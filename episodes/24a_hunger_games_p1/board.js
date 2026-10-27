@@ -31,6 +31,8 @@ const cSalute=add({k:'clip',full:1,clip:'katniss',handle:'Hunger Games (2012) ·
   after:(w,h,t)=>{topBox(w,h,t,N(36),'TROIS DOIGTS LEVÉS','LE SIGNE DE LA RÉVOLTE',66);}});
 const cThai=add({k:'clip',full:1,img:'thai',handle:'Photo de presse · Khon Kaen, 19 nov. 2014',badge:'THAÏLANDE · DEVANT LE PREMIER MINISTRE',w:900,h:1150,rot:-1.5,t0:N(38),
   after:(w,h,t)=>{topBox(w,h,t,N(38),'NOV. 2014 · APRÈS LE COUP D’ÉTAT','5 ÉTUDIANTS ARRÊTÉS À KHON KAEN',52);band(-160,t,N(42),'CINÉMA SCALA : FILM DÉPROGRAMMÉ',46);stampAt('ARRÊTÉS POUR 3 DOIGTS',0,-30,62,t,N(44),-.07);}});
+const cBkk=add({k:'clip',full:1,clip:'bkk',handle:'TV5 Monde · Le Journal international',badge:'BANGKOK · OCTOBRE 2020',w:900,h:1150,rot:1.5,t0:N(43),
+  after:(w,h,t)=>{topBox(w,h,t,N(43),'LE GESTE INTERDIT','DES MILLIERS DE MAINS LEVÉES',64);}});
 const cAsie=add({k:'asie',w:940,h:1000,rot:2,t0:N(45)});
 const cOP=add({k:'onepiece',w:960,h:1100,rot:-1.5,t0:N(48)});
 const cFin=add({k:'fin1',w:920,h:900,rot:1.5,t0:N(52)});
@@ -272,7 +274,7 @@ function drawCard(c,t){
   if(c.hl!=null&&t>=c.hl&&t<WT1+1){const a=(1-lin(t,WT1,WT1+1))*eo(lin(t,c.hl,c.hl+.2))*(.7+.3*Math.sin((t-c.hl)*9));ctx.save();ctx.strokeStyle=`rgba(255,58,46,${a})`;ctx.lineWidth=40;ctx.shadowColor='rgba(255,40,30,.95)';ctx.shadowBlur=70;ctx.strokeRect(-w/2-34,-h/2-34,w+68,h+68);ctx.restore();}
   ctx.restore();
 }
-function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);['Sources : S. Collins (British Council, LitCharts) · Juvénal, Satires X · Khaosod English · SCMP · CBC · LMU Asia Media · NPR (2025)', 'Extraits de films : Hunger Games (Lionsgate), droit de citation · Images : Milktea2020, Kilyac (CC BY-SA) · LaloMassalia (CC0)', 'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>txt(s,0,i*36,'400 15px Mono','rgba(236,238,230,.75)','center'));ctx.restore();}
+function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);['Sources : TV5 Monde · S. Collins (British Council, LitCharts) · Juvénal, Satires X · Khaosod English · SCMP · CBC · LMU Asia Media · NPR (2025)', 'Extraits de films : Hunger Games (Lionsgate), droit de citation · Images : Milktea2020, Kilyac (CC BY-SA) · LaloMassalia (CC0)', 'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>txt(s,0,i*36,'400 15px Mono','rgba(236,238,230,.75)','center'));ctx.restore();}
 // ---------- sous-titres courts (3 mots max)
 const CHUNKS=[];SEGS.forEach(s=>{const ws=s.txt.split(' ');const tot=ws.reduce((a,w)=>a+w.length+1,0);let acc=0;const dur=s.t1-s.t0;const wt=ws.map(w=>{const tt=s.t0+dur*acc/tot;acc+=w.length+1;return[w,tt];});
   for(let i=0;i<wt.length;){let n=Math.min(3,wt.length-i);if(n==3&&wt[i+1][0].length+wt[i][0].length+wt[i+2][0].length>18)n=2;CHUNKS.push({m:s.m,txt:wt.slice(i,i+n).map(x=>x[0]).join(' ').toUpperCase(),t:wt[i][1]});i+=n;}});

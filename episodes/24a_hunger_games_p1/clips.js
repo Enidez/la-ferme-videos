@@ -1,1 +1,1 @@
-window.CLIPLIST=[["katniss", 105], ["salute", 106]];
+window.CLIPLIST=[["bkk", 120], ["katniss", 105], ["salute", 106]];
