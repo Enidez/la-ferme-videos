@@ -25,9 +25,7 @@ const cNur=add({k:'clip',full:1,img:'nuremberg',handle:'US Army · domaine publi
   after:(w,h,t)=>{topBox(w,h,t,N(11),'GÖRING, LE N° 2 NAZI','EN CELLULE · FACE À UN PSYCHOLOGUE',60);band(-160,t,N(14),'« C’EST FACILE. »',80);
     band(-40,t,N(15),'« DITES-LEUR QU’ILS SONT ATTAQUÉS »',42,'rgba(10,10,10,.88)',AMB);}});
 const cRue=add({k:'clip',full:1,img:'hook',handle:'J. Jaramillo · CC BY-SA',badge:'PARIS · 17 OCTOBRE 2026',w:900,h:1150,rot:-1.5,t0:N(17),
-  after:(w,h,t)=>{topBox(w,h,t,N(18),'COUVRE-FEUX · 5 GRANDES VILLES','70 000 POLICIERS ET GENDARMES',50);}});
-const cBlinde=add({k:'clip',full:1,img:'blinde',handle:'A. Prevot · CC BY-SA 4.0',badge:'DES BLINDÉS DANS LES RUES',w:900,h:1000,rot:2,t0:N(20),
-  after:(w,h,t)=>{stampAt('VIOLENCES RÉELLES',0,-120,70,t,N(21),-.07,INK);band(0,t,N(25),'« PROTÉGEZ-MOI »',84);}});
+  after:(w,h,t)=>{topBox(w,h,t,N(18),'COUVRE-FEUX · 5 GRANDES VILLES','70 000 POLICIERS ET GENDARMES',50);band(-160,t,N(20),'DES BLINDÉS',70);stampAt('VIOLENCES RÉELLES',0,-30,64,t,N(21),-.07,INK);band(80,t,N(25),'« PROTÉGEZ-MOI »',84);}});
 const cT2=add({k:'proof',lab:'TECHNIQUE',n:2,l:'L’ENNEMI',w:880,h:760,rot:-2,t0:N(26)});
 const cLas=add({k:'clip',full:1,img:'lasswell',handle:'Martap95 · CC BY-SA 4.0',badge:'HAROLD LASSWELL · 1927',w:900,h:1150,rot:1.5,t0:N(27),
   after:(w,h,t)=>{topBox(w,h,t,N(28),'« AUCUN DOUTE SUR QUI','LE PUBLIC DOIT HAÏR »',64);}});
@@ -36,9 +34,7 @@ const cMacE=add({k:'clip',full:1,img:'macron',handle:'Commission européenne · 
 const cTrump=add({k:'clip',full:1,img:'trump',handle:'Maison-Blanche · domaine public',badge:'DONALD TRUMP · 18 OCTOBRE',w:900,h:1150,rot:2,t0:N(32),
   after:(w,h,t)=>{topBox(w,h,t,N(33),'« THE MIGRANTS HAVE','TAKEN OVER FRANCE »',64);band(-120,t,N(34),'MÊME OUTIL · AUTRE CIBLE',56);band(0,t,N(37),'ET LE PRIX DE TON PLEIN ?',50,'rgba(10,10,10,.88)',AMB);}});
 const cT3=add({k:'proof',lab:'TECHNIQUE',n:3,l:'DIVISER',w:880,h:760,rot:-1.5,t0:N(38)});
-const cFBI=add({k:'clip',full:1,img:'mlk',handle:'FBI · domaine public',badge:'LETTRE DU FBI À M. L. KING · 1964',w:900,h:1150,rot:1.5,t0:N(40),
-  after:(w,h,t)=>{topBox(w,h,t,N(40),'COINTELPRO · 1956-1971','LE FBI CONTRE SES CITOYENS',62);band(40,t,N(42),'PERTURBER · DISCRÉDITER · NEUTRALISER',36);
-    stampAt('MONTER LES GROUPES ENTRE EUX',0,-120,52,t,N(47),-.07);}});
+const cFBI=add({k:'fbi',w:920,h:1080,rot:1.5,t0:N(40)});
 const cTrap=add({k:'trappes',w:960,h:1100,rot:-2,t0:N(48)});
 const cT4=add({k:'proof',lab:'TECHNIQUE',n:4,l:'LE CHOC',w:880,h:760,rot:2,t0:N(54)});
 const cFri=add({k:'clip',full:1,img:'friedman',handle:'Friedman Foundation · CC0',badge:'MILTON FRIEDMAN · PRIX NOBEL',w:900,h:1150,rot:-1.5,t0:N(55),
@@ -175,6 +171,12 @@ function drawHook3(w,h,t){
 }
 // ---------- cartes dessinées
 function cardExtra(c,t,w,h){
+  if(c.k==='fbi'){framePaper(w,h,'#e3dcc6');txt('FEDERAL BUREAU OF INVESTIGATION',0,-h/2+90,'700 30px Mono','rgba(27,28,26,.8)','center',2);
+    txt('COINTELPRO · 1956 → 1971',0,-h/2+190,'80px Anton',INKD,'center',2);
+    if(t>=N(41))['RÉVÉLÉ EN 1971 PAR DES DOCUMENTS VOLÉS','LE FBI INFILTRE SES PROPRES CITOYENS'].forEach((l,i)=>txt(l,0,-h/2+270+i*46,'700 26px Mono',INKD,'center',1,lin(t,N(41)+i*.3,N(41)+i*.3+.2)));
+    [['PERTURBER',N(43)],['DISCRÉDITER',N(44)],['NEUTRALISER',N(45)]].forEach(([s2,t0],i)=>stampAt(s2,0,-h/2+470+i*130,84,t,t0,-.06+i*.04));
+    if(t>=N(47))band(h/2-150,t,N(47),'MONTER LES GROUPES ENTRE EUX',54);
+    stampAt('CONFIDENTIEL',-w/2+200,h/2-60,40,t,c.t0+.3,-.15);darkTxt('Source : commission Church, Sénat américain (1976)',0,w,h);return 1;}
   if(c.k==='huit'){framePaper(w,h,'rgba(30,32,30,.95)');txt('8 TECHNIQUES',0,-h/2+110,'90px Anton',INK,'center',3);
     txt('ÉCRITES NOIR SUR BLANC',0,-h/2+175,'700 30px Mono',AMB,'center',4,lin(t,N(4),N(4)+.2));
     for(let i=0;i<8;i++){const x=-w/2+140+(i%4)*220,y=-h/2+330+Math.floor(i/4)*260;const q=eo(lin(t,c.t0+.1+i*.08,c.t0+.3+i*.08));const last=i===7,hot=last&&t>=N(7);
@@ -385,7 +387,7 @@ function drawCard(c,t){
 function outroCredits(t){const c=C[cOutro];ctx.save();ctx.translate(c.x,c.y+c.h/2+110);[
   'Sources : G. M. Gilbert, Nuremberg Diary (1947) · H. Lasswell (1927) · FBI / commission Church · M. Friedman (1982)',
   'Le Monde · franceinfo · Assemblée nationale · Sénat · ministère de l’Intérieur',
-  'Images : AFP (citation) · US Army, FBI, Maison-Blanche (dom. public) · Commission européenne, J. Jaramillo, A. Prevot, Martap95 (CC) · Friedman Fdn (CC0)',
+  'Images : AFP (citation) · US Army, Maison-Blanche (dom. public) · Commission européenne, J. Jaramillo, Martap95 (CC) · Friedman Fdn (CC0)',
   'Musique : « Hitman », K. MacLeod · CC BY 4.0'].forEach((s,i)=>txt(s,0,i*36,'400 15px Mono','rgba(236,238,230,.75)','center'));ctx.restore();}
 // ---------- sous-titres courts (3 mots max)
 const CHUNKS=[];SEGS.forEach(s=>{const ws=s.txt.split(' ');const tot=ws.reduce((a,w)=>a+w.length+1,0);let acc=0;const dur=s.t1-s.t0;const wt=ws.map(w=>{const tt=s.t0+dur*acc/tot;acc+=w.length+1;return[w,tt];});
@@ -411,7 +413,7 @@ for(let i=0;i<8;i++)ev(C[cHuit].t0+.1+i*.08,'tick');reveal(N(7),1.1);
 [N(8),N(26),N(38),N(54)].forEach(x=>reveal(x,1.1));
 ev(N(11),'tick');reveal(N(14),1.2);ev(N(15),'thud');ev(N(18),'tick');ev(N(20),'thud');ev(N(21),'thud');ev(N(25),'thud');
 reveal(N(28),.9);ev(N(30),'tick');ev(N(31),'thud');ev(N(33),'tick');ev(N(34),'thud');ev(N(37),'tick');
-ev(N(40),'tick');[43,44,45].forEach(k=>ev(N(k),'thud'));reveal(N(47),1);ev(N(48),'tick');reveal(N(50),1.1);ev(N(51),'tick');ev(N(53),'thud');
+ev(N(40),'tick');[43,44,45].forEach(k=>ev(N(k),'thud'));ev(N(41),'tick');reveal(N(47),1);ev(N(48),'tick');reveal(N(50),1.1);ev(N(51),'tick');ev(N(53),'thud');
 reveal(N(57),1);ev(N(59),'tick');ev(N(60),'thud');ev(N(61),'thud');ev(N(62),'tick');reveal(N(64),1.1);
 ev(WT0-.9,'riser');reveal(N(66),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));ev(N(68),'thud');ev(N(71),'tick');reveal(N(72),1.3);ev(N(74),'thud');ev(VEND+.35,'boom');
 
