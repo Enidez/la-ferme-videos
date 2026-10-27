@@ -128,6 +128,7 @@ Le générique de fin « ferme-la » (réplique de film + logo animé) est ajout
 - Vérifier que le **connecteur ElevenLabs** est disponible ; sinon, demander à Enidez de l'ajouter.
 - **Réseau du cloud** (réglé le 20/10) : environnement en accès **Custom** + liste par défaut, avec en plus `commons.wikimedia.org`, `upload.wikimedia.org`, `*.youtube.com`, `*.googlevideo.com`, `x.com`, `*.x.com`, `twitter.com`, `*.twitter.com`, `*.twimg.com`, `*.entrevue.fr`, `incompetech.com`. Les voix ElevenLabs se téléchargent depuis `storage.googleapis.com` (autorisé). Wikimedia renvoie souvent 429 depuis le cloud : espacer les requêtes.
 - L'application GitHub « Claude » est installée sur `la-ferme-videos` et `la-ferme-publication` (push possible depuis le cloud).
+- **YouTube depuis le cloud** : `tools/yt.sh URL sortie.mp4` (cookies d’Enidez dans `/root/.secrets/yt_cookies.txt`, à redemander s’ils expirent ; `venv/bin/pip install "yt-dlp[default]" deno` ; ne JAMAIS versionner les cookies).
 - `setup_cloud.sh` : la ligne `playwright install` est inutile dans le cloud (Chromium déjà installé dans /opt/pw-browsers) ; `yt-dlp` s'installe à part : `venv/bin/pip install yt-dlp`.
 - Livrer avec l'outil d'envoi de fichiers (≤ 30 Mo) et pousser le projet (sans mp4).
 
