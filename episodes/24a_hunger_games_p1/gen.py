@@ -9,7 +9,7 @@ const cPanem=add({k:'panem',w:940,h:1060,rot:-2,t0:N(21)});
 const cMatch=add({k:'clip',full:1,img:'parc3',handle:'Kilyac · CC BY-SA',badge:'PARC DES PRINCES · IMAGE D’ARCHIVE',w:900,h:1100,rot:1.5,t0:N(30),
   after:(w,h,t)=>{topBox(w,h,t,N(30),'LES MANIFS : INTERDITES','CE MOIS-CI',66);stampAt('LE MATCH : MAINTENU',0,-60,70,t,N(32),-.07);}});
 const cP3=add({k:'proof',lab:'POINT',n:3,l:'LE GESTE',w:880,h:760,rot:-1.5,t0:N(33)});
-const cSalute=add({k:'clip',full:1,clip:'salute',handle:'Hunger Games : L’Embrasement (2013) · Lionsgate',badge:'DANS LE FILM',w:900,h:1150,rot:2,t0:N(35),
+const cSalute=add({k:'clip',full:1,clip:'katniss',handle:'Hunger Games (2012) · Lionsgate',badge:'DANS LE FILM',w:900,h:1150,rot:2,t0:N(35),
   after:(w,h,t)=>{topBox(w,h,t,N(36),'TROIS DOIGTS LEVÉS','LE SIGNE DE LA RÉVOLTE',66);}});
 const cThai=add({k:'clip',full:1,img:'thai',handle:'Milktea2020 · CC BY-SA 4.0',badge:'THAÏLANDE · LE SALUT DANS LA RUE',w:900,h:1150,rot:-1.5,t0:N(38),
   after:(w,h,t)=>{topBox(w,h,t,N(38),'NOV. 2014 · APRÈS LE COUP D’ÉTAT','5 ÉTUDIANTS ARRÊTÉS À KHON KAEN',52);band(-160,t,N(42),'CINÉMA SCALA : FILM DÉPROGRAMMÉ',46);stampAt('ARRÊTÉS POUR 3 DOIGTS',0,-30,62,t,N(44),-.07);}});
@@ -24,10 +24,10 @@ const XT=[[cP1,cP2,N(52)],[cP2,cP3,N(52)+.2],[cSalute,cThai,N(52)+.4],[cThai,cOP
 HOOK=r'''function drawHook3(w,h,t){
   const fr=(window.CLIPS&&CLIPS.salute)||[];let im=fr.length?fr[Math.min(fr.length-1,Math.floor(t*30))]:IM.thai;ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
   if(im){ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();const sb=Math.max(w/im.width,h/im.height)*1.1;ctx.filter='blur(28px) brightness(.55)';ctx.drawImage(im,-im.width*sb/2,-im.height*sb/2,im.width*sb,im.height*sb);
-    const z=(fr.length?1.4:1.0)+.02*t;const s=w/im.width*z;ctx.filter='contrast(1.12)';ctx.drawImage(im,-im.width*s*.5,-h/2+720-im.height*s*.5,im.width*s,im.height*s);ctx.restore();}
+    const z=(fr.length?1.9:1.0)+.02*t;const s=w/im.width*z;ctx.filter='contrast(1.12)';ctx.drawImage(im,-im.width*s*.5,-h/2+720-im.height*s*.5,im.width*s,im.height*s);ctx.restore();}
   {const g=ctx.createLinearGradient(0,-h/2+h*.55,0,-h/2+h*.85);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.9)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2+h*.55,w,h*.45);}
   {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+420);g.addColorStop(0,'rgba(0,0,0,.8)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,420);}
-  txt(fr.length?'HUNGER GAMES : L’EMBRASEMENT (2013) · LIONSGATE':'THAÏLANDE · MILKTEA2020 · CC BY-SA 4.0',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
+  txt(fr.length?'HUNGER GAMES (2012) · LIONSGATE':'THAÏLANDE · MILKTEA2020 · CC BY-SA 4.0',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.5-.5*q;ctx.save();ctx.translate(0,y);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
   sl('CE GESTE VIENT',-h/2+210,'110px Anton',INK,0,2,16);sl('D’UN FILM.',-h/2+330,'110px Anton',INK,0,2,16);
   sl('DANS LA VRAIE VIE…',-h/2+1170,'100px Anton',INK,N(1),2,16);if(t>=N(2))stampAt('IL T’ENVOIE EN PRISON',0,-h/2+1310,80,t,N(2),-.06,RED);
