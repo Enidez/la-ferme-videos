@@ -20,11 +20,13 @@ function topBox(w,h,t,t0,a,b,sz=60,col){if(t<t0)return;const p=eo(lin(t,t0,t0+.3
 function band(y,t,t0,s,sz,bg,fg){if(t<t0)return;const p=eo(lin(t,t0,t0+.25));ctx.save();ctx.globalAlpha*=p;ctx.font=sz+'px Anton';const bw=Math.min(860,mw(s,sz+'px Anton',2)+60);ctx.fillStyle=bg||'rgba(201,48,44,.92)';ctx.fillRect(-bw/2,y-sz*.85,bw,sz*1.15);txt(s,0,y,sz+'px Anton',fg||'#fff','center',2);ctx.restore();}
 const cCover=add({k:'cover',w:1080,h:1920,rot:0,t0:0});
 const cEich=add({k:'clip',full:1,img:'eichmann',handle:'Israel GPO · domaine public',badge:'JÉRUSALEM · 1961',w:900,h:1150,rot:-1.5,t0:N(3),
-  after:(w,h,t)=>{topBox(w,h,t,N(3),'LE PROCÈS D’ADOLF EICHMANN','UN DES ORGANISATEURS DE LA SHOAH',58);band(-120,t,N(4),'« JE N’AI FAIT QU’OBÉIR »',70);}});
+  after:(w,h,t)=>{band(330,t,N(3),'ADOLF EICHMANN',62);band(440,t,N(4),'« JE N’AI FAIT QU’OBÉIR »',66,'rgba(10,10,10,.88)',AMB);}});
 const cQ=add({k:'question',w:920,h:760,rot:2,t0:N(6)});
 const cA1=add({k:'proof',lab:'ACTE',n:1,l:'L’EXPÉRIENCE',w:880,h:760,rot:-2,t0:N(8)});
 const cYale=add({k:'clip',full:1,clip:'yale',handle:'Archives de l’expérience Milgram (1962)',badge:'UNIVERSITÉ DE YALE · 1961',w:900,h:1150,rot:1.5,t0:N(10),
   after:(w,h,t)=>{topBox(w,h,t,N(11),'DES GENS ORDINAIRES','RECRUTÉS PAR PETITE ANNONCE',66);}});
+const cMilg=add({k:'clip',full:1,img:'milgram',handle:'Stanley Milgram · Wikimedia Commons',badge:'PSYCHOLOGUE · YALE',w:900,h:1150,rot:-1.5,t0:N(11),
+  after:(w,h,t)=>{band(330,t,N(11),'STANLEY MILGRAM',66);band(440,t,N(11)+.8,'RECRUTE DES GENS ORDINAIRES',56,'rgba(10,10,10,.88)',AMB);}});
 const cRoles=add({k:'clip',full:1,clip:'roles',handle:'Archives de l’expérience Milgram (1962)',badge:'LE TIRAGE AU SORT (TRUQUÉ)',w:900,h:1150,rot:-1.5,t0:N(12),
   after:(w,h,t)=>{band(-160,t,N(13),'TOI : LE PROFESSEUR',64);band(-40,t,N(14),'LUI : L’ÉLÈVE',64,'rgba(10,10,10,.88)',AMB);}});
 const cVolt=add({k:'volts',w:960,h:1000,rot:2,t0:N(15)});
@@ -157,7 +159,7 @@ function drawHook3(w,h,t){
   {const g=ctx.createLinearGradient(0,-h/2,0,-h/2+420);g.addColorStop(0,'rgba(0,0,0,.85)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,420);}
   txt('ARCHIVES DE L’EXPÉRIENCE MILGRAM · 1962',0,-h/2+1490,'400 18px Mono','rgba(236,238,230,.7)','center',2);
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.5-.5*q;ctx.save();ctx.translate(0,y);ctx.scale(sc,sc);txt(s,0,0,f,col,'center',ls,cl(q*1.5),gl);ctx.restore();};
-  sl('TOI AUSSI ?',-h/2+300,'170px Anton',RED,0,4,24);
+  sl('TOI AUSSI ?',-h/2+820,'170px Anton',RED,0,4,24);
   sl('TU AURAIS PU',-h/2+1190,'96px Anton',INK,.3,2,16);sl('OBÉIR AUX NAZIS.',-h/2+1310,'110px Anton',INK,.6,2,16);
   if(t>=N(2))band(-h/2+1420,t,N(2),'UNE EXPÉRIENCE DE 1961',50);
 }
