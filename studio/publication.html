@@ -72,7 +72,7 @@ function render(){
   if(!rows.length){const e=document.createElement('div');e.className='empty';e.textContent=ROWS.length?'Rien dans ce filtre.':'Les vidéos prêtes apparaissent ici, avec leur couverture, leur légende et un bouton de téléchargement.';list.append(e);return}
   rows.forEach(r=>{
     const c=document.createElement('article');c.className='card';
-    const img=document.createElement('img');img.className='cover';img.alt='Couverture : '+(r.titre||'');if(r.cover)img.src=r.cover;c.append(img);
+    const img=document.createElement('img');img.className='cover';img.alt='Couverture : '+(r.titre||'');img.src=r.cover_data||r.cover||'';if(r.cover_data&&r.cover)img.onerror=()=>{img.onerror=null;img.src=r.cover};c.append(img);
     const b=document.createElement('div');b.style.minWidth='0';
     const top=document.createElement('div');top.className='top';
     const h=document.createElement('h2');h.textContent=r.titre||'Sans titre';
