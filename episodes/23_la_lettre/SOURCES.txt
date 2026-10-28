@@ -1,0 +1,29 @@
+ÉP. 23 « LA LETTRE. » — sources (vérifiées le 28/10/2026, à revérifier le jour de la voix)
+
+LA LETTRE (révélation Blast, non confirmée / non démentie)
+- Blast, 24/10/2026 : lettre de S. Lecornu datée du 22/10 à C. Heydemann (Orange), B. Torloting (Bouygues), T. Reynaud (Iliad/Free), A. Dreyfuss (Altice/SFR). Se tenir prêts à suspendre Snapchat, TikTok, Instagram le week-end des 24-25/10 « en cas de réitération de violences urbaines » ; « sans délai », « quelques heures » ; filtrage DNS, réseaux mobiles d'abord, fibre épargnée ; X ajouté après. Caractère « confidentiel » / « exploratoire ».
+- Réunion du 23/10 (compte rendu cité par Blast) : blocage par zone ou mobile seul pas faisable à court terme ; contournement VPN ; risques juridiques ; demande d'un acte officiel.
+- Reprises : Clubic https://www.clubic.com/actualite-635851-le-gouvernement-voulait-pouvoir-couper-les-reseaux-sociaux-pendant-la-manifestation-du-24-octobre-une-lettre-le-prouve.html
+  Univers Freebox https://www.universfreebox.com/article/598732/le-gouvernement-a-demande-a-free-orange-sfr-et-bouygues-telecom-de-se-preparer-a-bloquer-les-reseaux-sociaux
+  Presse-citron https://www.presse-citron.net/bloquer-temporairement-lacces-aux-applications-snapchat-tiktok-et-instagram-le-gouvernement-a-songe-a-censurer-les-reseaux-sociaux-ce-week-end/
+  Generation NT https://www.generation-nt.com/actualites/reseaux-sociaux-coupure-plan-gouvernement-operateurs-2083449
+- Matignon : pas de commentaire (sollicité par Le Figaro et par Blast, selon les reprises). Aucun démenti trouvé au 28/10.
+
+L'AMENDEMENT
+- Déposé le 26/10 au Sénat (projet de loi « casseurs-payeurs »). V1 : retrait en 1 h des appels à l'insurrection / à l'armement contre l'État, sinon blocage, amende jusqu'à 150 000 € ; + extension Pharos (24 h) aux provocations directes à des violences, vols, dégradations pouvant créer un trouble grave à l'ordre public.
+  https://www.politiquematin.fr/reseaux-sociaux-retrait-une-heure-appels-insurrection-amendement-senat-2026
+  https://kohenavocats.com/loi-casseurs-payeurs-senat-retrait-une-heure-insurrection-pharos-blocage-reseaux-sociaux-2026/
+- 27/10 : le gouvernement retire l'« une heure » au dernier moment (L. Nuñez : interrogations sur la conformité à la Constitution et au droit européen). Version adoptée : 24 h, sans juge préalable ; personne qualifiée de l'Arcom qui contrôle et peut saisir le juge administratif ; amendement adopté 219 voix contre 115.
+  https://www.journaldunet.com/business/action-publique/1557265-le-senat-adopte-le-retrait-sous-24-heures-des-contenus-appelant-aux-violences/
+  https://coinacademy.fr/actu/censure-reseaux-sociaux-gouvernement-renonce-retrait-heure/
+  https://cryptoast.fr/censure-reseaux-sociaux-gouvernement-assouplit-amendement-pharos/
+- Projet de loi entier adopté par le Sénat 229 voix contre 105 (nuit du 27 au 28/10).
+  https://www.publicsenat.fr/actualites/parlementaire/le-senat-adopte-le-projet-de-loi-casseurs-payeurs-apres-lavoir-largement-durci
+  → À CONFIRMER sur senat.fr (scrutin de l'amendement) : sources secondaires seulement.
+
+CONTEXTE
+- Conseil d'État, Assemblée, 1er avril 2025, n° 494511 (LDH, Quadrature du Net…) : suspension de TikTok en Nouvelle-Calédonie (mai 2024) annulée. https://next.ink/178412/la-suspension-de-tiktok-en-nouvelle-caledonie-jugee-illegale-mais-pas-impossible/
+- 24/10 : mobilisation (chiffres à revérifier : ~400 000 ministère / ~800 000 CGT selon une reprise) ; ~1 000 interpellations (Nuñez, CNews) ; 112 publications supprimées à la demande d'une cellule de signalement (RMC, via reprise).
+- CCI : plus de 2 500 commerces dégradés les 17 et 24/10, dont 1 161 fortement.
+- Attal (19/10) a évoqué le blocage temporaire de plateformes pendant des émeutes ; Nuñez : « piste de réflexion » (veille/recap_2026-10-24.md).
+- Notre propre veille du 24/10 classait « le gouvernement coupe les réseaux » TROMPEUR (rien de décidé) : c'était juste ce jour-là, et ça reste vrai qu'aucune coupure n'a eu lieu.
