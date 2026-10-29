@@ -17,7 +17,7 @@ ffmpeg -v error -y -i "$W/video.mp4" -i "$W/mix.wav" -c:v libx264 -preset slow -
 ffmpeg -v error -y -ss 2 -i "$OUT" -frames:v 1 -q:v 2 "${OUT%.mp4}_couverture.jpg"
 # générique de fin « ferme-la » enchaîné juste après la dernière phrase (GENERIQUE=0 pour s'en passer)
 if [ "${GENERIQUE:-1}" = 1 ]; then
-  VEND=$("$PY" -c "import json,sys;s=[l for l in open(sys.argv[1]).read().split(chr(10)) if l.startswith('const SEGS=')][0];m=[l for l in open(sys.argv[1]).read().split(chr(10)) if l.startswith('const MARK=')];print(json.loads(s[s.index('['):s.rindex(']')+1])[-1]['t1']+.35+(json.loads(m[0][11:].rstrip(';')).get('tail',0) if m else 0))" "$P/segs.js")
+  VEND=$("$PY" -c "import json,sys;s=[l for l in open(sys.argv[1]).read().split(chr(10)) if l.startswith('const SEGS=')][0];m=[l for l in open(sys.argv[1]).read().split(chr(10)) if l.startswith('const MARK=')];print(json.loads(s[s.index('['):s.rindex(']')+1])[-1]['t1']+.35+(json.loads(m[0][11:].rstrip(';')).get('tail',0) if m else 0) if not (m and 'vend' in json.loads(m[0][11:].rstrip(';'))) else json.loads(m[0][11:].rstrip(';'))['vend'])" "$P/segs.js")
   CUT=$(echo "$VEND + 1.4" | bc); mv "$OUT" "$W/sans_generique.mp4"; bash tools/generique.sh "$W/sans_generique.mp4" "$OUT" "$CUT"
 fi
 echo "OK : $OUT (+ couverture)"
