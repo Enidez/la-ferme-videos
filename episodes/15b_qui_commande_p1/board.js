@@ -349,7 +349,7 @@ ev(N(56)+.4,'tick');ev(N(57),'tick');ev(N(58),'tick');ev(N(60),'tick');ev(N(62),
 ev(WT0-.9,'riser');reveal(N(64),1);XT.forEach(([a,b,t0])=>ev(t0,'zap'));reveal(N(71),1.3);ev(N(75),'thud');ev(N(77),'tick');ev(VEND+.35,'boom');
 
 EV.splice(0,EV.length,...EV.filter(e=>e[0]<81.01));REV.splice(0,REV.length,...REV.filter(e=>e[0]<81.01));
-ev(C[cP2].t0-.5,'whoosh');ev(C[cP2].wt,'thud');ev(C[cP2].wt+.5,'type');ev(VEND+.35,'boom');
+ev(C[cP2].t0-.5,'whoosh');ev(C[cP2].wt,'thud');ev(C[cP2].wt+.5,'type');ev(VEND+.35,'boom');CHUNKS.splice(0,CHUNKS.length,...CHUNKS.filter(c=>c.t<80.81));
 // ---------- post (gris-vert)
 function post2(t){const fr=Math.floor(t*FPS);
   ctx.save();ctx.globalCompositeOperation='multiply';ctx.fillStyle='rgba(220,228,215,1)';ctx.fillRect(0,0,W,H);ctx.restore();

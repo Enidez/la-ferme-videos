@@ -243,7 +243,7 @@ ev(T[41]-.6,'riser');reveal(T[45]+.9,1.3);reveal(T[47],1.2);
 ev(T[59],'tick');ev(T[60],'tick');reveal(T[61],1.2);reveal(T[64]+.3,1.3);ev(VEND+.35,'boom');
 
 EV.splice(0,EV.length,...EV.filter(e=>e[0]<61.44));REV.splice(0,REV.length,...REV.filter(e=>e[0]<61.44));
-ev(C[cP2].t0-.5,'whoosh');ev(C[cP2].wt,'thud');ev(C[cP2].wt+.5,'type');ev(VEND+.35,'boom');
+ev(C[cP2].t0-.5,'whoosh');ev(C[cP2].wt,'thud');ev(C[cP2].wt+.5,'type');ev(VEND+.35,'boom');CHUNKS.splice(0,CHUNKS.length,...CHUNKS.filter(c=>c.t<61.24));
 // ---------- post (gris-vert)
 function post2(t){const fr=Math.floor(t*FPS);
   ctx.save();ctx.globalCompositeOperation='multiply';ctx.fillStyle='rgba(220,228,215,1)';ctx.fillRect(0,0,W,H);ctx.restore();

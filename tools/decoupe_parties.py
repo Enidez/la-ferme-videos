@@ -87,7 +87,7 @@ B = rep(B, '\n// placement en serpentin', f"\nconst cP2=add({{k:'p2',w:900,h:106
 B = rep(B, '\nfunction fitZoom(', "\n{const nx=C.findIndex(c=>c.off&&c.k!=='outro');const q=nx>=0?C[nx]:C[cP2-1];C[cP2].x=q.x;C[cP2].y=q.y;}\nfunction fitZoom(")
 B = rep(B, '\nKEYS.sort((a,b)=>a.t-b.t);', f"\nKEYS.splice(0,KEYS.length,...KEYS.filter(k=>k.t<={T1+.31:.2f}));\nKEYS.sort((a,b)=>a.t-b.t);")
 B = rep(B, 'function outroCredits(t){', 'function outroCredits(t){return;')
-B = rep(B, '\n// ---------- post', f"\nEV.splice(0,EV.length,...EV.filter(e=>e[0]<{T1+.25:.2f}));REV.splice(0,REV.length,...REV.filter(e=>e[0]<{T1+.25:.2f}));\nev(C[cP2].t0-.5,'whoosh');ev(C[cP2].wt,'thud');ev(C[cP2].wt+.5,'type');ev(VEND+.35,'boom');\n// ---------- post")
+B = rep(B, '\n// ---------- post', f"\nEV.splice(0,EV.length,...EV.filter(e=>e[0]<{T1+.25:.2f}));REV.splice(0,REV.length,...REV.filter(e=>e[0]<{T1+.25:.2f}));\nev(C[cP2].t0-.5,'whoosh');ev(C[cP2].wt,'thud');ev(C[cP2].wt+.5,'type');ev(VEND+.35,'boom');CHUNKS.splice(0,CHUNKS.length,...CHUNKS.filter(c=>c.t<{T1+.05:.2f}));\n// ---------- post")
 m1 = dict(MARK, vend=VEND1)
 project(os.path.join(R, CFG['p1']), SEGS, m1, B, f'0:{VEND1:.2f}:0')
 
