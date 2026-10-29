@@ -1,0 +1,25 @@
+SOURCES — Dossier « COUPÉ. » (vérifié le 29/10/2026, à REVÉRIFIER avant le montage et avant le 31/10)
+
+Lettre du 22/10 (Lecornu -> Orange, SFR, Free, Bouygues ; Snapchat, TikTok, Instagram, puis X ; filtrage DNS ; aucune base légale ; motif = coordination des violences du 17-18/10 : cibles, déplacements, positions police ; réserves des opérateurs le 23/10 ; rien coupé le 24) :
+- Blast (révélation)
+- Clubic : https://www.clubic.com/actualite-635851-le-gouvernement-voulait-pouvoir-couper-les-reseaux-sociaux-pendant-la-manifestation-du-24-octobre-une-lettre-le-prouve.html
+- Univers Freebox : https://www.universfreebox.com/article/598732/le-gouvernement-a-demande-a-free-orange-sfr-et-bouygues-telecom-de-se-preparer-a-bloquer-les-reseaux-sociaux
+- Actu17 : https://actu17.fr/societe/reseaux-sociaux-de-la-coupure-preparee-a-la-menace-de-blocage-le-gouvernement-serre-la-vis.html
+- KultureGeek : https://kulturegeek.fr/news-362676/tiktok-instagram-snapchat-x-matignon-avait-prepare-blocage-pendant-manifestations
+
+Amendement Sénat (retrait 24 h sans juge, blocage/déréférencement, extension de Pharos) :
+- Public Sénat (veille)
+- Journal du Net : https://www.journaldunet.com/business/action-publique/1557265-le-senat-adopte-le-retrait-sous-24-heures-des-contenus-appelant-aux-violences/
+- Next : https://next.ink/263962/mobilisations-matignon-voulait-couper-les-reseaux-le-gouvernement-veut-elargir-pharos/
+!! 219-115 = vote de l'amendement ; 229-105 = vote de l'ensemble du texte « casseurs-payeurs ». Ne pas confondre.
+!! Next évoque aussi un délai d'UNE heure pour les appels à l'insurrection/attentat (procédure d'urgence). Le script garde 24 h (cas général).
+
+Nouvelle-Calédonie : Conseil d'État, 1er avril 2025, blocage de TikTok (mai 2024) jugé illégal.
+
+Bitchat (Jack Dorsey, Bluetooth maillé, sans compte ni numéro ; Iran, Ouganda, Inde) :
+- Presse-citron : https://www.presse-citron.net/manifestations-panne-orange-voici-la-nouvelle-app-que-les-francais-installent-massivement/
+- Upside24 (n°1 des gratuites, 24/10 après-midi) : https://www.upside24.com/articles/bitchat-l-application-bluetooth-de-jack-dorsey-bondit-en-tete-des-telechargement-090133
+- Bitcoin.fr (n°1 Réseaux sociaux) : https://bitcoin.fr/bitchat-en-tete-de-lapp-store-en-france/
+- ThePrint (Inde) : https://theprint.in/feature/jack-dorseys-bitchat-worked-without-internet-at-jantar-mantar-protests-now-facing-govt-ban/2995851/
+- BISI (coupures d'internet) : https://bisi.org.uk/reports/bitchat-bluetooth-mesh-networks-and-internet-shutdowns
+!! Le pic coïncide AUSSI avec la panne Orange (~10 h). Ne pas dire que la lettre seule l'explique.
