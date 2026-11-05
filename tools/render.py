@@ -2,7 +2,10 @@ import sys,os,base64,subprocess,json
 from playwright.sync_api import sync_playwright
 P=os.path.abspath(sys.argv[1]);mode=sys.argv[2]
 with sync_playwright() as pw:
-    b=pw.chromium.launch(args=['--allow-file-access-from-files'])
+    exe='/opt/pw-browsers/chromium/chrome-linux/chrome'  # Chromium préinstallé (session cloud)
+    if not os.path.exists(exe):
+        import glob;c=glob.glob('/opt/pw-browsers/chromium-*/chrome-linux*/chrome');exe=c[0] if c else None
+    b=pw.chromium.launch(args=['--allow-file-access-from-files'],**({'executable_path':exe} if exe else {}))
     pg=b.new_page(viewport={'width':1080,'height':1920})
     pg.on('pageerror',lambda e:print('PAGE ERROR',e))
     pg.goto('file://'+os.path.join(P,'index.html'));pg.evaluate('window.ready')

@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$CLAUDE_CODE_REMOTE\" = true ] && bash \"$CLAUDE_PROJECT_DIR/setup_cloud.sh\" >/tmp/la_ferme_setup.log 2>&1; echo 'LA FERME : environnement prêt (journal /tmp/la_ferme_setup.log). Lire PASSATION.md et skill/SKILL.md, puis suivre PUBLIER_DEPUIS_LE_TELEPHONE.md.'",
+            "timeout": 600
+          }
+        ]
+      }
+    ]
+  }
+}

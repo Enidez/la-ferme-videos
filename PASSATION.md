@@ -123,12 +123,13 @@ Le générique de fin « ferme-la » (réplique de film + logo animé) est ajout
 - Commits : terminer par `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 
 ## 8. Travailler depuis le cloud (PC éteint)
-- Démarrer : `bash setup_cloud.sh`, puis lire ce document et la Bible.
+- **Mode d'emploi téléphone → vidéo → publication automatique : `PUBLIER_DEPUIS_LE_TELEPHONE.md`** (05/11/2026).
+- Démarrer : `setup_cloud.sh` se lance tout seul au début de chaque session cloud (hook `.claude/settings.json`) ; puis lire ce document et la Bible.
 - Pas d'accès au Mac (Téléchargements, `~/Movies/Dossier01_rushes`, Chrome) : tout ce qui compte est dans le dépôt.
 - Vérifier que le **connecteur ElevenLabs** est disponible ; sinon, demander à Enidez de l'ajouter.
 - **Réseau du cloud** (réglé le 20/10) : environnement en accès **Custom** + liste par défaut, avec en plus `commons.wikimedia.org`, `upload.wikimedia.org`, `*.youtube.com`, `*.googlevideo.com`, `x.com`, `*.x.com`, `twitter.com`, `*.twitter.com`, `*.twimg.com`, `*.entrevue.fr`, `incompetech.com`. Les voix ElevenLabs se téléchargent depuis `storage.googleapis.com` (autorisé). Wikimedia renvoie souvent 429 depuis le cloud : espacer les requêtes.
 - L'application GitHub « Claude » est installée sur `la-ferme-videos` et `la-ferme-publication` (push possible depuis le cloud).
-- `setup_cloud.sh` : la ligne `playwright install` est inutile dans le cloud (Chromium déjà installé dans /opt/pw-browsers) ; `yt-dlp` s'installe à part : `venv/bin/pip install yt-dlp`.
+- `setup_cloud.sh` est idempotent (ne refait que ce qui manque, yt-dlp compris) ; `tools/render.py` utilise directement le Chromium préinstallé de /opt/pw-browsers.
 - Livrer avec l'outil d'envoi de fichiers (≤ 30 Mo) et pousser le projet (sans mp4).
 
 ## 9. En cours et idées en attente
