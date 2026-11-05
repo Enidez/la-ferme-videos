@@ -1,0 +1,54 @@
+LE DOSSIER — « L'INTERRUPTEUR. »   (script v1, 05/11/2026)
+Couverture : photo réelle (antenne-relais ou mains qui filment avec un téléphone dans une manif), sur-titre « LE DOSSIER », titre « L'INTERRUPTEUR. »
+Voix : grave, posée. Stabilité Natural, vitesse 1.0. Durée visée ≈ 95-105 s.
+
+[serious] Cette appli. Celle sur laquelle tu regardes cette vidéo.
+Le vingt-quatre octobre, le gouvernement s'était préparé à la couper.
+[slowly] Pas un pirate. Pas une panne. Une lettre.
+Le vingt-deux octobre, Matignon écrit à Orange, SFR, Bouygues et Free.
+Selon le média Blast, qui a publié cette lettre, la consigne est claire.
+Se tenir prêts à suspendre TikTok, Instagram et Snapchat.
+Pendant quelques heures. Le week-end de la manifestation.
+Pas de vote. Pas de juge.
+Matignon estime qu'une simple instruction suffit.
+[intrigued] Les opérateurs répondent que c'est impossible à si court terme.
+La coupure n'a pas lieu.
+Le lendemain, Matignon parle publiquement de « coopération renforcée » avec les plateformes.
+Pas un mot sur la coupure.
+Officiellement, tout part des pillages du dix-sept octobre, organisés en ligne.
+Mais trois jours plus tard, au Sénat, l'idée devient un texte de loi.
+Le vingt-sept octobre, un amendement du gouvernement est glissé dans le projet de loi « casseurs-payeurs ».
+Deux cent dix-neuf voix pour. Cent quinze contre.
+Ce qu'il permet.
+L'administration peut exiger qu'un contenu soit retiré en vingt-quatre heures, s'il risque de troubler gravement l'ordre public.
+Sans passer par un juge.
+Si la plateforme ne retire pas : blocage, ou déréférencement.
+Dans la première version, c'était en une heure.
+Le gouvernement a reculé, de peur d'être censuré par le Conseil constitutionnel.
+Le ministre de l'Intérieur le répète : il ne s'agit pas de fermer les réseaux. Seulement de supprimer des contenus.
+[serious] Mais le plus étrange…
+C'est que la France l'a déjà fait.
+Mai deux mille vingt-quatre. Nouvelle-Calédonie. Des émeutes.
+TikTok est coupé pendant deux semaines.
+En avril deux mille vingt-cinq, le Conseil d'État tranche.
+C'était illégal.
+[slowly] Illégal… mais l'interrupteur, lui, existe toujours.
+Et aujourd'hui, ils écrivent les règles pour s'en servir.
+Qui décidera qu'une vidéo trouble gravement l'ordre public ?
+Un appel au pillage… ou un appel à manifester ?
+Le texte doit encore passer à l'Assemblée nationale.
+[whispers] Si cette vidéo disparaît un jour… tu sauras pourquoi.
+
+CARTON DE FIN : ABONNE-TOI · « Ils parlent… Nous on vérifie. » · Musique : Kevin MacLeod « Hitman » (CC BY 4.0) puis générique « ferme-la ».
+
+CARTES PRÉVUES (tableau d'enquêteur)
+1. Plein écran : un téléphone qui affiche TikTok, l'écran se « coupe » (glitch + bip) → titre L'INTERRUPTEUR.
+2. Document papier « LETTRE · MATIGNON · 22/10 » avec 4 logos texte ORANGE / SFR / BOUYGUES / FREE reliés par des fils rouges ; source « Blast, 24/10/2026 ».
+3. Trois tuiles TIKTOK · INSTAGRAM · SNAPCHAT, barrées une à une (grand X lumineux).
+4. Tampons « PAS DE VOTE » / « PAS DE JUGE ».
+5. Communiqué « coopération renforcée » ; cercle rouge sur l'absence du mot « coupure ».
+6. Hémicycle du Sénat en points : 219 / 115 ; étiquette « AMENDEMENT DU GOUVERNEMENT · LOI CASSEURS-PAYEURS ».
+7. Compteur 24:00:00 qui défile ; « 1 H » barré (version initiale).
+8. Carte Nouvelle-Calédonie (photo Commons), « TIKTOK COUPÉ · 15 → 29 MAI 2024 », tampon rouge « ILLÉGAL » (Conseil d'État, 1/04/2025).
+9. Interrupteur en gros plan (illustration), deux colonnes « APPEL AU PILLAGE / APPEL À MANIFESTER » avec un « ? ».
+10. Fin : l'écran du téléphone s'éteint sur « Si cette vidéo disparaît… ».
