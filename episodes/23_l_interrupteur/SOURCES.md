@@ -14,3 +14,13 @@
 | Nouvelle-Calédonie : TikTok bloqué du 15 au 29 mai 2024 ; référé rejeté (mai 2024) ; Conseil d'État, Assemblée, 1er avril 2025 (n° 494511) : blocage illégal (durée indéterminée, pas de mesures alternatives) | conseil-etat.fr ; Les Nouvelles Calédoniennes ; Next ; Dalloz |
 
 À NE PAS DIRE : « ils vont couper TikTok » (non décidé) ; « X était dans la lettre » ; « retrait en 1 h » comme règle actuelle ; la citation de Macron « non, mais des discussions » (source trop faible).
+
+## Ajouts v2 « PUIS… PLUS RIEN. » (05/11/2026)
+| Fait | Sources |
+|---|---|
+| #17octobre : 800 millions de vues sur TikTok | franceinfo, « Des vidéos ont-elles disparu des réseaux sociaux ? » (05/11/2026) |
+| TikTok reconnaît avoir modéré certains posts liés aux manifestations ; blocage de certains mots dans la recherche | franceinfo (05/11/2026) |
+| Nette baisse des publications (TikTok, Instagram) | Visibrain, cité par le Canard enchaîné ; confirmé à 20 Minutes (05/11/2026) |
+| Manifs du 24/10 moins violentes → moins de vidéos virales | franceinfo |
+| Certaines plateformes ont restreint des contenus liés aux manifs après que le gouvernement les y a encouragées | franceinfo (selon 20 Minutes) |
+| Pas de preuve d'une censure ordonnée par l'État | franceinfo, 20 Minutes |
