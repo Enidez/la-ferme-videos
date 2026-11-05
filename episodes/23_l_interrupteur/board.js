@@ -221,17 +221,17 @@ function cardExtra(c,t,w,h){
     if(t>=N(22)+2.2)txt('LA COUPURE N’A PAS LIEU.',0,h/2-90,'60px Anton',AMB,'center',2,lin(t,N(22)+2.2,N(22)+2.4));
     srcFit('Source : Blast, repris par la presse',w,h);return 1;}
   if(c.k==='methode'){framePaper(w,h,'rgba(30,32,30,.95)');txt('ALORS LA MÉTHODE CHANGE',0,-h/2+100,'60px Anton',INK,'center',2);
-    txt('COUPER',0,-h/2+260,'150px Anton','rgba(236,238,230,.55)','center',6);bigX(t,c.t0+.5,0,-h/2+210,150);
+    txt('COUPER',0,-h/2+330,'150px Anton','rgba(236,238,230,.55)','center',6);bigX(t,c.t0+.5,0,-h/2+275,105);
     if(t>=N(24)){const q=eo(lin(t,N(24),N(24)+.25));ctx.save();ctx.globalAlpha*=q;txt('RESTREINDRE',0,-h/2+470,'130px Anton',PINK,'center',5,1,18);
       ['« CERTAINES PLATEFORMES ONT RESTREINT','DES CONTENUS LIÉS AUX MANIFS… APRÈS QUE','LE GOUVERNEMENT LES Y A ENCOURAGÉES. »'].forEach((s,i)=>txt(s,0,-h/2+570+i*48,'700 30px Mono',AMB,'center',1,lin(t,N(24)+.6+i*.5,N(24)+.9+i*.5)));ctx.restore();}
     srcFit('Source : franceinfo, 05/11/2026',w,h);return 1;}
   if(c.k==='senat2'){framePaper(w,h,PAPERC);txt('SÉNAT · 27 OCTOBRE 2026',0,-h/2+90,'700 30px Mono','rgba(27,28,26,.7)','center',4);
     txt('AMENDEMENT DU GOUVERNEMENT',0,-h/2+165,'56px Anton',INKD,'center',2);txt('LOI « CASSEURS-PAYEURS »',0,-h/2+225,'700 30px Mono',PINK,'center',3);
-    const cx=0,cy=-h/2+520,p=lin(t,c.t0+.4,c.t0+2);const ns=SEATS.length;ctx.save();ctx.translate(cx,cy);ctx.scale(.95,.95);
+    const cx=0,cy=-h/2+580,p=lin(t,c.t0+.4,c.t0+2);const ns=SEATS.length;ctx.save();ctx.translate(cx,cy);ctx.scale(.72,.72);
     SEATS.forEach((s,i)=>{if(i/ns>p)return;const yes=s.k<219/334;ctx.fillStyle=yes?PINK:'rgba(27,28,26,.35)';ctx.beginPath();ctx.arc(s.x,s.y,9,0,6.283);ctx.fill();});ctx.restore();
-    if(p>=1){txt('219',-220,cy+70,'110px Anton',PINK,'center',2);txt('POUR',-220,cy+115,'700 28px Mono',INKD,'center',4);txt('115',220,cy+70,'110px Anton','rgba(27,28,26,.6)','center',2);txt('CONTRE',220,cy+115,'700 28px Mono',INKD,'center',4);}
-    [['RETRAIT EN 24 H',N(26)+.3],['SANS JUGE',N(26)+2.6],['SINON : BLOCAGE',N(26)+3.6]].forEach(([s,t0],i)=>{if(t<t0)return;const q=eo(lin(t,t0,t0+.2));const y=-h/2+720+i*72;ctx.save();ctx.globalAlpha*=q;ctx.fillStyle=i==1?'rgba(201,48,44,.92)':'rgba(27,28,26,.9)';ctx.fillRect(-300,y-52,600,66);txt(s,0,y,'50px Anton','#fff','center',3);ctx.restore();});
-    if(t>=N(27))stampAt('PROCHAINE ÉTAPE : L’ASSEMBLÉE',0,h/2-70,48,t,N(27),-.04,INKD);
+    if(p>=1){txt('219',-250,cy+75,'110px Anton',PINK,'center',2);txt('POUR',-250,cy+115,'700 28px Mono',INKD,'center',4);txt('115',250,cy+75,'110px Anton','rgba(27,28,26,.6)','center',2);txt('CONTRE',250,cy+115,'700 28px Mono',INKD,'center',4);}
+    [['RETRAIT EN 24 H',N(26)+.3],['SANS JUGE',N(26)+2.6],['SINON : BLOCAGE',N(26)+3.6]].forEach(([s,t0],i)=>{if(t<t0)return;const q=eo(lin(t,t0,t0+.2));const y=-h/2+745+i*68;ctx.save();ctx.globalAlpha*=q;ctx.fillStyle=i==1?'rgba(201,48,44,.92)':'rgba(27,28,26,.9)';ctx.fillRect(-300,y-52,600,66);txt(s,0,y,'50px Anton','#fff','center',3);ctx.restore();});
+    if(t>=N(27))stampAt('PROCHAINE ÉTAPE : L’ASSEMBLÉE',0,h/2-42,44,t,N(27),-.04,INKD);
     darkTxt('',0,w,h);return 1;}
   if(c.k==='volume'){framePaper(w,h,'rgba(24,26,24,.97)');
     // interrupteur : COUPER
