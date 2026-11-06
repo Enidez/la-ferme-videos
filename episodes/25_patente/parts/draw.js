@@ -17,10 +17,10 @@ function drawHook25(w,h,t){
   {const g=ctx.createLinearGradient(0,Y(1050),0,Y(1560));g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.92)');ctx.fillStyle=g;ctx.fillRect(-w/2,Y(1050),w,870);}
   {const g=ctx.createLinearGradient(0,-h/2,0,Y(380));g.addColorStop(0,'rgba(0,0,0,.8)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,380);}
   if(t<N(1)){txt('LE RÉCIT VS LE RÉEL',0,Y(250),'700 30px Mono','rgba(236,238,230,.9)','center',6);
-    ctx.fillStyle='rgba(201,48,44,.95)';ctx.fillRect(-w/2+70,Y(1010),w-140,64);txt('ÉDOUARD PHILIPPE, SUR LES PILLEURS DU 17 OCTOBRE :',0,Y(1053),'700 28px Mono','#fff','center',1);
-    txt('« JEUNES ISSUS DE',0,Y(1190),'118px Anton',INK,'center',3,1,22);txt('L’IMMIGRATION »',0,Y(1320),'130px Anton',INK,'center',3,1,22);
-    txt('VRAI OU FAUX ?',0,Y(1460),'120px Anton',RED,'center',5,1,26);
-    txt('Photo : Jacques Paquier · CC BY 2.0',0,Y(1520),'400 18px Mono','rgba(236,238,230,.6)','center',1);}
+    ctx.fillStyle='rgba(201,48,44,.95)';ctx.fillRect(-w/2+150,Y(1030),w-300,60);txt('PILLAGES DU 17 OCTOBRE',0,Y(1071),'700 32px Mono','#fff','center',4);
+    txt('LES CASSEURS',0,Y(1230),'160px Anton',INK,'center',4,1,22);txt('SONT DES',0,Y(1350),'110px Anton',INK,'center',4,1,22);
+    txt('IMMIGRÉS ?',0,Y(1490),'150px Anton',RED,'center',5,1,26);
+    txt('Photo : Jacques Paquier · CC BY 2.0',0,Y(1545),'400 18px Mono','rgba(236,238,230,.6)','center',1);}
   else{// la citation, puis le mot entouré, puis la définition
     ctx.fillStyle='rgba(8,9,8,.82)';ctx.fillRect(-w/2+60,Y(980),w-120,330);
     txt('« UNE SURREPRÉSENTATION', 0,Y(1070),'66px Anton',INK,'center',2,lin(t,N(1),N(1)+.2));
