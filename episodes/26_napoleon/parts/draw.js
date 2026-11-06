@@ -46,9 +46,10 @@ function cardExtra(c,t,w,h){
     txt('— Napoléon',w/2-90,-h/2+600,'italic 700 44px Osw','#3a2a16','right',1,lin(t,T0+3.6,T0+3.9));
     stampAt('DERNIERS SACREMENTS : UN PRÊTRE CATHOLIQUE',0,h/2-170,40,t,N(25)+.4,-.05);
     srcFit('Sources : Fondation Napoléon (testament, 15/04/1821) · abbé Vignali',w,h,1);return 1;}
-  if(c.k==='bilan'){framePaper(w,h,'rgba(24,26,24,.97)');txt('LE BILAN',0,-h/2+110,'700 40px Mono',AMB,'center',10);
-    const row=(y,a,b,col,t0)=>{if(t<t0)return;const q=eo(lin(t,t0,t0+.2));ctx.save();ctx.globalAlpha*=q;ctx.fillStyle='rgba(128,134,126,.22)';ctx.fillRect(-w/2+50,y-80,w-100,130);txt(a,-w/2+80,y+5,'700 30px Mono','rgba(236,238,230,.85)','left',2);ctx.restore();slam(b,w/2-210,y+14,'64',col,t,t0+.3,2);};
-    row(-h/2+280,'MUSULMAN ?','JAMAIS',RED,N(26)+.3);row(-h/2+460,'ADMIRATEUR DE L’ISLAM ?','JUSQU’AU BOUT',VERT,N(26)+2.5);return 1;}
+  if(c.k==='bilan'){framePaper(w,h,'rgba(24,26,24,.97)');txt('LE BILAN',0,-h/2+90,'700 40px Mono',AMB,'center',10);
+    const blk=(y,a,b,col,t0,ta)=>{if(t<ta)return;ctx.save();ctx.globalAlpha*=eo(lin(t,ta,ta+.2));ctx.fillStyle='rgba(128,134,126,.22)';ctx.fillRect(-w/2+50,y-60,w-100,200);txt(a,0,y,'700 34px Mono','rgba(236,238,230,.85)','center',3);ctx.restore();slam(b,0,y+100,'70',col,t,t0,2);};
+    blk(-h/2+200,'MUSULMAN ?','ON NE SAURA PEUT-ÊTRE JAMAIS',AMB,N(26)+2.05,N(26));
+    blk(-h/2+470,'ADMIRATEUR DE L’ISLAM ?','JUSQU’AU BOUT',VERT,N(26)+5.95,N(26)+4.0);return 1;}
   if(c.k==='q'){framePaper(w,h,'rgba(40,43,40,.92)');['PLUS D’ARMÉE.','PLUS DE POUVOIR.','PLUS RIEN À GAGNER.'].forEach((s,i)=>{const t0=N(28)+.2+i*1.1;if(t>=t0)txt(s,0,-h/2+110+i*70,'56px Anton',INK,'center',2,lin(t,t0,t0+.15));});
     if(t>=N(28)+3.8)txt('POURQUOI FAIRE L’ÉLOGE DE L’ISLAM ?',0,-h/2+360,'52px Anton',AMB,'center',2,lin(t,N(28)+3.8,N(28)+4));
     slam('STRATÈGE…',0,-h/2+520,'120',VERT,t,N(29),4,18);slam('OU SINCÈRE ?',0,-h/2+660,'110',RED,t,N(29)+1.0,3,24);txt('DIS-LE EN COMMENTAIRE ↓',0,h/2-50,'700 36px Mono',AMB,'center',3,lin(t,N(30),N(30)+.3));return 1;}

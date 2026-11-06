@@ -20,7 +20,7 @@ const cRoed=add({k:'roederer',hold:1,w:960,h:1050,rot:1.5,t0:N(12)});
 const cHel=add({k:'helene',w:940,h:900,rot:-1.5,t0:N(17)});
 const cGour=add({k:'doc',hd:'JOURNAL DU GÉNÉRAL GOURGAUD · SAINTE-HÉLÈNE · 1817',big:'« J’AIME MIEUX',l2:'LA RELIGION DE MAHOMET »',rows:[['« ELLE EST MOINS RIDICULE QUE LA NÔTRE »',N(21)+2],['SINCÈRE ?',N(22)+.6]],src:'Source : G. Gourgaud, Journal de Sainte-Hélène (éd. Flammarion, 1944)',w:940,h:820,rot:2,t0:N(20)});
 const cTest=add({k:'testament',hold:1,w:940,h:1000,rot:-1.5,t0:N(23)});
-const cBil=add({k:'bilan',w:940,h:760,rot:1.5,t0:N(26)});
+const cBil=add({k:'bilan',hold:1,w:940,h:760,rot:1.5,t0:N(26)});
 const cQ=add({k:'q',w:960,h:820,rot:-2,t0:N(27)});
 const cOutro=add({k:'outro',full:1,w:900,h:900,rot:-1.5,t0:VEND+.5});
 const WT0=N(17)-.1,WT1=N(18)-.3+1.2;
