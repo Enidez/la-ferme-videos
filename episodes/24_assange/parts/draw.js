@@ -81,10 +81,27 @@ function cardExtra(c,t,w,h){
     if(c.stampOnu)stampAt('TORTURE PSYCHOLOGIQUE',0,h/2-170,72,t,c.stampOnu,-.07);
     if(c.stampLibre)stampAt('LIBRE',w/2-190,h/2-150,110,t,c.stampLibre,-.14,VERT);
     srcFit(c.src||'',w,h,1);return 1;}
+  if(c.k==='manning'){const M=k=>SEGS[ID['m'+k]].t0;framePaper(w,h,'rgba(24,26,24,.97)');txt('D’OÙ VIENNENT LES SECRETS ?',0,-h/2+100,'60px Anton',INK,'center',2);
+    if(t>=M(1)){stampAt('LA SOURCE',-w/2+190,-h/2+200,56,t,M(1),-.1);slam('CHELSEA MANNING',0,-h/2+300,'96',RED,t,M(1)+1.9,3,20);
+      txt('22 ANS · ANALYSTE DU RENSEIGNEMENT · IRAK',0,-h/2+360,'700 28px Mono',AMB,'center',2,lin(t,M(1)+3.2,M(1)+3.5));}
+    if(t>=M(2)){// le CD « Lady Gaga »
+      const cx=-170,cy=-h/2+560,R=150,a=(t-M(2))*3;ctx.save();ctx.translate(cx,cy);ctx.rotate(a);const g=ctx.createConicGradient?ctx.createConicGradient(0,0,0):null;
+      if(g){g.addColorStop(0,'#c9ccd2');g.addColorStop(.25,'#8fd3ff');g.addColorStop(.5,'#f2c4ff');g.addColorStop(.75,'#c9f2c4');g.addColorStop(1,'#c9ccd2');ctx.fillStyle=g;}else ctx.fillStyle='#c9ccd2';
+      ctx.beginPath();ctx.arc(0,0,R,0,6.283);ctx.fill();ctx.fillStyle='#222';ctx.beginPath();ctx.arc(0,0,22,0,6.283);ctx.fill();ctx.restore();
+      ctx.save();ctx.translate(cx,cy+R*.45);ctx.rotate(-.08);ctx.fillStyle='rgba(255,255,255,.92)';ctx.fillRect(-110,-26,220,46);txt('LADY GAGA',0,10,'40px Anton','#c2185b','center',3);ctx.restore();
+      if(t>=M(2)+1.9)stampAt('SECRET DÉFENSE',cx,cy-20,46,t,M(2)+1.9,-.18);
+      txt('UN CD',130,-h/2+500,'70px Anton',INK,'center',2);txt('« DE MUSIQUE »',130,-h/2+570,'54px Anton',AMB,'center',2,lin(t,M(2)+1.8,M(2)+2));}
+    if(t>=M(3)){const p=eo(lin(t,M(3),M(3)+.6));ctx.save();ctx.strokeStyle=RED;ctx.lineWidth=10;ctx.beginPath();ctx.moveTo(-w/2+120,h/2-190);ctx.lineTo(-w/2+120+(w-360)*p,h/2-190);ctx.stroke();ctx.restore();
+      if(p>=1){ctx.fillStyle='rgba(201,48,44,.95)';ctx.fillRect(w/2-260,h/2-250,210,120);txt('WIKILEAKS',w/2-155,h/2-178,'44px Anton','#fff','center',2);}
+      txt('DÉPÔT ANONYME ET CHIFFRÉ',0,h/2-80,'700 32px Mono',AMB,'center',3,lin(t,M(3)+1.8,M(3)+2.1));}
+    srcFit('Sources : messages de C. Manning publiés par Wired (2010) · procès de Manning (2013)',w,h);return 1;}
+  if(c.k==='vs14'){framePaper(w,h,'rgba(30,32,30,.95)');const X=[-w/4+10,w/4-10];ctx.fillStyle='rgba(236,238,230,.3)';ctx.fillRect(-2,-h/2+60,4,h-120);
+    txt('POUR LES UNS',X[0],-h/2+150,'700 30px Mono','rgba(236,238,230,.7)','center',3);slam('JOURNALISTE',X[0],-h/2+300,'78',VERT,t,c.t0+.3,2);txt('DU SIÈCLE',X[0],-h/2+380,'56px Anton',VERT,'center',2,lin(t,c.t0+.5,c.t0+.7));
+    if(t>=N(14)+2.4){txt('POUR WASHINGTON',X[1],-h/2+150,'700 30px Mono','rgba(236,238,230,.7)','center',3);slam('ENNEMI',X[1],-h/2+300,'90',RED,t,N(14)+3.4,2);slam('PUBLIC',X[1],-h/2+390,'70',RED,t,N(14)+3.6,2);}return 1;}
   if(c.k==='docs'){framePaper(w,h,'rgba(30,32,30,.95)');txt('WIKILEAKS · 2010',0,-h/2+100,'700 34px Mono',AMB,'center',6);txt('DOCUMENTS SECRETS PUBLIÉS',0,-h/2+180,'64px Anton',INK,'center',2);
     [['AFGHANISTAN',77000,N(13)+2.9],['IRAK',392000,N(13)+3.9],['DIPLOMATIE',251000,N(13)+4.6]].forEach(([s,v,t0],i)=>{if(t<t0)return;const y=-h/2+320+i*125;const q=eo(lin(t,t0,t0+.15));ctx.save();ctx.globalAlpha*=q;ctx.fillStyle='rgba(128,134,126,.25)';ctx.fillRect(-w/2+60,y-70,w-120,105);
       txt(s,-w/2+90,y+10,'56px Anton',INK,'left',3);txt('≈ '+fmtN(v*eo(lin(t,t0,t0+.8))),w/2-90,y+10,'64px Anton',RED,'right',2,1,12);ctx.restore();});
-    if(t>=N(14)){const X=[-w/4+10,w/4-10];ctx.fillStyle='rgba(10,10,10,.9)';ctx.fillRect(-w/2+40,h/2-250,w-80,190);
+    if(false){const X=[-w/4+10,w/4-10];ctx.fillStyle='rgba(10,10,10,.9)';ctx.fillRect(-w/2+40,h/2-250,w-80,190);
       txt('POUR LES UNS',X[0],h/2-195,'700 26px Mono','rgba(236,238,230,.7)','center',3);txt('JOURNALISTE',X[0],h/2-130,'60px Anton',VERT,'center',2);txt('DU SIÈCLE',X[0],h/2-80,'44px Anton',VERT,'center',2);
       if(t>=N(14)+2.4){txt('POUR WASHINGTON',X[1],h/2-195,'700 26px Mono','rgba(236,238,230,.7)','center',3);slam('ENNEMI',X[1],h/2-130,'60',RED,t,N(14)+3.4,2);slam('PUBLIC',X[1],h/2-80,'44',RED,t,N(14)+3.6,2);}}
     srcFit('Sources : WikiLeaks · The Guardian · New York Times (2010)',w,h);return 1;}

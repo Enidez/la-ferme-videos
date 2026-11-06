@@ -17,3 +17,6 @@
 | « Près de quatorze ans » : de l'arrestation de décembre 2010 (puis assignation, ambassade, Belmarsh) à juin 2024 | calcul |
 
 À NE PAS DIRE : « il a été condamné pour espionnage » sans préciser l'accord ; « la CIA a voulu le tuer » comme un fait établi (dire « selon une enquête de Yahoo News ») ; montrer des victimes ou des corps.
+
+| Chelsea Manning, 22 ans, analyste du renseignement en Irak ; fichiers copiés sur un CD-RW marqué « Lady Gaga » (ses messages à Adrian Lamo, publiés par Wired, 2010) ; transmission via le système de dépôt anonyme de WikiLeaks (déclaration de Manning au procès, 2013) | Wired (2010) ; The Guardian ; procès de Manning (2013) |
+| Vidéo originale « Collateral Murder » : caméra de l'Apache, domaine public ; copie archive.org ; « Light 'em all up. Come on, fire! » à 4:47 — VÉRIFIÉ sur l'original | archive.org (CollateralMurderWikileaksIraq5rXPrfnU3G0) |

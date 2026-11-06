@@ -6,7 +6,7 @@ C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 ev(N(2),'riser');for(let k=0;k<20;k++)ev(N(5)+.3+k*.045,'type');for(let k=0;k<14;k++)ev(N(6)-.3+k*.1,'hit');reveal(N(6)-.3,1.4);for(let k=0;k<10;k++)ev(N(7)+2.55+k*.1,'hit');reveal(N(7)+2.55,1.2);
 for(let k=0;k<11;k++)ev(N(6)+k*.08,'tick');reveal(N(6),1.2);ev(N(7)+3.8,'boom');reveal(N(7)+3.8,1.1);ev(N(8)+1.1,'thud');ev(N(9)+.6,'thud');
 // WikiLeaks
-reveal(N(10),1.2);ev(N(11)+2.4,'hit');ev(N(12),'tick');reveal(N(12)+.95,1.4);for(let k=0;k<3;k++)ev(N(13)+2.9+k*.85,'thud');ev(N(14)+3.4,'boom');
+reveal(N(10),1.2);ev(N(11)+2.4,'hit');ev(N(12),'tick');reveal(N(12)+.95,1.4);for(let k=0;k<3;k++)ev(N(13)+2.9+k*.85,'thud');ev(N(14)+3.4,'boom');{const M=k=>SEGS[ID['m'+k]].t0;ev(M(0),'riser');reveal(M(1)+1.9,1.3);ev(M(2),'whoosh');ev(M(2)+1.9,'thud');ev(M(3),'zap');ev(M(3)+.6,'hit');}
 // traque
 reveal(N(15),1.1);ev(N(16)+.3,'tick');for(let k=0;k<20;k++)ev(N(17)+k*.12,'tick');ev(N(18)+1.6,'thud');reveal(N(18)+3.4,1.2);
 ev(N(19)+.2,'hit');ev(N(19)+1.1,'thud');reveal(N(19)+2.6,1.2);
