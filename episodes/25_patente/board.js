@@ -159,8 +159,10 @@ function drawHook25(w,h,t){
     ctx.drawImage(im,-im.width*s*.5,-h/2-(im.height*s-h)*.1,im.width*s,im.height*s);ctx.restore();}
   {const g=ctx.createLinearGradient(0,Y(1050),0,Y(1560));g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.92)');ctx.fillStyle=g;ctx.fillRect(-w/2,Y(1050),w,870);}
   {const g=ctx.createLinearGradient(0,-h/2,0,Y(380));g.addColorStop(0,'rgba(0,0,0,.8)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,380);}
-  if(t<N(1)){txt('LE RÉCIT VS LE RÉEL · ÉDOUARD PHILIPPE',0,Y(285),'700 30px Mono','rgba(236,238,230,.9)','center',4);
-    txt('SUR QUELS',0,Y(1290),'170px Anton',INK,'center',5,1,24);txt('CHIFFRES ?',0,Y(1460),'176px Anton',RED,'center',5,1,26);
+  if(t<N(1)){txt('LE RÉCIT VS LE RÉEL',0,Y(250),'700 30px Mono','rgba(236,238,230,.9)','center',6);
+    ctx.fillStyle='rgba(201,48,44,.95)';ctx.fillRect(-w/2+70,Y(1010),w-140,64);txt('ÉDOUARD PHILIPPE, SUR LES PILLEURS DU 17 OCTOBRE :',0,Y(1053),'700 28px Mono','#fff','center',1);
+    txt('« JEUNES ISSUS DE',0,Y(1190),'118px Anton',INK,'center',3,1,22);txt('L’IMMIGRATION »',0,Y(1320),'130px Anton',INK,'center',3,1,22);
+    txt('VRAI OU FAUX ?',0,Y(1460),'120px Anton',RED,'center',5,1,26);
     txt('Photo : Jacques Paquier · CC BY 2.0',0,Y(1520),'400 18px Mono','rgba(236,238,230,.6)','center',1);}
   else{// la citation, puis le mot entouré, puis la définition
     ctx.fillStyle='rgba(8,9,8,.82)';ctx.fillRect(-w/2+60,Y(980),w-120,330);
