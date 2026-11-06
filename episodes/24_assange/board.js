@@ -22,9 +22,9 @@ function band(y,t,t0,s,sz,bg,fg){if(t<t0)return;const p=eo(lin(t,t0,t0+.25));ctx
 const DK='rgba(10,10,10,.88)',VERT='#2f9a4c';
 const cCover=add({k:'cover',w:1080,h:1920,rot:0,t0:0});
 const cVis=add({k:'viseur',full:1,hold:1,w:900,h:1150,rot:-1,t0:N(2)});
-const cWL=add({k:'clip',full:1,img:'assange',handle:'Photo : Snapperjack · CC BY-SA 2.0',badge:'JULIAN ASSANGE · 38 ANS',w:900,h:1050,rot:1.5,t0:N(10),
-  after:(w,h,t)=>{topBox(w,h,t,N(10)+.3,'5 AVRIL 2010','IL MET LA VIDÉO EN LIGNE',70);band(-h/2+330,t,N(11)+2.4,'WIKILEAKS',80,'rgba(201,48,44,.92)');band(h/2-260,t,N(12),'LE MONDE DÉCOUVRE LA GUERRE',50,DK,AMB);}});
-const cDocs=add({k:'docs',w:940,h:900,rot:-2,t0:N(13)});
+const cWL=add({k:'clip',full:1,hold:1,img:'assange',handle:'Photo : Snapperjack · CC BY-SA 2.0',badge:'JULIAN ASSANGE · 38 ANS',w:900,h:1050,rot:1.5,t0:N(10),
+  after:(w,h,t)=>{topBox(w,h,t,N(10)+.3,'5 AVRIL 2010','IL MET LA VIDÉO EN LIGNE',70);band(-h/2+330,t,N(11)+2.4,'WIKILEAKS',80,'rgba(201,48,44,.92)');band(h/2-500,t,N(12),'LA GUERRE TELLE QU’ELLE EST :',48,DK,AMB);sanglante(w,h,t);}});
+const cDocs=add({k:'docs',w:940,h:900,rot:-2,t0:N(13)+.6});
 const cTraque=add({k:'proof',lab:'CHAPITRE',n:2,l:'LA TRAQUE',w:880,h:760,rot:2,t0:N(15)});
 const cAmb=add({k:'clip',full:1,img:'balcon',handle:'Photo : wl dreamer · CC BY-SA 3.0 (visages floutés)',badge:'AMBASSADE D’ÉQUATEUR · LONDRES',w:900,h:1050,rot:-1.5,t0:N(16),
   after:(w,h,t)=>{topBox(w,h,t,N(16)+.3,'19 JUIN 2012','IL S’Y RÉFUGIE',70);ambDays(w,h,t);}});
@@ -149,6 +149,7 @@ function fmtN(v){return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g
 function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
 function shake(t,t0,dur,amp){if(t<t0||t>t0+dur)return;const k=1-(t-t0)/dur;ctx.translate(Math.sin(t*97)*amp*k,Math.cos(t*83)*amp*k);}
 function slam(s,x,y,size,col,t,t0,ls=4,glow=22){if(t<t0)return;const q=eo(lin(t,t0,t0+.14));ctx.save();ctx.translate(x,y);shake(t,t0,.3,14);ctx.scale(1.7-.7*q,1.7-.7*q);txt(s,0,0,size+'px Anton',col,'center',ls,cl(q*1.5),glow);ctx.restore();}
+function sanglante(w,h,t){const t0=N(12)+.95;if(t<t0)return;slam('SANGLANTE.',0,h/2-340,'150',RED,t,t0,6,30);const r=rng(5);ctx.save();ctx.fillStyle='rgba(180,20,18,.9)';for(let i=0;i<9;i++){const x=-300+r()*600,l=lin(t,t0+.15+r()*.3,t0+1.6+r())*(60+r()*140);ctx.fillRect(x,h/2-320,6+r()*6,l);ctx.beginPath();ctx.arc(x+5,h/2-320+l,7,0,6.283);ctx.fill();}ctx.restore();}
 function ambDays(w,h,t){if(t<N(17))return;const v=Math.round(2487*eo(lin(t,N(17),N(17)+2.4)));ctx.save();ctx.fillStyle='rgba(10,10,10,.85)';ctx.fillRect(-380,-h/2+300,760,200);
   txt(fmtN(v),0,-h/2+430,'130px Anton',RED,'center',3,1,20);txt('JOURS SANS JAMAIS SORTIR',0,-h/2+485,'700 30px Mono',AMB,'center',3);ctx.restore();}
 // ---------- couverture / accroche : son visage… puis le viseur
@@ -172,39 +173,30 @@ function drawHook24(w,h,t){
 // ---------- viseur (reconstitution, aucune personne réelle à l'image)
 const VTER=[];{const r=rng(77);for(let i=0;i<60;i++)VTER.push({x:(r()-.5)*1600,y:(r()-.5)*1600,w:80+r()*260,h:60+r()*200,g:40+r()*60});}
 function drawViseur(w,h,t,c){
-  const T0=c.t0,FIRE=N(5)+1.55;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
-  ctx.fillStyle='#1d221d';ctx.fillRect(-w/2,-h/2,w,h);
-  ctx.save();shake(t,FIRE,1.2,26);const pan=(t-T0)*14;ctx.translate(-pan*.6,-pan*.3);
-  VTER.forEach(b=>{ctx.fillStyle=`rgb(${b.g},${b.g+8},${b.g})`;ctx.fillRect(b.x,b.y,b.w,b.h);ctx.strokeStyle='rgba(200,215,200,.12)';ctx.lineWidth=2;ctx.strokeRect(b.x,b.y,b.w,b.h);});
-  ctx.strokeStyle='rgba(180,195,180,.18)';ctx.lineWidth=40;ctx.beginPath();ctx.moveTo(-900,120);ctx.lineTo(900,40);ctx.stroke();
-  if(t>=N(4)){for(let i=0;i<9;i++){const x=-120+i*34+(i%3)*8,y=60+(i%2)*14;const cam=i==2||i==6;person(x+pan*.6,y+pan*.3,.22,cam?'rgba(255,190,80,.95)':'rgba(220,230,220,.75)');}
-    if(t<FIRE){txt('APPAREILS PHOTO',60+pan*.6,-40+pan*.3,'700 26px Mono',AMB,'left',2);}}
+  const SEQ=[['city',N(2)-.1],['group',N(3)-.1],['cam',N(4)-.1],['light',N(5)-.1],['fire',N(6)-.3],['van',N(7)-.1],['vanfire',N(7)+2.55]];
+  let ck=SEQ[0][0],cs=SEQ[0][1];SEQ.forEach(([k,ts])=>{if(t>=ts){ck=k;cs=ts;}});const im=VF(ck,t,cs);
+  ctx.fillStyle='#050605';ctx.fillRect(-w/2,-h/2,w,h);
+  const PX=-w/2+16,PW=w-32,PH=Math.round(PW*344/360),PY=-h/2+120;
+  ctx.save();ctx.beginPath();ctx.rect(PX,PY,PW,PH);ctx.clip();
+  const firing=(ck==='fire'&&t<N(6)+1.6)||ck==='vanfire';if(firing)shake(t,cs,2.5,18);
+  if(im){ctx.filter='contrast(1.25) brightness(1.02)';ctx.drawImage(im,141,0,360,344,PX-8,PY-6,PW+16,PH+12);ctx.filter='none';}
+  if(firing&&Math.floor((t-cs)*14)%3==0){ctx.fillStyle='rgba(255,255,255,.22)';ctx.fillRect(PX,PY,PW,PH);}
+  for(let y=PY;y<PY+PH;y+=5){ctx.fillStyle='rgba(0,0,0,.08)';ctx.fillRect(PX,y,PW,2);}
+  // traduction de l'ordre radio
+  if(ck==='light'){ctx.fillStyle='rgba(0,0,0,.72)';ctx.fillRect(PX,PY+40,PW,150);slam('« ALLUMEZ-LES TOUS. FEU ! »',0,PY+140,'50',AMB,t,N(5)+1.0,2,16);}
+  // bilan par-dessus les vraies images
+  if(t>=N(6)+.9&&ck==='fire'){const d=eo(lin(t,N(6)+.9,N(6)+1.4));ctx.fillStyle=`rgba(0,0,0,${.55*d})`;ctx.fillRect(PX,PY,PW,PH);
+    const v=Math.round(11*eo(lin(t,N(6)+.9,N(6)+1.7)));slam(String(v),0,PY+300,'260',RED,t,N(6)+.9,2,28);txt('MORTS AU MOINS',0,PY+390,'64px Anton',INK,'center',4,lin(t,N(6)+1.1,N(6)+1.3));
+    if(t>=N(6)+1.6)txt('DONT 2 JOURNALISTES DE REUTERS',0,PY+450,'700 30px Mono',AMB,'center',2,lin(t,N(6)+1.6,N(6)+1.8));}
+  if(ck==='van'&&t<N(7)+2.55){ctx.fillStyle='rgba(0,0,0,.65)';ctx.fillRect(PX,PY+20,PW,90);txt('UNE CAMIONNETTE VIENT SECOURIR UN BLESSÉ',0,PY+78,'700 30px Mono',INK,'center',1);}
+  if(t>=N(7)+3.8){ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(PX,PY,PW,PH);slam('À L’INTÉRIEUR :',0,PY+200,'70',INK,t,N(7)+3.4,3);slam('2 ENFANTS',0,PY+330,'140',RED,t,N(7)+3.8,3,26);}
+  stampAt('ÉQUIPAGE BLANCHI',0,PY+PH-170,80,t,N(8)+1.1,-.07,VERT);stampAt('SECRET',0,PY+PH/2-60,130,t,N(9)+.6,.08);
   ctx.restore();
-  // grain thermique + lignes
-  const r=rng(Math.floor(t*30));ctx.fillStyle='rgba(255,255,255,.05)';for(let i=0;i<160;i++)ctx.fillRect(-w/2+r()*w,-h/2+r()*h,2,2);
-  for(let y=-h/2;y<h/2;y+=6){ctx.fillStyle='rgba(0,0,0,.12)';ctx.fillRect(-w/2,y,w,2);}
-  // tirs : éclairs blancs
-  if(t>=FIRE&&t<FIRE+1.4){if(Math.floor((t-FIRE)*18)%2==0){ctx.fillStyle='rgba(255,255,255,.55)';ctx.fillRect(-w/2,-h/2,w,h);}}
-  if(t>=FIRE+1.4&&t<N(6)+.05){ctx.fillStyle='rgba(0,0,0,.85)';ctx.fillRect(-w/2,-h/2,w,h);}
-  // réticule et HUD
-  ctx.strokeStyle='rgba(230,240,230,.85)';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-160,0);ctx.lineTo(-40,0);ctx.moveTo(40,0);ctx.lineTo(160,0);ctx.moveTo(0,-160);ctx.lineTo(0,-40);ctx.moveTo(0,40);ctx.lineTo(0,160);ctx.stroke();ctx.strokeRect(-60,-60,120,120);
-  txt('12.07.2007  10:20',-w/2+40,-h/2+70,'700 30px Mono','rgba(230,240,230,.9)','left',2);txt('BAGDAD · NOUVELLE-BAGDAD',-w/2+40,-h/2+110,'700 26px Mono','rgba(230,240,230,.7)','left',2);
-  txt('ALT 1200',w/2-40,-h/2+70,'700 30px Mono','rgba(230,240,230,.9)','right',2);
-  ctx.fillStyle='rgba(201,48,44,.92)';ctx.fillRect(-w/2+40,h/2-90,330,50);txt('RECONSTITUTION',-w/2+205,h/2-54,'700 28px Mono','#fff','center',3);
-  // la phrase radio
-  if(t>=N(5)+.2&&t<N(6)){ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(-w/2,-h/2+180,w,260);txt('RADIO :',0,-h/2+240,'700 30px Mono',AMB,'center',6);
-    const s='« LIGHT ’EM ALL UP. »';const n=Math.floor(s.length*lin(t,N(5)+.3,N(5)+1.2));txt(s.slice(0,n),0,-h/2+330,'72px Anton','#fff','center',2,1,18);
-    if(t>=N(5)+1.2)txt('« ALLUMEZ-LES TOUS. »',0,-h/2+405,'54px Anton',RED,'center',3,1,16);}
-  // bilan
-  if(t>=N(6)){ctx.fillStyle='rgba(0,0,0,.72)';ctx.fillRect(-w/2,-h/2,w,h);
-    const v=Math.round(11*eo(lin(t,N(6),N(6)+.9)));slam(String(v),0,-h/2+380,'300',RED,t,N(6),2,28);txt('MORTS AU MOINS',0,-h/2+470,'70px Anton',INK,'center',4,lin(t,N(6)+.3,N(6)+.5));
-    if(t>=N(6)+1.4)txt('DONT 2 JOURNALISTES DE REUTERS',0,-h/2+540,'700 32px Mono',AMB,'center',2,lin(t,N(6)+1.4,N(6)+1.6));
-    if(t>=N(7)+3.8){slam('2 ENFANTS BLESSÉS',0,-h/2+680,'84',INK,t,N(7)+3.8,3);}
-    else if(t>=N(7))txt('UNE CAMIONNETTE S’ARRÊTE POUR AIDER',0,-h/2+680,'700 34px Mono',INK,'center',2,lin(t,N(7),N(7)+.2));
-    stampAt('ÉQUIPAGE BLANCHI',0,-h/2+860,90,t,N(8)+1.1,-.07,VERT);
-    stampAt('SECRET',0,h/2-150,130,t,N(9)+.6,.08);}
-  ctx.restore();
-  srcFit('Sources : CPJ · Reuters · enquête de l’armée américaine (2007)',w,h);
+  ctx.strokeStyle='rgba(236,238,230,.6)';ctx.lineWidth=3;ctx.strokeRect(PX,PY,PW,PH);
+  if(Math.floor(t*2)%2){ctx.fillStyle=RED;ctx.beginPath();ctx.arc(-w/2+40,-h/2+62,11,0,6.283);ctx.fill();}
+  txt('12 JUILLET 2007 · BAGDAD',-w/2+62,-h/2+72,'700 30px Mono',INK,'left',3);
+  ctx.fillStyle='rgba(201,48,44,.92)';ctx.fillRect(w/2-330,-h/2+38,310,46);txt('VRAIES IMAGES',w/2-175,-h/2+70,'700 28px Mono','#fff','center',3);
+  srcFit('Images : caméra de l’hélicoptère Apache (armée américaine, domaine public) · publiées par WikiLeaks, 5/04/2010',w,h);
 }
 // ---------- la cellule de Belmarsh
 function drawCellule(w,h,t,c){
@@ -393,10 +385,10 @@ ev(MARK.frz,'zap');reveal(MARK.frz+.4,1.2);reveal(MARK.frz+.9,1.3);ev(MARK.tcov-
 KEYS.forEach(k=>{if(k.t>MARK.tcov+.1)ev(k.t-.5,'whoosh');});
 C.forEach((c,i)=>{if(i>0)ev(c.t0-.05,'click');});
 // Bagdad
-ev(N(2),'riser');for(let k=0;k<20;k++)ev(N(5)+.3+k*.045,'type');for(let k=0;k<14;k++)ev(N(5)+1.55+k*.1,'hit');reveal(N(5)+1.55,1.4);
+ev(N(2),'riser');for(let k=0;k<20;k++)ev(N(5)+.3+k*.045,'type');for(let k=0;k<14;k++)ev(N(6)-.3+k*.1,'hit');reveal(N(6)-.3,1.4);for(let k=0;k<10;k++)ev(N(7)+2.55+k*.1,'hit');reveal(N(7)+2.55,1.2);
 for(let k=0;k<11;k++)ev(N(6)+k*.08,'tick');reveal(N(6),1.2);ev(N(7)+3.8,'boom');reveal(N(7)+3.8,1.1);ev(N(8)+1.1,'thud');ev(N(9)+.6,'thud');
 // WikiLeaks
-reveal(N(10),1.2);ev(N(11)+2.4,'hit');ev(N(12),'tick');for(let k=0;k<3;k++)ev(N(13)+2.9+k*.85,'thud');ev(N(14)+3.4,'boom');
+reveal(N(10),1.2);ev(N(11)+2.4,'hit');ev(N(12),'tick');reveal(N(12)+.95,1.4);for(let k=0;k<3;k++)ev(N(13)+2.9+k*.85,'thud');ev(N(14)+3.4,'boom');
 // traque
 reveal(N(15),1.1);ev(N(16)+.3,'tick');for(let k=0;k<20;k++)ev(N(17)+k*.12,'tick');ev(N(18)+1.6,'thud');reveal(N(18)+3.4,1.2);
 ev(N(19)+.2,'hit');ev(N(19)+1.1,'thud');reveal(N(19)+2.6,1.2);

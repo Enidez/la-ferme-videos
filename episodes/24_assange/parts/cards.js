@@ -8,9 +8,9 @@ function band(y,t,t0,s,sz,bg,fg){if(t<t0)return;const p=eo(lin(t,t0,t0+.25));ctx
 const DK='rgba(10,10,10,.88)',VERT='#2f9a4c';
 const cCover=add({k:'cover',w:1080,h:1920,rot:0,t0:0});
 const cVis=add({k:'viseur',full:1,hold:1,w:900,h:1150,rot:-1,t0:N(2)});
-const cWL=add({k:'clip',full:1,img:'assange',handle:'Photo : Snapperjack · CC BY-SA 2.0',badge:'JULIAN ASSANGE · 38 ANS',w:900,h:1050,rot:1.5,t0:N(10),
+const cWL=add({k:'clip',full:1,hold:1,img:'assange',handle:'Photo : Snapperjack · CC BY-SA 2.0',badge:'JULIAN ASSANGE · 38 ANS',w:900,h:1050,rot:1.5,t0:N(10),
   after:(w,h,t)=>{topBox(w,h,t,N(10)+.3,'5 AVRIL 2010','IL MET LA VIDÉO EN LIGNE',70);band(-h/2+330,t,N(11)+2.4,'WIKILEAKS',80,'rgba(201,48,44,.92)');band(h/2-260,t,N(12),'LE MONDE DÉCOUVRE LA GUERRE',50,DK,AMB);}});
-const cDocs=add({k:'docs',w:940,h:900,rot:-2,t0:N(13)});
+const cDocs=add({k:'docs',w:940,h:900,rot:-2,t0:N(13)+.6});
 const cTraque=add({k:'proof',lab:'CHAPITRE',n:2,l:'LA TRAQUE',w:880,h:760,rot:2,t0:N(15)});
 const cAmb=add({k:'clip',full:1,img:'balcon',handle:'Photo : wl dreamer · CC BY-SA 3.0 (visages floutés)',badge:'AMBASSADE D’ÉQUATEUR · LONDRES',w:900,h:1050,rot:-1.5,t0:N(16),
   after:(w,h,t)=>{topBox(w,h,t,N(16)+.3,'19 JUIN 2012','IL S’Y RÉFUGIE',70);ambDays(w,h,t);}});
