@@ -46,7 +46,7 @@
 | **L'AUTRE ANGLE** | Une vidéo qui buzze, analysée sous l'angle que personne ne prend (contexte coupé, ce qu'il a vraiment dit). Réagir en 24-48 h, courts extraits cités. |
 | **LE RÉCIT VS LE RÉEL** | Une rumeur virale confrontée aux faits, tampons VRAI / FAUX / NON PROUVÉ. |
 | **HISTOIRE VRAIE** | Portraits courts en vertical (ex. les frères Badir). |
-| **LE PRIX À PAYER** (ex-« Les Anticorps », renommé le 07/11/2026) | Format long YouTube 16:9 (~10 min) : un portrait par épisode, étiquette « LE PRIX À PAYER : … » en signature. #01 Aaron Swartz (script v1 : episodes/28_aaron_swartz/), clôture « L'ADDITION. » (episodes/XX_laddition_reunion_A_VENIR/). |
+| **LE PRIX À PAYER** (ex-« Les Anticorps », renommé le 07/11/2026) | Format long YouTube 16:9 (~10 min) : un portrait par épisode, étiquette « LE PRIX À PAYER : … » en signature. #01 Aaron Swartz (script v1 : episodes/28_aaron_swartz/). Série ouverte, pas d'épisode de clôture ; brouillons des portraits suivants : veille/le_prix_a_payer_pistes/. |
 | **COMME PAR HASARD** | Parodie pure (coïncidences vraies, logique absurde) — peu performant, en pause. |
 | **Format « service de renseignement »** | Fiches CONFIDENTIEL numérotées « Dossier 1, 2, 3… », tampons AVÉRÉ / CONDAMNÉ / EN COURS / DÉMENTI / NON PROUVÉ (« Qui commande ? »). |
 

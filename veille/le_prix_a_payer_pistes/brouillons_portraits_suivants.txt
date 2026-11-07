@@ -1,11 +1,11 @@
-LA FERME — ÉP. XX — LE PRIX À PAYER · FORMAT LONG YOUTUBE 16:9 — « L'ADDITION. » (épisode de clôture de la série LE PRIX À PAYER) — script v2 (07/11/2026)
+BROUILLONS POUR LES PROCHAINS ÉPISODES DE « LE PRIX À PAYER » (Elbakyan, Manning, Assange, Snowden, les Badir) — ancien script multi-portraits du 07/11/2026, conservé comme matière de départ. Ce n'est PAS un épisode prévu.
 Changement par rapport à la v1 (demande d'Enidez) : faire RESSORTIR L'ÉMOTION de chaque cas, en s'appuyant sur le regard de
 Flore Vasseur, qui a été émotionnellement impliquée (4 ans d'enquête, voyage aux États-Unis sur ses traces, rencontres avec ses proches).
 Principe d'écriture v2 : chaque chapitre a son MOMENT INTIME (une personne, un geste, une phrase vraie), placé juste avant l'étiquette
 de prix. On ne raconte plus seulement ce qu'ils ont fait : on fait sentir ce que ça leur a coûté, à eux et à ceux qui les aimaient.
 Flore Vasseur devient le TÉMOIN du chapitre 1 : c'est elle qui « marche dans ses pas », et son regard ouvre et ferme la vidéo.
 Règles : émotion oui, invention non. Chaque détail intime est sourcé (⚠ = à recouper). Aucune phrase du livre de Vasseur sans
-le texte sous les yeux : les emplacements [VASSEUR : …] attendent la transcription de « Libre à vous ! » (10/01/2023) ou le livre.
+le texte sous les yeux. v3 : ses phrases viennent de sa vraie voix (interview TV 2019, extraits V1 à V7 dans veille/vasseur/).
 Durée visée : 12 à 14 min. Voix : Liam pour la narration ; vraies voix pour les citations.
 
 ══════════════════════════════════════════════════════════════════════
@@ -22,8 +22,11 @@ On lui a promis trente-cinq ans de prison.
 [ÉCRAN] Photo de Flore Vasseur (⚠ photo libre ou presse citée), carte « une Française · 4 ans d'enquête ».
 Des années après sa mort, une écrivaine française traverse les États-Unis pour comprendre.
 Elle s'appelle Flore Vasseur. Elle va passer quatre ans sur ses traces. Rencontrer ceux qui l'ont aimé.
-Et elle n'en ressortira pas intacte.
-[VASSEUR : une phrase où elle dit ce que cette histoire lui a fait — à prendre dans l'interview]
+Elle part avec une certitude.
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V5, 9:23 → 9:39 ; vraie vidéo TV5MONDE « 64' » 2019, recadrée sur elle ; étiquette « FLORE VASSEUR · ÉCRIVAINE · TV5MONDE 2019 ») :
+« J'ai passé quatre ans d'enquête. J'étais complètement persuadée qu'on l'avait poussé au suicide.
+Parce que tant d'intelligence, tant de générosité, tant de désintérêt… dans le monde dans lequel on est aujourd'hui… potentiellement, c'est dangereux. »
+[ÉCRAN] On COUPE avant « c'est pire qu'un complot » : la réponse arrive à la mort d'Aaron (fin du chapitre 1). Curiosité qui tient 4 minutes.
 
 [slowly] Aaron n'était pas seul.
 Une étudiante. Une soldate. Un espion repenti. Un éditeur australien.
@@ -40,14 +43,26 @@ CHAPITRE 1 — AARON SWARTZ · « LE GARÇON QUI LISAIT TROP » (0:45 – 5:00)
 [ÉCRAN] Photo de Swartz enfant/ado (Commons), carte « Highland Park, près de Chicago · 1986 ».
 
 Highland Park, près de Chicago.
-Un petit garçon qui apprend à lire tout seul, à trois ans. ⚠
-Qui code avant dix ans.
+Un petit garçon qui pose des questions du matin au soir. Pourquoi. Pourquoi. Pourquoi.
+Flore Vasseur a rencontré ses parents. Elle raconte le jour où tout a commencé.
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V1, 1:52 → 2:09) sur la photo d'Aaron enfant, caméra immobile, musique presque coupée :
+« Son père passe le clavier à son fils. Et là, tout à coup, la maison se calme. Tout à coup, tout devient silencieux.
+Et Aaron plonge dans l'écran, et plonge dans le code. À huit ans.
+Et le code, son père lui disait, ça doit être parfait. Un peu comme un poème. »
+(⚠ attaque de l'extrait : elle dit « Il dit à un moment, il passe le clavier… » — couper sur « il passe le clavier à son fils »)
+Un cerveau immense, dans un tout petit corps d'enfant.
 À quatorze ans, il participe à l'écriture de RSS — ce qui te prévient encore aujourd'hui quand ton podcast sort un épisode.
 Les adultes autour de la table sont des ingénieurs. Lui, il n'a pas encore fini le collège.
 À quinze ans, il aide à construire Creative Commons, les licences qui permettent de partager librement une photo, une musique, un livre.
 À dix-neuf ans, il cofonde ce qui deviendra Reddit. Il devient riche.
 
 [ÉCRAN] Capture de son blog « Raw Thought » (texte public, citation courte), carte grise.
+[ÉCRAN] Carte « 11 SEPTEMBRE 2001 · Aaron a 14 ans ».
+Et puis il y a le 11 septembre 2001. Aaron a quatorze ans.
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V3, 4:02 → 4:18) :
+« Jusqu'à présent, il est dans le code, dans l'émerveillement de ce que le code peut faire. C'est un artiste, un esthète. Et là, il se politise. »
+Il voit l'internet de la liberté passer, petit à petit, aux mains du business et de l'armée.
+
 Mais Aaron n'est pas un gagnant heureux.
 Il est fragile. Il dort mal. Il est souvent malade.
 Sur son blog, il écrit sur sa tristesse, sur ses périodes sombres. ⚠ (billets de 2007 sur la dépression)
@@ -60,6 +75,9 @@ Puis elle est enfermée derrière des abonnements : trente, quarante dollars l'a
 Un étudiant d'un pays pauvre, un malade qui veut comprendre sa maladie… ils restent à la porte.
 En 2008, il écrit :
 « L'information, c'est le pouvoir. Mais comme tout pouvoir, il y a ceux qui veulent le garder pour eux. » ⚠ traduction
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V4, 8:32 → 8:42) :
+« Il a vingt et un ans, c'est un idéaliste. On est encore dans un monde où on croit qu'on peut utiliser ce genre de mots sans que, des années plus tard, ça vous rattrape. »
+Ces mots, les procureurs les ressortiront.  ⚠ vérifier que le manifeste a bien été cité par l'accusation
 
 [ÉCRAN] MIT, bâtiment 16, placard du sous-sol ; image de la caméra de surveillance (⚠ droits), « ARCHIVE · janvier 2011 ».
 Fin 2010. Le MIT.
@@ -69,7 +87,10 @@ Il n'en vend aucun. Il n'en publie aucun.
 Le 6 janvier 2011, il est arrêté.
 Il a vingt-quatre ans.
 JSTOR, la bibliothèque concernée, récupère tout et renonce aux poursuites.
-L'État fédéral, lui, continue.
+L'État fédéral, lui, continue. Pourquoi ?
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V7, 11:07 → 11:30) :
+« Le gouvernement américain, celui d'Obama, a pris la suite. Il voulait faire un exemple. Pour montrer à tous ceux qui avaient des velléités de devenir des Assange… voici le traitement qu'on réserve aux personnes qui osent. »
+[ÉCRAN] Sur « des Assange » : un fil rouge part du chapitre 1 vers le portrait (encore retourné) d'Assange. On l'annonce sans le montrer.
 
 [ÉCRAN] Photo officielle de Carmen Ortiz ; citation officielle en ambre.
 « Voler, c'est voler. Qu'on utilise une commande informatique ou un pied-de-biche. »
@@ -99,10 +120,15 @@ Le lendemain, l'inventeur du web lui-même, Tim Berners-Lee, écrit :
 « Aaron a été tué par le gouvernement. »
 
 [ÉCRAN] Retour sur Flore Vasseur ; couverture du livre « Ce qu'il reste de nos rêves » (Équateurs, 2019).
-Flore Vasseur, elle, ne l'a jamais rencontré. Il était mort avant.
-Elle a rencontré ce qui restait : les gens, les lieux, le vide.
-Elle parle d'une « intelligence décapitée ».
-[VASSEUR : son ressenti en rencontrant ses proches / ce qu'elle aurait voulu lui dire — interview]
+Flore Vasseur ne l'a jamais rencontré. Il était mort avant.
+Elle était partie persuadée qu'on l'avait poussé au suicide. Après quatre ans d'enquête, voilà ce qu'elle a trouvé.
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V6, 9:39 → 10:04) — LA RÉPONSE AU TEASER DE L'ACCROCHE :
+« Et en fait, je crois que c'est pire qu'un complot.
+Les autorités savaient qu'il était fragile psychologiquement. Et ils ont appuyé là où il pouvait passer à l'acte.
+Aujourd'hui, pour faire taire quelqu'un, on ne l'assassine plus. Ça, c'est les histoires des barbouzes des années 70.
+Aujourd'hui, on lui ruine sa réputation. Ou on l'empêche de travailler. »
+[ÉCRAN] Petite étiquette sous la carte : « ANALYSE DE L'AUTRICE · aucune décision de justice sur ce point » (on reste honnête : c'est son regard).
+Dans son livre, elle parle d'une « intelligence décapitée ».
 
 Le MIT ne reconnaît aucune faute. La loi « Aaron », proposée au Congrès, n'est jamais votée.
 
@@ -219,7 +245,7 @@ Ses enfants ne connaissent pas le pays de leur père.
 [ÉCRAN] Fil rouge qui revient au chapitre 1 : Lessig face à Snowden, « MOSCOU · 2016 · Meeting Snowden (Flore Vasseur) » (cité, pas montré).
 Et le fil revient au début.
 En 2016, Flore Vasseur filme Snowden à Moscou. Face à lui : Lawrence Lessig. Le mentor d'Aaron.
-[VASSEUR : ce qu'elle a ressenti en réunissant ces deux histoires — interview, si elle en parle]
+Ce qu'Aaron n'a pas pu voir, Snowden le vit : l'exil, plutôt que la prison.
 
 [ÉCRAN] Étiquette : « LE PRIX : SON PAYS. »
 
@@ -262,8 +288,10 @@ Le programme que Snowden a dénoncé a été jugé illégal.
 Ils avaient raison sur le fond.
 Et chacun a payé. Seul.
 
-[ÉCRAN] Retour sur Flore Vasseur / couverture du livre.
-[VASSEUR : la phrase de fin — ce qu'il nous reste à faire, ce qu'il reste de nos rêves]
+[ÉCRAN] Retour sur la photo d'Aaron enfant, devant l'ordinateur. La musique se coupe.
+[SON] VRAIE VOIX DE FLORE VASSEUR, reprise courte de l'extrait V5 :
+« Tant d'intelligence. Tant de générosité. Tant de désintérêt. »
+Le titre de son livre pose la question qui reste : « Ce qu'il reste de nos rêves ».
 
 Ils misent sur l'oubli. Nous, on garde les preuves.
 Alors, dis-moi en commentaire : ces gens-là… criminels, ou anticorps ?
@@ -277,4 +305,9 @@ NOTES
 • Respiration : sur chaque moment intime, la caméra ralentit et s'arrête 1 à 2 s de silence (autorisé ici : format long).
 • Suicide (Aaron, tentatives de Manning) : ton sobre, aucun détail de méthode, et un bandeau en fin de vidéo
   « Si tu traverses une période difficile : 3114 (numéro national de prévention du suicide, gratuit, 24 h/24) ». Recommandé aussi par YouTube.
-• Emplacements [VASSEUR : …] : à remplir avec ses mots exacts (transcription « Libre à vous ! » du 10/01/2023, RTS 2019, ou le livre).
+• Voix de Flore Vasseur : interview télé de 2019 (« Aaron Swartz et les illusions perdues d'Internet », MP3 fourni par Enidez le 07/11),
+  dans veille/vasseur/ : interview complète, transcription brute whisper, et 8 extraits découpés (V1 à V8, minutages ci-dessus).
+  Source : TV5MONDE, « 64' Le Monde en français », Grand Angle, 2019. Vidéo partielle reçue : V3 à V6 en vrai visage ; V1, V2, V7 en voix sur nos images. Droit de citation : extraits courts, crédités, avec sa photo
+  ou les vraies images de l'interview si on retrouve la vidéo. Volume de l'extrait remonté pour égaler la voix off.
+  ⚠ Réécouter chaque extrait à l'oreille : whisper peut se tromper sur un mot ; toute phrase entre guillemets doit être mot pour mot.
+• V8 (« le priver d'un accès à un ordinateur à vie ») non utilisé : à vérifier avant tout usage (condition de l'offre de plaider-coupable ?).
