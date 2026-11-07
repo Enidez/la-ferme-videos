@@ -1,0 +1,182 @@
+[
+ {
+  "id": "A1 Aaron « couldn't let that happen »",
+  "type": "vraie",
+  "t0": 0.0,
+  "t1": 6.41
+ },
+ {
+  "id": "0a narration",
+  "type": "nar",
+  "t0": 7.71,
+  "t1": 18.66
+ },
+ {
+  "id": "V5 Vasseur « persuadée »",
+  "type": "vraie",
+  "t0": 19.16,
+  "t1": 35.26
+ },
+ {
+  "id": "0b narration",
+  "type": "nar",
+  "t0": 35.96,
+  "t1": 40.22
+ },
+ {
+  "id": "1a narration",
+  "type": "nar",
+  "t0": 41.42,
+  "t1": 51.87
+ },
+ {
+  "id": "V1 Vasseur « le clavier »",
+  "type": "vraie",
+  "t0": 52.37,
+  "t1": 68.87
+ },
+ {
+  "id": "1b narration",
+  "type": "nar",
+  "t0": 69.67,
+  "t1": 104.61
+ },
+ {
+  "id": "V2 Vasseur « petit corps »",
+  "type": "vraie",
+  "t0": 105.11,
+  "t1": 113.06
+ },
+ {
+  "id": "2a narration",
+  "type": "nar",
+  "t0": 114.06,
+  "t1": 118.81
+ },
+ {
+  "id": "V3 Vasseur « il se politise »",
+  "type": "vraie",
+  "t0": 119.31,
+  "t1": 135.01
+ },
+ {
+  "id": "2b narration",
+  "type": "nar",
+  "t0": 135.61,
+  "t1": 168.81
+ },
+ {
+  "id": "3a narration",
+  "type": "nar",
+  "t0": 169.81,
+  "t1": 196.61
+ },
+ {
+  "id": "V4 Vasseur « 21 ans, idéaliste »",
+  "type": "vraie",
+  "t0": 197.11,
+  "t1": 206.81
+ },
+ {
+  "id": "3b narration",
+  "type": "nar",
+  "t0": 207.41,
+  "t1": 237.44
+ },
+ {
+  "id": "4a narration",
+  "type": "nar",
+  "t0": 238.44,
+  "t1": 272.19
+ },
+ {
+  "id": "V7 Vasseur « faire un exemple »",
+  "type": "vraie",
+  "t0": 272.69,
+  "t1": 292.49
+ },
+ {
+  "id": "4b narration",
+  "type": "nar",
+  "t0": 293.09,
+  "t1": 304.01
+ },
+ {
+  "id": "5a narration",
+  "type": "nar",
+  "t0": 305.01,
+  "t1": 351.91
+ },
+ {
+  "id": "A2 Aaron « There's a battle going on »",
+  "type": "vraie",
+  "t0": 352.31,
+  "t1": 356.41
+ },
+ {
+  "id": "5b narration",
+  "type": "nar",
+  "t0": 356.91,
+  "t1": 387.96
+ },
+ {
+  "id": "6a narration",
+  "type": "nar",
+  "t0": 389.36,
+  "t1": 418.21
+ },
+ {
+  "id": "T3 Eckersley « le monde s'est effondré »",
+  "type": "vraie",
+  "t0": 419.21,
+  "t1": 431.72
+ },
+ {
+  "id": "T1 Lessig « les docteurs »",
+  "type": "vraie",
+  "t0": 432.32,
+  "t1": 445.33
+ },
+ {
+  "id": "T2 Lessig « il faisait partie de moi »",
+  "type": "vraie",
+  "t0": 445.83,
+  "t1": 456.83
+ },
+ {
+  "id": "PÈRE (texte à l'écran, silence)",
+  "type": "silence",
+  "t0": 458.03,
+  "t1": 458.03
+ },
+ {
+  "id": "6b narration",
+  "type": "nar",
+  "t0": 461.53,
+  "t1": 468.45
+ },
+ {
+  "id": "V6 Vasseur « pire qu'un complot »",
+  "type": "vraie",
+  "t0": 469.15,
+  "t1": 494.15
+ },
+ {
+  "id": "7a narration",
+  "type": "nar",
+  "t0": 495.75,
+  "t1": 531.35
+ },
+ {
+  "id": "V5r Vasseur « tant d'intelligence »",
+  "type": "vraie",
+  "t0": 532.15,
+  "t1": 534.95
+ },
+ {
+  "id": "7b narration",
+  "type": "nar",
+  "t0": 536.15,
+  "t1": 550.29
+ }
+]
