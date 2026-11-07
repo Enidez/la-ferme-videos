@@ -64,3 +64,16 @@ AJOUTS ÉPISODE 100 % AARON — ⚠ à recouper avant la voix
 • SOPA : Demand Progress (2010), blackout du 18/01/2012, retrait du texte ; discours « How we stopped SOPA » (Freedom to Connect, mai 2012).
 • Carmen Ortiz : sanctions ? (pétition à la Maison-Blanche ; aucune sanction connue).
 • Flore Vasseur : TV5MONDE, « 64' Le Monde en français », Grand Angle, 2019 — veille/vasseur/README.md.
+
+VÉRIFICATION DU 07/11/2026 (script #01)
+✅ Prix ArsDigita à 13 ans (The Info Network / theinfo.org) ; RSS 1.0 à 14 ans ; Creative Commons ; Reddit (Infogami 2005, rachat Condé Nast oct. 2006, départ 2007). « Licencié » non confirmé → retiré.
+✅ Billet « Sick » (novembre 2007) : dépression, migraines. Colite ulcéreuse non confirmée → retirée.
+✅ Manifeste, juillet 2008, 1re phrase : « Information is power. But like all power, there are those who want to keep it for themselves. » (archive.org/stream/GuerillaOpenAccessManifesto)
+✅ PACER 2008 : ≈ 2,7 millions de documents, confiés à Public.Resource.Org (Carl Malamud) ; enquête du FBI, voiture devant la maison des parents à Highland Park ; dossier classé sans poursuites (Gizmodo, Boing Boing 2009).
+✅ Carmen Ortiz, communiqué du 19/07/2011 : « Stealing is stealing whether you use a computer command or a crowbar, and whether you take documents, data or dollars. » (justice.gov/archive/usao/ma/news/2011/July/SwartzAaronPR.html) ; en poste jusqu'au 13/01/2017 (Boston Globe, DOJ).
+✅ Quinn Norton : convoquée, assignation demandant les ordinateurs d'Aaron, accord avec le procureur (Wikipedia, emptywheel).
+✅ Robert Swartz, funérailles du 15/01/2013 : « He was killed by the government, and MIT betrayed all of its basic principles. » (WBUR, CBS Boston, Common Dreams).
+✅ Taren Stinebrickner-Kauffman l'a retrouvé dans leur appartement de Brooklyn en rentrant du travail (DNAinfo, TechCrunch).
+✗ « Ses économies partent en frais d'avocats » : non confirmé → retiré du script.
+⚠ Aaron's Law : déposée en 2013 (Z. Lofgren), redéposée ensuite, jamais adoptée — à confirmer sur congress.gov avant la voix.
+RESTE (droits d'images) : photo d'Aaron enfant ; image de la caméra de surveillance du MIT ; vidéo des funérailles ; The Internet's Own Boy (CC BY-NC-SA).

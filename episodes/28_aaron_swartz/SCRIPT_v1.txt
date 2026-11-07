@@ -43,8 +43,8 @@ Son père travaille dans l'informatique.
 Et Aaron plonge dans l'écran, et plonge dans le code. À huit ans.
 Et le code, son père lui disait, ça doit être parfait. Un peu comme un poème. »
 
-[ÉCRAN] Cartes qui défilent sur le fil : « 13 ANS · prix ArsDigita » ⚠ ; « 14 ANS · RSS » ; « 15 ANS · Creative Commons » ; photo de Lawrence Lessig.
-À treize ans, il construit une encyclopédie en ligne écrite par tout le monde. Avant Wikipédia. ⚠ (The Info Network, prix ArsDigita 2000)
+[ÉCRAN] Cartes qui défilent sur le fil : « 13 ANS · prix ArsDigita » ✅ ; « 14 ANS · RSS » ; « 15 ANS · Creative Commons » ; photo de Lawrence Lessig.
+À treize ans, il gagne un prix national pour une encyclopédie en ligne écrite par tout le monde. Avant Wikipédia. ✅ (The Info Network / theinfo.org, prix ArsDigita)
 À quatorze ans, il participe à l'écriture de RSS — ce qui te prévient encore aujourd'hui quand ton podcast sort un épisode.
 Autour de la table, des ingénieurs adultes. Lui n'a pas fini le collège.
 À quinze ans, un professeur de droit de Harvard, Lawrence Lessig, lui confie le code de Creative Commons : les licences qui permettent de partager librement une photo, une musique, un livre.
@@ -63,9 +63,9 @@ Il lit Noam Chomsky. Il voit l'internet de la liberté passer, petit à petit, a
 [ÉCRAN] Logo Reddit (carte), « 2005 », « RACHAT · 2006 ».
 À dix-neuf ans, il rejoint une petite entreprise qui deviendra Reddit. Elle est rachetée par un géant de la presse.
 Aaron devient riche. Il a tout ce que la Silicon Valley promet.
-Et il est malheureux. ⚠
-Il déteste les bureaux, les réunions, la vie d'entreprise. Il part au bout de quelques mois. ⚠ (licencié début 2007)
-Sur son blog, il écrit sur sa tristesse. Ses nuits. Son corps qui le lâche. ⚠ (billets de 2007 ; colite ulcéreuse)
+Et il est malheureux.
+La vie d'entreprise l'étouffe. En 2007, il quitte Reddit. ✅ (départ en 2007 ; on ne dit pas « licencié », non confirmé)
+Sur son blog, il écrit sa dépression. Ses migraines. Son corps qui le lâche. ✅ (billet « Sick », novembre 2007)
 
 [ÉCRAN] Ralenti, silence d'une seconde. Photo d'Aaron seul.
 Ce qui le tient debout, c'est une idée.
@@ -81,15 +81,15 @@ Si tu n'es pas dans une grande université d'un pays riche… tu restes à la po
 
 [ÉCRAN] Manifeste de 2008 (texte public), citation en ambre.
 En 2008, il écrit un texte : le « Manifeste de la guérilla pour le libre accès ».
-« L'information, c'est le pouvoir. Mais comme tout pouvoir, il y a ceux qui veulent le garder pour eux. » ⚠ traduction
+« L'information, c'est le pouvoir. Mais comme tout pouvoir, il y a ceux qui veulent le garder pour eux. » ✅ (1re phrase du manifeste, juillet 2008 : « Information is power. But like all power, there are those who want to keep it for themselves. »)
 [VASSEUR V4 — vidéo] « Il a vingt et un ans, c'est un idéaliste. On est encore dans un monde où on croit qu'on peut utiliser ce genre de mots sans que, des années plus tard, ça vous rattrape. »
 
 [ÉCRAN] Carte « PACER · 2008 · tribunaux fédéraux » ; « 8 centimes la page » ; tampon « FBI ».
 La même année, il s'attaque à une première porte.
 Les décisions de justice américaines, des documents publics… payants : quelques centimes la page.
-Avec des amis, Aaron en récupère des millions et les met en ligne gratuitement. ⚠ (≈ 2,7 millions de documents)
-Le FBI ouvre une enquête. Des agents surveillent la maison de ses parents. ⚠
-Aucune poursuite. Il n'avait rien volé : c'étaient des documents publics.
+Aaron en récupère deux millions sept cent mille, et les confie à une association qui les met en ligne gratuitement. ✅
+Le FBI ouvre une enquête. Une voiture d'agents vient surveiller la maison de ses parents. ✅ (dossier du FBI, révélé en 2009)
+Les tribunaux parlent d'accès non autorisé. Mais l'enquête est classée. Aucune poursuite. C'étaient des documents publics.
 Mais désormais, son nom est dans un dossier.
 
 ══════════════════════════════════════════════════════════════════════
@@ -112,7 +112,7 @@ Fin de l'histoire ? Non.
 
 [ÉCRAN] Photo officielle de la procureure Carmen Ortiz (DOJ, domaine public), citation du communiqué officiel en ambre.
 La procureure fédérale publie un communiqué :
-« Voler, c'est voler. Qu'on utilise une commande informatique ou un pied-de-biche. Qu'on prenne des documents, des données ou des dollars. » ⚠ texte original
+« Voler, c'est voler. Qu'on utilise une commande informatique ou un pied-de-biche. Qu'on prenne des documents, des données ou des dollars. » ✅ (communiqué du DOJ, 19/07/2011)
 
 ══════════════════════════════════════════════════════════════════════
 5. LA MACHINE (6:00 – 7:45)
@@ -129,7 +129,7 @@ Aaron, lui, risque trente-cinq ans. Pour des articles qu'il n'a ni vendus, ni di
 
 [ÉCRAN] Vraie vidéo : Aaron au micro, 2012 (le discours de l'accroche), étiquette « 18 JANVIER 2012 · INTERNET S'ÉTEINT ». Captures de Wikipédia en noir ce jour-là.
 Et pendant ce temps-là… Aaron se bat. Pour les autres.
-En 2012, le Congrès veut voter une loi qui permettrait de faire fermer des sites entiers. ⚠ (SOPA)
+En 2012, le Congrès veut voter une loi, SOPA, qui permettrait de faire bloquer des sites entiers sans vrai procès.
 Aaron monte une campagne. Le 18 janvier 2012, Wikipédia et des milliers de sites s'éteignent pour protester.
 Le Congrès recule.
 [SON] Vraie voix d'Aaron, 6 s (discours « How we stopped SOPA », 2012 — phrase à choisir).
@@ -138,8 +138,8 @@ Et en même temps, Washington est en train de le broyer.
 
 [ÉCRAN] Ralenti. Cartes : « ses économies » → « frais d'avocats » ; « ses amis » → « convoqués ».
 Deux ans de procédure.
-Ses économies partent en frais d'avocats. ⚠
-Ses proches sont convoqués par les enquêteurs pour témoigner contre lui. ⚠ (Quinn Norton, grand jury)
+Son ancienne compagne, Quinn Norton, est convoquée par les enquêteurs. On lui demande ses ordinateurs, puis de parler de lui. ✅
+(Ligne « ses économies partent en frais d'avocats » SUPPRIMÉE : non confirmée.)
 On lui propose un marché : plaider coupable des treize crimes, et faire quelques mois de prison.
 Il refuse.
 Accepter, c'est porter toute sa vie le mot « criminel ». Pour avoir voulu que les gens puissent lire.
@@ -157,7 +157,7 @@ Son procès devait s'ouvrir quelques semaines plus tard.
 Le lendemain, l'inventeur du web, Tim Berners-Lee, écrit :
 « Aaron est mort. Vagabonds du monde, nous avons perdu un sage. Hackers du bon côté, nous sommes un de moins. Parents, nous avons perdu un enfant. Pleurons. »
 
-[SON] Vraie voix de Robert Swartz, son père, aux funérailles (⚠ source vidéo) :
+[SON] Vraie voix de Robert Swartz, son père, aux funérailles, 15/01/2013, Highland Park (✅ citation : WBUR, CBS, Common Dreams ; ⚠ trouver la vidéo, sinon citation à l'écran) :
 « Aaron a été tué par le gouvernement. Et le MIT a trahi tous ses principes fondamentaux. »
 
 [ÉCRAN] Retour sur la carte vidéo de Flore Vasseur.
@@ -178,7 +178,7 @@ Aujourd'hui, on lui ruine sa réputation. Ou on l'empêche de travailler. »
 [ÉCRAN] Rapport du MIT (2013), carte « AARON'S LAW · jamais votée ».
 Le MIT publie un rapport. Il ne reconnaît aucune faute : il dit être resté « neutre ».
 Des élus proposent une loi à son nom, pour que ça n'arrive plus. Elle n'a jamais été votée.
-La procureure ne sera jamais sanctionnée. ⚠
+La procureure, elle, défend son dossier. Elle reste en poste jusqu'en 2017. ✅
 
 [ÉCRAN] Vue d'ensemble du mur. Puis carte « 2011 · ALMATY, KAZAKHSTAN » retournée à moitié (teaser de l'épisode suivant).
 Mais son idée, elle, n'est pas morte.
