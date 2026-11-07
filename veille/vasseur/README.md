@@ -17,3 +17,10 @@ Elle mentionne qu'Aaron « aurait eu 33 ans aujourd'hui », donc l'interview dat
 | V6_pire_que_complot | 9:39 – 10:04 | « Je crois que c'est pire qu'un complot. Les autorités savaient qu'il était fragile psychologiquement et ils ont appuyé là où il pouvait passer à l'acte. Aujourd'hui, pour faire taire quelqu'un, on ne l'assassine plus… on lui ruine sa réputation, ou on l'empêche de travailler. » |
 | V7_obama_assange | 11:07 – 11:30 | « L'éditeur s'est retiré de la plainte… Mais le gouvernement américain, celui d'Obama, a pris la suite. Il voulait faire un exemple pour montrer à tous ceux qui avaient des velléités de devenir des Assange… voici le traitement qu'on réserve aux personnes qui osent utiliser la technologie… » |
 | V8_ordinateur_a_vie | 10:03 – 10:16 | « Ce que lui avait promis le gouvernement… c'était de le priver d'un accès à un ordinateur à vie. » (à vérifier avant usage) |
+
+## Vidéo (partielle) — reçue le 07/11/2026
+
+- **Source identifiée** : **TV5MONDE, émission « 64' Le Monde en français », rubrique « Grand Angle »** (bandeau : « Flore Vasseur – autrice de "Ce qu'il reste de nos rêves" · Aaron Swartz et les illusions perdues d'Internet »). Crédit à l'écran : « TV5MONDE · 64' Le Monde en français · 2019 ».
+- `interview_vasseur_2019_partiel.mov` : 640×360, 7 min 45 s. Elle couvre l'interview de **3:28 à 11:12** (calage par l'audio : vidéo 0 s = MP3 207,7 s).
+- Extraits vidéo découpés (`extraits/*.mp4`) : V3, V4, V5, V6, V8. **Hors de la vidéo** : V1 et V2 (enfance, 1:19-2:09) et l'essentiel de V7 (Obama/Assange, 11:07-11:30) → ces passages passent en voix seule, sur nos propres images (photo d'Aaron enfant, Obama, Assange). Ce n'est pas une image figée de vidéo, c'est un montage photo avec mouvement de caméra.
+- Plans : alternance Flore Vasseur seule / plan large avec le présentateur / photo d'Aaron plein cadre. Au montage : recadrer sur elle (moitié droite des plans larges), couper les bandeaux du bas ; les plans où la chaîne montre la photo d'Aaron peuvent rester (la vidéo bouge avec le son). Résolution faible (360p) : à montrer dans une carte du tableau, pas en plein écran 1080p.

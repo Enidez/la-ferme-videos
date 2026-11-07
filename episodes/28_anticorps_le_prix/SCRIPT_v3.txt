@@ -23,7 +23,7 @@ On lui a promis trente-cinq ans de prison.
 Des années après sa mort, une écrivaine française traverse les États-Unis pour comprendre.
 Elle s'appelle Flore Vasseur. Elle va passer quatre ans sur ses traces. Rencontrer ceux qui l'ont aimé.
 Elle part avec une certitude.
-[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V5, interview TV 2019, 9:23 → 9:39 ; carte = sa photo + « FLORE VASSEUR · ÉCRIVAINE · 2019 ») :
+[SON] VRAIE VOIX DE FLORE VASSEUR (extrait V5, 9:23 → 9:39 ; vraie vidéo TV5MONDE « 64' » 2019, recadrée sur elle ; étiquette « FLORE VASSEUR · ÉCRIVAINE · TV5MONDE 2019 ») :
 « J'ai passé quatre ans d'enquête. J'étais complètement persuadée qu'on l'avait poussé au suicide.
 Parce que tant d'intelligence, tant de générosité, tant de désintérêt… dans le monde dans lequel on est aujourd'hui… potentiellement, c'est dangereux. »
 [ÉCRAN] On COUPE avant « c'est pire qu'un complot » : la réponse arrive à la mort d'Aaron (fin du chapitre 1). Curiosité qui tient 4 minutes.
@@ -307,7 +307,7 @@ NOTES
   « Si tu traverses une période difficile : 3114 (numéro national de prévention du suicide, gratuit, 24 h/24) ». Recommandé aussi par YouTube.
 • Voix de Flore Vasseur : interview télé de 2019 (« Aaron Swartz et les illusions perdues d'Internet », MP3 fourni par Enidez le 07/11),
   dans veille/vasseur/ : interview complète, transcription brute whisper, et 8 extraits découpés (V1 à V8, minutages ci-dessus).
-  ⚠ Nom de la chaîne et date exacte à confirmer (pour le crédit à l'écran). Droit de citation : extraits courts, crédités, avec sa photo
+  Source : TV5MONDE, « 64' Le Monde en français », Grand Angle, 2019. Vidéo partielle reçue : V3 à V6 en vrai visage ; V1, V2, V7 en voix sur nos images. Droit de citation : extraits courts, crédités, avec sa photo
   ou les vraies images de l'interview si on retrouve la vidéo. Volume de l'extrait remonté pour égaler la voix off.
   ⚠ Réécouter chaque extrait à l'oreille : whisper peut se tromper sur un mot ; toute phrase entre guillemets doit être mot pour mot.
 • V8 (« le priver d'un accès à un ordinateur à vie ») non utilisé : à vérifier avant tout usage (condition de l'offre de plaider-coupable ?).
