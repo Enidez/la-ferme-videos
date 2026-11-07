@@ -1,0 +1,19 @@
+# Flore Vasseur — interview TV 2019 « Aaron Swartz et les illusions perdues d'Internet »
+
+MP3 fourni par Enidez le 07/11/2026 (vidéo YouTube 5nz2sfNRtQk, chaîne et date exacte à confirmer). Durée : 11 min 44.
+Elle mentionne qu'Aaron « aurait eu 33 ans aujourd'hui », donc l'interview date de 2019, à la sortie du livre (Équateurs).
+
+- `interview_vasseur_2019.mp3` : l'interview complète.
+- `transcription_whisper_brute.txt` : transcription automatique (whisper-small), avec des erreurs. Réécouter avant de citer.
+- `extraits/` : les passages forts, découpés et retranscrits :
+
+| Fichier | Minutage | Phrase (vérifiée sur l'extrait seul) |
+|---|---|---|
+| V1_clavier_poeme | 1:52 – 2:09 | « Il passe le clavier à son fils et là, tout à coup, la maison se calme, tout devient silencieux, et Aaron plonge dans l'écran et plonge dans le code, à 8 ans. Et le code, son père lui disait, ça doit être parfait… un peu comme un poème. » |
+| V2_tout_petit_corps | 1:19 – 1:31 | « …nourrir ce cerveau fantastique… il était surdoué, génial, dans un tout petit corps d'enfant. » |
+| V3_artiste_politise | 4:02 – 4:18 | « J'ai parlé avec ses parents… jusqu'à présent, il est dans le code, dans l'émerveillement de ce que le code peut faire, dans la création pure. C'est un artiste, un esthète. Et là, il se politise. » (le 11 septembre 2001) |
+| V4_21ans_idealiste | 8:32 – 8:42 | « Il a 21 ans, c'est un idéaliste. On est encore dans un monde où on croit qu'on peut utiliser ce genre de mots sans que, X années plus tard, ça vous rattrape. » (le manifeste de 2008) |
+| V5_persuadee_complot | 9:23 – 9:45 | « J'ai passé 4 ans d'enquête… J'étais complètement persuadée qu'on l'avait poussé au suicide, parce que tant d'intelligence, tant de générosité, tant de désintérêt, dans le monde dans lequel on est aujourd'hui, potentiellement, c'est dangereux. » |
+| V6_pire_que_complot | 9:39 – 10:04 | « Je crois que c'est pire qu'un complot. Les autorités savaient qu'il était fragile psychologiquement et ils ont appuyé là où il pouvait passer à l'acte. Aujourd'hui, pour faire taire quelqu'un, on ne l'assassine plus… on lui ruine sa réputation, ou on l'empêche de travailler. » |
+| V7_obama_assange | 11:07 – 11:30 | « L'éditeur s'est retiré de la plainte… Mais le gouvernement américain, celui d'Obama, a pris la suite. Il voulait faire un exemple pour montrer à tous ceux qui avaient des velléités de devenir des Assange… voici le traitement qu'on réserve aux personnes qui osent utiliser la technologie… » |
+| V8_ordinateur_a_vie | 10:03 – 10:16 | « Ce que lui avait promis le gouvernement… c'était de le priver d'un accès à un ordinateur à vie. » (à vérifier avant usage) |
