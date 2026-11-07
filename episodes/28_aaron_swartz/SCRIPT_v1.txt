@@ -1,0 +1,210 @@
+LA FERME — ÉP. 28 — LES ANTICORPS #01 (format long YouTube 16:9) — « AARON SWARTZ · PIRE QU'UN COMPLOT. » — script v1 (07/11/2026)
+Choix d'Enidez (07/11) : une vidéo 100 % Aaron, ~10 min, Flore Vasseur en guide. Les autres portraits = épisodes suivants de la série
+(ordre proposé : Elbakyan → Manning → Assange → Snowden → les Badir), puis « LE PRIX. » qui les réunit (episodes/XX_le_prix_reunion_A_VENIR).
+
+FIL ROUGE : la phrase de Flore Vasseur « c'est pire qu'un complot ». Elle part persuadée qu'on l'a poussé au suicide ; on garde sa
+réponse jusqu'à la fin du chapitre 6. Toute la vidéo est la question : qu'a-t-elle trouvé ?
+Honnêteté : sa conclusion est présentée comme SON analyse après 4 ans d'enquête (étiquette à l'écran), jamais comme un fait jugé.
+Émotion : chaque chapitre a un moment intime ; la caméra ralentit, 1 à 2 s de silence, musique qui se retire.
+Voix off : Liam (posée, documentaire). Vraies voix : Flore Vasseur (TV5MONDE, « 64' Le Monde en français », 2019 — extraits V1 à V7 dans
+veille/vasseur/), Aaron Swartz (discours de 2012), Robert Swartz (funérailles). Chiffres en lettres dans le fichier voix.
+[ÉCRAN] = image · [SON] = vraie voix · [VASSEUR Vx] = extrait de sa vraie voix (vidéo si disponible, sinon voix sur nos images) · ⚠ = à recouper.
+
+══════════════════════════════════════════════════════════════════════
+0. ACCROCHE (0:00 – 0:45)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Vraie vidéo plein cadre : Aaron Swartz au micro, 2012, souriant. 3 s avec son propre son. Arrêt sur image N&B, boum.
+[SON] Swartz (phrase courte, à choisir à la transcription du discours).
+
+Il a téléchargé des articles scientifiques.
+On lui a promis trente-cinq ans de prison.
+Il avait vingt-quatre ans.
+
+[ÉCRAN] Carte vidéo : Flore Vasseur sur le plateau (recadrée sur elle). Étiquette « FLORE VASSEUR · ÉCRIVAINE · TV5MONDE 2019 ».
+Une écrivaine française a passé quatre ans à enquêter sur sa mort.
+[VASSEUR V5 — vidéo] « J'étais complètement persuadée qu'on l'avait poussé au suicide.
+Parce que tant d'intelligence, tant de générosité, tant de désintérêt… dans le monde dans lequel on est aujourd'hui… potentiellement, c'est dangereux. »
+[ÉCRAN] On coupe net avant la suite. Arrêt sur son visage ? NON (jamais d'image figée sur une voix) : la caméra recule et quitte la carte.
+
+Ce qu'elle a trouvé…
+[ÉCRAN] TITRE énorme : « PIRE QU'UN COMPLOT. » — sur-titre Mono « LES ANTICORPS #01 · AARON SWARTZ »
+… pour le comprendre, il faut revenir au début.
+
+══════════════════════════════════════════════════════════════════════
+1. L'ENFANT (0:45 – 2:00)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Carte « HIGHLAND PARK · PRÈS DE CHICAGO · 1986 ». Photo d'Aaron enfant (⚠ photo libre ou de famille diffusée avec crédit).
+Highland Park, près de Chicago. 1986.
+Un petit garçon qui déborde d'énergie. Qui demande « pourquoi » du matin au soir.
+Son père travaille dans l'informatique.
+
+[VASSEUR V1 — voix sur la photo d'Aaron enfant ; lent zoom ; musique presque coupée]
+« Il passe le clavier à son fils. Et là, tout à coup, la maison se calme. Tout à coup, tout devient silencieux.
+Et Aaron plonge dans l'écran, et plonge dans le code. À huit ans.
+Et le code, son père lui disait, ça doit être parfait. Un peu comme un poème. »
+
+[ÉCRAN] Cartes qui défilent sur le fil : « 13 ANS · prix ArsDigita » ⚠ ; « 14 ANS · RSS » ; « 15 ANS · Creative Commons » ; photo de Lawrence Lessig.
+À treize ans, il construit une encyclopédie en ligne écrite par tout le monde. Avant Wikipédia. ⚠ (The Info Network, prix ArsDigita 2000)
+À quatorze ans, il participe à l'écriture de RSS — ce qui te prévient encore aujourd'hui quand ton podcast sort un épisode.
+Autour de la table, des ingénieurs adultes. Lui n'a pas fini le collège.
+À quinze ans, un professeur de droit de Harvard, Lawrence Lessig, lui confie le code de Creative Commons : les licences qui permettent de partager librement une photo, une musique, un livre.
+Lessig deviendra son mentor. Presque un deuxième père.
+
+[VASSEUR V2 — voix] « … ce cerveau fantastique… surdoué, génial… dans un tout petit corps d'enfant. »
+
+══════════════════════════════════════════════════════════════════════
+2. LA FISSURE (2:00 – 3:15)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Carte « 11 SEPTEMBRE 2001 · Aaron a 14 ans » (photo libre des tours, Commons).
+Et puis, le 11 septembre 2001. Aaron a quatorze ans.
+[VASSEUR V3 — vidéo] « Jusqu'à présent, il est dans le code, dans l'émerveillement de ce que le code peut faire, dans la création pure. C'est un artiste, un esthète. Et là, il se politise. »
+Il lit Noam Chomsky. Il voit l'internet de la liberté passer, petit à petit, aux mains du business… et de l'armée.
+
+[ÉCRAN] Logo Reddit (carte), « 2005 », « RACHAT · 2006 ».
+À dix-neuf ans, il rejoint une petite entreprise qui deviendra Reddit. Elle est rachetée par un géant de la presse.
+Aaron devient riche. Il a tout ce que la Silicon Valley promet.
+Et il est malheureux. ⚠
+Il déteste les bureaux, les réunions, la vie d'entreprise. Il part au bout de quelques mois. ⚠ (licencié début 2007)
+Sur son blog, il écrit sur sa tristesse. Ses nuits. Son corps qui le lâche. ⚠ (billets de 2007 ; colite ulcéreuse)
+
+[ÉCRAN] Ralenti, silence d'une seconde. Photo d'Aaron seul.
+Ce qui le tient debout, c'est une idée.
+
+══════════════════════════════════════════════════════════════════════
+3. LE COMBAT (3:15 – 4:45)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Schéma simple : « RECHERCHE » ← « ARGENT PUBLIC (tes impôts) » ; « ARTICLE » → cadenas → « 30-40 $ ».
+Le savoir devrait appartenir à tout le monde.
+La recherche scientifique est souvent payée par l'argent public. Tes impôts.
+Puis les articles sont enfermés derrière des abonnements. Trente, quarante dollars l'article.
+Si tu n'es pas dans une grande université d'un pays riche… tu restes à la porte.
+
+[ÉCRAN] Manifeste de 2008 (texte public), citation en ambre.
+En 2008, il écrit un texte : le « Manifeste de la guérilla pour le libre accès ».
+« L'information, c'est le pouvoir. Mais comme tout pouvoir, il y a ceux qui veulent le garder pour eux. » ⚠ traduction
+[VASSEUR V4 — vidéo] « Il a vingt et un ans, c'est un idéaliste. On est encore dans un monde où on croit qu'on peut utiliser ce genre de mots sans que, des années plus tard, ça vous rattrape. »
+
+[ÉCRAN] Carte « PACER · 2008 · tribunaux fédéraux » ; « 8 centimes la page » ; tampon « FBI ».
+La même année, il s'attaque à une première porte.
+Les décisions de justice américaines, des documents publics… payants : quelques centimes la page.
+Avec des amis, Aaron en récupère des millions et les met en ligne gratuitement. ⚠ (≈ 2,7 millions de documents)
+Le FBI ouvre une enquête. Des agents surveillent la maison de ses parents. ⚠
+Aucune poursuite. Il n'avait rien volé : c'étaient des documents publics.
+Mais désormais, son nom est dans un dossier.
+
+══════════════════════════════════════════════════════════════════════
+4. LE PLACARD (4:45 – 6:00)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Photo du MIT (Commons) ; carte « BÂTIMENT 16 · SOUS-SOL » ; image de la caméra de surveillance (⚠ droits) « ARCHIVE · janvier 2011 ».
+Fin 2010. Le MIT, l'une des universités les plus prestigieuses du monde. Le campus est ouvert.
+Aaron branche un ordinateur portable dans un placard technique du sous-sol. La porte n'est pas fermée à clé.
+Pendant des semaines, il télécharge des articles de JSTOR, une immense bibliothèque scientifique.
+Plus de quatre millions.
+Il n'en vend aucun. Il n'en publie aucun.
+Le 6 janvier 2011, il est arrêté. Menotté.
+
+[ÉCRAN] Carte « JSTOR : PLAINTE RETIRÉE ».
+JSTOR récupère ses fichiers. Et renonce aux poursuites.
+Fin de l'histoire ? Non.
+
+[VASSEUR V7 — voix ; le fil rouge part vers des cartes retournées (Assange, Snowden : on ne les nomme qu'en image)]
+« Le gouvernement américain, celui d'Obama, a pris la suite. Il voulait faire un exemple. Pour montrer à tous ceux qui avaient des velléités de devenir des Assange… voici le traitement qu'on réserve aux personnes qui osent. »
+
+[ÉCRAN] Photo officielle de la procureure Carmen Ortiz (DOJ, domaine public), citation du communiqué officiel en ambre.
+La procureure fédérale publie un communiqué :
+« Voler, c'est voler. Qu'on utilise une commande informatique ou un pied-de-biche. Qu'on prenne des documents, des données ou des dollars. » ⚠ texte original
+
+══════════════════════════════════════════════════════════════════════
+5. LA MACHINE (6:00 – 7:45)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Compteur : 4 chefs d'accusation → 13. Puis « 35 ANS · 1 000 000 $ ».
+D'abord quatre chefs d'accusation. Puis treize.
+Jusqu'à trente-cinq ans de prison. Un million de dollars d'amende.
+
+[ÉCRAN] Contrepoint sur le mur : « CRISE DE 2008 · des millions de familles à la rue » → « 1 grand banquier de Wall Street en prison · 30 mois ».
+Pour te donner l'échelle.
+Après la crise financière de 2008, des millions de familles américaines perdent leur maison.
+Combien de grands banquiers de Wall Street en prison ? Un seul. Trente mois.
+Aaron, lui, risque trente-cinq ans. Pour des articles qu'il n'a ni vendus, ni diffusés.
+
+[ÉCRAN] Vraie vidéo : Aaron au micro, 2012 (le discours de l'accroche), étiquette « 18 JANVIER 2012 · INTERNET S'ÉTEINT ». Captures de Wikipédia en noir ce jour-là.
+Et pendant ce temps-là… Aaron se bat. Pour les autres.
+En 2012, le Congrès veut voter une loi qui permettrait de faire fermer des sites entiers. ⚠ (SOPA)
+Aaron monte une campagne. Le 18 janvier 2012, Wikipédia et des milliers de sites s'éteignent pour protester.
+Le Congrès recule.
+[SON] Vraie voix d'Aaron, 6 s (discours « How we stopped SOPA », 2012 — phrase à choisir).
+Un gamin de vingt-cinq ans vient de faire plier Washington.
+Et en même temps, Washington est en train de le broyer.
+
+[ÉCRAN] Ralenti. Cartes : « ses économies » → « frais d'avocats » ; « ses amis » → « convoqués ».
+Deux ans de procédure.
+Ses économies partent en frais d'avocats. ⚠
+Ses proches sont convoqués par les enquêteurs pour témoigner contre lui. ⚠ (Quinn Norton, grand jury)
+On lui propose un marché : plaider coupable des treize crimes, et faire quelques mois de prison.
+Il refuse.
+Accepter, c'est porter toute sa vie le mot « criminel ». Pour avoir voulu que les gens puissent lire.
+
+══════════════════════════════════════════════════════════════════════
+6. LE 11 JANVIER (7:45 – 9:00)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] La musique se retire. Photo d'Aaron souriant. Silence d'une seconde et demie.
+Le 11 janvier 2013, sa compagne le retrouve dans leur appartement de Brooklyn.
+Il s'est donné la mort.
+[slowly] Il avait vingt-six ans.
+Son procès devait s'ouvrir quelques semaines plus tard.
+
+[ÉCRAN] Message de Tim Berners-Lee, l'inventeur du web (12/01/2013), traduit en ambre ; sa photo (Commons).
+Le lendemain, l'inventeur du web, Tim Berners-Lee, écrit :
+« Aaron est mort. Vagabonds du monde, nous avons perdu un sage. Hackers du bon côté, nous sommes un de moins. Parents, nous avons perdu un enfant. Pleurons. »
+
+[SON] Vraie voix de Robert Swartz, son père, aux funérailles (⚠ source vidéo) :
+« Aaron a été tué par le gouvernement. Et le MIT a trahi tous ses principes fondamentaux. »
+
+[ÉCRAN] Retour sur la carte vidéo de Flore Vasseur.
+Flore Vasseur, elle, était partie persuadée qu'on l'avait poussé au suicide.
+Après quatre ans d'enquête, voilà ce qu'elle a trouvé.
+[VASSEUR V6 — vidéo] « Et en fait, je crois que c'est pire qu'un complot.
+Les autorités savaient qu'il était fragile psychologiquement. Et ils ont appuyé là où il pouvait passer à l'acte.
+Aujourd'hui, pour faire taire quelqu'un, on ne l'assassine plus. Ça, c'est les histoires des barbouzes des années 70.
+Aujourd'hui, on lui ruine sa réputation. Ou on l'empêche de travailler. »
+[ÉCRAN] Étiquette sous la carte : « ANALYSE DE L'AUTRICE · aucune décision de justice sur ce point ».
+
+[ÉCRAN] Tampon rouge sur le mur : « PIRE QU'UN COMPLOT. »
+
+══════════════════════════════════════════════════════════════════════
+7. CE QU'IL RESTE (9:00 – 10:15)
+══════════════════════════════════════════════════════════════════════
+[ÉCRAN] Rapport du MIT (2013), carte « AARON'S LAW · jamais votée ».
+Le MIT publie un rapport. Il ne reconnaît aucune faute : il dit être resté « neutre ».
+Des élus proposent une loi à son nom, pour que ça n'arrive plus. Elle n'a jamais été votée.
+La procureure ne sera jamais sanctionnée. ⚠
+
+[ÉCRAN] Vue d'ensemble du mur. Puis carte « 2011 · ALMATY, KAZAKHSTAN » retournée à moitié (teaser de l'épisode suivant).
+Mais son idée, elle, n'est pas morte.
+Quelques mois après son arrestation, à l'autre bout du monde, une étudiante de vingt-deux ans a décidé de finir le travail.
+Elle, aussi, va le payer. Ce sera le prochain épisode.
+
+[ÉCRAN] Retour lent sur la photo d'Aaron enfant devant l'ordinateur. Musique : piano seul.
+Le 8 novembre 2026, Aaron Swartz aurait eu quarante ans.
+[VASSEUR V5 — reprise courte, voix] « Tant d'intelligence. Tant de générosité. Tant de désintérêt. »
+Son histoire, ils misent sur l'oubli.
+Nous, on garde les preuves.
+
+Alors, dis-moi en commentaire :
+pour toi, Aaron Swartz… c'était un voleur, ou un anticorps ?
+
+Abonne-toi. Ils parlent… Nous on vérifie.
+
+[ÉCRAN] Carton de fin (crédits complets : TV5MONDE « 64' », photos Commons, musique), bandeau « Si tu traverses une période difficile : 3114 · gratuit, 24 h/24 », puis générique « ferme-la ».
+
+══════════════════════════════════════════════════════════════════════
+NOTES
+══════════════════════════════════════════════════════════════════════
+• Titre YouTube : « Aaron Swartz : 35 ans de prison pour avoir voulu libérer le savoir » · variantes : « Il voulait libérer le savoir. L'État l'a broyé. » ·
+  « Pire qu'un complot : l'histoire d'Aaron Swartz ». Couverture : visage d'Aaron N&B plein cadre, « PIRE QU'UN COMPLOT. », petite étiquette « 35 ANS ».
+• Chapitres YouTube : 0:00 Pire qu'un complot · 0:45 L'enfant · 2:00 La fissure · 3:15 Le combat · 4:45 Le placard · 6:00 La machine · 7:45 Le 11 janvier · 9:00 Ce qu'il reste.
+• Relances : « Fin de l'histoire ? Non. » (4:45) · « Et pendant ce temps-là… » (6:45) · teaser Vasseur gardé jusqu'à 8:30.
+• Musique : piano (« Heartbreaking ») pour l'enfance et la mort ; tension (« Hitman ») pour le placard et la machine ; montée sur SOPA.
+• Suicide : sobre, aucun détail de méthode, numéro 3114 en fin de vidéo.
+• Images d'Aaron en vidéo : The Internet's Own Boy (CC BY-NC-SA) → ⚠ clause non commerciale si la chaîne est monétisée ; sinon extraits courts en droit de citation.
+• Découpe en Shorts verticaux : V1 « la maison se calme » ; « 35 ans / un seul banquier » ; « pire qu'un complot ».
