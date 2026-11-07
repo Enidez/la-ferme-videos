@@ -68,7 +68,7 @@ for lab, kind, x, pause in parts:
     out.append(x); tl.append({'id': lab, 'type': kind, 't0': round(t, 2), 't1': round(t + len(x) / SR, 2)})
     t += len(x) / SR
     out.append(np.zeros(int(pause * SR), np.float32)); t += pause
-y = np.concatenate(out); y = y / max(1.0, np.abs(y).max() / 0.89)
+y = np.concatenate(out).astype(np.float32); y = (y / max(1.0, np.abs(y).max() / 0.89)).astype(np.float32)
 os.makedirs(os.path.join(H, 'audio'), exist_ok=True)
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'f32le', '-ar', str(SR), '-ac', '1', '-i', '-', os.path.join(H, 'audio', 'vo_complete.wav')], input=y.tobytes(), check=True)
 json.dump(tl, open(os.path.join(H, 'audio', 'timeline.json'), 'w'), ensure_ascii=False, indent=1)
