@@ -13,8 +13,8 @@ veille/vasseur/), Aaron Swartz (discours de 2012), Robert Swartz (funérailles).
 ══════════════════════════════════════════════════════════════════════
 0. ACCROCHE (0:00 – 0:45)
 ══════════════════════════════════════════════════════════════════════
-[ÉCRAN] Vraie vidéo plein cadre : Aaron Swartz au micro, 2012, souriant. 3 s avec son propre son. Arrêt sur image N&B, boum.
-[SON] Swartz (phrase courte, à choisir à la transcription du discours).
+[ÉCRAN] Vraie vidéo plein cadre : Aaron Swartz au micro, Freedom to Connect, 21/05/2012 (domaine public, archive.org) — clips/A1. Arrêt sur image N&B, boum.
+[SON] Aaron (discours, 5:05) : « And I realized that day… that I couldn't let that happen. » — sous-titre FR : « Et j'ai compris ce jour-là… que je ne pouvais pas laisser faire ça. »
 
 Il a téléchargé des articles scientifiques.
 On lui a promis trente-cinq ans de prison.
@@ -157,7 +157,11 @@ Son procès devait s'ouvrir quelques semaines plus tard.
 Le lendemain, l'inventeur du web, Tim Berners-Lee, écrit :
 « Aaron est mort. Vagabonds du monde, nous avons perdu un sage. Hackers du bon côté, nous sommes un de moins. Parents, nous avons perdu un enfant. Pleurons. »
 
-[SON] Vraie voix de Robert Swartz, son père, aux funérailles, 15/01/2013, Highland Park (✅ citation : WBUR, CBS, Common Dreams ; ⚠ trouver la vidéo, sinon citation à l'écran) :
+[SON] VRAIES VOIX (The Internet's Own Boy, CC BY-NC-SA, sous-titres FR en ambre) — clips/ :
+  T3 Peter Eckersley, ami (film 1:34:42) : « Le monde entier s'est effondré à ce moment-là. »
+  T1 Lawrence Lessig (film 1:35:35) : « J'ai essayé de l'expliquer à mes enfants. Mon fils de trois ans m'a dit que les docteurs allaient le réparer. »
+  T2 Lawrence Lessig (film 1:36:02) : « Il faisait partie de moi. »
+[ÉCRAN] Puis la phrase de son père en TEXTE à l'écran (aucune vidéo libre trouvée des funérailles du 15/01/2013 ; source WBUR, CBS) :
 « Aaron a été tué par le gouvernement. Et le MIT a trahi tous ses principes fondamentaux. »
 
 [ÉCRAN] Retour sur la carte vidéo de Flore Vasseur.

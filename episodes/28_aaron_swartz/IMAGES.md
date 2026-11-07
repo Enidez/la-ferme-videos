@@ -50,3 +50,18 @@ Les vidéos de famille, la caméra du MIT et l'hommage viennent du documentaire,
 - **Si la chaîne YouTube n'est pas monétisée** : on peut les utiliser librement, crédit « The Internet's Own Boy, Brian Knappenberger, CC BY-NC-SA 4.0 ».
 - **Si elle est monétisée** : on se limite au droit de citation (extraits courts, quelques secondes, commentés, crédités), ou on demande l'autorisation à la production (Luminant Media).
 Tout le reste (discours SOPA, photos Commons, Vasseur en citation) est utilisable même avec une chaîne monétisée.
+
+## Extraits découpés (clips/, copies de travail basse définition ; recouper en HD depuis archive.org au montage)
+
+| Fichier | Source et minutage | Contenu |
+|---|---|---|
+| A1_sopa_couldnt_let_that_happen | discours SOPA 5:05 – 5:11 (domaine public) | « …that I couldn't let that happen. » → ACCROCHE |
+| T1_lessig_mon_fils_docteurs | film 1:35:35 – 1:35:48 | Lessig : « Mon fils de trois ans m'a dit que les docteurs allaient le réparer. » |
+| T2_lessig_part_of_me | film 1:36:02 – 1:36:13 | Lessig, ému : « Il faisait partie de moi. » |
+| T3_eckersley_world_fell_apart | film 1:34:42 – 1:34:58 | Peter Eckersley : « Le monde entier s'est effondré à ce moment-là. » |
+| T4_camera_placard_MIT | film 42:28 – 43:15 | vraie caméra de surveillance du placard |
+| T5_videos_famille_enfance | film 2:20 – 6:20 | vidéos de famille (4 min, à découper) |
+| T6_fin_enfant_danse | film 1:42:30 – 1:43:15 | Aaron enfant qui lit, puis qui danse |
+
+Voix du père aux funérailles : introuvable en vidéo libre (ni dans le film, ni sur archive.org) → sa phrase passe en texte à l'écran, sourcée.
+Autre phrase forte repérée (hommage, film 1:39:15) : « Aaron Swartz was not a criminal. » (orateur à identifier).
