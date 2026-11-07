@@ -1,0 +1,109 @@
+# VOIX OFF — #01 AARON SWARTZ · PIRE QU'UN COMPLOT. — Liam (EmZGlxI7QPvCEMOkFhB9), eleven_v3, 1 prise par morceau
+# Un morceau = un chapitre. Les extraits de vraies voix (Vasseur, Aaron, son père) sont montés entre les phrases, pas lus par Liam.
+# Les « // » marquent l'endroit où un extrait de vraie voix vient s'insérer (ne pas lire).
+
+=== 0_ACCROCHE ===
+[serious] Il a téléchargé des articles scientifiques.
+On lui a promis trente-cinq ans de prison.
+[slowly] Il avait vingt-quatre ans.
+Une écrivaine française a passé quatre ans à enquêter sur sa mort.
+// VASSEUR V5
+Ce qu'elle a trouvé…
+[serious] pour le comprendre, il faut revenir au début.
+
+=== 1_ENFANT ===
+[matter-of-fact] Highland Park, près de Chicago. Mille neuf cent quatre-vingt-six.
+Un petit garçon qui déborde d'énergie. Qui demande « pourquoi » du matin au soir.
+Son père travaille dans l'informatique.
+// VASSEUR V1
+À treize ans, il gagne un prix national pour une encyclopédie en ligne, écrite par tout le monde. Avant Wikipédia.
+À quatorze ans, il participe à l'écriture de RSS. Ce qui te prévient encore aujourd'hui quand ton podcast sort un épisode.
+Autour de la table, des ingénieurs adultes. Lui n'a pas fini le collège.
+À quinze ans, un professeur de droit de Harvard, Lawrence Lessig, lui confie le code de Creative Commons : les licences qui permettent de partager librement une photo, une musique, un livre.
+Lessig deviendra son mentor. [slowly] Presque un deuxième père.
+// VASSEUR V2
+
+=== 2_FISSURE ===
+[serious] Et puis, le onze septembre deux mille un. Aaron a quatorze ans.
+// VASSEUR V3
+Il lit Noam Chomsky. Il voit l'internet de la liberté passer, petit à petit, aux mains du business… et de l'armée.
+À dix-neuf ans, il rejoint une petite entreprise qui deviendra Reddit. Elle est rachetée par un géant de la presse.
+Aaron devient riche. Il a tout ce que la Silicon Valley promet.
+[slowly] Et il est malheureux.
+La vie d'entreprise l'étouffe. En deux mille sept, il quitte Reddit.
+Sur son blog, il écrit sa dépression. Ses migraines. Son corps qui le lâche.
+[lowered voice] Ce qui le tient debout, c'est une idée.
+
+=== 3_COMBAT ===
+[firm] Le savoir devrait appartenir à tout le monde.
+La recherche scientifique est souvent payée par l'argent public. Tes impôts.
+Puis les articles sont enfermés derrière des abonnements. Trente, quarante dollars l'article.
+Si tu n'es pas dans une grande université d'un pays riche… tu restes à la porte.
+En deux mille huit, il écrit un texte : le « Manifeste de la guérilla pour le libre accès ».
+Première phrase : « L'information, c'est le pouvoir. Mais comme tout pouvoir, il y a ceux qui veulent le garder pour eux. »
+// VASSEUR V4
+La même année, il s'attaque à une première porte.
+Les décisions de justice américaines. Des documents publics… mais payants. Quelques centimes la page.
+Aaron en récupère deux millions sept cent mille, et les confie à une association qui les met en ligne gratuitement.
+[serious] Le FBI ouvre une enquête. Une voiture d'agents vient surveiller la maison de ses parents.
+Les tribunaux parlent d'accès non autorisé. Mais l'enquête est classée. Aucune poursuite. C'étaient des documents publics.
+[slowly] Mais désormais, son nom est dans un dossier.
+
+=== 4_PLACARD ===
+[matter-of-fact] Fin deux mille dix. Le MIT, l'une des universités les plus prestigieuses du monde. Le campus est ouvert.
+Aaron branche un ordinateur portable dans un placard technique du sous-sol. La porte n'est pas fermée à clé.
+Pendant des semaines, il télécharge des articles de JSTOR, une immense bibliothèque scientifique.
+Plus de quatre millions.
+Il n'en vend aucun. Il n'en publie aucun.
+[serious] Le six janvier deux mille onze, il est arrêté. Menotté.
+JSTOR récupère ses fichiers. Et renonce aux poursuites.
+Fin de l'histoire ? [firm] Non.
+// VASSEUR V7
+La procureure fédérale publie un communiqué :
+« Voler, c'est voler. Qu'on utilise une commande informatique ou un pied-de-biche. Qu'on prenne des documents, des données ou des dollars. »
+
+=== 5_MACHINE ===
+[firm] D'abord quatre chefs d'accusation. Puis treize.
+Jusqu'à trente-cinq ans de prison. Un million de dollars d'amende.
+Pour te donner l'échelle.
+Après la crise financière de deux mille huit, des millions de familles américaines perdent leur maison.
+Combien de grands banquiers de Wall Street en prison ? [slowly] Un seul. Trente mois.
+Aaron, lui, risque trente-cinq ans. Pour des articles qu'il n'a ni vendus, ni diffusés.
+[intrigued] Et pendant ce temps-là… Aaron se bat. Pour les autres.
+En deux mille douze, le Congrès veut voter une loi, SOPA, qui permettrait de faire bloquer des sites entiers sans vrai procès.
+Aaron monte une campagne. Le dix-huit janvier deux mille douze, Wikipédia et des milliers de sites s'éteignent pour protester.
+Le Congrès recule.
+// AARON (discours SOPA)
+Un gamin de vingt-cinq ans vient de faire plier Washington.
+[lowered voice] Et en même temps, Washington est en train de le broyer.
+Deux ans de procédure.
+Son ancienne compagne, Quinn Norton, est convoquée par les enquêteurs. On lui demande ses ordinateurs. Puis de parler de lui.
+On lui propose un marché : plaider coupable des treize crimes, et faire quelques mois de prison.
+[firm] Il refuse.
+Accepter, c'est porter toute sa vie le mot « criminel ». [slowly] Pour avoir voulu que les gens puissent lire.
+
+=== 6_ONZE_JANVIER ===
+[slowly] Le onze janvier deux mille treize, sa compagne le retrouve dans leur appartement de Brooklyn.
+Il s'est donné la mort.
+Il avait vingt-six ans.
+Son procès devait s'ouvrir quelques semaines plus tard.
+Le lendemain, l'inventeur du web, Tim Berners-Lee, écrit :
+« Aaron est mort. Vagabonds du monde, nous avons perdu un sage. Hackers du bon côté, nous sommes un de moins. Parents, nous avons perdu un enfant. [lowered voice] Pleurons. »
+// PÈRE (si vidéo trouvée)
+Flore Vasseur, elle, était partie persuadée qu'on l'avait poussé au suicide.
+Après quatre ans d'enquête, voilà ce qu'elle a trouvé.
+// VASSEUR V6
+
+=== 7_CE_QUIL_RESTE ===
+[matter-of-fact] Le MIT publie un rapport. Il ne reconnaît aucune faute : il dit être resté « neutre ».
+Des élus proposent une loi à son nom, pour que ça n'arrive plus. Elle n'a jamais été votée.
+La procureure, elle, défend son dossier. Elle reste en poste jusqu'en deux mille dix-sept.
+[serious] Mais son idée, elle, n'est pas morte.
+Quelques mois après son arrestation, à l'autre bout du monde, une étudiante de vingt-deux ans a décidé de finir le travail.
+Elle aussi va le payer. Ce sera le prochain épisode.
+[slowly] Le huit novembre deux mille vingt-six, Aaron Swartz aurait eu quarante ans.
+// VASSEUR V5 (reprise : « Tant d'intelligence. Tant de générosité. Tant de désintérêt. »)
+Son histoire, ils misent sur l'oubli.
+Nous, on garde les preuves.
+Alors, dis-moi en commentaire : pour toi, Aaron Swartz… voleur, ou héros ?
+Abonne-toi. Ils parlent… Nous on vérifie.
