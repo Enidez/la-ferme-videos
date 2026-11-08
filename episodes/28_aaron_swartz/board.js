@@ -92,7 +92,7 @@ function camSpline(t){let i=0;while(i<WP.length-2&&t>=WP[i+1].t)i++;
   return{x:cr(a.x,b.x,c.x,d.x,us),y:cr(a.y,b.y,c.y,d.y,us),z:Math.exp(cr(Math.log(a.z),Math.log(b.z),Math.log(c.z),Math.log(d.z),us)),r:cr(a.r,b.r,c.r,d.r,us)};}
 function camRaw(t){let s=camSpline(t);for(const WH of WHS){const sm=u=>u*u*(3-2*u);const k=sm(lin(t,WH.t0-.8,WH.t0))*(1-sm(lin(t,WH.t1,WH.t1+.8)));if(k<=0)continue;
   const hz=WH.z*(1+.05*lin(t,WH.t0,WH.t1));s={x:s.x+(WH.x-s.x)*k,y:s.y+(WH.y-s.y)*k,z:Math.exp(Math.log(s.z)+(Math.log(hz)-Math.log(s.z))*k),r:s.r*(1-k)};}return s;}
-function camState(t){if(t<TCOV){const k=KEYS[0];return{x:k.x,y:k.y,z:1+.015*t,rot:0,speed:0,dir:0};}
+function camState(t){if(t<TCOV){const k=KEYS[0];return{x:k.x,y:k.y,z:1,rot:0,speed:0,dir:0};}
   const s=camRaw(t),q=camRaw(t-1/FPS);const vx=(s.x-q.x)*s.z,vy=(s.y-q.y)*s.z;const sp=Math.hypot(vx,vy);const bank=cl(-vx*.0013,-.08,.08);
   return{x:s.x+Math.sin(t*1.7)*3,y:s.y+Math.cos(t*1.3)*3,z:s.z,rot:s.r+bank,speed:sp,dir:Math.atan2(vy,vx)};}
 let CS={x:0,y:0,z:1,rot:0},TNOW=0;
@@ -130,8 +130,8 @@ function cover(im,x,y,pw,ph,filter,fy=.5,fx=.5){if(!im){ctx.fillStyle='#000';ctx
   ctx.filter=filter||'none';ctx.drawImage(im,x-pw/2-(im.width*s-pw)*fx,y-ph/2-(im.height*s-ph)*fy,im.width*s,im.height*s);ctx.restore();}
 function rowBar(s,y,w,t,t0,dark,col){if(t<t0)return;const q=eo(lin(t,t0,t0+.25));ctx.save();ctx.globalAlpha*=q;let z=46;while(z>22&&mw(s,z+'px Anton',2)>w-140)z-=2;
   ctx.fillStyle=dark?'rgba(27,28,26,.88)':'rgba(128,134,126,.3)';ctx.fillRect(-w/2+60,y-z,w-120,z*1.45);txt(s,0,y+z*.12,z+'px Anton',col||(dark?INK:INK),'center',2);ctx.restore();}
-function badge(s,w,h){let z=30;while(z>16&&mw(s,'700 '+z+'px Mono',3)>w-140)z--;const bw=mw(s,'700 '+z+'px Mono',3)+48;ctx.fillStyle='rgba(10,10,10,.82)';ctx.fillRect(-w/2+36,-h/2+30,bw,z+26);txt(s,-w/2+60,-h/2+30+z+6,'700 '+z+'px Mono',AMB,'left',3);}
-function handle(s,w,h){let z=20;while(z>12&&mw(s,'400 '+z+'px Mono')>w-80)z--;const bw=mw(s,'400 '+z+'px Mono')+28;ctx.fillStyle='rgba(10,10,10,.7)';ctx.fillRect(w/2-36-bw,h/2-56,bw,z+18);txt(s,w/2-50,h/2-56+z+4,'400 '+z+'px Mono','rgba(236,238,230,.8)','right');}
+function badge(s,w,h){let z=26;while(z>16&&mw(s,'600 '+z+'px Inter',2)>w-140)z--;const bw=mw(s,'600 '+z+'px Inter',2)+44;ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(-w/2+36,-h/2+30,bw,z+24);txt(s,-w/2+58,-h/2+30+z+5,'600 '+z+'px Inter','#fff','left',2);}
+function handle(s,w,h){let z=19;while(z>12&&mw(s,'400 '+z+'px Inter')>w*.45)z--;const bw=mw(s,'400 '+z+'px Inter')+28;ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(w/2-36-bw,-h/2+34,bw,z+18);txt(s,w/2-50,-h/2+34+z+4,'400 '+z+'px Inter','rgba(255,255,255,.82)','right');}
 // étiquette « LE PRIX À PAYER » (signature de la série)
 function priceTag(x,y,s,t,t0){if(t<t0)return;const p=eback(lin(t,t0,t0+.5));ctx.save();ctx.translate(x,y);ctx.rotate(-.12+(1-p)*.5);ctx.scale(p,p);
   ctx.shadowColor='rgba(0,0,0,.6)';ctx.shadowBlur=26;ctx.shadowOffsetY=12;ctx.fillStyle='#c9302c';ctx.beginPath();ctx.moveTo(-330,-95);ctx.lineTo(260,-95);ctx.lineTo(330,0);ctx.lineTo(260,95);ctx.lineTo(-330,95);ctx.closePath();ctx.fill();ctx.shadowColor='transparent';
@@ -139,10 +139,10 @@ function priceTag(x,y,s,t,t0){if(t<t0)return;const p=eback(lin(t,t0,t0+.5));ctx.
   txt('LE PRIX À PAYER',-30,-22,'700 30px Mono','rgba(255,255,255,.9)','center',6);txt(s,-30,52,'72px Anton','#fff','center',3);ctx.restore();}
 
 function drawCover(w,h,t){const frz=t>=A1E-.05;const im=VF('A1',t,0);ctx.fillStyle='#0b0c0b';ctx.fillRect(-w/2,-h/2,w,h);
-  if(im){const z=frz?1.12+.008*(t-A1E):1.02+.012*t;const s=Math.max(w/im.width,h/im.height)*z;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
+  if(im){const z=frz?1.12+.004*(t-A1E):1.02+.01*t;const s=Math.max(w/im.width,h/im.height)*z;ctx.save();ctx.beginPath();ctx.rect(-w/2,-h/2,w,h);ctx.clip();
     ctx.filter=frz?'grayscale(1) contrast(1.3) brightness(.5)':'contrast(1.08) brightness(.92)';ctx.drawImage(im,-im.width*s/2+(frz?260:0),-im.height*s/2,im.width*s,im.height*s);ctx.restore();}
   const g=ctx.createLinearGradient(-w/2,0,w/2,0);g.addColorStop(0,'rgba(0,0,0,.85)');g.addColorStop(.6,'rgba(0,0,0,.2)');g.addColorStop(1,'rgba(0,0,0,0)');if(frz){ctx.fillStyle=g;ctx.fillRect(-w/2,-h/2,w,h);}
-  txt('ARCHIVE · 21 MAI 2012 · FREEDOM TO CONNECT · DOMAINE PUBLIC',-w/2+40,h/2-40,'400 18px Mono','rgba(236,238,230,.7)','left',2);
+  txt('Archive · 21 mai 2012 · Freedom to Connect · domaine public',w/2-40,-h/2+46,'400 19px Inter','rgba(255,255,255,.75)','right',0);
   txt('LE PRIX À PAYER #01',-w/2+120,-h/2+150,'700 30px Mono',AMB,'left',8,frz?1:lin(t,.3,.8));
   const sl=(s,y,f,col,ta,ls,gl)=>{if(t<ta)return;const q=eo(lin(t,ta,ta+.13));const sc=1.6-.6*q;ctx.save();ctx.translate(-w/2+120,y);ctx.scale(sc,sc);txt(s,0,0,f,col,'left',ls,cl(q*1.5),gl);ctx.restore();};
   if(!frz)txt('AARON SWARTZ',-w/2+120,-h/2+230,'86px Anton',INK,'left',3,lin(t,.6,1.1));
@@ -236,12 +236,12 @@ ev(WT0-.9,'riser');ev(WB0-.9,'riser');ev(M('V5r')[0]+.1,'thud');ev(VEND+.35,'boo
 // ---------- rendu
 const MBC=document.createElement('canvas');MBC.width=W;MBC.height=H;
 window.ready=(async()=>{for(const [k,f] of Object.entries(window.IMGS))IM[k]=await load('img/'+f);
-  await document.fonts.load('80px Anton');await document.fonts.load('700 50px Osw');await document.fonts.load('700 30px Mono');await document.fonts.load('400 30px Mono');})();
+  await document.fonts.load('80px Anton');await document.fonts.load('700 50px Osw');await document.fonts.load('700 30px Mono');await document.fonts.load('400 30px Mono');await document.fonts.load('500 40px Inter');await document.fonts.load('700 38px Inter');await document.fonts.load('400 25px Inter');await document.fonts.load('600 26px Inter');})();
 window.renderFrame=async f=>{const t=f/FPS;TNOW=t;await ensureClips(t);const st=camState(t);CS=st;
   ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#262a27';ctx.fillRect(0,0,W,H);
   ctx.save();toWorld();drawWall();drawThreads(t);C.forEach(c=>drawCard(c,t));ctx.restore();ctx.setTransform(1,0,0,1,0,0);
   if(st.speed>24){const m=MBC.getContext('2d');m.clearRect(0,0,W,H);m.drawImage(cv,0,0);ctx.save();ctx.globalAlpha=.28;const dx=-Math.cos(st.dir)*Math.min(st.speed,90)*.45,dy=-Math.sin(st.dir)*Math.min(st.speed,90)*.45;ctx.drawImage(MBC,dx,dy);ctx.drawImage(MBC,dx*.5,dy*.5);ctx.restore();}
   // vues d'ensemble : la phrase en surimpression
   [[WB0,WB1,['ILS MISENT SUR L’OUBLI.','NOUS, ON GARDE LES PREUVES.']]].forEach(([a,b,L])=>{const al=vis(t,a+.4,b+.6,.4,.4);if(al>0){txt(L[0],960,430,'110px Anton',INK,'center',4,al,16);txt(L[1],960,560,'110px Anton',PINK,'center',4,al*lin(t,S('n140'),S('n140')+.3),18);}});
-  if(t>=A1E-6.4&&t<VEND+.3)subs(t);
+  if(t>=A1E-6.4&&t<VEND+.3){subs(t);supers(t);}
   post(t);flash(t);};

@@ -7,6 +7,10 @@
 @font-face{font-family:Mono;font-weight:700;src:url(../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2) format('woff2');}
 @font-face{font-family:Osw;font-weight:700;src:url(../../node_modules/@fontsource/oswald/files/oswald-latin-700-normal.woff2) format('woff2');}
 @font-face{font-family:Osw;font-weight:700;src:url(../../node_modules/@fontsource/oswald/files/oswald-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-024F;}
+@font-face{font-family:Inter;font-weight:400;src:url(../../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:Inter;font-weight:500;src:url(../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:Inter;font-weight:600;src:url(../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:Inter;font-weight:700;src:url(../../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2) format('woff2');}
 html,body{margin:0;background:#000}canvas{display:block}
 </style></head>
 <body><canvas id="c" width="1920" height="1080"></canvas>
@@ -56,19 +60,28 @@ function post(t){const fr=Math.floor(t*FPS);
   ctx.save();DUST.forEach(d=>{const x=(d.x+d.vx*t+W*3)%W,y=(d.y+d.vy*t+H*3)%H;ctx.fillStyle=`rgba(240,240,230,${.12+.22*Math.max(0,Math.sin(t*d.tw+d.ph))})`;ctx.beginPath();ctx.arc(x,y,d.s,0,6.283);ctx.fill();});ctx.restore();
   const r=rng(fr*31+5);const fl=(r()-.5)*.04;ctx.fillStyle=fl>0?`rgba(255,250,240,${fl*.5})`:`rgba(0,0,0,${-fl})`;ctx.fillRect(0,0,W,H);}
 
-// ---------- sous-titres (format long : une ligne de 6-7 mots ; vraies voix en ambre, avec le nom)
+// ---------- sous-titres façon Arte : blanc, sobre, sans encadré, deux lignes maximum (Inter ≈ Helvetica Neue)
+const SUBF='500 40px Inter';
 const CHUNKS=[];SEGS.forEach(s=>{const ws=s.txt.split(' ');const tot=ws.reduce((a,w)=>a+w.length+1,0);let acc=0;const dur=s.t1-s.t0;
   const wt=ws.map(w=>{const tt=s.t0+dur*acc/tot;acc+=w.length+1;return[w,tt];});
-  for(let i=0;i<wt.length;){let n=0,len=0;while(i+n<wt.length&&(n<3||len+wt[i+n][0].length<44)&&n<9){len+=wt[i+n][0].length+1;n++;if(/[.?!…:]$/.test(wt[i+n-1][0])&&len>14)break;}
-    CHUNKS.push({v:s.v,who:s.who,lang:s.lang,txt:wt.slice(i,i+n).map(x=>x[0]).join(' '),t:wt[i][1]});i+=n;}});
-CHUNKS.forEach((c,i)=>{c.e=i<CHUNKS.length-1?Math.min(CHUNKS[i+1].t,c.t+3.2):c.t+2;});
-function subs(t){const c=CHUNKS.find(c=>t>=c.t-.03&&t<c.e);if(!c)return;const p=eo(lin(t,c.t-.03,c.t+.08));
-  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=p;const font='700 50px Osw';ctx.font=font;ctx.textAlign='center';ctx.letterSpacing='1px';
-  const s=c.txt;const w=ctx.measureText(s).width;const y=1010;
-  ctx.fillStyle='rgba(20,22,20,.62)';ctx.fillRect(960-w/2-28,y-58,w+56,78);ctx.strokeStyle='rgba(255,255,255,.35)';ctx.lineWidth=2;ctx.strokeRect(960-w/2-28,y-58,w+56,78);
-  ctx.shadowColor='rgba(0,0,0,.8)';ctx.shadowBlur=8;ctx.fillStyle=c.v?'#FFC24A':'#f4f1e6';ctx.fillText(s,960,y);
-  if(c.v&&c.who){ctx.shadowBlur=0;txt(c.who+(c.lang=='en'?' · traduit de l’anglais':''),960,y-74,'700 22px Mono','rgba(255,194,74,.9)','center',3);}
+  for(let i=0;i<wt.length;){let n=0,len=0;while(i+n<wt.length&&(n<3||len+wt[i+n][0].length<74)){len+=wt[i+n][0].length+1;n++;if(/[.?!…]$/.test(wt[i+n-1][0])&&len>22)break;}
+    CHUNKS.push({v:s.v,txt:wt.slice(i,i+n).map(x=>x[0]).join(' '),t:wt[i][1]});i+=n;}});
+CHUNKS.forEach((c,i)=>{c.e=i<CHUNKS.length-1?Math.min(CHUNKS[i+1].t,c.t+4.5):c.t+2.5;});
+function subLines(s){ctx.font=SUBF;const ws=s.split(' ');if(ctx.measureText(s).width<=1250)return[s];let best=[s],bd=1e9;
+  for(let k=1;k<ws.length;k++){const a=ws.slice(0,k).join(' '),b=ws.slice(k).join(' ');const d=Math.abs(ctx.measureText(a).width-ctx.measureText(b).width);if(d<bd){bd=d;best=[a,b];}}return best;}
+function subs(t){const c=CHUNKS.find(c=>t>=c.t-.03&&t<c.e);if(!c)return;const a=lin(t,c.t-.03,c.t+.06)*(1-lin(t,c.e-.06,c.e));
+  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=a;ctx.font=SUBF;ctx.textAlign='center';ctx.letterSpacing='0px';
+  const L=subLines(c.txt);const y0=1022-(L.length-1)*50;
+  L.forEach((l,i)=>{ctx.lineJoin='round';ctx.lineWidth=5;ctx.strokeStyle='rgba(0,0,0,.55)';ctx.strokeText(l,960,y0+i*50);ctx.shadowColor='rgba(0,0,0,.9)';ctx.shadowBlur=10;ctx.shadowOffsetY=2;ctx.fillStyle='#fff';ctx.fillText(l,960,y0+i*50);ctx.shadowColor='transparent';});
   ctx.restore();}
+// synthé (nom + fonction) en bas à gauche, à la première apparition d'une vraie voix
+const WHO={'AARON SWARTZ · 2012':['Aaron Swartz','Discours « How We Stopped SOPA », 2012 · traduit de l’anglais'],'FLORE VASSEUR':['Flore Vasseur','Écrivaine, autrice de « Ce qu’il reste de nos rêves »'],
+  'PETER ECKERSLEY · AMI':['Peter Eckersley','Ami d’Aaron · traduit de l’anglais'],'LAWRENCE LESSIG':['Lawrence Lessig','Professeur de droit, son mentor · traduit de l’anglais']};
+const SUPERS=[];{const last={};SEGS.forEach(s=>{if(!s.v||!WHO[s.who])return;if(last[s.who]!=null&&s.t0-last[s.who]<45){last[s.who]=s.t1;return;}SUPERS.push({t0:s.t0+.3,t1:Math.min(s.t1,s.t0+5),n:WHO[s.who][0],f:WHO[s.who][1]});last[s.who]=s.t1;});}
+function supers(t){SUPERS.forEach(s=>{const a=vis(t,s.t0,s.t1,.35,.35);if(a<=0)return;const p=eo(lin(t,s.t0,s.t0+.5));ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=a;
+  const g=ctx.createLinearGradient(0,0,760,0);g.addColorStop(0,'rgba(0,0,0,.55)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,742,760,120);
+  ctx.fillStyle='#fff';ctx.fillRect(96,770,3,64);ctx.translate((1-p)*-20,0);ctx.letterSpacing='0px';
+  ctx.shadowColor='rgba(0,0,0,.8)';ctx.shadowBlur=8;ctx.font='700 38px Inter';ctx.textAlign='left';ctx.fillText(s.n,120,800);ctx.font='400 25px Inter';ctx.fillStyle='rgba(255,255,255,.85)';ctx.fillText(s.f,120,836);ctx.restore();});}
 </script>
 <script src="board.js"></script>
 </body></html>

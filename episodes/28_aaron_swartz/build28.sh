@@ -37,3 +37,9 @@ EOF
 ffmpeg -v error -y -ss $A -t $LEN -i "$P/audio/vo_complete.wav" -ss $A -t $LEN -i "$W/music_full.wav" -ss $A -t $LEN -i "$W/sfx_full.wav" -filter_complex "[0]aresample=48000,pan=stereo|c0=c0|c1=c0,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2dB,apad=whole_dur=${LEN}[v];[v]asplit=3[v1][v2][v3];[1]volume=0.32[m];[m][v2]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];[2]volume=0.55[s];[s][v3]sidechaincompress=threshold=0.05:ratio=3:attack=5:release=200[sd];[v1][md][sd]amix=inputs=3:normalize=0,alimiter=limit=0.85,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.84:level=false" -ar 48000 "$W/mix.wav"
 ffmpeg -v error -y -i "$W/video.mp4" -i "$W/mix.wav" -c:v libx264 -preset slow -crf 20 -maxrate 6000k -bufsize 9000k -pix_fmt yuv420p -c:a aac -b:a 192k -shortest -movflags +faststart "$OUT"
 echo "OK : $OUT ($(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT") s)"
+# générique « ferme-la » en 16:9 (GENERIQUE=0 pour s'en passer)
+if [ "${GENERIQUE:-1}" = 1 ] && [ -z "$2" ]; then
+  G="$ROOT/generique16/generique16.mp4"; mv "$OUT" "$W/sans_generique.mp4"
+  ffmpeg -v error -y -i "$W/sans_generique.mp4" -i "$G" -filter_complex "[0:v]fps=30,setsar=1[v0];[1:v]fps=30,setsar=1[v1];[0:a]aresample=48000,afade=t=out:st=$(echo "$LEN-0.15"|bc):d=0.15[a0];[1:a]aresample=48000[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" -c:v libx264 -preset slow -crf 20 -maxrate 6000k -bufsize 9000k -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart "$OUT"
+  echo "générique ajouté : $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT") s"
+fi
