@@ -68,6 +68,9 @@ with sync_playwright() as pw:
         pg.screenshot(path=f'{OUT}/C2_{i}.jpg', type='jpeg', quality=88)
     os.remove(hp); b.close()
 D = os.path.dirname(__file__)
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{OUT}/C2_%d.jpg', '-i', f'{OUT}/C_plein_cadre_1.jpg', '-filter_complex',
-                '[0]scale=960:-2,tile=2x4:padding=12:color=white:nb_frames=7[a];[a]null', '-frames:v', '1', os.path.join(D, 'planche_C2.jpg')], check=True)
+import shutil, tempfile
+T = tempfile.mkdtemp()
+for i in range(1, 8): shutil.copy(f'{OUT}/C2_{i}.jpg', f'{T}/p_{i}.jpg')
+shutil.copy(f'{OUT}/C_plein_cadre_1.jpg', f'{T}/p_8.jpg')   # 8e case : le titre sans serif, pour comparer
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{T}/p_%d.jpg', '-vf', 'scale=960:-2,tile=2x4:padding=12:color=white', '-frames:v', '1', os.path.join(D, 'planche_C2.jpg')], check=True)
 print('ok')
