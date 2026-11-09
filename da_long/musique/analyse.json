@@ -1,0 +1,212 @@
+[
+ {
+  "cat": "1 Ouverture / tension",
+  "n": "Impact Prelude",
+  "f": "Impact_Prelude.mp3",
+  "dur": 202,
+  "start": 137,
+  "niveau": -16.4,
+  "dyn": 13.2,
+  "brill": 1798
+ },
+ {
+  "cat": "1 Ouverture / tension",
+  "n": "Unanswered Questions",
+  "f": "Unanswered_Questions.mp3",
+  "dur": 165,
+  "start": 119,
+  "niveau": -16.4,
+  "dyn": 9.5,
+  "brill": 903
+ },
+ {
+  "cat": "1 Ouverture / tension",
+  "n": "Long Note Four",
+  "f": "Long_Note_Four.mp3",
+  "dur": 600,
+  "start": 10,
+  "niveau": -31.5,
+  "dyn": 13.9,
+  "brill": 815
+ },
+ {
+  "cat": "2 Enquête / recherche",
+  "n": "Investigations",
+  "f": "Investigations.mp3",
+  "dur": 93,
+  "start": 12,
+  "niveau": -20.2,
+  "dyn": 11.5,
+  "brill": 1012
+ },
+ {
+  "cat": "2 Enquête / recherche",
+  "n": "Comfortable Mystery",
+  "f": "Comfortable_Mystery.mp3",
+  "dur": 236,
+  "start": 80,
+  "niveau": -32.8,
+  "dyn": 11.8,
+  "brill": 1040
+ },
+ {
+  "cat": "2 Enquête / recherche",
+  "n": "Spy Glass",
+  "f": "Spy_Glass.mp3",
+  "dur": 226,
+  "start": 128,
+  "niveau": -17.8,
+  "dyn": 21.4,
+  "brill": 1892
+ },
+ {
+  "cat": "3 Archives / nostalgie",
+  "n": "Gymnopedie No 1",
+  "f": "Gymnopedie_No_1.mp3",
+  "dur": 187,
+  "start": 46,
+  "niveau": -23.0,
+  "dyn": 13.2,
+  "brill": 884
+ },
+ {
+  "cat": "3 Archives / nostalgie",
+  "n": "Prelude in C - BWV 846",
+  "f": "Prelude_in_C_-_BWV_846.mp3",
+  "dur": 178,
+  "start": 92,
+  "niveau": -17.1,
+  "dyn": 6.8,
+  "brill": 907
+ },
+ {
+  "cat": "3 Archives / nostalgie",
+  "n": "Echoes of Time v2",
+  "f": "Echoes_of_Time_v2.mp3",
+  "dur": 285,
+  "start": 154,
+  "niveau": -16.6,
+  "dyn": 17.6,
+  "brill": 814
+ },
+ {
+  "cat": "4 Action / pression",
+  "n": "Clenched Teeth",
+  "f": "Clenched_Teeth.mp3",
+  "dur": 91,
+  "start": 51,
+  "niveau": -15.3,
+  "dyn": 13.9,
+  "brill": 2026
+ },
+ {
+  "cat": "4 Action / pression",
+  "n": "Movement Proposition",
+  "f": "Movement_Proposition.mp3",
+  "dur": 141,
+  "start": 18,
+  "niveau": -10.7,
+  "dyn": 22.4,
+  "brill": 2537
+ },
+ {
+  "cat": "4 Action / pression",
+  "n": "Prelude and Action",
+  "f": "Prelude_and_Action.mp3",
+  "dur": 98,
+  "start": 65,
+  "niveau": -14.8,
+  "dyn": 8.9,
+  "brill": 1294
+ },
+ {
+  "cat": "5 Drame / deuil",
+  "n": "Sad Trio",
+  "f": "Sad_Trio.mp3",
+  "dur": 251,
+  "start": 45,
+  "niveau": -41.1,
+  "dyn": 14.1,
+  "brill": 1181
+ },
+ {
+  "cat": "5 Drame / deuil",
+  "n": "Lightless Dawn",
+  "f": "Lightless_Dawn.mp3",
+  "dur": 379,
+  "start": 182,
+  "niveau": -25.8,
+  "dyn": 13.3,
+  "brill": 779
+ },
+ {
+  "cat": "5 Drame / deuil",
+  "n": "Peaceful Desolation",
+  "f": "Peaceful_Desolation.mp3",
+  "dur": 91,
+  "start": 42,
+  "niveau": -21.9,
+  "dyn": 13.3,
+  "brill": 1155
+ },
+ {
+  "cat": "6 Révélation / bascule sombre",
+  "n": "Gathering Darkness",
+  "f": "Gathering_Darkness.mp3",
+  "dur": 264,
+  "start": 47,
+  "niveau": -18.6,
+  "dyn": 12.7,
+  "brill": 1007
+ },
+ {
+  "cat": "6 Révélation / bascule sombre",
+  "n": "The Descent",
+  "f": "The_Descent.mp3",
+  "dur": 191,
+  "start": 140,
+  "niveau": -15.8,
+  "dyn": 12.5,
+  "brill": 1130
+ },
+ {
+  "cat": "6 Révélation / bascule sombre",
+  "n": "Darkest Child",
+  "f": "Darkest_Child.mp3",
+  "dur": 238,
+  "start": 74,
+  "niveau": -15.6,
+  "dyn": 6.3,
+  "brill": 1001
+ },
+ {
+  "cat": "7 Conclusion / espoir",
+  "n": "Lasting Hope",
+  "f": "Lasting_Hope.mp3",
+  "dur": 143,
+  "start": 20,
+  "niveau": -17.1,
+  "dyn": 7.4,
+  "brill": 749
+ },
+ {
+  "cat": "7 Conclusion / espoir",
+  "n": "Bathed in the Light",
+  "f": "Bathed_in_the_Light.mp3",
+  "dur": 166,
+  "start": 61,
+  "niveau": -17.8,
+  "dyn": 8.5,
+  "brill": 1295
+ },
+ {
+  "cat": "7 Conclusion / espoir",
+  "n": "Dreams Become Real",
+  "f": "Dreams_Become_Real.mp3",
+  "dur": 410,
+  "start": 134,
+  "niveau": -25.3,
+  "dyn": 8.9,
+  "brill": 782
+ }
+]
