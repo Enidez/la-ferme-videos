@@ -78,7 +78,7 @@ label.f input{width:78px;font-family:var(--f-num)}
   <span class="time" id="clock">0:00.0</span>
   <span class="sep"></span>
   <div class="grp" id="tools">
-    <button data-tool="draw" title="Crayon (B) : toucher pour poser un point, glisser pour dessiner une ligne">✎ Crayon</button>
+    <button data-tool="draw" title="Crayon (B) : toucher pour choisir, double toucher pour créer une note, glisser dans le vide pour dessiner">✎ Crayon</button>
     <button data-tool="select" title="Sélection (V) : toucher un point, tracer un cadre, déplacer en groupe">⬚ Sélection</button>
     <button data-tool="erase" title="Gomme (E) : toucher ou balayer les points à effacer">⌫ Gomme</button>
     <button data-tool="hand" title="Main (H) : faire glisser la vue">✋ Main</button>
@@ -126,10 +126,10 @@ label.f input{width:78px;font-family:var(--f-num)}
 
 <div class="panel" id="help" hidden>
   <ul>
-    <li><b>Crayon</b> : toucher = un point sur la voix active · glisser = dessiner une mélodie</li>
+    <li><b>Crayon</b> : un toucher = choisir une note (ou une voix) · <b>double toucher</b> = créer une note · faire glisser une note = la déplacer · glisser dans le vide = dessiner une mélodie</li>
     <li><b>Sélection</b> : cadre pour choisir plusieurs points · glisser pour les déplacer (Alt = copier)</li>
     <li><b>Gomme</b> : toucher ou balayer · <b>Main</b> : déplacer la vue</li>
-    <li><b>Double toucher sur une ligne de couleur</b> : on n'entend plus qu'elle (les autres s'estompent) · refaire le geste pour tout réentendre</li>
+    <li><b>Écouter une voix seule</b> : bouton S de la voix, double-clic sur sa carte en bas, ou double toucher sur sa ligne avec la Sélection ou la Main</li>
     <li><b>Deux doigts</b> : se déplacer et pincer pour zoomer (écarter en largeur = temps, en hauteur = notes)</li>
     <li><b>Molette</b> : défiler · Maj + molette : avancer dans le temps · Ctrl + molette : zoom · Alt + molette : hauteur des notes</li>
     <li><b>Règle</b> : toucher = tête de lecture · glisser = zone de boucle · tirer le drapeau « fin » = durée</li>
@@ -267,8 +267,8 @@ function drawOv(){const w=ov.width/(devicePixelRatio||1),h=ov.height/(devicePixe
 function setTool(t){tool=t;document.querySelectorAll('#tools button').forEach(b=>b.classList.toggle('on',b.dataset.tool===t));
   cv.style.cursor={draw:'crosshair',select:'default',erase:'not-allowed',hand:'grab'}[t];}
 document.querySelectorAll('#tools button').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
-function hitPoint(x,y,r=12){let best=null,bd=r;const ks=[voice].concat(P.voix.map((v,k)=>k).filter(k=>k!==voice));
-  for(const k of ks){const v=P.voix[k];if(!v)continue;for(const q of v.points){const d=Math.hypot(xOf(q[0])-x,yOf(q[1])-y);if(d<bd-(k===voice?0:2)){bd=d;best={k,q};}}if(best&&best.k===voice)return best;}return best;}
+function hitPoint(x,y,r=12){r=Math.min(r,Math.max(7,V.row*.75));let best=null,bd=r;
+  P.voix.forEach((v,k)=>{for(const q of v.points){const d=Math.hypot(xOf(q[0])-x,yOf(q[1])-y);if(d<bd){bd=d;best={k,q};}}});return best;}
 const voiceOf=q=>P.voix.findIndex(v=>v.points.includes(q));
 function sortAll(){P.voix.forEach(v=>v.points.sort((a,b)=>a[0]-b[0]));}
 
@@ -297,19 +297,17 @@ cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);const p=
     act={type:'ruler',x0:x,t:snapT(tOf(x))};return;}
   if(x<KEYW){const m=Math.round(mOf(y));preview(m);act={type:'keys',y0:y,v:{...V}};return;}
   const now=performance.now(),touch=e.pointerType==='touch';
-  if(now-lastTap.t<400&&Math.hypot(x-lastTap.x,y-lastTap.y)<26){ // double toucher : isoler la voix visée
-    if(lastTap.added){const v=P.voix[lastTap.added.k],i=v?v.points.indexOf(lastTap.added.q):-1;if(i>=0){v.points.splice(i,1);sel.delete(lastTap.added.q);hist.pop();undoUI();renderSel();req();}}
-    const hp=hitPoint(x,y,touch?16:11),k=hp?hp.k:lineAt(x,y,touch?22:14);lastTap.t=0;
-    if(k!=null){isolate(k);return;}}
-  else lastTap={t:now,x,y,added:null};
+  const dbl=now-lastTap.t<400&&Math.hypot(x-lastTap.x,y-lastTap.y)<30;lastTap=dbl?{t:0,x:0,y:0}:{t:now,x,y};
+  if(dbl&&tool==='draw'){createNote(x,y,touch);return;}               // crayon : double toucher = une nouvelle note
+  if(dbl&&(tool==='select'||tool==='hand')){const hp=hitPoint(x,y,touch?16:11),k=hp?hp.k:lineAt(x,y,touch?22:14);if(k!=null){isolate(k);return;}}
   const h=hitPoint(x,y,touch?16:11);
   if(tool==='erase'){checkpoint();act={type:'erase',n:0};eraseAt(x,y);return;}
   if(h&&(tool==='draw'||tool==='select')){
     if(e.shiftKey&&tool==='select'){sel.has(h.q)?sel.delete(h.q):sel.add(h.q);renderSel();req();return;}
     if(!sel.has(h.q)){sel.clear();sel.add(h.q);}selChord=null;
     if(voice!==h.k){voice=h.k;renderVoices();}
-    act={type:'move',x0:x,y0:y,anchor:h.q,copy:e.altKey,started:false};renderSel();req();return;}
-  if(tool==='draw'){act={type:'drawPending',x0:x,y0:y};return;}
+    act={type:'move',x0:x,y0:y,anchor:h.q,copy:e.altKey,started:false,thr:touch?12:4};renderSel();req();return;}
+  if(tool==='draw'){act={type:'drawPending',x0:x,y0:y,thr:touch?14:6};return;}
   if(tool==='select'){if(!e.shiftKey)sel.clear();selChord=null;act={type:'rect',x0:x,y0:y,x1:x,y1:y,base:new Set(sel)};renderSel();req();}
 });
 cv.addEventListener('pointermove',e=>{if(!ptrs.has(e.pointerId)){hover(e);return;}const p=pos(e);ptrs.set(e.pointerId,p);
@@ -325,7 +323,7 @@ cv.addEventListener('pointermove',e=>{if(!ptrs.has(e.pointerId)){hover(e);return
     case'ruler':if(Math.abs(x-act.x0)>6||act.loop){act.loop=true;const t=snapT(tOf(x));loop.a=Math.min(act.t,t);loop.b=Math.max(act.t,t);if(!loop.on&&loop.b>loop.a){loop.on=true;loopUI();}req();}break;
     case'chordDrag':if(Math.abs(x-act.x0)>4){if(!act.moved){checkpoint();act.moved=true;}act.c.t=snapT(act.t0+(x-act.x0)/V.px);changed();}break;
     case'erase':eraseAt(x,y);break;
-    case'drawPending':if(Math.hypot(x-act.x0,y-act.y0)>6){checkpoint();act={type:'drawLine',last:null};drawAt(act.x0,act.y0);drawAt(x,y);}break;
+    case'drawPending':if(Math.hypot(x-act.x0,y-act.y0)>act.thr){checkpoint();act={type:'drawLine',last:null};drawAt(act.x0,act.y0);drawAt(x,y);}break;
     case'drawLine':drawAt(x,y);break;
     case'move':moveSel(x,y);break;
     case'rect':act.x1=x;act.y1=y;rectSelect();req();break;}
@@ -338,8 +336,8 @@ function endPtr(e){if(!ptrs.has(e.pointerId))return;const p=ptrs.get(e.pointerId
     case'ruler':if(!a.loop){playT=a.t;if(playing)restartPlay();}req();break;
     case'end':if(loop.b>P.duree)loop.b=P.duree;changed();break;
     case'chordDrag':if(a.moved)P.accords.sort((x,y)=>x.t-y.t);renderSel();break;
-    case'drawPending':{checkpoint();const v=P.voix[voice];if(!v){status('Ajoute d’abord une voix.');break;}const t=snapT(tOf(a.x0)),m=clamp(Math.round(mOf(a.y0)),MINM,MAXM);
-      v.points=v.points.filter(q=>Math.abs(q[0]-t)>1e-6);const q=[t,m];v.points.push(q);v.points.sort((x,y)=>x[0]-y[0]);sel.clear();sel.add(q);lastTap.added={k:voice,q};preview(m,v);renderSel();changed();break;}
+    case'drawPending':{const k=lineAt(a.x0,a.y0,22);sel.clear();if(k!=null&&k!==voice){voice=k;renderVoices();}renderSel();req();
+      status(k!=null?`« ${P.voix[k].nom} » choisie. Double-touche pour ajouter une note.`:'Double-touche pour créer une note.');break;}
     case'move':if(a.started){sortAll();changed();}renderSel();break;
     case'rect':renderSel();req();break;
     case'erase':if(!a.n)hist.pop(),undoUI();break;}
@@ -347,11 +345,16 @@ function endPtr(e){if(!ptrs.has(e.pointerId))return;const p=ptrs.get(e.pointerId
 cv.addEventListener('pointerup',endPtr);cv.addEventListener('pointercancel',endPtr);
 function hover(e){const{x,y}=pos(e);if(tool==='hand'||spaceDown)return;let c=tool==='draw'?'crosshair':tool==='erase'?'not-allowed':'default';
   if(y<RULER&&Math.abs(x-xOf(P.duree))<14&&y<20)c='ew-resize';else if(y>=RULER&&x>=KEYW&&tool!=='erase'&&hitPoint(x,y))c='move';cv.style.cursor=c;}
+function createNote(x,y,touch){const hp=hitPoint(x,y,touch?16:11),lk=lineAt(x,y,touch?18:12);const k=hp?hp.k:lk!=null?lk:voice;const v=P.voix[k];if(!v){status('Ajoute d’abord une voix.');return;}
+  let t=snapT(tOf(x));const m=hp?hp.q[1]:clamp(Math.round(lk!=null?pitchAt(v.points,t):mOf(y)),MINM,MAXM);
+  if(v.points.some(q=>Math.abs(q[0]-t)<1e-6)){t=snapT(t+(gridSec()||.25));if(v.points.some(q=>Math.abs(q[0]-t)<1e-6)){status('Il y a déjà une note à cet endroit.');return;}}
+  checkpoint();const q=[t,m];v.points.push(q);v.points.sort((a,b)=>a[0]-b[0]);sel.clear();sel.add(q);
+  if(voice!==k){voice=k;renderVoices();}preview(m,v);renderSel();changed();status(`Note ajoutée sur « ${v.nom} ». Fais-la glisser, ou utilise −½ / +½ pour changer sa hauteur.`);}
 function drawAt(x,y){const v=P.voix[voice];if(!v)return;const t=snapT(tOf(x)),m=clamp(Math.round(mOf(y)),MINM,MAXM);
   if(act.last&&act.last[0]===t){if(act.last[1]!==m){act.last[1]=m;preview(m,v);}changed();return;}
   v.points=v.points.filter(q=>Math.abs(q[0]-t)>1e-6);const q=[t,m];v.points.push(q);v.points.sort((a,b)=>a[0]-b[0]);act.last=q;sel.clear();preview(m,v);changed();}
 function eraseAt(x,y){const h=hitPoint(x,y,14);if(!h)return;const v=P.voix[h.k];v.points.splice(v.points.indexOf(h.q),1);sel.delete(h.q);act.n++;changed();}
-function moveSel(x,y){if(!act.started){if(Math.hypot(x-act.x0,y-act.y0)<4)return;checkpoint();act.started=true;
+function moveSel(x,y){if(!act.started){if(Math.hypot(x-act.x0,y-act.y0)<act.thr)return;checkpoint();act.started=true;
     if(act.copy){const n=new Set();sel.forEach(q=>{const k=voiceOf(q),c=q.slice();P.voix[k].points.push(c);if(q===act.anchor)act.anchor=c;n.add(c);});sel=n;}
     act.orig=new Map([...sel].map(q=>[q,[q[0],q[1]]]));}
   const o=act.orig.get(act.anchor),dt=snapT(o[0]+(x-act.x0)/V.px)-o[0],dm=Math.round(-(y-act.y0)/V.row);
