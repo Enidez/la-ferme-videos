@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Serif;src:url(../../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2)}
+@font-face{font-family:Serif;font-style:italic;src:url(../../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:Inter;font-weight:500;src:url(../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2)}
+html,body{margin:0;background:#000}canvas{display:block}</style></head><body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="data.js"></script><script>
+// Visualisation « bloom » : chaque voix est une ligne lumineuse ; le temps défile de droite à gauche, la tête de lecture est fixe.
+const W=1920,H=1080,FPS=30;window.DURATION=DUR;window.EVENTS=[];const cv=document.getElementById('c'),ctx=cv.getContext('2d');
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),lin=(t,a,b)=>cl((t-a)/(b-a));
+const PX=700,SC=150,YT=300,YB=840,MLO=26,MHI=82;   // tête de lecture, px par seconde, bande des voix, plage de notes affichée
+const y=m=>m<46?YB-(m-26)/20*90:YB-130-(m-46)/36*(YB-130-YT);   // basse en bas, voix aiguës écartées sur toute la hauteur
+const HUE=[215,250,275,295,315,335,355,25,45,150,180];
+const col=(k,a)=>`hsla(${HUE[k]},85%,${k?68:62}%,${a})`;
+const NN=['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
+const STARS=[];{let s=9;const r=()=>(s=(s*16807)%2147483647)/2147483647;for(let i=0;i<220;i++)STARS.push([r()*W,r()*H,r()*1.6+.3,r()*6]);}
+const vAt=(k,t)=>{const a=VO[k],i=t*30,i0=Math.floor(cl(i,0,a.length-1)),i1=Math.min(a.length-1,i0+1);return a[i0]+(a[i1]-a[i0])*(i-i0);};
+window.ready=Promise.all([document.fonts.load('120px Serif'),document.fonts.load('italic 60px Serif'),document.fonts.load('500 20px Inter')]);
+window.renderFrame=f=>{const t=f/FPS;ctx.setTransform(1,0,0,1,0,0);
+  // fond : nuit bleu-violet + étoiles
+  const g=ctx.createRadialGradient(W*.5,H*.95,50,W*.5,H*.6,1300);g.addColorStop(0,'#3a2552');g.addColorStop(.45,'#161830');g.addColorStop(1,'#07080f');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  STARS.forEach(([x,yy,r,p])=>{ctx.fillStyle=`rgba(255,255,255,${.15+.25*Math.max(0,Math.sin(t*.8+p))})`;ctx.beginPath();ctx.arc(x,yy,r,0,6.28);ctx.fill();});
+  const fade=lin(t,0,.6)*(1-lin(t,DUR-1,DUR));ctx.globalAlpha=fade;
+  // accord en cours
+  let ci=-1;CHORDS.forEach((c,i)=>{if(t>=c.t0-.05)ci=i;});
+  // repères d'accords sur la frise
+  CHORDS.forEach(c=>{const x=PX+(c.t0-t)*SC;if(x<-50||x>W+50)return;ctx.strokeStyle='rgba(255,255,255,.10)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,YT-40);ctx.lineTo(x,YB+30);ctx.stroke();
+    ctx.font='500 19px Inter';ctx.fillStyle='rgba(255,255,255,.45)';ctx.textAlign='center';ctx.fillText(c.name+c.q,x,YT-55);});
+  // les voix
+  for(let k=0;k<VO.length;k++){
+    const path=(a,b,alpha,w)=>{ctx.beginPath();for(let s=a;s<=b;s+=1/30){const x=PX+(s-t)*SC;const yy=y(vAt(k,Math.max(0,s)));s===a?ctx.moveTo(x,yy):ctx.lineTo(x,yy);}ctx.strokeStyle=col(k,alpha);ctx.lineWidth=w;ctx.stroke();};
+    ctx.save();ctx.shadowColor=col(k,.9);ctx.shadowBlur=14;path(Math.max(0,t-PX/SC),t,.95,2.6);ctx.restore();   // passé : lumineux
+    path(t,Math.min(DUR,t+(W-PX)/SC),.16,1.6);                                                      // à venir : en pointillé discret
+    const yy=y(vAt(k,t));ctx.save();ctx.shadowColor=col(k,1);ctx.shadowBlur=26;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(PX,yy,6,0,6.28);ctx.fill();ctx.fillStyle=col(k,1);ctx.beginPath();ctx.arc(PX,yy,4,0,6.28);ctx.fill();ctx.restore();}
+  ctx.strokeStyle='rgba(255,255,255,.22)';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(PX,YT-20);ctx.lineTo(PX,YB+20);ctx.stroke();
+  // nom de l'accord en serif (fondu entre deux accords)
+  ctx.textAlign='center';
+  if(t<CHORDS[0].t0){const a=lin(t,.2,.8);ctx.globalAlpha=fade*a;ctx.fillStyle='#f4f1ea';ctx.font='130px Serif';ctx.fillText('C',W/2,170);ctx.font='500 20px Inter';ctx.fillStyle='rgba(255,255,255,.6)';ctx.fillText('UNE NOTE',W/2,215);}
+  else{const c=CHORDS[ci],a=lin(t,c.t0-.05,c.t0+.35);ctx.globalAlpha=fade*a;ctx.fillStyle='#f4f1ea';
+    ctx.font='130px Serif';const w1=ctx.measureText(c.name).width;ctx.font='italic 72px Serif';const w2=ctx.measureText(c.q).width;const x0=W/2-(w1+w2+8)/2;
+    ctx.textAlign='left';ctx.font='130px Serif';ctx.fillText(c.name,x0,170);ctx.font='italic 72px Serif';ctx.fillText(c.q,x0+w1+8,170);ctx.textAlign='center';
+    ctx.font='500 20px Inter';ctx.fillStyle='rgba(255,255,255,.6)';ctx.fillText(c.rn+'   ·   '+[...new Set(c.notes.slice(1).map(m=>NN[m%12]))].join('  '),W/2,215);}
+  ctx.globalAlpha=fade;
+  // clavier
+  const K0=24,K1=88,kx=110,kw=(W-2*kx)/((K1-K0+1)*7/12),KY=905,KH=110;const lit={};for(let k=0;k<VO.length;k++)lit[Math.round(vAt(k,t))]=k;
+  let wx=kx;const white=[],black=[];for(let m=K0;m<=K1;m++){const isB=[1,3,6,8,10].includes(m%12);if(isB)black.push([m,wx-kw*.3]);else{white.push([m,wx]);wx+=kw;}}
+  white.forEach(([m,x])=>{const k=lit[m];ctx.fillStyle=k!=null?col(k,.95):'rgba(235,235,245,.16)';ctx.fillRect(x+1,KY,kw-2,KH);if(k!=null){ctx.save();ctx.shadowColor=col(k,1);ctx.shadowBlur=30;ctx.fillRect(x+1,KY,kw-2,KH);ctx.restore();}});
+  black.forEach(([m,x])=>{const k=lit[m];ctx.fillStyle=k!=null?col(k,1):'#0b0b14';ctx.fillRect(x,KY,kw*.6,KH*.62);});
+  ctx.globalAlpha=1;ctx.font='500 17px Inter';ctx.textAlign='left';ctx.fillStyle='rgba(255,255,255,.35)';ctx.fillText('LA FERME · STUDIO',60,1055);
+};
+</script></body></html>
